@@ -1,10 +1,10 @@
-name: OpenCode Cloud Pro v2 (Terbaru + 24/7 + Panel + Live Preview)
+name: OpenCode Cloud Pro v2 (Terbaru + Fix Tunnel + 24/7 + Panel + Preview)
 
 on:
   workflow_dispatch:
     inputs:
       versi_opencode:
-        description: "Pilih versi OpenCode (v2 = Generasi Terbaru v2.1+, v1 = Klasik Stabil v1.19+)"
+        description: "Pilih versi OpenCode (v2 = Terbaru v2.1+ Full Fix, v1 = Klasik v1.19+)"
         type: choice
         options:
           - v2
@@ -39,7 +39,7 @@ jobs:
       - name: 1. Ambil Kode & Backup Sebelumnya
         uses: actions/checkout@v6
 
-      - name: 2. Install OpenCode Terbaru (${{ inputs.versi_opencode }}), Panel & Helper
+      - name: 2. Install OpenCode (${{ inputs.versi_opencode }}), WebSocket SSE Bridge, Panel & Helper
         env:
           OC_VER: ${{ inputs.versi_opencode }}
         run: |
@@ -67,7 +67,7 @@ jobs:
           chmod +x "$HOME/.local/bin/opencode" "$HOME/.local/bin/cloudflared"
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
-          # Konfigurasi default model gratis OpenCode
+          # Konfigurasi default model gratis OpenCode (kompatibel penuh di v2 maupun v1)
           if [ ! -f opencode.json ]; then
             printf '{\n  "$schema": "https://opencode.ai/config.json",\n  "model": "opencode/deepseek-v4.1-flash-free"\n}\n' > opencode.json
           fi
@@ -228,7 +228,8 @@ jobs:
           chmod +x "$HOME/.local/bin/oc-publish-url"
 
           # ------------------------------------------------------------------
-          # Helper 3: Full Gateway (Auto-Pair v2 & v1) + Floating Panel + Preview
+          # Helper 3: Full Gateway + Real-Time WebSocket SSE Bridge (Anti-Buffering
+          # TryCloudflare untuk v2 & v1) + Auto Workspace v2 + Cloud Panel
           # ------------------------------------------------------------------
           cat << 'PROXYEOF' > /tmp/auth-proxy.mjs
           import http from "node:http";
@@ -556,38 +557,193 @@ jobs:
           </html>`;
 
           const WIDGET_JS = `(() => {
-            if (document.getElementById('__oc_cloud_fab')) return;
-            const a = document.createElement('a');
-            a.id = '__oc_cloud_fab';
-            a.href = '/__panel';
-            a.target = '_blank';
-            a.textContent = '⚡ Cloud Panel';
-            a.title = 'Live Preview Port, Download ZIP/APK, Save Paksa & Info Server';
-            Object.assign(a.style, {
-              position: 'fixed',
-              right: '14px',
-              bottom: '14px',
-              zIndex: '2147483647',
-              padding: '7px 12px',
-              borderRadius: '999px',
-              background: 'rgba(22, 25, 34, 0.92)',
-              color: '#60a5fa',
-              border: '1px solid #334155',
-              fontSize: '12px',
-              fontWeight: '600',
-              fontFamily: 'system-ui, -apple-system, sans-serif',
-              textDecoration: 'none',
-              boxShadow: '0 6px 20px rgba(0,0,0,0.45)',
-              backdropFilter: 'blur(8px)',
-            });
-            document.addEventListener('DOMContentLoaded', () => document.body.appendChild(a));
-            if (document.body) document.body.appendChild(a);
+            const OC_WORKSPACE = ${JSON.stringify(WORKSPACE)};
+            const OC_MODE = ${JSON.stringify(OC_VER)};
+
+            // 1. Daftarkan otomatis folder GitHub repository ke OpenCode v2 di setiap domain baru
+            if (OC_MODE !== 'v1' && OC_WORKSPACE) {
+              try {
+                const key = 'opencode.global.dat:server';
+                const parsed = JSON.parse(localStorage.getItem(key) || 'null') || {
+                  list: [],
+                  hidden: {},
+                  projects: { local: [] },
+                  lastProject: {},
+                  recentlyClosed: {}
+                };
+                parsed.projects = parsed.projects || {};
+                parsed.projects.local = Array.isArray(parsed.projects.local) ? parsed.projects.local : [];
+                if (!parsed.projects.local.some((p) => p && p.worktree === OC_WORKSPACE)) {
+                  parsed.projects.local.unshift({ worktree: OC_WORKSPACE, expanded: true });
+                }
+                parsed.lastProject = parsed.lastProject || {};
+                parsed.lastProject.local = OC_WORKSPACE;
+                localStorage.setItem(key, JSON.stringify(parsed));
+              } catch {}
+            }
+
+            // 2. Real-Time SSE-over-WebSocket Tunnel (mengatasi buffering HTTP chunked di *.trycloudflare.com!)
+            if (!window.__ocSsePatched) {
+              window.__ocSsePatched = true;
+              const origFetch = window.fetch.bind(window);
+              const isSseReq = (input, init) => {
+                try {
+                  const rawUrl = typeof input === 'string'
+                    ? input
+                    : input instanceof URL
+                    ? input.href
+                    : (input && input.url) || String(input || '');
+                  const u = new URL(rawUrl, location.origin);
+                  if (u.origin !== location.origin) return null;
+                  let accept = '';
+                  if (init && init.headers) {
+                    if (init.headers instanceof Headers) accept = init.headers.get('accept') || '';
+                    else if (Array.isArray(init.headers)) {
+                      const found = init.headers.find(([k]) => String(k).toLowerCase() === 'accept');
+                      accept = found ? found[1] : '';
+                    } else {
+                      for (const k of Object.keys(init.headers)) {
+                        if (k.toLowerCase() === 'accept') accept = init.headers[k];
+                      }
+                    }
+                  } else if (input instanceof Request) {
+                    accept = input.headers.get('accept') || '';
+                  }
+                  if (accept.includes('text/event-stream') || u.pathname === '/event' || u.pathname.endsWith('/event')) {
+                    return u.pathname + u.search;
+                  }
+                } catch {}
+                return null;
+              };
+
+              const openWsStream = (targetPath, signal) => new Promise((resolve, reject) => {
+                const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const ws = new WebSocket(proto + '//' + location.host + '/__oc_sse_ws?path=' + encodeURIComponent(targetPath));
+                ws.binaryType = 'arraybuffer';
+                let settled = false;
+                let controllerRef = null;
+                const stream = new ReadableStream({
+                  start(controller) { controllerRef = controller; },
+                  cancel() { try { ws.close(); } catch {} }
+                });
+                if (signal) {
+                  if (signal.aborted) { try { ws.close(); } catch {} return reject(new DOMException('Aborted', 'AbortError')); }
+                  signal.addEventListener('abort', () => {
+                    try { ws.close(); } catch {}
+                    try { controllerRef && controllerRef.close(); } catch {}
+                  }, { once: true });
+                }
+                ws.onmessage = (ev) => {
+                  if (!settled) {
+                    settled = true;
+                    resolve(new Response(stream, {
+                      status: 200,
+                      headers: { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
+                    }));
+                  }
+                  try {
+                    const bytes = typeof ev.data === 'string' ? new TextEncoder().encode(ev.data) : new Uint8Array(ev.data);
+                    controllerRef.enqueue(bytes);
+                  } catch {}
+                };
+                ws.onerror = () => {
+                  if (!settled) { settled = true; reject(new TypeError('SSE WebSocket failed')); }
+                  else { try { controllerRef && controllerRef.close(); } catch {} }
+                };
+                ws.onclose = () => {
+                  if (!settled) {
+                    settled = true;
+                    resolve(new Response(stream, { status: 200, headers: { 'content-type': 'text/event-stream' } }));
+                  }
+                  try { controllerRef && controllerRef.close(); } catch {}
+                };
+              });
+
+              window.fetch = function(input, init) {
+                const method = (init && init.method) || (input instanceof Request ? input.method : 'GET');
+                const ssePath = isSseReq(input, init);
+                if (ssePath && String(method).toUpperCase() === 'GET') {
+                  return openWsStream(ssePath, (init && init.signal) || (input instanceof Request ? input.signal : undefined));
+                }
+                return origFetch(input, init);
+              };
+            }
+
+            // 3. Jika di v2 belum ada chat sama sekali di halaman awal, buka otomatis kolom chat baru!
+            if (OC_MODE !== 'v1') {
+              let tries = 0;
+              let autoClicked = false;
+              const autoTimer = setInterval(() => {
+                tries++;
+                if (autoClicked || tries > 25 || location.pathname !== '/') {
+                  clearInterval(autoTimer);
+                  return;
+                }
+                const newBtn = document.querySelector('[data-action="home-new-session"]');
+                if (newBtn && document.body && document.body.innerText.includes('Nothing here yet')) {
+                  autoClicked = true;
+                  clearInterval(autoTimer);
+                  newBtn.click();
+                }
+              }, 300);
+            }
+
+            // 4. Tombol melayang ⚡ Cloud Panel
+            const mountFab = () => {
+              if (document.getElementById('__oc_cloud_fab') || !document.body) return;
+              const a = document.createElement('a');
+              a.id = '__oc_cloud_fab';
+              a.href = '/__panel';
+              a.target = '_blank';
+              a.textContent = '⚡ Cloud Panel';
+              a.title = 'Live Preview Port, Download ZIP/APK, Save Paksa & Info Server';
+              Object.assign(a.style, {
+                position: 'fixed',
+                right: '14px',
+                bottom: '14px',
+                zIndex: '2147483647',
+                padding: '7px 12px',
+                borderRadius: '999px',
+                background: 'rgba(22, 25, 34, 0.92)',
+                color: '#60a5fa',
+                border: '1px solid #334155',
+                fontSize: '12px',
+                fontWeight: '600',
+                fontFamily: 'system-ui, -apple-system, sans-serif',
+                textDecoration: 'none',
+                boxShadow: '0 6px 20px rgba(0,0,0,0.45)',
+                backdropFilter: 'blur(8px)',
+              });
+              document.body.appendChild(a);
+            };
+            document.addEventListener('DOMContentLoaded', mountFab);
+            mountFab();
           })();`;
 
           let cachedOcVersion = "";
           try {
             cachedOcVersion = execFileSync(path.join(HOME_DIR, ".local/bin/opencode"), ["--version"], { encoding: "utf8" }).trim();
           } catch {}
+
+          function sendWsBinary(socket, buf) {
+            if (socket.destroyed) return;
+            const len = buf.length;
+            let header;
+            if (len < 126) {
+              header = Buffer.from([0x82, len]);
+            } else if (len < 65536) {
+              header = Buffer.alloc(4);
+              header[0] = 0x82;
+              header[1] = 126;
+              header.writeUInt16BE(len, 2);
+            } else {
+              header = Buffer.alloc(10);
+              header[0] = 0x82;
+              header[1] = 127;
+              header.writeBigUInt64BE(BigInt(len), 2);
+            }
+            socket.write(Buffer.concat([header, buf]));
+          }
 
           const server = http.createServer(async (req, res) => {
             const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
@@ -617,7 +773,6 @@ jobs:
               return res.end(LOGIN_HTML(false));
             }
 
-            // Endpoint sinkronisasi one-click pairing OpenCode v2
             if (url.pathname === "/__oc_pair") {
               res.writeHead(302, { "Location": getV2PairPath(), "cache-control": "no-store" });
               return res.end();
@@ -759,8 +914,16 @@ jobs:
               return req.pipe(pReq);
             }
 
-            if (req.method === "GET" && url.pathname === "/") {
-              // Jika mode v2 tetapi browser belum punya cookie opencode_session_<targetPort> (misal sehabis ganti sesi 6 jam), auto-pair otomatis!
+            // Semua navigasi halaman HTML (/, /new-session, /session/..., F5 reload) -> auto-pair + injeksi <head> widget & SSE WS bridge!
+            const acceptHdr = String(req.headers.accept || "");
+            const isHtmlNav =
+              req.method === "GET" &&
+              acceptHdr.includes("text/html") &&
+              !url.pathname.startsWith("/auth/") &&
+              !url.pathname.startsWith("/api/") &&
+              !url.pathname.startsWith("/assets/");
+
+            if (isHtmlNav) {
               const cookies = parseCookies(req.headers.cookie || "");
               if (OC_VER !== "v1" && !cookies[`opencode_session_${targetPort}`]) {
                 const pairPath = getV2PairPath();
@@ -768,6 +931,12 @@ jobs:
                   res.writeHead(302, { "Location": pairPath, "cache-control": "no-store" });
                   return res.end();
                 }
+              }
+
+              // Jika tab HP/browser di-reload saat masih di draft kosong (?draftId=...), arahkan balik ke / agar draft segar dibuat otomatis
+              if (url.pathname === "/new-session" && url.searchParams.has("draftId")) {
+                res.writeHead(302, { "Location": "/", "cache-control": "no-store" });
+                return res.end();
               }
 
               const cleanHeaders = {
@@ -779,16 +948,23 @@ jobs:
               const proxyReq = http.request(
                 { hostname: "127.0.0.1", port: targetPort, path: req.url, method: "GET", headers: cleanHeaders },
                 (proxyRes) => {
+                  const ct = String(proxyRes.headers["content-type"] || "");
+                  const outHeaders = { ...proxyRes.headers };
+                  delete outHeaders["access-control-allow-origin"];
+                  if (!ct.includes("text/html")) {
+                    res.writeHead(proxyRes.statusCode || 200, outHeaders);
+                    return proxyRes.pipe(res);
+                  }
                   const chunks = [];
                   proxyRes.on("data", (c) => chunks.push(c));
                   proxyRes.on("end", () => {
                     let html = Buffer.concat(chunks).toString("utf8");
-                    if (html.includes("</body>")) {
-                      html = html.replace("</body>", '<script src="/__oc_widget.js" defer></script></body>');
+                    if (html.includes("<head>")) {
+                      html = html.replace("<head>", '<head><script src="/__oc_widget.js"></script>');
+                    } else if (html.includes("</body>")) {
+                      html = html.replace("</body>", '<script src="/__oc_widget.js"></script></body>');
                     }
-                    const outHeaders = { ...proxyRes.headers };
                     delete outHeaders["content-length"];
-                    delete outHeaders["access-control-allow-origin"];
                     res.writeHead(proxyRes.statusCode || 200, outHeaders);
                     res.end(html);
                   });
@@ -835,6 +1011,59 @@ jobs:
               return;
             }
             const targetPort = getUpstreamPort();
+            const upUrl = new URL(req.url || "/", "http://localhost");
+
+            // Endpoint WebSocket khusus untuk streaming SSE real-time tanpa buffering Cloudflare Quick Tunnel!
+            if (upUrl.pathname === "/__oc_sse_ws") {
+              const wsKey = req.headers["sec-websocket-key"];
+              const ssePath = upUrl.searchParams.get("path") || "/api/event";
+              if (!wsKey || !ssePath.startsWith("/")) {
+                socket.destroy();
+                return;
+              }
+              const acceptKey = crypto
+                .createHash("sha1")
+                .update(wsKey + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")
+                .digest("base64");
+              socket.write(
+                "HTTP/1.1 101 Switching Protocols\r\n" +
+                "Upgrade: websocket\r\n" +
+                "Connection: Upgrade\r\n" +
+                `Sec-WebSocket-Accept: ${acceptKey}\r\n\r\n`
+              );
+              const sseHeaders = {
+                cookie: req.headers.cookie || "",
+                accept: "text/event-stream",
+                host: `127.0.0.1:${targetPort}`,
+                origin: `http://127.0.0.1:${targetPort}`,
+              };
+              const upstreamReq = http.request(
+                { hostname: "127.0.0.1", port: targetPort, path: ssePath, method: "GET", headers: sseHeaders },
+                (upstreamRes) => {
+                  sendWsBinary(socket, Buffer.from(": connected\n\n", "utf8"));
+                  upstreamRes.on("data", (chunk) => sendWsBinary(socket, Buffer.from(chunk)));
+                  upstreamRes.on("end", () => { try { socket.end(); } catch {} });
+                  upstreamRes.on("error", () => { try { socket.destroy(); } catch {} });
+                }
+              );
+              upstreamReq.on("error", () => { try { socket.destroy(); } catch {} });
+              upstreamReq.end();
+              socket.on("data", (frame) => {
+                if (frame.length >= 1) {
+                  const op = frame[0] & 0x0f;
+                  if (op === 0x08) {
+                    upstreamReq.destroy();
+                    try { socket.end(); } catch {}
+                  } else if (op === 0x09 && !socket.destroyed) {
+                    socket.write(Buffer.from([0x8a, 0x00]));
+                  }
+                }
+              });
+              socket.on("close", () => upstreamReq.destroy());
+              socket.on("error", () => upstreamReq.destroy());
+              return;
+            }
+
             const upstream = net.connect(targetPort, "127.0.0.1", () => {
               let raw = `${req.method} ${req.url} HTTP/${req.httpVersion}\r\n`;
               for (let i = 0; i < req.rawHeaders.length; i += 2) {
