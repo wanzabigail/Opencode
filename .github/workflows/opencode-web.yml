@@ -1,0 +1,154 @@
+name: OpenCode Web Cloud (Aktif 6 Jam Nonstop)
+
+on:
+  workflow_dispatch:
+    inputs:
+      durasi_menit:
+        description: "Durasi aktif nonstop dalam menit (maks 350 = hampir 6 jam)"
+        required: true
+        default: "350"
+      lanjut_otomatis:
+        description: "Otomatis lanjut sesi 6 jam berikutnya setelah habis? (24/7 Nonstop)"
+        type: boolean
+        required: true
+        default: false
+
+jobs:
+  opencode-web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: write
+      actions: write
+
+    steps:
+      - name: 1. Ambil Kode Repository
+        uses: actions/checkout@v6
+
+      - name: 2. Install OpenCode & Cloudflare Tunnel
+        run: |
+          mkdir -p "$HOME/.local/bin"
+          curl -fsSL https://opencode.ai/install | bash
+          cp "$HOME/.opencode/bin/opencode" "$HOME/.local/bin/opencode"
+          curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o "$HOME/.local/bin/cloudflared"
+          chmod +x "$HOME/.local/bin/opencode" "$HOME/.local/bin/cloudflared"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+          if [ ! -f opencode.json ]; then
+            printf '{\n  "$schema": "https://opencode.ai/config.json",\n  "model": "opencode/deepseek-v4.1-flash-free"\n}\n' > opencode.json
+          fi
+
+      - name: 3. Nyalakan OpenCode Web & Tampilkan Link Klik
+        env:
+          PW: ${{ secrets.OPENCODE_PASSWORD }}
+        run: |
+          if [ -z "$PW" ]; then
+            echo "::error::Secret OPENCODE_PASSWORD belum dibuat! Buka Settings -> Secrets and variables -> Actions -> New repository secret dengan nama OPENCODE_PASSWORD."
+            exit 1
+          fi
+
+          env -u RUNNER_TRACKING_ID OPENCODE_SERVER_PASSWORD="$PW" \
+            nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4096 </dev/null >/tmp/oc.log 2>&1 &
+          sleep 2
+
+          env -u RUNNER_TRACKING_ID \
+            nohup "$HOME/.local/bin/cloudflared" tunnel --no-autoupdate --protocol http2 --url http://127.0.0.1:4096 </dev/null >/tmp/cf.log 2>&1 &
+
+          URL=""
+          for i in $(seq 1 25); do
+            URL=$(grep -o 'https://[-a-z0-9]*\.trycloudflare\.com' /tmp/cf.log | head -n 1 || true)
+            [ -n "$URL" ] && break
+            sleep 1
+          done
+
+          if [ -z "$URL" ]; then
+            echo "::error::Gagal mendapatkan URL Cloudflare Tunnel."
+            cat /tmp/cf.log
+            exit 1
+          fi
+
+          for i in $(seq 1 20); do
+            if curl -4 -fsS -u "opencode:$PW" "$URL/global/health" >/dev/null 2>&1; then
+              break
+            fi
+            sleep 1
+          done
+
+          echo "::notice title=KLIK LINK OPENCODE WEB (AKTIF 6 JAM)::$URL  |  Username: opencode  |  Password: (isi secret OPENCODE_PASSWORD kamu)"
+
+          {
+            echo "## 🚀 OpenCode Web Cloud Aktif!"
+            echo ""
+            echo "| Info Login | Detail |"
+            echo "| :--- | :--- |"
+            echo "| **🌐 Link Web (Klik Langsung)** | [**$URL**]($URL) |"
+            echo "| **👤 Username** | \`opencode\` |"
+            echo "| **🔑 Password** | Sesuai Secret \`OPENCODE_PASSWORD\` yang kamu buat |"
+            echo "| **⏱️ Durasi Sesi Ini** | **${{ inputs.durasi_menit }} menit** nonstop (~6 jam) |"
+            echo "| **♻️ Lanjut Otomatis (24/7)** | \`${{ inputs.lanjut_otomatis }}\` |"
+            echo ""
+            echo "> 💡 **Tips:** Kamu bebas menutup tab GitHub ini sekarang! Server akan tetap jalan di cloud dan **otomatis menyimpan perubahan kode ke GitHub setiap 10 menit**."
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 4. Jaga Server Aktif 6 Jam + Auto-Save Kode Tiap 10 Menit
+        env:
+          PW: ${{ secrets.OPENCODE_PASSWORD }}
+          DURASI: ${{ inputs.durasi_menit }}
+        run: |
+          git config user.name "OpenCode Cloud"
+          git config user.email "bot@opencode.local"
+
+          TOTAL_DETIK=$(( DURASI * 60 ))
+          BERJALAN=0
+
+          while [ "$BERJALAN" -lt "$TOTAL_DETIK" ]; do
+            if ! pgrep -f "opencode web" >/dev/null 2>&1; then
+              echo "Menyalakan ulang proses OpenCode Web..."
+              env -u RUNNER_TRACKING_ID OPENCODE_SERVER_PASSWORD="$PW" \
+                nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4096 </dev/null >>/tmp/oc.log 2>&1 &
+            fi
+
+            if ! pgrep -f "cloudflared tunnel" >/dev/null 2>&1; then
+              echo "Koneksi tunnel terputus, membuat link baru..."
+              rm -f /tmp/cf.log
+              env -u RUNNER_TRACKING_ID \
+                nohup "$HOME/.local/bin/cloudflared" tunnel --no-autoupdate --protocol http2 --url http://127.0.0.1:4096 </dev/null >/tmp/cf.log 2>&1 &
+              for i in $(seq 1 20); do
+                NEW_URL=$(grep -o 'https://[-a-z0-9]*\.trycloudflare\.com' /tmp/cf.log | head -n 1 || true)
+                [ -n "$NEW_URL" ] && break
+                sleep 1
+              done
+              echo "::notice title=LINK BARU OPENCODE WEB::$NEW_URL"
+            fi
+
+            sleep 60
+            BERJALAN=$(( BERJALAN + 60 ))
+
+            if [ $(( BERJALAN % 600 )) -eq 0 ]; then
+              git add -A
+              if ! git diff --cached --quiet; then
+                git commit -m "chore: auto-save progres OpenCode Web (${BERJALAN}s)"
+                git push || true
+              fi
+            fi
+          done
+
+      - name: 5. Simpan Semua Pekerjaan Sebelum Sesi Selesai / Dibatalkan
+        if: always()
+        run: |
+          git config user.name "OpenCode Cloud"
+          git config user.email "bot@opencode.local"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: final auto-save sesi OpenCode Web"
+            git push || true
+          fi
+
+      - name: 6. Lanjut Otomatis Sesi 6 Jam Berikutnya (Jika Diaktifkan)
+        if: success() && inputs.lanjut_otomatis == true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh workflow run opencode-web.yml \
+            -f durasi_menit="${{ inputs.durasi_menit }}" \
+            -f lanjut_otomatis=true
