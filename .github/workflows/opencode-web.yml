@@ -1,8 +1,16 @@
-name: OpenCode Cloud Pro (24/7 + Panel + Live Preview + GitHub Pages)
+name: OpenCode Cloud Pro v2 (Terbaru + 24/7 + Panel + Live Preview)
 
 on:
   workflow_dispatch:
     inputs:
+      versi_opencode:
+        description: "Pilih versi OpenCode (v2 = Generasi Terbaru v2.1+, v1 = Klasik Stabil v1.19+)"
+        type: choice
+        options:
+          - v2
+          - v1
+        required: true
+        default: "v2"
       password_login:
         description: "Password login (kosongkan jika sudah pakai Secret OPENCODE_PASSWORD)"
         required: false
@@ -31,7 +39,9 @@ jobs:
       - name: 1. Ambil Kode & Backup Sebelumnya
         uses: actions/checkout@v6
 
-      - name: 2. Siapkan Full Cloud Dev Environment, Panel & Helper
+      - name: 2. Install OpenCode Terbaru (${{ inputs.versi_opencode }}), Panel & Helper
+        env:
+          OC_VER: ${{ inputs.versi_opencode }}
         run: |
           # Simpan salinan workflow agar tidak pernah terhapus tak sengaja oleh agen AI
           cp .github/workflows/opencode-web.yml /tmp/protected-workflow.yml 2>/dev/null || true
@@ -39,8 +49,14 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq zip >/dev/null 2>&1 || true
 
           mkdir -p "$HOME/.local/bin"
-          curl -fsSL https://opencode.ai/install | bash
+          if [ "$OC_VER" = "v1" ]; then
+            curl -fsSL https://opencode.ai/install | bash
+          else
+            # Default: Install OpenCode Generasi Terbaru v2 (v2.1.x+)
+            curl -fsSL https://opencode.ai/v2/install | bash
+          fi
           cp "$HOME/.opencode/bin/opencode" "$HOME/.local/bin/opencode"
+          echo "Versi OpenCode terinstal: $($HOME/.local/bin/opencode --version)"
 
           # Install Bun (super cepat untuk JS/TS build modern)
           curl -fsSL https://bun.sh/install | bash >/dev/null 2>&1 || true
@@ -93,7 +109,6 @@ jobs:
           #!/usr/bin/env bash
           set -e
           cd "$WORKSPACE_DIR"
-          # Pastikan file workflow selalu utuh walaupun agen AI menghapus isi folder!
           if [ -f /tmp/protected-workflow.yml ]; then
             mkdir -p .github/workflows
             cp /tmp/protected-workflow.yml .github/workflows/opencode-web.yml
@@ -101,15 +116,17 @@ jobs:
           TARGETS=()
           [ -d "$HOME/.local/share/opencode" ] && TARGETS+=(".local/share/opencode")
           [ -d "$HOME/.config/opencode" ] && TARGETS+=(".config/opencode")
+          [ -d "$HOME/.local/state/opencode" ] && TARGETS+=(".local/state/opencode")
           if [ "${#TARGETS[@]}" -gt 0 ] && [ -n "$FINAL_PW" ]; then
             tar -czf - -C "$HOME" \
               --exclude='.local/share/opencode/log' \
+              --exclude='.local/state/opencode/locks' \
+              --exclude='.local/state/opencode/service.json' \
               "${TARGETS[@]}" 2>/dev/null \
               | openssl enc -aes-256-cbc -salt -pbkdf2 -pass env:FINAL_PW -out .opencode-backup.enc.tmp
             mv .opencode-backup.enc.tmp .opencode-backup.enc
           fi
           git add -A
-          # Lepaskan dari commit jika ada file tunggal > 95MB agar GitHub tidak menolak push
           git diff --cached --name-only | while IFS= read -r file; do
             if [ -f "$file" ]; then
               size=$(wc -c < "$file" 2>/dev/null || echo 0)
@@ -142,7 +159,6 @@ jobs:
           PAGES_URL="https://${OWNER_LOWER}.github.io/${REPO}/"
           echo "$PAGES_URL" > /tmp/pages_url.txt
 
-          # 1. Deploy halaman redirect cantik ke branch gh-pages
           if [ -n "$GITHUB_REPOSITORY" ] && [ -n "$GH_TOKEN" ]; then
             TMP_PAGES=$(mktemp -d)
             (
@@ -190,12 +206,10 @@ jobs:
             )
             rm -rf "$TMP_PAGES"
 
-            # Coba aktifkan GitHub Pages otomatis via API (berhasil otomatis untuk Public Repo)
             gh api -X POST "repos/${GITHUB_REPOSITORY}/pages" \
               -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null 2>&1 || true
           fi
 
-          # 2. Kirim Notifikasi Otomatis ke Telegram (jika Secret diisi)
           if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
             MSG="🚀 *OpenCode Cloud Pro Aktif!*%0A%0A🌐 *Link Sesi Ini:*%0A${NEW_URL}%0A%0A🔗 *Link Permanen:*%0A${PAGES_URL}%0A%0A⚙️ *Control Panel:*%0A${NEW_URL}/__panel"
             curl -4 -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
@@ -204,7 +218,6 @@ jobs:
               -d "text=${MSG}" >/dev/null 2>&1 || true
           fi
 
-          # 3. Kirim Notifikasi Otomatis ke Discord Webhook (jika Secret diisi)
           if [ -n "$DISCORD_WEBHOOK_URL" ]; then
             PAYLOAD=$(printf '{"content":"🚀 **OpenCode Cloud Pro Aktif!**\\n🌐 **Link Sesi Ini:** %s\\n🔗 **Link Permanen:** %s\\n⚙️ **Control Panel:** %s/__panel"}' "$NEW_URL" "$PAGES_URL" "$NEW_URL")
             curl -4 -fsS -X POST "$DISCORD_WEBHOOK_URL" \
@@ -215,7 +228,7 @@ jobs:
           chmod +x "$HOME/.local/bin/oc-publish-url"
 
           # ------------------------------------------------------------------
-          # Helper 3: Full Gateway + Floating Widget + Control Panel + Live Preview
+          # Helper 3: Full Gateway (Auto-Pair v2 & v1) + Floating Panel + Preview
           # ------------------------------------------------------------------
           cat << 'PROXYEOF' > /tmp/auth-proxy.mjs
           import http from "node:http";
@@ -227,16 +240,46 @@ jobs:
           import { spawn, execFileSync, execSync } from "node:child_process";
 
           const PASSWORD = (process.env.OPENCODE_PASSWORD || "").trim();
+          const OC_VER = (process.env.OC_VER || "v2").trim();
           const WORKSPACE = process.env.WORKSPACE_DIR || process.cwd();
           const HOME_DIR = process.env.HOME || "/root";
           const START_TIME = Number(process.env.START_TIME_MS || Date.now());
           const DURATION_MIN = Number(process.env.DURASI_MENIT || 350);
           const LISTEN_PORT = 4096;
-          const TARGET_PORT = 4097;
           const TOKEN = crypto.createHmac("sha256", PASSWORD || "default").update("opencode-cookie-v3").digest("hex");
 
-          // Simpan daftar tunnel Live Preview yang aktif per port
-          const previewTunnels = new Map(); // port -> { url, proc, status }
+          const previewTunnels = new Map();
+
+          // Baca port & service info dinamis untuk OpenCode v2 (maupun fallback 4097 untuk v1)
+          function getUpstreamPort() {
+            if (OC_VER !== "v1") {
+              try {
+                const svcFile = path.join(HOME_DIR, ".local/state/opencode/service.json");
+                const svc = JSON.parse(fs.readFileSync(svcFile, "utf8"));
+                if (svc && svc.url) {
+                  const u = new URL(svc.url);
+                  if (u.port) return Number(u.port);
+                }
+              } catch {}
+            }
+            return 4097;
+          }
+
+          // Buat link pairing sekali pakai resmi untuk OpenCode v2 agar otomatis login tanpa ketik terminal
+          function getV2PairPath() {
+            if (OC_VER === "v1") return "/";
+            try {
+              const ocBin = path.join(HOME_DIR, ".local/bin/opencode");
+              const out = execFileSync(ocBin, ["pair", "--url", "http://127.0.0.1:4096"], {
+                env: { ...process.env, HOME: HOME_DIR },
+                encoding: "utf8",
+                timeout: 8000,
+              });
+              const m = out.match(/\/auth\/connect\/[-A-Za-z0-9_]+/);
+              if (m) return m[0];
+            } catch {}
+            return "/";
+          }
 
           function parseCookies(header = "") {
             const out = {};
@@ -265,7 +308,6 @@ jobs:
             });
           }
 
-          // Cari semua file .apk / .aab / .zip hasil build di workspace untuk tombol download 1-klik
           function scanArtifacts(dir, depth = 0, out = []) {
             if (depth > 6) return out;
             let entries = [];
@@ -290,11 +332,10 @@ jobs:
             return out.sort((a, b) => b.mtime - a.mtime);
           }
 
-          // Deteksi port web yang sedang dinyalakan oleh OpenCode (selain port internal sistem)
           function detectActivePorts() {
             try {
               const raw = execSync("ss -tlnH 2>/dev/null || true", { encoding: "utf8" });
-              const ignored = new Set([22, 4096, 4097, 20241]);
+              const ignored = new Set([22, 4096, 4097, 20241, getUpstreamPort()]);
               const found = new Set();
               for (const line of raw.split("\n")) {
                 const m = line.match(/:(\d+)\s+/);
@@ -364,7 +405,7 @@ jobs:
           </head>
           <body>
             <form class="card" method="POST" action="/__oc_login">
-              <h1>🚀 OpenCode Cloud Pro</h1>
+              <h1>🚀 OpenCode Cloud Pro (${OC_VER.toUpperCase()})</h1>
               <p>Masukkan password kamu untuk membuka ruang kerja AI & Cloud Panel.</p>
               ${err ? '<div class="err">Password belum cocok. Cek kembali password kamu.</div>' : ''}
               <label>Password</label>
@@ -408,13 +449,14 @@ jobs:
             <div class="wrap">
               <div class="top">
                 <h1>⚡ OpenCode Cloud Control Panel</h1>
-                <a class="back" href="/">← Kembali ke OpenCode Web</a>
+                <a class="back" href="/__oc_pair">← Masuk / Sinkronkan OpenCode Web</a>
               </div>
 
               <div class="grid">
-                <div class="stat"><div class="k">Sisa Waktu Sesi Ini</div><div class="v" id="st-time">Memuat...</div></div>
+                <div class="stat"><div class="k">Versi Engine</div><div class="v" id="st-ver">Memuat...</div></div>
+                <div class="stat"><div class="k">Sisa Waktu Sesi</div><div class="v" id="st-time">Memuat...</div></div>
                 <div class="stat"><div class="k">RAM Terpakai</div><div class="v" id="st-ram">Memuat...</div></div>
-                <div class="stat"><div class="k">Penyimpanan Bebas</div><div class="v" id="st-disk">Memuat...</div></div>
+                <div class="stat"><div class="k">Disk Bebas</div><div class="v" id="st-disk">Memuat...</div></div>
               </div>
 
               <div class="card">
@@ -444,6 +486,7 @@ jobs:
                 <div class="row">
                   <button class="green" onclick="doAction('/__api/save', 'Menyimpan kode & chat ke GitHub...')">💾 Save & Backup Sekarang</button>
                   <button class="amber" onclick="doAction('/__api/restart', 'Me-restart mesin OpenCode...')">🔄 Restart OpenCode</button>
+                  <a class="btn" href="/__oc_pair">🔗 Hubungkan Ulang Sesi Web</a>
                 </div>
                 <div class="msg" id="act-msg"></div>
               </div>
@@ -453,6 +496,7 @@ jobs:
               async function loadStatus() {
                 const r = await fetch('/__api/status');
                 const d = await r.json();
+                document.getElementById('st-ver').textContent = d.ocVersion || '-';
                 document.getElementById('st-time').textContent = d.remainingMin + ' menit';
                 document.getElementById('st-ram').textContent = d.usedMemGB + ' / ' + d.totalMemGB + ' GB';
                 document.getElementById('st-disk').textContent = d.freeDisk;
@@ -540,11 +584,17 @@ jobs:
             if (document.body) document.body.appendChild(a);
           })();`;
 
+          let cachedOcVersion = "";
+          try {
+            cachedOcVersion = execFileSync(path.join(HOME_DIR, ".local/bin/opencode"), ["--version"], { encoding: "utf8" }).trim();
+          } catch {}
+
           const server = http.createServer(async (req, res) => {
             const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
+            const targetPort = getUpstreamPort();
 
             if (url.pathname === "/__oc_health") {
-              return sendJson(res, 200, { ok: true });
+              return sendJson(res, 200, { ok: true, version: cachedOcVersion });
             }
 
             if (url.pathname === "/__oc_login" && req.method === "POST") {
@@ -554,7 +604,7 @@ jobs:
                 const isHttps = req.headers["x-forwarded-proto"] === "https";
                 res.writeHead(302, {
                   "Set-Cookie": `oc_auth=${TOKEN}; Path=/; HttpOnly; Max-Age=2592000; SameSite=Lax${isHttps ? "; Secure" : ""}`,
-                  "Location": "/",
+                  "Location": getV2PairPath(),
                 });
                 return res.end();
               }
@@ -565,6 +615,12 @@ jobs:
             if (!isAuthed(req)) {
               res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
               return res.end(LOGIN_HTML(false));
+            }
+
+            // Endpoint sinkronisasi one-click pairing OpenCode v2
+            if (url.pathname === "/__oc_pair") {
+              res.writeHead(302, { "Location": getV2PairPath(), "cache-control": "no-store" });
+              return res.end();
             }
 
             if (url.pathname === "/__oc_widget.js") {
@@ -593,6 +649,7 @@ jobs:
                 if (info.url && info.proc && info.proc.exitCode === null) tunnels.push({ port, url: info.url });
               }
               return sendJson(res, 200, {
+                ocVersion: cachedOcVersion,
                 remainingMin,
                 totalMemGB,
                 usedMemGB,
@@ -628,8 +685,14 @@ jobs:
 
             if (url.pathname === "/__api/restart" && req.method === "POST") {
               try {
-                execSync('pkill -TERM -f "opencode web" || true');
-                return sendJson(res, 200, { message: "✅ Mesin OpenCode di-restart! Tunggu 3 detik lalu buka kembali halaman utama." });
+                if (OC_VER === "v1") {
+                  execSync('pkill -TERM -f "opencode web" || true');
+                } else {
+                  const ocBin = path.join(HOME_DIR, ".local/bin/opencode");
+                  execFileSync(ocBin, ["service", "stop"], { env: { ...process.env, HOME: HOME_DIR }, timeout: 10000 });
+                  execFileSync(ocBin, ["service", "start"], { cwd: WORKSPACE, env: { ...process.env, HOME: HOME_DIR }, timeout: 10000 });
+                }
+                return sendJson(res, 200, { message: "✅ Mesin OpenCode di-restart! Klik tombol 'Hubungkan Ulang Sesi Web' di sebelah kanan untuk masuk kembali." });
               } catch (e) {
                 return sendJson(res, 500, { message: "❌ Gagal restart: " + e.message });
               }
@@ -697,10 +760,24 @@ jobs:
             }
 
             if (req.method === "GET" && url.pathname === "/") {
-              const cleanHeaders = { ...req.headers, host: `127.0.0.1:${TARGET_PORT}` };
+              // Jika mode v2 tetapi browser belum punya cookie opencode_session_<targetPort> (misal sehabis ganti sesi 6 jam), auto-pair otomatis!
+              const cookies = parseCookies(req.headers.cookie || "");
+              if (OC_VER !== "v1" && !cookies[`opencode_session_${targetPort}`]) {
+                const pairPath = getV2PairPath();
+                if (pairPath !== "/") {
+                  res.writeHead(302, { "Location": pairPath, "cache-control": "no-store" });
+                  return res.end();
+                }
+              }
+
+              const cleanHeaders = {
+                ...req.headers,
+                host: `127.0.0.1:${targetPort}`,
+                origin: `http://127.0.0.1:${targetPort}`,
+              };
               delete cleanHeaders["accept-encoding"];
               const proxyReq = http.request(
-                { hostname: "127.0.0.1", port: TARGET_PORT, path: req.url, method: "GET", headers: cleanHeaders },
+                { hostname: "127.0.0.1", port: targetPort, path: req.url, method: "GET", headers: cleanHeaders },
                 (proxyRes) => {
                   const chunks = [];
                   proxyRes.on("data", (c) => chunks.push(c));
@@ -711,6 +788,7 @@ jobs:
                     }
                     const outHeaders = { ...proxyRes.headers };
                     delete outHeaders["content-length"];
+                    delete outHeaders["access-control-allow-origin"];
                     res.writeHead(proxyRes.statusCode || 200, outHeaders);
                     res.end(html);
                   });
@@ -723,16 +801,23 @@ jobs:
               return proxyReq.end();
             }
 
+            const upHeaders = {
+              ...req.headers,
+              host: `127.0.0.1:${targetPort}`,
+              origin: `http://127.0.0.1:${targetPort}`,
+            };
             const proxyReq = http.request(
               {
                 hostname: "127.0.0.1",
-                port: TARGET_PORT,
+                port: targetPort,
                 path: req.url,
                 method: req.method,
-                headers: { ...req.headers, host: `127.0.0.1:${TARGET_PORT}` },
+                headers: upHeaders,
               },
               (proxyRes) => {
-                res.writeHead(proxyRes.statusCode || 200, proxyRes.headers);
+                const outHeaders = { ...proxyRes.headers };
+                delete outHeaders["access-control-allow-origin"];
+                res.writeHead(proxyRes.statusCode || 200, outHeaders);
                 proxyRes.pipe(res);
               }
             );
@@ -749,11 +834,18 @@ jobs:
               socket.destroy();
               return;
             }
-            const upstream = net.connect(TARGET_PORT, "127.0.0.1", () => {
+            const targetPort = getUpstreamPort();
+            const upstream = net.connect(targetPort, "127.0.0.1", () => {
               let raw = `${req.method} ${req.url} HTTP/${req.httpVersion}\r\n`;
               for (let i = 0; i < req.rawHeaders.length; i += 2) {
                 const k = req.rawHeaders[i];
-                const v = k.toLowerCase() === "host" ? `127.0.0.1:${TARGET_PORT}` : req.rawHeaders[i + 1];
+                const kl = k.toLowerCase();
+                const v =
+                  kl === "host"
+                    ? `127.0.0.1:${targetPort}`
+                    : kl === "origin"
+                    ? `http://127.0.0.1:${targetPort}`
+                    : req.rawHeaders[i + 1];
                 raw += `${k}: ${v}\r\n`;
               }
               raw += "\r\n";
@@ -770,6 +862,7 @@ jobs:
 
       - name: 3. Restore Session, Nyalakan Server, Publish GitHub Pages & Notif
         env:
+          OC_VER: ${{ inputs.versi_opencode }}
           SECRET_PW: ${{ secrets.OPENCODE_PASSWORD }}
           INPUT_PW: ${{ inputs.password_login }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -797,11 +890,17 @@ jobs:
           START_MS=$(date +%s%3N)
           echo "$START_MS" > /tmp/start_ms.txt
 
-          env -u RUNNER_TRACKING_ID \
-            nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4097 </dev/null >/tmp/oc.log 2>&1 &
+          if [ "$OC_VER" = "v1" ]; then
+            env -u RUNNER_TRACKING_ID \
+              nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4097 </dev/null >/tmp/oc.log 2>&1 &
+          else
+            env -u RUNNER_TRACKING_ID \
+              "$HOME/.local/bin/opencode" service start >/tmp/oc.log 2>&1
+          fi
           sleep 2
 
           env -u RUNNER_TRACKING_ID \
+            OC_VER="$OC_VER" \
             OPENCODE_PASSWORD="$FINAL_PW" \
             WORKSPACE_DIR="$WORKSPACE_DIR" \
             START_TIME_MS="$START_MS" \
@@ -832,26 +931,27 @@ jobs:
             sleep 1
           done
 
-          # Publikasikan ke GitHub Pages + Kirim Notif Telegram / Discord
           "$HOME/.local/bin/oc-publish-url" "$URL"
           PAGES_URL=$(cat /tmp/pages_url.txt 2>/dev/null || echo "")
+          OC_FULL_VER=$("$HOME/.local/bin/opencode" --version 2>/dev/null || echo "$OC_VER")
 
-          echo "::notice title=OPENCODE CLOUD PRO AKTIF::$URL  |  Link Permanen: $PAGES_URL"
+          echo "::notice title=OPENCODE CLOUD PRO ($OC_FULL_VER)::$URL  |  Link Permanen: $PAGES_URL"
 
           {
-            echo "## 🚀 OpenCode Cloud Pro Aktif!"
+            echo "## 🚀 OpenCode Cloud Pro Aktif! (\`$OC_FULL_VER\`)"
             echo ""
             echo "| Fitur | Link / Info |"
             echo "| :--- | :--- |"
+            echo "| **🧬 Versi Engine** | **\`$OC_FULL_VER\`** |"
             echo "| **🌐 Link Langsung Sesi Ini** | [**$URL**]($URL) |"
             echo "| **🔗 Link Permanen Seumur Hidup (GitHub Pages)** | [**$PAGES_URL**]($PAGES_URL) |"
             echo "| **⚡ Cloud Control Panel (Preview & Download ZIP/APK)** | [**$URL/__panel**]($URL/__panel) *(atau klik tombol \`⚡ Cloud Panel\` di pojok kanan bawah)* |"
             echo "| **💾 Auto-Backup Kode & Chat Session** | Aktif tiap **10 menit** (AES-256 Encrypted) |"
-            echo "| **♻️ Estafet Otomatis 24/7** | \`${{ inputs.lanjut_otomatis }}\` |"
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: 4. Jaga Server Aktif 24/7 + Watchdog + Auto-Save Tiap 10 Menit
         env:
+          OC_VER: ${{ inputs.versi_opencode }}
           SECRET_PW: ${{ secrets.OPENCODE_PASSWORD }}
           INPUT_PW: ${{ inputs.password_login }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -880,13 +980,20 @@ jobs:
           BERJALAN=0
 
           while [ "$BERJALAN" -lt "$TOTAL_DETIK" ]; do
-            if ! pgrep -f "opencode web" >/dev/null 2>&1; then
-              env -u RUNNER_TRACKING_ID \
-                nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4097 </dev/null >>/tmp/oc.log 2>&1 &
+            if [ "$OC_VER" = "v1" ]; then
+              if ! pgrep -f "opencode web" >/dev/null 2>&1; then
+                env -u RUNNER_TRACKING_ID \
+                  nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4097 </dev/null >>/tmp/oc.log 2>&1 &
+              fi
+            else
+              if ! pgrep -f "opencode" >/dev/null 2>&1; then
+                env -u RUNNER_TRACKING_ID "$HOME/.local/bin/opencode" service start >>/tmp/oc.log 2>&1 || true
+              fi
             fi
 
             if ! pgrep -f "auth-proxy.mjs" >/dev/null 2>&1; then
               env -u RUNNER_TRACKING_ID \
+                OC_VER="$OC_VER" \
                 OPENCODE_PASSWORD="$FINAL_PW" \
                 WORKSPACE_DIR="$WORKSPACE_DIR" \
                 START_TIME_MS="$START_MS" \
@@ -920,6 +1027,7 @@ jobs:
       - name: 5. Simpan Permanen Semua Kode & Session Sebelum Ganti Sesi / Berhenti
         if: always()
         env:
+          OC_VER: ${{ inputs.versi_opencode }}
           SECRET_PW: ${{ secrets.OPENCODE_PASSWORD }}
           INPUT_PW: ${{ inputs.password_login }}
         run: |
@@ -928,7 +1036,11 @@ jobs:
           git config user.name "OpenCode Cloud"
           git config user.email "bot@opencode.local"
 
-          pkill -TERM -f "opencode web" || true
+          if [ "$OC_VER" = "v1" ]; then
+            pkill -TERM -f "opencode web" || true
+          else
+            "$HOME/.local/bin/opencode" service stop >/dev/null 2>&1 || true
+          fi
           sleep 2
 
           "$HOME/.local/bin/oc-save" "chore: final auto-save kode & session OpenCode"
@@ -939,6 +1051,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           gh workflow run opencode-web.yml \
+            -f versi_opencode="${{ inputs.versi_opencode }}" \
             -f password_login="${{ inputs.password_login }}" \
             -f durasi_menit="${{ inputs.durasi_menit }}" \
             -f lanjut_otomatis=true
