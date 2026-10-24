@@ -1,0 +1,14 @@
+=== umi_article columns ===
+  admin_name:   user_name:   username:   uid:   user_id:   id:   password:   user_pass:   pass:   email:   nickname:   real_name:   mobile:   phone: 
+=== ums_admin_user columns ===
+  admin_name:   user_name:   username:   uid:   user_id:   id:   password:   user_pass:   pass:   email:   nickname:   real_name:   mobile:   phone: 
+=== ums_user columns ===
+  admin_name:   user_name:   username:   uid:   user_id:   id:   password:   user_pass:   pass:   email:   nickname:   real_name:   mobile:   phone: 
+=== ecs_admin_user columns ===
+  admin_name:   user_name:   username:   uid:   user_id:   id:   password:   user_pass:   pass:   email:   nickname:   real_name:   mobile:   phone: 
+=== ecs_user columns ===
+  admin_name:   user_name:   username:   uid:   user_id:   id:   password:   user_pass:   pass:   email:   nickname:   real_name:   mobile:   phone: 
+=== admin_user columns ===
+  admin_name:   user_name:   username:   uid:   user_id:   id:   password:   user_pass:   pass:   email:   nickname:   real_name:   mobile:   phone: 
+=== admin columns ===
+  admin_name:   user_name:   username:   uid:   user_id:   id:   password:   user_pass:   pass:   email:   nickname:   real_name:   mobile:   phone: 

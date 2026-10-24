@@ -1,0 +1,14 @@
+200ums_admin_user_cols >100: 0
+200ums_admin_user_cols >200: 0
+=== admin_ums.txt ===
+admin_name: user_name: username: pass: email: |: admin: test: user: admin@: admin,: 
+=== admin_umsuser.txt ===
+admin_name: user_name: username: pass: email: |: admin: test: user: admin@: admin,: 
+=== admin_ecsadmin.txt ===
+admin_name: user_name: username: pass: email: |: admin: test: user: admin@: admin,: 
+=== admin_ecsuser.txt ===
+admin_name: user_name: username: pass: email: |: admin: test: user: admin@: admin,: 
+=== admin_adminuser.txt ===
+admin_name: user_name: username: pass: email: |: admin: test: user: admin@: admin,: 
+=== admin_admin.txt ===
+admin_name: user_name: username: pass: email: |: admin: test: user: admin@: admin,: 

@@ -1,0 +1,26 @@
+=== TABLES IN DATABASE ===
+  ums_admin_user
+  ums_user
+  ecs_admin_user
+  ecs_user
+  admin_user
+  admin
+  users
+  admin_users
+  ecs_users
+  user
+  ecs_session
+  ecs_visit_stats
+  ecs_click_stats
+  ecs_feedback
+  ecs_comment
+  ecs_order_info
+  ecs_users
+  ecs_members
+  ecs_shop_config
+  ecs_languages
+  ecs_area
+  ecs_country
+  ecs_district
+  ecs_province
+  ecs_city

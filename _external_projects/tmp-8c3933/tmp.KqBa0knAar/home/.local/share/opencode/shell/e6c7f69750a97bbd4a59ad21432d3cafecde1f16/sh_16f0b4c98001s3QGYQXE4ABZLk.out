@@ -1,0 +1,12 @@
+=== ums_admin_user ===
+  has_admin_name: 200  has_username: 200  has_password: 200  has_uid: 200  has_user_id: 200  file_size_check: 200
+=== ums_user ===
+  has_admin_name: 200  has_username: 200  has_password: 200  has_uid: 200  has_user_id: 200  file_size_check: 200
+=== ecs_admin_user ===
+  has_admin_name: 200  has_username: 200  has_password: 200  has_uid: 200  has_user_id: 200  file_size_check: 200
+=== ecs_user ===
+  has_admin_name: 200  has_username: 200  has_password: 200  has_uid: 200  has_user_id: 200  file_size_check: 200
+=== admin_user ===
+  has_admin_name: 200  has_username: 200  has_password: 200  has_uid: 200  has_user_id: 200  file_size_check: 200
+=== admin ===
+  has_admin_name: 200  has_username: 200  has_password: 200  has_uid: 200  has_user_id: 200  file_size_check: 200

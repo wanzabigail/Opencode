@@ -1,0 +1,20 @@
+cols_umi_article.txt written
+cols_ums_admin_user.txt written
+cols_ums_user.txt written
+cols_ecs_admin_user.txt written
+cols_ecs_user.txt written
+cols_admin_user.txt written
+cols_admin.txt written
+---
+=== ums_admin_user ===
+  admin_name:   username:   password:   uid:   user_id:   file_len: 
+=== ums_user ===
+  admin_name:   username:   password:   uid:   user_id:   file_len: 
+=== ecs_admin_user ===
+  admin_name:   username:   password:   uid:   user_id:   file_len: 
+=== ecs_user ===
+  admin_name:   username:   password:   uid:   user_id:   file_len: 
+=== admin_user ===
+  admin_name:   username:   password:   uid:   user_id:   file_len: 
+=== admin ===
+  admin_name:   username:   password:   uid:   user_id:   file_len: 
