@@ -1,0 +1,8 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+-rw-r--r-- 1 root root 0 Oct 24 20:37 /marimo/llm/tunnel.log
+---
+10669 python3 /marimo/llm/tunnel.py
+10670 ssh -p 443 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ServerAliveInterval=30 -o ExitOnForwardFailure=yes -R0:localhost:8080 a.pinggy.io
+10671 bash -lc ls -l /marimo/llm/tunnel.log; cat /marimo/llm/tunnel.log | tail -8; echo ---; pgrep -af 'pinggy|tunnel.py' | head -3
+
+
