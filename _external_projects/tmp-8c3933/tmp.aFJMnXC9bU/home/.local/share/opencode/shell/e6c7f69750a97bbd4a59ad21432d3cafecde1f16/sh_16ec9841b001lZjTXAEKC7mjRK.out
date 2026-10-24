@@ -1,0 +1,15 @@
+    result = await self._request_wrapper(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/telegram/request/_baser
+equest.py", line 375, in _request_wrapper
+    raise exception
+telegram.error.Conflict: Conflict: terminated by other getUpdates request; make
+sure that only one bot instance is running
+^C
+python3 tg_dashboard.py
+runner@runnervm8k3b6:~/phishing$
+runner@runnervm8k3b6:~/phishing$ python3 tg_dashboard.py
+🎣 SpookPhish Bot Starting...
+📊 Campaigns: 0
+✅ Bot running! Check Telegram @Alokhitambot
+
