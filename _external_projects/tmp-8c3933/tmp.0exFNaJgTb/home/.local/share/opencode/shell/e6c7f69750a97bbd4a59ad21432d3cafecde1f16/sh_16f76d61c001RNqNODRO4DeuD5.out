@@ -1,0 +1,6 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+Traceback (most recent call last):
+  File "/tmp/marimo_83/__marimo__cell___scratch___.py", line 3, in <module>
+    print(c._config)
+          ^^^^^^^^^
+AttributeError: 'chat' object has no attribute '_config'

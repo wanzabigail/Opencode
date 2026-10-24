@@ -1,0 +1,24 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+Hbol '__' idle errors: []
+UuLv 'chat' idle errors: []
+UItW 'model_info' idle errors: []
+[llama-server]  
+./llama-server  
+
+model_info code:
+ ntent":"Halo"}],
+           "chat_template_kwargs":{"enable_thinking":true,"reasoning_effort":"xhigh"}}'
+    ```
+
+    **Catatan:** tunnel Pinggy gratis kedaluwarsa ±60 menit. Perpanjang dengan:
+
+    ```bash
+    MARIMO_LLM_KEY=sk-molab-b1b5c624c794fccfeb46b8647caa8afd nohup /marimo/llm/start.sh > /marimo/llm/server.log 2>&1 &
+    nohup python3 /marimo/llm/tunnel.py > /dev/null 2>&1 &
+    tail -3 /marimo/llm/tunnel.log   # ambil URL baru
+    ```
+
+    Matikan server: `/marimo/llm/stop.sh`
+    """
+)
+

@@ -1,0 +1,11 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+/usr/bin/ssh
+/usr/bin/node
+/usr/bin/npm
+/usr/bin/npx
+---
+LT443-FAIL
+LHR443-FAIL
+PINGGY-OK
+
+

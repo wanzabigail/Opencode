@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+606 [llama-server] <defunct>
+1.41.967.211 I slot print_timing: id  1 | task 312 | draft acceptance = 0.34218 (  129 accepted /   377 generated), mean len =  2.02
+1.41.967.264 I slot      release: id  1 | task 312 | stop processing: n_tokens = 280, truncated = 0
+4.22.372.324 I srv    operator(): operator(): cleaning up before exit...
+
+

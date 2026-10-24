@@ -1,0 +1,8 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+-rw-r--r-- 1 root root 0 Oct 24 19:49 /marimo/llm/tunnel.log
+---
+root       893  0.0  0.0  11068  4456 ?        Ss   19:49   0:00 script -qfc ssh
+root       894  0.0  0.0  10740  3080 ?        Ss   19:49   0:00 sh -c ssh -p 44
+root       895  0.0  0.0  22220 13944 ?        S    19:49   0:00 ssh -p 443 -o S
+
+

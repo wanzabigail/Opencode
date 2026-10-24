@@ -1,0 +1,10 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+Script started on 2026-10-24 19:49:05+00:00 [COMMAND="ssh -p 443 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ServerAliveInterval=30 -R0:localhost:8080 a.pinggy.io" <not executed on terminal>]
+
+Script done on 2026-10-24 19:49:37+00:00 [COMMAND_EXIT_CODE="0"]
+henticated.
+Your tunnel will expire in 60 minutes. Upgrade to Pinggy Pro to get unrestricted tunnels. https://dashboard.pinggy.io
+https://cbewq-166-19-116-222.free.pinggy.net
+https://zrsma-166-19-116-222.run.pinggy-free.link
+
+

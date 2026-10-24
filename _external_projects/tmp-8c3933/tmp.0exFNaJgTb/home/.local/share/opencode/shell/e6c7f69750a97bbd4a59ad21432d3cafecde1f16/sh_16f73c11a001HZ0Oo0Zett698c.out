@@ -1,0 +1,9 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+cloudflared running: []
+started pid 844
+URL: https://division-inclusive-dubai-cordless.trycloudflare.com
+2026-10-24T19:47:13Z INF |  ERROR: Allow outbound QUIC traffic on port 7844 or use HTTP2.                                     |
+2026-10-24T19:47:13Z INF |  ERROR: Allow outbound QUIC traffic on port 7844 or use HTTP2.                                     |
+2026-10-24T19:47:13Z INF |  ERROR: Allow outbound TCP on port 7844.                                                           |
+2026-10-24T19:47:13Z INF |  ERROR: Allow outbound TCP on port 7844.                                                           |
+
