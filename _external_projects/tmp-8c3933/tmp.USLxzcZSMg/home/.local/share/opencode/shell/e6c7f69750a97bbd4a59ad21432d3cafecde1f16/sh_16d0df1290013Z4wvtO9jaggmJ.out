@@ -1,0 +1,50 @@
+=== Trying different DoodStream domains ===
+  doodstream.com/d/wyr99ofrib7b
+    Status: 301, CT: text/html, CL: 175
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+    Body: 175 bytes
+    Preview: b'<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently'
+  dood.ws/d/wyr99ofrib7b
+    Status: 301, CT: text/html, CL: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+    Body: 162 bytes
+    Preview: b'<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently'
+  dood.li/d/wyr99ofrib7b
+    Status: 301, CT: text/html, CL: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+    Body: 162 bytes
+    Preview: b'<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently'
+  doodstream.com/e/wyr99ofrib7b
+    Status: 301, CT: text/html, CL: 175
+    Redirect: https://playmogo.com/e/wyr99ofrib7b
+    Body: 175 bytes
+    Preview: b'<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently'
+  dood.ws/e/wyr99ofrib7b
+    Status: 301, CT: text/html, CL: 162
+    Redirect: https://playmogo.com/e/wyr99ofrib7b
+    Body: 162 bytes
+    Preview: b'<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently'
+  d0000d.com/d/wyr99ofrib7b
+    Status: 301, CT: text/html, CL: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+    Body: 162 bytes
+    Preview: b'<html>\r\n<head><title>301 Moved Permanently</title></head>\r\n<body>\r\n<center><h1>301 Moved Permanently'
+  d0000d.org/d/wyr99ofrib7b: [Errno -2] Name or service not known
+
+=== DoodStream API ===
+API Error: HTTP Error 404: Not Found
+
+=== Direct file access patterns ===
+  https://doodstream.com/d/wyr99ofrib7b
+    Final: https://playmogo.com/d/wyr99ofrib7b
+    CT: text/html; charset=UTF-8
+  https://dood.ws/d/wyr99ofrib7b
+    Final: https://playmogo.com/d/wyr99ofrib7b
+    CT: text/html; charset=UTF-8
+  https://d0000d.com/d/wyr99ofrib7b
+    Final: https://playmogo.com/d/wyr99ofrib7b
+    CT: text/html; charset=UTF-8
+  https://d0000d.org/d/wyr99ofrib7b: <urlopen error [Errno -2] Name or service not known>
+
+=== Parsing DoodStream page for video source ===
+  Iframe src: /e/wyr99ofrib7b

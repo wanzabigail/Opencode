@@ -1,0 +1,27 @@
+{
+    "ok": true,
+    "result": {
+        "message_id": 354,
+        "from": {
+            "id": 8366198018,
+            "is_bot": true,
+            "first_name": "Yt bot",
+            "username": "Alokhitambot"
+        },
+        "chat": {
+            "id": 7171052892,
+            "first_name": "Wanz osaka",
+            "username": "Wan4angel",
+            "type": "private"
+        },
+        "date": 1792859445,
+        "text": "/start",
+        "entities": [
+            {
+                "offset": 0,
+                "length": 6,
+                "type": "bot_command"
+            }
+        ]
+    }
+}

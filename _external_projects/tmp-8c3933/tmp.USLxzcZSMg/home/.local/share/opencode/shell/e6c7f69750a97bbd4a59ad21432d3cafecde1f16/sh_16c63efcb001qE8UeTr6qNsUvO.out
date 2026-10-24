@@ -1,0 +1,26 @@
+Warning: connecting to non-local server 'sb-238b5efe5619d672.sb.molab.run'. Ensure this is trusted.
+def _allowed(request) -> bool:
+    return not KEY or request.query_params.get("k") == KEY
+
+
+def _vram():
+    now = time.time()
+    if _vram_cache["val"] and now - _vram_cache["at"] < 10:
+        return _vram_cache["val"]
+    try:
+        out = subprocess.run(
+            ["nvidia-smi", "--query-gpu=memory.used,memory.total", "--format=csv,noheader,nounits"],
+            capture_output=True, text=True, timeout=3,
+        ).stdout.strip().splitlines()[0]
+        used, total = (int(x) for x in out.split(","))
+        _vram_cache["val"] = {"used_gb": round(used / 1024, 1), "total_gb": round(total / 1024, 1)}
+    except Exception:
+        _vram_cache["val"] = None
+    _vram_cache["at"] = now
+    return _vram_cache["val"]
+
+
+def _ctx():
+    now = time.time()
+    if _ctx_cache["val"] and now - _ct
+

@@ -1,0 +1,4 @@
+Bot PID: 21868
+/usr/lib/python3.12/threading.py:1010: RuntimeWarning: coroutine 'poll_for_new' was never awaited
+  self._target(*self._args, **self._kwargs)
+RuntimeWarning: Enable tracemalloc to get the object allocation traceback

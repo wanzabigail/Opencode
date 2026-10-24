@@ -1,0 +1,31 @@
+==================================================
+🎣 SpookPhish Telegram Dashboard
+==================================================
+
+⚠️  Set your BOT_TOKEN and ADMIN_USER_ID in tg_dashboard.py
+
+📋 Current Captures:
+--------------------------------------------------
+
+📊 Capture #1
+   🕐 Time: 2026-10-24 16:12:59
+   📡 IP: 127.0.0.1
+   📱 Device: Apple
+   📍 Location: -6.2088, 106.8456
+   🗺️  Maps: https://maps.google.com/?q=-6.2088,106.8456
+   🔋 Battery: 73% (🔋 Not charging)
+   📸 Photo: ✅
+   🌍 Language: id-ID
+   📶 Network: 4g
+   📐 Screen: 390x844
+
+==================================================
+Total: 1 capture(s)
+==================================================
+
+📱 To receive on Telegram:
+1. Create bot at @BotFather → get token
+2. Get your ID at @userinfobot
+3. Edit tg_dashboard.py with your credentials
+4. Run: python3 tg_dashboard.py
+

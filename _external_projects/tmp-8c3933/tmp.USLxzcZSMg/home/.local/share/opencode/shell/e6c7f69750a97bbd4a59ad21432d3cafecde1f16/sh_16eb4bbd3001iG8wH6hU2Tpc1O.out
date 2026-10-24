@@ -1,0 +1,5 @@
+Downloading h11-0.16.0-py3-none-any.whl (37 kB)
+Downloading typing_extensions-4.16.0-py3-none-any.whl (45 kB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 45.6/45.6 kB 20.8 MB/s eta 0:00:00
+Installing collected packages: typing_extensions, h11, httpcore, anyio, httpx, python-telegram-bot
+Successfully installed anyio-4.15.1 h11-0.16.0 httpcore-1.0.9 httpx-0.28.1 python-telegram-bot-22.8 typing_extensions-4.16.0
