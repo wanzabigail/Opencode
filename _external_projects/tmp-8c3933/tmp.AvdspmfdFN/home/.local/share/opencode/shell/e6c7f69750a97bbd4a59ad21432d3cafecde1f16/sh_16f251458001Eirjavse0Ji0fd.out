@@ -1,0 +1,16 @@
+=== SIMPLE PATTERNS ===
+  FOUND: www.umidigi.com
+  FOUND: /www
+  FOUND: /home
+  FOUND: /var
+  FOUND: server_name
+  FOUND: fastcgi
+  FOUND: index.php
+  FOUND: try_files
+
+=== EXTRACTING CONFIG STRUCTURE ===
+  Starts with: 'server'
+  Starts with: 'http'
+  Starts with: 'upstream'
+  Starts with: 'log_format'
+  Starts with: 'server_name'

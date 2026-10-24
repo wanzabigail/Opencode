@@ -1,0 +1,6 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+exit 0
+restore: model -> http://127.0.0.1:18080/v1 | ui -> http://127.0.0.1:8501 | tunnel file -> /marimo/ngrok_url.txt
+
+ERR 
+

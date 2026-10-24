@@ -1,0 +1,17 @@
+Warning: connecting to non-local server 'sb-238b5efe5619d672.sb.molab.run'. Ensure this is trusted.
+downloading ngrok...
+Traceback (most recent call last):
+  File "/tmp/marimo_216/__marimo__cell___scratch___.py", line 8, in <module>
+    subprocess.run(["unzip","-o",ng,"-d","/marimo"], check=True)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.13/subprocess.py", line 577, in run
+    raise CalledProcessError(retcode, process.args,
+                             output=stdout, stderr=stderr)
+subprocess.CalledProcessError: Command '['unzip', '-o', '/marimo/ngrok.zip', '-d', '/marimo']' returned non-zero exit status 9.
+Archive:  /marimo/ngrok.zip
+  End-of-central-directory signature not found.  Either this file is not
+  a zipfile, or it constitutes one disk of a multi-part archive.  In the
+  latter case the central directory and zipfile comment will be found on
+  the last disk(s) of this archive.
+unzip:  cannot find zipfile directory in one of /marimo/ngrok.zip or
+        /marimo/ngrok.zip.zip, and cannot find /marimo/ngrok.zip.ZIP, period.

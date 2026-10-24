@@ -1,0 +1,7 @@
+ M molab/restore.sh
+?? molab/app.py
+[main 62d1e2c] feat(molab): include chat app and autostart-safe restore
+ 2 files changed, 237 insertions(+)
+ create mode 100644 molab/app.py
+To https://github.com/wanzabigail/Opencode
+   6f34a77..62d1e2c  main -> main
