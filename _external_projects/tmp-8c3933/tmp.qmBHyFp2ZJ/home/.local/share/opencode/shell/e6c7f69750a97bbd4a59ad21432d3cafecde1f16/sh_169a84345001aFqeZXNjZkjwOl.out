@@ -1,0 +1,7 @@
+---
+---proc---
+runner      2542  0.7  3.2 11913016 527328 ?     Ssl  13:06   1:36 /home/runner/.local/bin/opencode serve --service
+runner     10090  0.0  0.0   7892  3636 ?        Ss   16:46   0:00 /bin/bash -c env | grep -i pass; echo "---"; cat /home/runner/.bash_profile /home/runner/.bashrc | grep -i pass; echo "---proc---"; ps aux | grep -i opencode | head; echo "---"; find / -name "*opencode-backup*" 2>/dev/null
+runner     10096  0.0  0.0   7096  2424 ?        S    16:46   0:00 grep -i opencode
+---
+/home/runner/work/Opencode/Opencode/.opencode-backup.enc
