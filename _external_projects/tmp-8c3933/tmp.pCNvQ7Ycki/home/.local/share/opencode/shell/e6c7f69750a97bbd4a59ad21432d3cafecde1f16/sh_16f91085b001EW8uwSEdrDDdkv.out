@@ -1,0 +1,13 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+0.06.941.461 I common_speculative_init_result: loading draft model '/marimo/llm/models/Qwen3.8-27B-FastMTP-32K.gguf'
+0.07.935.150 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 204800, kv_unified = 'false'
+0.59.138.911 I slot print_timing: id  0 | task 0 |    graphs reused =        210
+0.59.138.914 I slot print_timing: id  0 | task 0 | draft acceptance = 0.46782 (  298 accepted /   637 generated), mean len =  2.40
+1.14.442.504 I slot print_timing: id  0 | task 217 |    graphs reused =        363
+1.14.442.508 I slot print_timing: id  0 | task 217 | draft acceptance = 0.25161 (  117 accepted /   465 generated), mean len =  1.75
+1.16.155.265 I slot print_timing: id  0 | task 375 |    graphs reused =        366
+1.16.155.272 I slot print_timing: id  0 | task 375 | draft acceptance = 0.33333 (    4 accepted /    12 generated), mean len =  2.00
+--- gpu:
+39539 MiB, 97887 MiB, 0 %
+
+
