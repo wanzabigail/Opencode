@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/tmp/opencode/test_vault.py", line 1, in <module>
+    from selenium import webdriver
+ModuleNotFoundError: No module named 'selenium'
