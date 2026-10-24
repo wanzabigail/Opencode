@@ -1,0 +1,12 @@
+State  Recv-Q Send-Q      Local Address:Port  Peer Address:PortProcess                                 
+LISTEN 0      4096        127.0.0.53%lo:53         0.0.0.0:*                                           
+LISTEN 0      511             127.0.0.1:4096       0.0.0.0:*    users:(("node",pid=2711,fd=21))        
+LISTEN 0      4096              0.0.0.0:22         0.0.0.0:*                                           
+LISTEN 0      4096           127.0.0.54:53         0.0.0.0:*                                           
+LISTEN 0      4096            127.0.0.1:11434      0.0.0.0:*                                           
+LISTEN 0      4096            127.0.0.1:20241      0.0.0.0:*    users:(("cloudflared",pid=2728,fd=11)) 
+LISTEN 0      4096            127.0.0.1:20242      0.0.0.0:*    users:(("cloudflared",pid=18686,fd=11))
+LISTEN 0      512             127.0.0.1:49374      0.0.0.0:*    users:(("opencode",pid=2697,fd=8))     
+LISTEN 0      50     [::ffff:127.0.0.1]:45193            *:*    users:(("java",pid=17022,fd=351))      
+LISTEN 0      4096                 [::]:22            [::]:*                                           
+LISTEN 0      50     [::ffff:127.0.0.1]:42499            *:*    users:(("java",pid=17220,fd=248))      

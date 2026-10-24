@@ -1,0 +1,5 @@
+Warning: connecting to non-local server 'sb-238b5efe5619d672.sb.molab.run'. Ensure this is trusted.
+unzip /usr/bin/unzip
+tar /usr/bin/tar
+python3 /tmp/uv-venv/bin/python3
+

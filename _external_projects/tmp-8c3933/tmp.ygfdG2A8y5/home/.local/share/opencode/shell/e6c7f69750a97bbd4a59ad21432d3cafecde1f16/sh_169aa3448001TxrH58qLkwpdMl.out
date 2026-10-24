@@ -1,0 +1,117 @@
+00000000: 5361 6c74 6564 5f5f 1cfb d479 a450 85ce  Salted__...y.P..
+00000010: 1c0f 6daa 9d73 feb4 3a2c 7548 dfe5 33ca  ..m..s..:,uH..3.
+00000020: fa40 4c80 47f6 4785 d7b5 8d0b ce8c a44b  .@L.G.G........K
+00000030: 1739 f0a6 e767 53dc be1d 1020 abe2 474a  .9...gS.... ..GJ
+---oc-save---
+#!/usr/bin/env bash
+set -e
+cd "$WORKSPACE_DIR"
+if [ -f /tmp/protected-workflow.yml ]; then
+  mkdir -p .github/workflows
+  cp /tmp/protected-workflow.yml .github/workflows/opencode-web.yml
+fi
+TARGETS=()
+[ -d "$HOME/.local/share/opencode" ] && TARGETS+=(".local/share/opencode")
+[ -d "$HOME/.config/opencode" ] && TARGETS+=(".config/opencode")
+[ -d "$HOME/.local/state/opencode" ] && TARGETS+=(".local/state/opencode")
+if [ "${#TARGETS[@]}" -gt 0 ] && [ -n "$FINAL_PW" ]; then
+  tar -czf - -C "$HOME" \
+    --exclude='.local/share/opencode/log' \
+    --exclude='.local/state/opencode/locks' \
+    --exclude='.local/state/opencode/service.json' \
+    "${TARGETS[@]}" 2>/dev/null \
+    | openssl enc -aes-256-cbc -salt -pbkdf2 -pass env:FINAL_PW -out .opencode-backup.enc.tmp
+  mv .opencode-backup.enc.tmp .opencode-backup.enc
+fi
+git add -A
+git diff --cached --name-only | while IFS= read -r file; do
+  if [ -f "$file" ]; then
+    size=$(wc -c < "$file" 2>/dev/null || echo 0)
+    if [ "$size" -gt 99000000 ]; then
+      echo "Melewati file >95MB dari git push (tetap bisa diunduh lewat Cloud Panel): $file"
+      git reset HEAD "$file" >/dev/null 2>&1 || true
+    fi
+  fi
+done
+if ! git diff --cached --quiet; then
+  git commit -m "${1:-chore: auto-save kode & session OpenCode}"
+  git pull --rebase --autostash || true
+  git push || true
+fi
+---oc-publish---
+#!/usr/bin/env bash
+NEW_URL="$1"
+[ -z "$NEW_URL" ] && exit 0
+echo "$NEW_URL" > /tmp/current_url.txt
+
+OWNER="${GITHUB_REPOSITORY%/*}"
+REPO="${GITHUB_REPOSITORY#*/}"
+OWNER_LOWER=$(echo "$OWNER" | tr '[:upper:]' '[:lower:]')
+PAGES_URL="https://${OWNER_LOWER}.github.io/${REPO}/"
+echo "$PAGES_URL" > /tmp/pages_url.txt
+
+if [ -n "$GITHUB_REPOSITORY" ] && [ -n "$GH_TOKEN" ]; then
+  TMP_PAGES=$(mktemp -d)
+  (
+    cd "$TMP_PAGES"
+    git init -q -b gh-pages
+    git config user.name "OpenCode Cloud"
+    git config user.email "bot@opencode.local"
+    NOW_WIB=$(TZ=Asia/Jakarta date '+%d %b %Y %H:%M WIB')
+    cat << HTMLEOF > index.html
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OpenCode Cloud Redirect</title>
+  <meta http-equiv="refresh" content="2;url=${NEW_URL}" />
+  <style>
+    * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b0d12; color: #f3f4f6; padding: 18px; text-align: center; }
+    .box { width: 100%; max-width: 430px; background: #161922; border: 1px solid #2a2f3d; border-radius: 18px; padding: 28px 24px; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+    .badge { display: inline-block; background: #064e3b; color: #6ee7b7; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
+    h1 { margin: 0 0 8px; font-size: 21px; }
+    p { margin: 0 0 20px; font-size: 14px; color: #9ca3af; line-height: 1.5; }
+    a.btn { display: block; width: 100%; padding: 13px; border-radius: 11px; background: #3b82f6; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; margin-bottom: 10px; }
+    a.sub { display: block; width: 100%; padding: 11px; border-radius: 11px; background: #1f2433; border: 1px solid #32394e; color: #d1d5db; text-decoration: none; font-size: 13px; }
+    .meta { margin-top: 16px; font-size: 12px; color: #6b7280; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="badge">● SERVER CLOUD AKTIF</div>
+    <h1>🚀 Mengarahkan ke OpenCode Web...</h1>
+    <p>Otomatis berpindah dalam 2 detik. Jika belum berpindah, klik tombol di bawah:</p>
+    <a class="btn" href="${NEW_URL}">Buka OpenCode Web Sekarang →</a>
+    <a class="sub" href="${NEW_URL}/__panel">⚙️ Buka Cloud Control Panel</a>
+    <div class="meta">Diperbarui otomatis: ${NOW_WIB}</div>
+  </div>
+</body>
+</html>
+HTMLEOF
+    touch .nojekyll
+    git add -A
+    git commit -q -m "chore: update active OpenCode URL"
+    git push -f -q "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages >/dev/null 2>&1 || true
+  )
+  rm -rf "$TMP_PAGES"
+
+  gh api -X POST "repos/${GITHUB_REPOSITORY}/pages" \
+    -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null 2>&1 || true
+fi
+
+if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+  MSG="🚀 *OpenCode Cloud Pro Aktif!*%0A%0A🌐 *Link Sesi Ini:*%0A${NEW_URL}%0A%0A🔗 *Link Permanen:*%0A${PAGES_URL}%0A%0A⚙️ *Control Panel:*%0A${NEW_URL}/__panel"
+  curl -4 -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+    -d "chat_id=${TELEGRAM_CHAT_ID}" \
+    -d "parse_mode=Markdown" \
+    -d "text=${MSG}" >/dev/null 2>&1 || true
+fi
+
+if [ -n "$DISCORD_WEBHOOK_URL" ]; then
+  PAYLOAD=$(printf '{"content":"🚀 **OpenCode Cloud Pro Aktif!**\\n🌐 **Link Sesi Ini:** %s\\n🔗 **Link Permanen:** %s\\n⚙️ **Control Panel:** %s/__panel"}' "$NEW_URL" "$PAGES_URL" "$NEW_URL")
+  curl -4 -fsS -X POST "$DISCORD_WEBHOOK_URL" \
+    -H "Content-Type: application/json" \
+    -d "$PAYLOAD" >/dev/null 2>&1 || true
+fi

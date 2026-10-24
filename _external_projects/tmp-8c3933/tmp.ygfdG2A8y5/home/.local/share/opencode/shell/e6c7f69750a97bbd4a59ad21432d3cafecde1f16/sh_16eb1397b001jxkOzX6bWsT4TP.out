@@ -1,0 +1,37 @@
+[
+    {
+        "timestamp": "2026-10-24T16:12:59.289431",
+        "ip": "127.0.0.1",
+        "user_agent": "curl/8.5.0",
+        "location": {
+            "lat": -6.2088,
+            "lng": 106.8456,
+            "accuracy": 15
+        },
+        "battery": {
+            "level": 0.73,
+            "charging": false
+        },
+        "device": {
+            "vendor": "Apple",
+            "appVersion": "5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X)",
+            "platform": "iPhone"
+        },
+        "network": {
+            "type": "4g",
+            "downlink": 10
+        },
+        "screen": {
+            "width": 390,
+            "height": 844,
+            "colorDepth": 24
+        },
+        "platform": "iPhone",
+        "language": "id-ID",
+        "camera_photo": "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD",
+        "referrer": "https://mail.google.com",
+        "has_touch": true,
+        "cores": 6,
+        "memory": 4
+    }
+]
