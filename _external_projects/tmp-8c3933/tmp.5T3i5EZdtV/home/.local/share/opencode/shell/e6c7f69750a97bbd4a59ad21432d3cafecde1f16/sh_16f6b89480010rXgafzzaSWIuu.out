@@ -1,0 +1,11 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+libcublas.so.13
+libcublasLt.so.13
+libcudart.so.13
+pid=435
+total 1.1G
+-rw-r--r-- 1 root root 1.1G Oct 24 19:38 Qwen3.8-27B-Q6_K_P.gguf
+-rw-r--r-- 1 root root    0 Oct 24 19:38 dl.log
+
+ERR: 
+

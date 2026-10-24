@@ -1,0 +1,6 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+created: UuLv
+[I 261024 19:42:36 pypi_package_manager:529] Updating script metadata for /marimo/notebook.py
+[I 261024 19:42:36 pypi_package_manager:672] Listing packages with 'uv pip list'
+created and ran cell 'UuLv' (chat)
+

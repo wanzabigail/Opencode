@@ -1,0 +1,26 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+-fa,   --flash-attn [on|off|auto]       set Flash Attention use ('on', 'off', or 'auto', default: 'auto')
+--rope-scaling {none,linear,yarn}       RoPE frequency scaling method, defaults to linear unless specified by
+                                        - none: no special loading mode
+-ngl,  --gpu-layers, --n-gpu-layers N   max. number of layers to store in VRAM, either an exact number,
+-mg,   --main-gpu INDEX                 the GPU to use for the model (with split-mode = none), or for
+--override-kv KEY=TYPE:VALUE,...        advanced option to override model metadata by key. to specify multiple
+-hff,  --hf-file FILE                   Hugging Face model file. If specified, it will override the quant in
+--spec-draft-type-k, -ctkd, --cache-type-k-draft TYPE
+                                        (env: LLAMA_ARG_SPEC_DRAFT_CACHE_TYPE_K)
+--spec-draft-type-v, -ctvd, --cache-type-v-draft TYPE
+                                        (env: LLAMA_ARG_SPEC_DRAFT_CACHE_TYPE_V)
+----- speculative params -----
+--spec-draft-hf, -hfd, -hfrd, --hf-repo-draft <user>/<model>[:quant]
+                                        (env: LLAMA_ARG_SPEC_DRAFT_HF_REPO)
+--spec-draft-threads, -td, --threads-draft N
+--spec-draft-threads-batch, -tbd, --threads-batch-draft N
+--spec-draft-cpu-mask, -Cd, --cpu-mask-draft M
+--spec-draft-cpu-range, -Crd, --cpu-range-draft lo-hi
+--spec-draft-cpu-strict, --cpu-strict-draft <0|1>
+--spec-draft-prio, --prio-draft N       set draft process/thread priority : 0-normal, 1-medium, 2-high,
+--- dl progress:
+-rw-r--r-- 1 root root 1.8G Oct 24 19:38 /marimo/llm/models/Qwen3.8-27B-Q6_K_P.gguf
+
+ERR: 
+

@@ -1,0 +1,14 @@
+273-  <script>
+274-            if ('serviceWorker' in navigator) {
+275:                const notebookId = "%2Fmarimo%2Fnotebook.py";
+276-                function sendNotebookId(registration) {
+277-                    if (registration.active) {
+278:                        registration.active.postMessage({ notebookId });
+279-                        return;
+280-                    }
+--
+283-                        worker.addEventListener('statechange', function() {
+284-                            if (worker.state === 'activated') {
+285:                                registration.active.postMessage({ notebookId });
+286-                            }
+287-                        });

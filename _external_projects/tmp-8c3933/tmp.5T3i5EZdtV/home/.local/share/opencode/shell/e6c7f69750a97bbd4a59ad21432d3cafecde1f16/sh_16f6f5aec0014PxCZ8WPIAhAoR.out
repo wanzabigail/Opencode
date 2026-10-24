@@ -1,0 +1,5 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+line 2
+    cmd = r'''curl -s http://127.0.0.1:8080/v1/chat/completions -H 'Content-Type: application/json' -d '{
+          ^
+SyntaxError: unterminated triple-quoted string literal (detected at line 14)

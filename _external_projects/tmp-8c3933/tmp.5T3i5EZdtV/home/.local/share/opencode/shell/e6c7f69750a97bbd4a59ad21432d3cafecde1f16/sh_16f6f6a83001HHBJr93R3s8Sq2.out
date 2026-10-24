@@ -1,0 +1,19 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+Halo, saya asisten AI yang siap membantu Anda.  
+Saya bisa menjawab pertanyaan, menulis, dan menerjemahkan dengan ringkas.
+wall: 1.77s
+timings: {
+ "cache_n": 0,
+ "prompt_n": 68,
+ "prompt_ms": 474.542,
+ "prompt_per_token_ms": 6.978558823529411,
+ "prompt_per_second": 143.2960623084996,
+ "predicted_n": 120,
+ "predicted_ms": 1282.795,
+ "predicted_per_token_ms": 10.779789915966386,
+ "predicted_per_second": 92.76618633530688,
+ "draft_n": 113,
+ "draft_n_accepted": 81
+}
+usage: {'completion_tokens': 120, 'prompt_tokens': 68, 'total_tokens': 188, 'prompt_tokens_details': {'cached_tokens': 0}}
+

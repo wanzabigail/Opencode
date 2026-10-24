@@ -1,0 +1,25 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+--- tree:
+bin/llama-b11865/libggml-cuda.so
+bin/llama-b11865/libggml-cpu-skylakex.so
+bin/llama-b11865/libggml-cpu-ivybridge.so
+bin/llama-b11865/libggml-cpu-cannonlake.so
+bin/llama-b11865/libllama.so.0.7.0
+bin/llama-b11865/libggml-base.so.0
+bin/llama-b11865/libggml-base.so
+bin/llama-b11865/libggml.so.0
+bin/llama-b11865/libggml-cpu-icelake.so
+bin/llama-b11865/libggml-cpu-haswell.so
+bin/llama-b11865/libllama.so
+bin/llama-b11865/libllama-batched-bench-impl.so
+bin/llama-b11865/libllama-quantize-impl.so
+bin/llama-b11865/libllama-common.so
+bin/llama-b11865/libggml.so.0.27.0
+bin/llama-b11865/libllama-fit-params-impl.so
+bin/llama-b11865/libllama-cli-impl.so
+bin/llama-b11865/libggml-cpu-x64.so
+bin/llama-b11865/libggml-cpu-zen4.so
+bin/llama-b11865/libllama-common.so.0.7.0
+
+ERR: 
+

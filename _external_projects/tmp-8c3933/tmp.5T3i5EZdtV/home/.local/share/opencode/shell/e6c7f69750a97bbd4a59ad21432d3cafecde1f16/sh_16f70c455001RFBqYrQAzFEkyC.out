@@ -1,0 +1,23 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+ 32K, full GPU offload
+    - **Performa:** ~62–93 tok/s generasi, ~134 tok/s prompt (RTX PRO 6000, ~29 GB VRAM)
+    - **Matikan:** `pkill -f llama-server`
+
+    Kalau server mati (mis. sandbox restart), nyalakan lagi:
+
+    ```bash
+    cd /marimo/llm/bin/llama-b11865
+    export LD_LIBRARY_PATH=$PWD:/marimo/llm/bin/cudart-llama-b11865-bin-ubuntu-cuda-13.4-x64
+    nohup ./llama-server -m /marimo/llm/models/Qwen3.8-27B-Q6_K_P.gguf \\
+      -ngl 99 -c 32768 -fa on --jinja --spec-type draft-mtp \\
+      --host 127.0.0.1 --port 8080 --alias qwen3.8-27b > /marimo/llm/server.log 2>&1 &
+    ```
+    """
+)
+---
+606 ./llama-server -m /marimo/llm/models/Qwen3.8-27B-Q6_K_P.gguf -ngl 99 -c 32768 -fa on --jinja --spec-type draft-mtp --host 127.0.0.1 --port 8080 --alias qwen3.8-27b
+645 bash -lc pgrep -af llama-server | head -2; du -sh /marimo/llm/models /marimo/llm/bin
+25G	/marimo/llm/models
+787M	/marimo/llm/bin
+
+

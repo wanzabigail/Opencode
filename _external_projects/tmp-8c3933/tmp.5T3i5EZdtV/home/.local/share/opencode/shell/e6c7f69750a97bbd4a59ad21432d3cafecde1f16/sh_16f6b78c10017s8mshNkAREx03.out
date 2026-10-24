@@ -1,0 +1,39 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+LICENSE
+ggml-rpc-server
+libggml-base.so
+libggml-base.so.0
+libggml-base.so.0.27.0
+libggml-cpu-alderlake.so
+libggml-cpu-cannonlake.so
+libggml-cpu-cascadelake.so
+libggml-cpu-cooperlake.so
+libggml-cpu-haswell.so
+libggml-cpu-icelake.so
+libggml-cpu-ivybridge.so
+libggml-cpu-piledriver.so
+libggml-cpu-sandybridge.so
+libggml-cpu-sapphirerapids.so
+libggml-cpu-skylakex.so
+libggml-cpu-sse42.so
+libggml-cpu-x64.so
+libggml-cpu-zen4.so
+libggml-cuda.so
+libggml-rpc.so
+libggml.so
+libggml.so.0
+libggml.so.0.27.0
+libllama-batched-bench-impl.so
+libllama-bench-impl.so
+libllama-cli-impl.so
+libllama-common.so
+libllama-common.so.0
+libllama-common.so.0.7.0
+--- version:
+version: 0.7.0-dev (build 11865, commit 9a0fde996)
+built with GNU 13.3.0 for Linux x86_64
+--- cudart files:
+cudart-llama-b11865-bin-ubuntu-cuda-13.4-x64
+
+ERR: 
+

@@ -1,0 +1,6 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+-rw-r--r-- 1 root root 13G Oct 24 19:39 /marimo/llm/models/Qwen3.8-27B-Q6_K_P.gguf
+435 curl -sSL -o Qwen3.8-27B-Q6_K_P.gguf https://huggingface.co/HauhauCS/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-MTP-GGUF/resolve/main/Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-Q6_K_P.gguf
+478 bash -lc ls -lh /marimo/llm/models/*.gguf; pgrep -af 'curl.*gguf' | head; tail -c 300 /marimo/llm/models/dl.log
+
+

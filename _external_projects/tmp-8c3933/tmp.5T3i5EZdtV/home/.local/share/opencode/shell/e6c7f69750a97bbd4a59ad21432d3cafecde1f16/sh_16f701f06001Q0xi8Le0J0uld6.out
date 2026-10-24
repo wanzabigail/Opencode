@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+chunks 202 fields {'content', 'role'} wall 3.30s
+Berikut adalah 3 fakta singkat tentang GPU NVIDIA Blackwell:
+
+1. **Dua-IC Design for Unprecedented Scale**: Unlike previous generations, the flagship Blackwell GPU (GB100) is built using a multi-chip module (MCM) design that combines two 5nm dielets with a high-bandwidth interconnect, effectively creating a single massive processor with over 200 billion transistors.
+2. **Native Support for FP4 Pre
+

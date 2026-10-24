@@ -1,0 +1,18 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+Traceback (most recent call last):
+  File "/tmp/marimo_83/__marimo__cell___scratch___.py", line 49, in <module>
+    async with cm.get_context() as ctx:
+               ~~~~~~~~~~~~~~^^
+  File "/usr/local/lib/python3.13/site-packages/marimo/_code_mode/_context.py", line 831, in __aexit__
+    self._dry_run_compile(ops)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "/usr/local/lib/python3.13/site-packages/marimo/_code_mode/_context.py", line 1707, in _dry_run_compile
+    raise RuntimeError(
+    ...<3 lines>...
+    )
+RuntimeError: Multiply-defined names:
+  - 'mo' is already defined in cell 'Hbol' (__)
+
+To skip validation, use: async with cm.get_context(skip_validation=True) as ctx
+cells: ['Hbol']
+created: MvYG

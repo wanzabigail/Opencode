@@ -1,0 +1,15 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+server pid=606
+0.00.219.336 I srv  llama_server: initializing ...
+0.00.219.364 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.219.955 W srv  llama_server: security: no API key is set and CORS allows all origins (see https://github.com/ggml-org/llama.cpp/pull/25655)
+0.00.224.218 I srv    load_model: loading model '/marimo/llm/models/Qwen3.8-27B-Q6_K_P.gguf'
+0.05.345.117 I cmn          init: llama threadpool init, n_threads = 20
+0.05.463.444 I common_speculative_init_result: creating MTP draft context against the target model '/marimo/llm/models/Qwen3.8-27B-Q6_K_P.gguf'
+0.05.493.544 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 32768, kv_unified = 'true'
+0.05.551.679 W srv          init: chat template supports preserving reasoning, it is enabled by default (may use more tokens, disable via --no-reasoning-preserve)
+0.05.551.818 I srv  llama_server: model loaded
+0.05.551.876 I srv  llama_server: listening on http://127.0.0.1:8080
+
+ERR: 
+
