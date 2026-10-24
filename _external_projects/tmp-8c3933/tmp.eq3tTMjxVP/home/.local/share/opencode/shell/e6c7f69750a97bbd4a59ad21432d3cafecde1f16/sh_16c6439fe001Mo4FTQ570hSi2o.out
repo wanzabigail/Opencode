@@ -1,0 +1,9 @@
+Warning: connecting to non-local server 'sb-238b5efe5619d672.sb.molab.run'. Ensure this is trusted.
+already running: False
+uvicorn pid 1156
+INFO:     Started server process [1156]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8501 (Press CTRL+C to quit)
+
+
