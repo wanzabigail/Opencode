@@ -1,0 +1,43 @@
+Page size: 5747
+
+=== ALL script content ===
+Script 2 (128 chars):
+var rdate = new Date();rdate.setTime(rdate.getTime() + (60 * 1000));$.cookie('dref_url', 'none', { path: '/', expires: rdate });
+
+Script 5 (908 chars):
+$(".download_vd").click(function(o){o.preventDefault(),$(this).prop("disabled",!0).addClass("loading disabled").html('<img src="//i.doodcdn.io/theme_2/img/loader.svg">');var d=5,n=setInterval(function(){$(".countdown").show(),d-=1,$(".countdown #seconds").html(d),d<=0&&(clearInterval(n),$(".countdown").remove(),$(".download_vd").remove(),$(".download-content").show("slow"))},1e3)});$(document).on("click",".player_lights",function(a){a.preventDefault();var e=$(this);$(".title-wrap"),$("#os_player
+
+Script 6 (921 chars):
+(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a4f7a8775af611de',t:'MTc5MjgzMTAzMA=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.
+
+
+=== Variable assignments ===
+  rdate = new Date()
+  d = 5,n=setInterval(function(){$(".countdown").show(),d-=1,$(".countdown #seconds").html(d),d<=0&&(clearInterval(n),$(".countdown").remove(),$(".download_vd").remove(),$(".download-content").show("slow"))
+  e = $(this)
+  b = a.contentDocument||(a.contentWindow&&a.contentWindow.document)
+  d = b.createElement('script')
+  a = document.createElement('script')
+  a = document.createElement('iframe')
+  e = document.onreadystatechange||function(){}
+
+=== Download-related ===
+
+=== Player configuration ===
+  player-page-fade").fadeTo("slow",0,function(){$("#player-page-fade").remove()
+
+=== Getting iframe content ===
+Iframe page size: 5399
+
+Ifame Script 2 (1860 chars):
+  var captchaContainer = null
+  var loadCaptcha = function() { const widgetId = turnstile.render("#turnstile-container", { sitekey: "0x4AAAAAACFq32tMjwLTJaKk", size: 'flexible', callback : function(response) { $.get("/dood?op=validate&gc_response="+r
+  var tryCount = 0
+  var minimalUserResponseInMiliseconds = 200
+
+Ifame Script 3 (921 chars):
+  var b = a.contentDocument||(a.contentWindow&&a.contentWindow.document)
+  var d = b.createElement('script')
+  var a = document.createElement('script')
+  var a = document.createElement('iframe')
+  var e = document.onreadystatechange||function(){}
