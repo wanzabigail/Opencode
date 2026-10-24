@@ -29,6 +29,9 @@ fetch() {
 }
 
 fetch start_model.py /marimo/start_model.py || true
+if [ ! -f /marimo/chat_app/app.py ]; then
+  fetch app.py /marimo/chat_app/app.py || true
+fi
 fetch start_chat.sh /marimo/start_chat.sh || true
 fetch anti_mati.sh /marimo/anti_mati.sh || true
 fetch keepalive.py /marimo/keepalive.py || true
