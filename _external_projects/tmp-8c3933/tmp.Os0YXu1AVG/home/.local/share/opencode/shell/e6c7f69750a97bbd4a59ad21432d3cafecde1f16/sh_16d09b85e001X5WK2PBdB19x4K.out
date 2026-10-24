@@ -1,0 +1,47 @@
+=== Following redirect chain ===
+1. https://dood.ws/d/wyr99ofrib7b
+   Status: 301
+   Location: https://playmogo.com/d/wyr99ofrib7b
+
+2. https://playmogo.com/d/wyr99ofrib7b
+   Status: 200
+   Location: none
+
+=== Embed page redirect chain ===
+3. https://dood.ws/e/wyr99ofrib7b
+   Status: 301
+   Location: https://playmogo.com/e/wyr99ofrib7b
+   Body length: 162
+
+=== Playmogo embed ===
+4. https://playmogo.com/e/wyr99ofrib7b
+   Status: 200
+   Location: none
+   Body length: 5760
+   Body: <html><head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>Bokep Indo Arachu Cantik Mulus Pamer Tobrut dan Colmek - DoodStream.com</title> <link 
+
+=== DoodStream embed API ===
+Traceback (most recent call last):
+  File "<stdin>", line 103, in <module>
+  File "/usr/lib/python3.12/http/client.py", line 1365, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1411, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1360, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/usr/lib/python3.12/http/client.py", line 1120, in _send_output
+    self.send(msg)
+  File "/usr/lib/python3.12/http/client.py", line 1064, in send
+    self.connect()
+  File "/usr/lib/python3.12/http/client.py", line 1499, in connect
+    super().connect()
+  File "/usr/lib/python3.12/http/client.py", line 1030, in connect
+    self.sock = self._create_connection(
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 828, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socket.py", line 963, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno -2] Name or service not known

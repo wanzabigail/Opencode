@@ -1,0 +1,41 @@
+=== Approach 1: Direct download ===
+  https://dood.ws/d/wyr99ofrib7b
+    Status: 301, Content-Type: text/html, Length: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+  https://dood.li/d/wyr99ofrib7b
+    Status: 301, Content-Type: text/html, Length: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+  https://doodstream.com/d/wyr99ofrib7b
+    Status: 301, Content-Type: text/html, Length: 175
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+  https://dood.la/d/wyr99ofrib7b
+    Status: 301, Content-Type: text/html, Length: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+  https://dood.watch/d/wyr99ofrib7b
+    Status: 302, Content-Type: text/html; charset=UTF-8, Length: 
+    Redirect: https://vide0.net/d/wyr99ofrib7b
+  https://d0000d.com/d/wyr99ofrib7b
+    Status: 301, Content-Type: text/html, Length: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+  https://d000d.com/d/wyr99ofrib7b
+    Status: 301, Content-Type: text/html, Length: 162
+    Redirect: https://playmogo.com/d/wyr99ofrib7b
+
+=== Approach 2: Parse embed page for video URL ===
+
+All URLs in page (4):
+  https://imgds.net/splash/8rrwpuv9srfef6aa.jpg
+  https://imgds.net/splash/8rrwpuv9srfef6aa.jpg
+  https://imgds.net/splash/8rrwpuv9srfef6aa.jpg
+  https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092
+
+=== Looking for video file patterns ===
+
+=== Approach 3: DoodStream API ===
+  https://doodapi.com/api/doodstream?file=wyr99ofrib7b: Error - HTTP Error 404: Not Found
+  https://doodws.com/api/doodstream?file=wyr99ofrib7b: Error - <urlopen error [Errno -2] Name or service not known>
+
+=== Approach 4: Direct file access ===
+  Final URL: https://playmogo.com/d/wyr99ofrib7b
+  Content-Type: text/html; charset=UTF-8
+  Status: 200

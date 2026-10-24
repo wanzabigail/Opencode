@@ -1,0 +1,15 @@
+=== vide0.net ===
+Status: 301
+Location: https://playmogo.com/d/wyr99ofrib7b
+
+=== ddog.pro ===
+Error: [Errno -2] Name or service not known
+
+=== DoodStream embed with browser headers ===
+
+=== Trying to extract video from DoodStream page ===
+Iframe: /e/wyr99ofrib7b
+
+=== Direct /d/ endpoint ===
+Final URL: https://playmogo.com/d/wyr99ofrib7b
+Content-Type: text/html; charset=UTF-8
