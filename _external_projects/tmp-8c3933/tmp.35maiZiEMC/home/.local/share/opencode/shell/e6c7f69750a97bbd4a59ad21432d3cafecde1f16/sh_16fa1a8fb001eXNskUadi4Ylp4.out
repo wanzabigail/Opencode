@@ -1,0 +1,11 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+606 [llama-server] <defunct>
+777 [llama-server] <defunct>
+--- health:
+200
+--- last server log:
+10.51.215.469 I slot print_timing: id  0 | task 1280 | draft acceptance = 0.47461 (  215 accepted /   453 generated), mean len =  2.42
+10.51.215.747 I slot      release: id  0 | task 1280 | stop processing: n_tokens = 5900, truncated = 0
+14.10.632.910 W srv    operator(): unauthorized: Invalid API Key
+
+

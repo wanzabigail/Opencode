@@ -1,0 +1,20 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+TCP_OK
+exit=124
+debug1: pledge: network
+debug1: remote forward success for: listen 0, connect localhost:8080
+Allocated port 1 for remote forward to localhost:8080
+debug1: Updating allowed port 1 for forwarding to host localhost port 8080
+debug1: Sending environment.
+debug1: channel 0: setting env LC_CTYPE = "C.UTF-8"
+debug1: pledge: network
+You are not authenticated.
+Your tunnel will expire in 60 minutes. Upgrade to Pinggy Pro to get unrestricted tunnels. https://dashboard.pinggy.io
+https://nmjmd-166-19-116-252.free.pinggy.net
+https://yysen-166-19-116-252.run.pinggy-free.link
+debug1: client_input_global_request: rtype keepalive@openssh.com want_reply 1
+debug1: client_input_global_request: rtype keepalive@openssh.com want_reply 1
+debug1: channel 0: free: client-session, nchannels 1
+Killed by signal 15.
+
+
