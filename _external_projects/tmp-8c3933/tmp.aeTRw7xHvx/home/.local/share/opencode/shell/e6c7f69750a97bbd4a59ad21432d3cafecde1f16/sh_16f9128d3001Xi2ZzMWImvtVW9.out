@@ -1,0 +1,21 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+6:0.06.941.461 I common_speculative_init_result: loading draft model '/marimo/llm/models/Qwen3.8-27B-FastMTP-32K.gguf'
+7-0.07.935.150 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 204800, kv_unified = 'false'
+8-0.08.064.352 I srv  llama_server: model loaded
+9-0.08.064.391 I srv  llama_server: listening on http://127.0.0.1:8080
+10-0.08.064.392 W srv  llama_server: NOTICE: server default port will be changed to :9931 in a future release
+11-0.08.064.393 W srv  llama_server:         ref: https://github.com/ggml-org/llama.cpp/pull/26508
+12-0.52.195.535 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+--- tensor names:
+smtp
+SMTP
+smtp
+SMTP
+.smtp
+Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-FastMTP-32K
+Optional FastMTP draft for the Qwen3.8-27B Aggressive variant by HauhauCS.
+mtp
+d2t
+mTP
+
+

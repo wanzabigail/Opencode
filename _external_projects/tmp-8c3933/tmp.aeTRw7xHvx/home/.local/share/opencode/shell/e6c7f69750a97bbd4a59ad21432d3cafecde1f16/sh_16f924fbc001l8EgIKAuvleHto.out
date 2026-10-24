@@ -1,0 +1,8 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+40:    const bool mtp_only = (hparams.n_layer_nextn > 0) && (ml.get_weight("blk.0.attn_norm.weight") == nullptr);
+41:    const int trunk_flags = mtp_only ? TENSOR_NOT_REQUIRED : 0;
+46:    if (mtp_only && d2t_meta) {
+---
+2492:        /*.load_mtp                    =*/ false,
+
+
