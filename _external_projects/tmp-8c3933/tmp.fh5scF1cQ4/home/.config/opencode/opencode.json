@@ -1,0 +1,17 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "qwen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Qwen",
+      "options": {
+        "baseURL": "https://animate-cardstock-detector.ngrok-free.dev/v1"
+      },
+      "models": {
+        "qwen3.6-35b-uncensored": {
+          "name": "Qwen"
+        }
+      }
+    }
+  }
+}
