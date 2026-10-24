@@ -1,0 +1,9 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+pid alive: True
+health ERR <urlopen error [Errno 111] Connection refused>
+out:
+[90mHint: A new version of huggingface_hub (2.3.0) is available! You are using version 1.24.0.
+To update, run: hf update[0m
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+

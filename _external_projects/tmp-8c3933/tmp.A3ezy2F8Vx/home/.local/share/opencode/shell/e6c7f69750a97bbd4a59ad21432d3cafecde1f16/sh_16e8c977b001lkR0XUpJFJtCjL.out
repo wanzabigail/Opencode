@@ -1,0 +1,8 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+/marimo/start_model.py exists: True size: 2753
+/marimo/run_ngrok.py exists: True size: 278
+/marimo/chat_app/app.py exists: True size: 8070
+/marimo/chat_app/index.html exists: False size: 0
+http://127.0.0.1:18080/v1/models ERR <urlopen error [Errno 111] Connection refused>
+http://127.0.0.1:8501/healthz ERR <urlopen error [Errno 111] Connection refused>
+

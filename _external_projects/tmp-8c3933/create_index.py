@@ -1,0 +1,43 @@
+html = """<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title> llama Qwen3.6-35B Chat (lokal)</title>
+<style>
+:root{--bg:#0b0d12;--fg:#e5e7eb;--card:#161922;--muted:#9ca3af;--blue:#3b82f6}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:16px}
+h1{margin:0 0 4px;font-size:20px}.sub{color:var(--muted);font-size:13px;margin-bottom:14px}
+.msg{padding:12px 14px;border-radius:12px;margin:8px 0;white-space:pre-wrap;line-height:1.5}
+.user{background:#1e3a5f}.assistant{background:var(--card)}
+.reasoning{color:#9ca3af;font-size:13px;border-left:3px solid #374151;margin:8px 0;padding:8px 10px;white-space:pre-wrap}
+.stats{color:var(--muted);font-size:12px;margin-top:4px}
+.row{display:flex;gap:8px;margin-top:10px}
+textarea{flex:1;background:var(--card);color:var(--fg);border:1px solid #2a2f3d;border-radius:10px;padding:10px;font-size:14px;resize:vertical;min-height:48px}
+button{background:var(--blue);color:#fff;border:0;border-radius:10px;padding:10px 16px;font-weight:600;cursor:pointer}
+button:disabled{opacity:.5;cursor:not-allowed}
+.err{color:#fca5a5;background:#3b181e;padding:8px 10px;border-radius:8px;margin:6px 0}
+#chat{display:flex;flex-direction:column;min-height:40vh}
+</style>
+</head>
+<body><div class="wrap">
+<h1>🦙 Qwen3.6-35B Uncensored — lokal</h1>
+<div class="sub" id="status">Memuat status…</div>
+<div id="chat"></div>
+<div class="row">
+<textarea id="input" placeholder="Tanya apa saja…"></textarea>
+<button id="send">Kirim</button>
+</div>
+</div>
+<script>
+const chat=document.getElementById("chat");const input=document.getElementById("input");const btn=document.getElementById("send");let msgs=[];let busy=false;
+async function loadStatus(){try{const r=await fetch("/api/status");const d=await r.json();document.getElementById("status").textContent="model="+d.model+" | VRAM="+JSON.stringify(d.vram)+" | ctx="+d.n_ctx;}catch(e){document.getElementById("status").textContent="status error: "+e;}}
+function add(role,text){const d=document.createElement("div");d.className="msg "+role;d.textContent=text;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
+btn.onclick=async()=>{if(busy)return;const t=input.value.trim();if(!t)return;busy=true;btn.disabled=true;msgs.push({role:"user",content:t});add("user",t);input.value="";const as=document.createElement("div");as.className="msg assistant";const think=document.createElement("div");think.className="reasoning";think.style.display="none";const out=document.createElement("div");as.appendChild(think);as.appendChild(out);chat.appendChild(as);chat.scrollTop=chat.scrollHeight;let acc="",rac="";const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:msgs,thinking:true})});const reader=r.body.getReader();const dec=new TextDecoder();let buf="";while(true){const {value,done}=await reader.read();if(done)break;buf+=dec.decode(value,{stream:true});const parts=buf.split("\\n\\n");buf=parts.pop();for(const p of parts){for(const line of p.split("\\n")){if(!line.startsWith("data:"))continue;try{const j=JSON.parse(line.slice(5).trim());if(j.r){rac+=j.r;think.style.display="block";think.textContent=rac;} if(j.t){acc+=j.t;out.textContent=acc;} if(j.e){const e=document.createElement("div");e.className="err";e.textContent=j.e;as.appendChild(e);} if(j.done){const s=document.createElement("div");s.className="stats";s.textContent=`${j.stats.tokens} token • ${j.stats.secs}s • ${j.stats.tps} t/s`;as.appendChild(s);} }catch(e){} }}}msgs.push({role:"assistant",content:acc});busy=false;btn.disabled=false;chat.scrollTop=chat.scrollHeight;};
+loadStatus();setInterval(loadStatus,10000);
+</script></body></html>
+"""
+import pathlib
+pathlib.Path("/marimo/chat_app/index.html").write_text(html)
+print("written index size:", pathlib.Path("/marimo/chat_app/index.html").stat().st_size)

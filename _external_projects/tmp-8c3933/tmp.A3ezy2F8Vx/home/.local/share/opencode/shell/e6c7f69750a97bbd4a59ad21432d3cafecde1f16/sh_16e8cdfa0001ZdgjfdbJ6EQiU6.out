@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+model pid alive: True
+python3 /marimo/start_model.py 
+health ERR <urlopen error [Errno 111] Connection refused>
+out:
+
+

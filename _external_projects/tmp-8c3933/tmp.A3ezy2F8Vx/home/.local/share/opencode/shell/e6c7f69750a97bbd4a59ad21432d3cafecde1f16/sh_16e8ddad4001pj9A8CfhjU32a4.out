@@ -1,0 +1,6 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+model pid alive: True
+model health ERR <urlopen error [Errno 111] Connection refused>
+app health 200
+public root 200
+

@@ -1,0 +1,12 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+CWD /marimo
+TOP ['.config', '.env', '__marimo__', 'chat_app', 'notebook.py', 'pyproject.toml', 'run_ngrok.py', 'start_model.py']
+NOTEBOOK exists True
+chat_app ['app.py']
+ngrok binary tools?
+curl /usr/bin/curl
+python3 /tmp/uv-venv/bin/python3
+uvicorn /usr/local/bin/uvicorn
+cloudflared None
+ngrok None
+
