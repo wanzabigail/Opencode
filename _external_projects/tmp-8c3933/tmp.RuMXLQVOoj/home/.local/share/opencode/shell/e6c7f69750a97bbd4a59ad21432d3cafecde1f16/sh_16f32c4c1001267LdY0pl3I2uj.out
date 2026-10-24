@@ -1,0 +1,50 @@
+origin	https://github.com/wanzabigail/Opencode (fetch)
+origin	https://github.com/wanzabigail/Opencode (push)
+---
+/usr/bin/gh
+github.com
+  ✓ Logged in to github.com account github-actions[bot] (GH_TOKEN)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: ghs_*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************
+---
+GITHUB_WORKSPACE=<set>
+GITHUB_PATH=<set>
+GITHUB_ACTION=<set>
+GITHUB_RUN_NUMBER=<set>
+GITHUB_REPOSITORY_OWNER_ID=<set>
+GH_TOKEN=<set>
+GITHUB_TRIGGERING_ACTOR=<set>
+GITHUB_REF_TYPE=<set>
+GITHUB_ARTIFACTS_LIST=<set>
+GITHUB_REPOSITORY_ID=<set>
+GITHUB_ACTIONS=<set>
+GITHUB_SHA=<set>
+GITHUB_WORKFLOW_REF=<set>
+GITHUB_REF=<set>
+GITHUB_REF_PROTECTED=<set>
+GITHUB_API_URL=<set>
+GITHUB_STATE=<set>
+GITHUB_ENV=<set>
+GITHUB_EVENT_PATH=<set>
+GITHUB_EVENT_NAME=<set>
+GITHUB_RUN_ID=<set>
+GITHUB_STEP_SUMMARY=<set>
+GITHUB_ACTOR=<set>
+GITHUB_RUN_ATTEMPT=<set>
+GITHUB_GRAPHQL_URL=<set>
+GITHUB_SERVER_URL=<set>
+GITHUB_ACTOR_ID=<set>
+GITHUB_ARTIFACTS=<set>
+GITHUB_WORKFLOW_SHA=<set>
+GITHUB_REF_NAME=<set>
+GITHUB_JOB=<set>
+GITHUB_REPOSITORY=<set>
+GITHUB_RETENTION_DAYS=<set>
+GITHUB_ACTION_REPOSITORY=<set>
+GITHUB_BASE_REF=<set>
+GITHUB_REPOSITORY_OWNER=<set>
+GITHUB_HEAD_REF=<set>
+GITHUB_ACTION_REF=<set>
+GITHUB_WORKFLOW=<set>
+GITHUB_OUTPUT=<set>

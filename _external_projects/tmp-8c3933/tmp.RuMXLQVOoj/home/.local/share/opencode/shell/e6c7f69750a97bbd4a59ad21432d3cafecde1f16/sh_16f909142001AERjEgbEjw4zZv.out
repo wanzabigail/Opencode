@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+0.06.941.461 I common_speculative_init_result: loading draft model '/marimo/llm/models/Qwen3.8-27B-FastMTP-32K.gguf'
+0.07.935.150 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 204800, kv_unified = 'false'
+
+wall 6.9s | PP 149 tok/s | TG 78.6 tok/s | draft 298/637
+finish: length | answer: 
+

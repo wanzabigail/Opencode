@@ -1,0 +1,11 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+output.weight [5120, 32768]
+d2t [32768]
+token_embd.weight [5120, 248320]
+blk.0.attn_q.weight None
+d2t-like: ['d2t']
+tensor count: 19
+names sample: ['output.weight', 'output_norm.weight', 'token_embd.weight', 'blk.64.attn_k.weight', 'blk.64.attn_k_norm.weight', 'blk.64.attn_norm.weight', 'blk.64.attn_output.weight', 'blk.64.attn_q.weight']
+
+ERR: 
+
