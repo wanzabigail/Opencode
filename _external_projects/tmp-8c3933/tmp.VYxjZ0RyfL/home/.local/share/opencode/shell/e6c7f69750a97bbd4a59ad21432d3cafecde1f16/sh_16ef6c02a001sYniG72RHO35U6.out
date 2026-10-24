@@ -1,0 +1,5 @@
+3
+<br />
+<b>Notice</b>:  Only variables should be assigned by reference in <b>/www/wwwroot/www.umidigi.com/mobile/includes/init.php</b> on line <b>150</b><br />
+<br />
+<b>Parse error</b>:  syntax error, unexpected 'new' (T_NEW) in <b>/www/wwwroot/www.umidigi.com/includes/lib.debug.php</b> on line <b>303</b><br />
