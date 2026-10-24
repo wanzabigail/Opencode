@@ -1,0 +1,11 @@
+admin_found=200
+zzz_notfound=200
+=== EXTRACTING CONFIG ===
+
+  server_name: www.umidigi.com
+  server_name: umidigi.com
+
+  fastcgi_pass: unix:/tmp/php-cgi-
+  fastcgi_pass: unix:/var/run/php/php
+  fastcgi_pass: 127.0.0.1:9000
+  fastcgi_pass: 127.0.0.1:9501

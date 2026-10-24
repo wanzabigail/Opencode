@@ -1,0 +1,12 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+49:        LLAMA_LOG_INFO("%s: QWEN35 MTP using d2t draft-vocab trim (n_vocab_out = %lld)\n",
+61:        GGML_ASSERT(!d2t && "d2t draft-vocab trim requires output.weight");
+41:    { LLM_ARCH_QWEN35,           "qwen35"           },
+42:    { LLM_ARCH_QWEN35MOE,        "qwen35moe"        },
+1000:        case LLM_ARCH_QWEN35:
+1001:        case LLM_ARCH_QWEN35MOE:
+1024:        case LLM_ARCH_QWEN35:
+-rw-r--r-- 1 root root 56096 20:15 /marimo/llm/llama.cpp-src/build/src/CMakeFiles/llama.dir/models/qwen35.cpp.o
+115e618e1f73cb50817ed5856f0551c6bf9c3d94df96f440eaca78dc63b8968b  /marimo/llm/models/Qwen3.8-27B-FastMTP-32K.gguf
+
+

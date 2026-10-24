@@ -1,0 +1,12 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+stopped: 606
+777
+8704
+0.05.825.891 I common_speculative_init_result: loading draft model '/marimo/llm/models/Qwen3.8-27B-FastMTP-32K.gguf'
+0.05.903.009 I llama_model_loader: loaded meta data with 54 key-value pairs and 19 tensors from /marimo/llm/models/Qwen3.8-27B-FastMTP-32K.gguf (version GGUF V3 (latest))
+0.05.952.795 I llama_model_loader: - kv  37:                        general.description str              = Optional FastMTP draft for the Qwen3....
+0.06.307.555 I print_info: general.name          = Qwen3.8-27B-Uncensored-HauhauCS-Aggressive-FastMTP-32K
+0.06.307.869 I load_arch_tensors: QWEN35 MTP using d2t draft-vocab trim (n_vocab_out = 32768)
+0.06.794.902 I spec common_specu: adding speculative implementation 'draft-mtp'
+
+

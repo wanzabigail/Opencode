@@ -1,0 +1,3542 @@
+/home/runner/work/Opencode/Opencode/:
+total 32
+drwxr-xr-x 5 runner runner 4096 Oct 24 07:05 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:54 ..
+drwxr-xr-x 7 runner runner 4096 Oct 24 08:46 .git
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 .github
+-rw-r--r-- 1 runner runner  188 Oct 24 06:55 .gitignore
+-rw-r--r-- 1 runner runner 1034 Oct 24 06:55 AGENTS.md
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 _external_projects
+-rw-r--r-- 1 runner runner   99 Oct 24 06:55 opencode.json
+
+/home/runner/work/Opencode/Opencode/.git:
+total 208
+drwxr-xr-x   7 runner runner   4096 Oct 24 08:46 .
+drwxr-xr-x   5 runner runner   4096 Oct 24 07:05 ..
+-rw-r--r--   1 runner runner     39 Oct 24 08:46 COMMIT_EDITMSG
+-rw-r--r--   1 runner runner    332 Oct 24 08:46 FETCH_HEAD
+-rw-r--r--   1 runner runner     21 Oct 24 06:55 HEAD
+-rw-r--r--   1 runner runner    929 Oct 24 08:46 config
+-rw-r--r--   1 runner runner     83 Oct 24 06:55 config.worktree
+-rwxr-xr-x   1 runner runner     73 Oct 24 06:54 description
+drwxr-xr-x   2 runner runner   4096 Oct 24 06:54 hooks
+-rw-r--r--   1 runner runner 154946 Oct 24 08:46 index
+drwxr-xr-x   2 runner runner   4096 Oct 24 06:54 info
+drwxr-xr-x   3 runner runner   4096 Oct 24 06:55 logs
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 objects
+-rw-r--r--   1 runner runner     40 Oct 24 06:55 opencode
+drwxr-xr-x   5 runner runner   4096 Oct 24 06:55 refs
+
+/home/runner/work/Opencode/Opencode/.git/hooks:
+total 72
+drwxr-xr-x 2 runner runner 4096 Oct 24 06:54 .
+drwxr-xr-x 7 runner runner 4096 Oct 24 08:46 ..
+-rwxr-xr-x 1 runner runner  478 Oct 24 06:54 applypatch-msg.sample
+-rwxr-xr-x 1 runner runner 1972 Oct 24 06:54 commit-msg.sample
+-rwxr-xr-x 1 runner runner 4611 Oct 24 06:54 fsmonitor-watchman.sample
+-rwxr-xr-x 1 runner runner  189 Oct 24 06:54 post-update.sample
+-rwxr-xr-x 1 runner runner  424 Oct 24 06:54 pre-applypatch.sample
+-rwxr-xr-x 1 runner runner 1649 Oct 24 06:54 pre-commit.sample
+-rwxr-xr-x 1 runner runner  416 Oct 24 06:54 pre-merge-commit.sample
+-rwxr-xr-x 1 runner runner 1374 Oct 24 06:54 pre-push.sample
+-rwxr-xr-x 1 runner runner 4898 Oct 24 06:54 pre-rebase.sample
+-rwxr-xr-x 1 runner runner  544 Oct 24 06:54 pre-receive.sample
+-rwxr-xr-x 1 runner runner 1492 Oct 24 06:54 prepare-commit-msg.sample
+-rwxr-xr-x 1 runner runner 2783 Oct 24 06:54 push-to-checkout.sample
+-rwxr-xr-x 1 runner runner 2308 Oct 24 06:54 sendemail-validate.sample
+-rwxr-xr-x 1 runner runner 3650 Oct 24 06:54 update.sample
+
+/home/runner/work/Opencode/Opencode/.git/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 06:54 .
+drwxr-xr-x 7 runner runner 4096 Oct 24 08:46 ..
+-rwxr-xr-x 1 runner runner  240 Oct 24 06:54 exclude
+
+/home/runner/work/Opencode/Opencode/.git/logs:
+total 16
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 .
+drwxr-xr-x 7 runner runner 4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner 1125 Oct 24 08:46 HEAD
+drwxr-xr-x 4 runner runner 4096 Oct 24 06:55 refs
+
+/home/runner/work/Opencode/Opencode/.git/logs/refs:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 06:55 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 06:55 heads
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 remotes
+
+/home/runner/work/Opencode/Opencode/.git/logs/refs/heads:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 06:55 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 06:55 ..
+-rw-r--r-- 1 runner runner 1134 Oct 24 08:46 main
+
+/home/runner/work/Opencode/Opencode/.git/logs/refs/remotes:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 06:55 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 07:05 origin
+
+/home/runner/work/Opencode/Opencode/.git/logs/refs/remotes/origin:
+total 24
+drwxr-xr-x 2 runner runner 4096 Oct 24 07:05 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 ..
+-rw-r--r-- 1 runner runner  141 Oct 24 07:05 HEAD
+-rw-r--r-- 1 runner runner  487 Oct 24 07:05 gh-pages
+-rw-r--r-- 1 runner runner 1011 Oct 24 08:46 main
+-rw-r--r-- 1 runner runner  879 Oct 24 08:46 oc-backup
+
+/home/runner/work/Opencode/Opencode/.git/objects:
+total 876
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x   7 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 00
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 01
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 02
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 03
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 04
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 05
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 06
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 07
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 08
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 09
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 0b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 0c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 0d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 0f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 10
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 13
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 14
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 17
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 18
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 19
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 1a
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 1b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 1c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 1d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 1e
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 21
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 22
+drwxr-xr-x   2 runner runner 4096 Oct 24 07:05 23
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 26
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 27
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 29
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 2b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 2c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 2d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 2e
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 2f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 31
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 32
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 33
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 34
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 35
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 36
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 37
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 38
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 39
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 3a
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 3b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 3c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 3d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 3e
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 40
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 41
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 42
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 43
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 45
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 46
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 48
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 49
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 4a
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 4b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 4c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 4d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 4e
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 4f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 50
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 51
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 52
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 55
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 56
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 57
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 58
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 59
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 5a
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 5c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 5d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 5f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 60
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 61
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 63
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 64
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 65
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 67
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 68
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 69
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 6a
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 6b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 6c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 6d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 6f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 70
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 71
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 72
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 73
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 74
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 75
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 77
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 78
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 79
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 7a
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 7b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 7c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 7d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 7e
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 7f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 80
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 81
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 83
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 85
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 86
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 87
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 88
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 89
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 8b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 8d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 8e
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 8f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 90
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 91
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 92
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 93
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 94
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 97
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 98
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 99
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 9a
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 9b
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 9c
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 9d
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 9e
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 9f
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 a0
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 a1
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 a2
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 a3
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 a4
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 a5
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 a6
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 a7
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 a8
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 a9
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 aa
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 ab
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 ac
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 ad
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 ae
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 af
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 b0
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 b1
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 b2
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 b3
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 b4
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 b5
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 b7
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 b8
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 b9
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 bb
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 bc
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 bd
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 bf
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c0
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c1
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c2
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c3
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c4
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c5
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 c6
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c7
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c8
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 c9
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 cb
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 cc
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 cd
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 ce
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 cf
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 d0
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 d1
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 d2
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 d3
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 d4
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 d5
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 d6
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 d8
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 d9
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 da
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 db
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 dd
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 de
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 df
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 e0
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 e1
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 e4
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 e5
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 e7
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 e8
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 e9
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 ea
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 eb
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 ec
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 ee
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 ef
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 f0
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 f1
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 f2
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 f5
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 f6
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 f7
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 f9
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 fb
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 fe
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 ff
+drwxr-xr-x   2 runner runner 4096 Oct 24 06:54 info
+drwxr-xr-x   2 runner runner 4096 Oct 24 06:55 pack
+
+/home/runner/work/Opencode/Opencode/.git/objects/00:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   24 Oct 24 08:46 4f296d64f82d468bda735ddae29455fd7e6b41
+-r--r--r--   1 runner runner  101 Oct 24 07:05 71065ac8b164e71d276c0787327198cea8cb79
+
+/home/runner/work/Opencode/Opencode/.git/objects/01:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   54 Oct 24 08:46 09f7daa795b69c576c5c716ee788a05ee2ff21
+-r--r--r--   1 runner runner 1654 Oct 24 08:46 2071823a27df62542342394b973cf3349f9026
+-r--r--r--   1 runner runner  146 Oct 24 08:46 c130118c47970ac956ecb3858f91f5cb62a5c6
+
+/home/runner/work/Opencode/Opencode/.git/objects/02:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  908 Oct 24 08:46 385719d31099e00770ce0e3a6a1e33f15dd424
+-r--r--r--   1 runner runner   32 Oct 24 08:46 6baf2cdefe69fd71cc7f77c21f6d8191b4bb76
+
+/home/runner/work/Opencode/Opencode/.git/objects/03:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  151 Oct 24 08:46 2a2e5de65701779318d18e41f6ef96ccd10344
+-r--r--r--   1 runner runner  158 Oct 24 08:46 f36dd38a85594317e098cb8049b351e81cc066
+
+/home/runner/work/Opencode/Opencode/.git/objects/04:
+total 100
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 92985 Oct 24 08:46 ec71aa98c5de44a429b25c7301c3f95ec5d7a1
+
+/home/runner/work/Opencode/Opencode/.git/objects/05:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  512 Oct 24 08:46 27b36f1734fbefafb5497351bb411f07f4e1a8
+
+/home/runner/work/Opencode/Opencode/.git/objects/06:
+total 3460
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3512349 Oct 24 08:46 63dba8ab5013c0ffcfd0cef23d1d629681da3b
+-r--r--r--   1 runner runner     117 Oct 24 08:46 657ba0688e12d69e64db3cb544274bbb7eb46a
+-r--r--r--   1 runner runner    7666 Oct 24 08:46 76288b613a36b1de6e72552a01ed22ddf5609c
+-r--r--r--   1 runner runner    6220 Oct 24 08:46 dd844afe49d481eafbc3757f243ceaf23ce196
+
+/home/runner/work/Opencode/Opencode/.git/objects/07:
+total 32
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1557 Oct 24 08:46 40c0a1d26aa543cccd1cf5a45384097cc21001
+-r--r--r--   1 runner runner 3047 Oct 24 08:46 54ba075475cb16c0d3d41bea275c97d97d64e5
+-r--r--r--   1 runner runner  122 Oct 24 08:46 c522129e12aa62af76b54fdd6947a5530f6666
+-r--r--r--   1 runner runner 6270 Oct 24 08:46 d193a718b856a7ce0b4a4ce7d9514763c04675
+-r--r--r--   1 runner runner 1065 Oct 24 08:46 f7edcf88258d67db8e7e340afdb3a9b3f3953b
+
+/home/runner/work/Opencode/Opencode/.git/objects/08:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   19 Oct 24 08:46 839f6bb296e888d311d8ea2f35f7ff82dd3f2d
+
+/home/runner/work/Opencode/Opencode/.git/objects/09:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1135 Oct 24 08:46 d8a2a7dba8278f8fda8f5e58734e5395a711df
+
+/home/runner/work/Opencode/Opencode/.git/objects/0b:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  869 Oct 24 08:46 544a6a0cfce0c7307eaee760f4407fdef072f8
+
+/home/runner/work/Opencode/Opencode/.git/objects/0c:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3470 Oct 24 08:46 5796dad10aa8fa24c787dc884d62a199316fab
+-r--r--r--   1 runner runner   40 Oct 24 08:46 8e7b5ff70c86089c1622630fec1f79845d6570
+-r--r--r--   1 runner runner  559 Oct 24 08:26 ab133f5e9ab98604a793214ff84314dd60839a
+
+/home/runner/work/Opencode/Opencode/.git/objects/0d:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   63 Oct 24 08:36 12a7249a4cb4f227b61d4ad8ce9ad26d39093d
+-r--r--r--   1 runner runner  381 Oct 24 08:15 59991ea3ba60f4e59fbf3ccc59f310eaa05e74
+-r--r--r--   1 runner runner   94 Oct 24 08:46 6749de828d7f409ebc71c335c41ce39ef889ac
+-r--r--r--   1 runner runner  128 Oct 24 08:46 e690bbd09e0bc6cc4f28ec09f974332e99413b
+
+/home/runner/work/Opencode/Opencode/.git/objects/0f:
+total 2240
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner    6173 Oct 24 08:46 60da11de55eda25365876918e56933a6f16770
+-r--r--r--   1 runner runner     173 Oct 24 08:46 ae099b35e0d0081120175a4fab97b05a09136d
+-r--r--r--   1 runner runner 2269378 Oct 24 08:46 c3d15e2a30bfc0215e225e97b825e3bf35b65e
+
+/home/runner/work/Opencode/Opencode/.git/objects/10:
+total 892
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 896285 Oct 24 08:46 00aa5b9a65359d6e4b9193fc664855d20ffb76
+-r--r--r--   1 runner runner    288 Oct 24 08:15 26bfbbffa99f8c077397af8252702babbde272
+-r--r--r--   1 runner runner    784 Oct 24 08:46 fa14c5ab0134436e2ae435138bf921eb477c60
+
+/home/runner/work/Opencode/Opencode/.git/objects/12:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1695 Oct 24 08:46 b1d69d6a2e9faad27490f1ad2b542b6c5646cf
+
+/home/runner/work/Opencode/Opencode/.git/objects/13:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  548 Oct 24 08:46 a2043b136d30d35368c94f3970c7eee374fb3a
+-r--r--r--   1 runner runner   50 Oct 24 08:46 a6150e4736eda7c465afb5c2a014d340e15d25
+
+/home/runner/work/Opencode/Opencode/.git/objects/14:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1791 Oct 24 08:46 8020c5bf1dc3a3a60c9007cd8ff5f3dc114d0a
+
+/home/runner/work/Opencode/Opencode/.git/objects/16:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 4776 Oct 24 08:46 cc977543f5082018f48e0a7146b711e352af23
+
+/home/runner/work/Opencode/Opencode/.git/objects/17:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  142 Oct 24 07:05 5ecf83db8f7239929dfeffe3f56bad82641f9b
+-r--r--r--   1 runner runner  145 Oct 24 08:26 7f59dfea8d9f4a84d7fb304852664f9820e190
+
+/home/runner/work/Opencode/Opencode/.git/objects/18:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2461 Oct 24 08:46 1105d7723e1f73de94bbdc4c44c73d9da15b95
+-r--r--r--   1 runner runner  588 Oct 24 08:26 d695e20a7b2d2c02c4e9e1afb48b78a5c1b47d
+
+/home/runner/work/Opencode/Opencode/.git/objects/19:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  399 Oct 24 08:46 920afccfab6ef174821f07bce55d0be45a913f
+-r--r--r--   1 runner runner  193 Oct 24 08:46 e6e2e57e7989ebee543aa9d076cc40d078d619
+
+/home/runner/work/Opencode/Opencode/.git/objects/1a:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  187 Oct 24 08:46 4edfcb35e200d0d7c47308c127fb4edd696871
+-r--r--r--   1 runner runner   53 Oct 24 08:46 c13f58dd23171daebf8183dfc49a45d78794c8
+
+/home/runner/work/Opencode/Opencode/.git/objects/1b:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  122 Oct 24 08:46 9b236ca2c2685d1d9f25715b387cc0c0c88ccd
+-r--r--r--   1 runner runner   30 Oct 24 08:46 ecba2bb0a80e7b9b0a7715f15e56512a7e5f7e
+
+/home/runner/work/Opencode/Opencode/.git/objects/1c:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  550 Oct 24 08:46 ade0da8fd9b4c2257f01bddad681fc606d24e2
+
+/home/runner/work/Opencode/Opencode/.git/objects/1d:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  287 Oct 24 08:46 b77f1034fdde7b0eaa789ad11e2dfa02a8449b
+
+/home/runner/work/Opencode/Opencode/.git/objects/1e:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  300 Oct 24 08:46 46d19a01bd83fa69653216b92e9fa89445eaf2
+-r--r--r--   1 runner runner  200 Oct 24 08:46 5a22835828cbe014ac862c077f5ac4a6ba272b
+-r--r--r--   1 runner runner 1941 Oct 24 08:46 91238f97e7b6fd00501e1310b4869281cfb5aa
+-r--r--r--   1 runner runner  453 Oct 24 08:26 a908fa07a92e566dbc42531113b43dd39f45ef
+
+/home/runner/work/Opencode/Opencode/.git/objects/20:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2494 Oct 24 08:46 2e58503a1f835f38f4bf4f1ead3ae7f5920c04
+-r--r--r--   1 runner runner 5194 Oct 24 08:46 36fd8f9569dea57a534c964d5962668bb7ed40
+
+/home/runner/work/Opencode/Opencode/.git/objects/21:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3422 Oct 24 08:46 c33da3ec0d5a1d47ce1f1b1795b73bfd7ab8b3
+
+/home/runner/work/Opencode/Opencode/.git/objects/22:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  109 Oct 24 08:46 3832536197449a171d66292c7235dedbf46b63
+-r--r--r--   1 runner runner  146 Oct 24 08:36 e868f4f4b76165760a1e4f3d30bf2c585cae56
+
+/home/runner/work/Opencode/Opencode/.git/objects/23:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 07:05 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   54 Oct 24 08:46 fb92f8549bb016f15c2f97dcddc2c3b5d7d859
+
+/home/runner/work/Opencode/Opencode/.git/objects/24:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   57 Oct 24 08:46 69f3a3ffde2d8542943e64511c77c271e340da
+
+/home/runner/work/Opencode/Opencode/.git/objects/26:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  404 Oct 24 08:46 3d71a70133f7f4d044a9a9fa0e420c8f69043f
+
+/home/runner/work/Opencode/Opencode/.git/objects/27:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 7377 Oct 24 08:46 0bee67a73b886303d8d7f07538a0a8e3dccee2
+-r--r--r--   1 runner runner  512 Oct 24 08:36 251b6ebfbef759cbbe7fbc0192acba5ce0d807
+
+/home/runner/work/Opencode/Opencode/.git/objects/28:
+total 44
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 33424 Oct 24 08:46 23b5b5461616ba8d504685e01d1595e7cdf29f
+
+/home/runner/work/Opencode/Opencode/.git/objects/29:
+total 32
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 4957 Oct 24 08:46 326c02f53d3331982e9bdfebbb530b29e0b465
+-r--r--r--   1 runner runner  124 Oct 24 08:46 3abef5bdd02a7106bd7761a89d880fd85972e0
+-r--r--r--   1 runner runner  886 Oct 24 08:46 e66f798838b0ab4306c3a0ea1483383711d113
+-r--r--r--   1 runner runner 3503 Oct 24 08:46 e7ab64faeec024fc2f8e92cd6248807c8a4d68
+-r--r--r--   1 runner runner  947 Oct 24 08:46 ed5ee486a4f07c3f0558101ef8efc46f3d6ab7
+
+/home/runner/work/Opencode/Opencode/.git/objects/2b:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  610 Oct 24 08:46 041446231cb9c6b6424e33f384b3dbeada0081
+-r--r--r--   1 runner runner   37 Oct 24 08:46 089db925fa8c6571ad4ff910478edac9eee9ea
+-r--r--r--   1 runner runner  113 Oct 24 08:46 88cc757317fbe56611d552466609a0262cf077
+
+/home/runner/work/Opencode/Opencode/.git/objects/2c:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6204 Oct 24 08:46 4379fb7759fb1cdefed8896a38bbe5305c0541
+-r--r--r--   1 runner runner   46 Oct 24 08:36 71a43504b7224ae26c9af728ea15781d8d282a
+
+/home/runner/work/Opencode/Opencode/.git/objects/2d:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  151 Oct 24 08:46 7109ab030c3f5ad9e158251a3ad7399f379864
+
+/home/runner/work/Opencode/Opencode/.git/objects/2e:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  488 Oct 24 08:46 13ee114b859e36b51cebb2373be20626696f11
+-r--r--r--   1 runner runner  563 Oct 24 08:15 1cfec166b4a6fe18ce1288438de5db2d84269b
+-r--r--r--   1 runner runner  489 Oct 24 08:46 e4e6fbec9d9dd11dbab52ca7e9ca788e2f5373
+-r--r--r--   1 runner runner   89 Oct 24 07:05 feb010f3def9c2691849e998eea05f8fa75203
+
+/home/runner/work/Opencode/Opencode/.git/objects/2f:
+total 80
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 71774 Oct 24 08:46 8bed3d81d1d3d3ff7e15fb9e5520a07da854d9
+
+/home/runner/work/Opencode/Opencode/.git/objects/31:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  648 Oct 24 08:46 9c1bc5511c716cf6c711565dbb72f2de8705bb
+-r--r--r--   1 runner runner   91 Oct 24 08:46 cf56089b1503b56d1aa793e907cb776f559207
+-r--r--r--   1 runner runner  278 Oct 24 08:15 de768c3af2f20f4e7047b0b5ee22c6ed04fee3
+
+/home/runner/work/Opencode/Opencode/.git/objects/32:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  426 Oct 24 08:46 48e68c27b86da8cc747ed17002418f52d414b2
+-r--r--r--   1 runner runner  151 Oct 24 08:46 77dcdd7ad288975bd6d1a1a7496e1246c6aef8
+-r--r--r--   1 runner runner  136 Oct 24 08:46 e4ad040858b1a11bb703eeef5d00a80acfe1cc
+
+/home/runner/work/Opencode/Opencode/.git/objects/33:
+total 100
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 93823 Oct 24 08:46 f3d2522d0f204fa2ab1a853a1fbf2d35463f56
+
+/home/runner/work/Opencode/Opencode/.git/objects/34:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3036 Oct 24 08:36 ab3af6d16eb10265206007f7bca05e95212e5b
+
+/home/runner/work/Opencode/Opencode/.git/objects/35:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2501 Oct 24 08:46 202fb80a9a322de52f18f20b38e1c9d2d94098
+-r--r--r--   1 runner runner  142 Oct 24 08:46 d018b7eb363f4a07d87ee2d23160c5cb610a42
+
+/home/runner/work/Opencode/Opencode/.git/objects/36:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  138 Oct 24 08:46 59c393c54dfe13595e18b127eb718e545ecc11
+-r--r--r--   1 runner runner  157 Oct 24 08:46 5b73da6fc990f7b6fc5ef246febf94111e0775
+
+/home/runner/work/Opencode/Opencode/.git/objects/37:
+total 24
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 10538 Oct 24 08:46 56954c51d7c29ca1f4dd7dcd3251513c8c929c
+-r--r--r--   1 runner runner  1027 Oct 24 08:46 f1048094bdd961840a4dfab5dbc45817899f5f
+
+/home/runner/work/Opencode/Opencode/.git/objects/38:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  993 Oct 24 08:46 2b925f511b596b7e90d736e1c5060ce7eec0bc
+-r--r--r--   1 runner runner  291 Oct 24 08:46 33bf1e4dd89d487c800963ab5584bbc5c84ef5
+-r--r--r--   1 runner runner   68 Oct 24 08:46 68305e61146e858258a707f662dfc570f32683
+
+/home/runner/work/Opencode/Opencode/.git/objects/39:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  272 Oct 24 08:46 9eab1924e39da570b389b0bef1ca713b3b05c3
+
+/home/runner/work/Opencode/Opencode/.git/objects/3a:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  310 Oct 24 08:46 5dbdcca6ed57cb186c77ffe8dcc27bf90c9e4c
+-r--r--r--   1 runner runner 3468 Oct 24 08:15 ad8e86edefcf296890126ba3de062f0fc58ab0
+-r--r--r--   1 runner runner   47 Oct 24 08:26 f3cf2688ae7b548c39e19fdd5185c75a8941bf
+
+/home/runner/work/Opencode/Opencode/.git/objects/3b:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  133 Oct 24 08:46 63188e553d1c18f6f10455dba141985e46e3d8
+-r--r--r--   1 runner runner  207 Oct 24 08:26 ca6f51451bba23397b9d0c63cfcb6ad640a65e
+
+/home/runner/work/Opencode/Opencode/.git/objects/3c:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6304 Oct 24 08:46 138bd2a25316ccddcf5a9e4c9e292e0bbd44bb
+-r--r--r--   1 runner runner   78 Oct 24 08:15 8d380c9548541ff84ab0baaed5e35ee6685173
+
+/home/runner/work/Opencode/Opencode/.git/objects/3d:
+total 2116
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner     115 Oct 24 08:46 5e518bd17b248b22ad5ac04557e42ae31a8371
+-r--r--r--   1 runner runner 2153538 Oct 24 07:05 dfbbaf59e7aa06d9299d02bc1b87310fe472d4
+
+/home/runner/work/Opencode/Opencode/.git/objects/3e:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   55 Oct 24 08:46 3db1a01a4c090f2e6a2f4cde9899e96c14ea8d
+-r--r--r--   1 runner runner 3583 Oct 24 08:46 90c387cabbbc52878f9f06a662e1702add6672
+
+/home/runner/work/Opencode/Opencode/.git/objects/40:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   82 Oct 24 08:46 bb8ead298a6d458faf2da7f309dc4e002ad630
+
+/home/runner/work/Opencode/Opencode/.git/objects/41:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  281 Oct 24 08:46 42082bcb939bbc17985a69ba748491ac6b62a5
+-r--r--r--   1 runner runner 3941 Oct 24 08:46 9781e7a9671489b6659d087625213a68bab356
+
+/home/runner/work/Opencode/Opencode/.git/objects/42:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1930 Oct 24 08:46 9e0a51c12efcc3dd2cdad7e7fc1ec971c9b739
+-r--r--r--   1 runner runner  148 Oct 24 08:46 c9aab5c21c19f7e525c0666629e22f008a447d
+
+/home/runner/work/Opencode/Opencode/.git/objects/43:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  652 Oct 24 08:46 9084c24ef2e0281dc4ca83a1f3cdab7616a731
+
+/home/runner/work/Opencode/Opencode/.git/objects/45:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1537 Oct 24 08:46 40c85ed57f611c36024e458c8178cbe9d3713c
+-r--r--r--   1 runner runner  428 Oct 24 08:46 b01d4a8f5f9ed8a1b468bbd634f2358cff988d
+-r--r--r--   1 runner runner  546 Oct 24 08:46 fc22c31becd26e06be267229482732a5d6bb7a
+
+/home/runner/work/Opencode/Opencode/.git/objects/46:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  212 Oct 24 08:46 2c0ed550e4fc3c04352aa6bc342b055f7d3e42
+
+/home/runner/work/Opencode/Opencode/.git/objects/48:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   46 Oct 24 08:46 036d9129a3e413d4b1d722034e82534900fe42
+-r--r--r--   1 runner runner  256 Oct 24 08:46 3880e55f748857bc8f73fe77c9b6f0b19b7966
+-r--r--r--   1 runner runner 2525 Oct 24 08:46 9bf194af290fcb60ef17a45fe8f50110ba46ea
+
+/home/runner/work/Opencode/Opencode/.git/objects/49:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  149 Oct 24 08:15 0a35a3741473a8d37c454fdc5898a59fd3369c
+-r--r--r--   1 runner runner 5971 Oct 24 08:46 7875a21abe21219cc24f15c8a929d1e5b45dc9
+-r--r--r--   1 runner runner   77 Oct 24 08:46 8b267a8c7812490d6479839c5577eaaec79d62
+
+/home/runner/work/Opencode/Opencode/.git/objects/4a:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  553 Oct 24 08:46 b087cf20191397feda80ac193eea4ac56bda5e
+
+/home/runner/work/Opencode/Opencode/.git/objects/4b:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   19 Oct 24 08:46 19a81fe98601f44506309cfb8e072522b6c658
+-r--r--r--   1 runner runner  705 Oct 24 08:26 865b813533845afa64d192ebed7a933e363aec
+-r--r--r--   1 runner runner   62 Oct 24 08:46 abf2d457cff00a1b2f47082b82b4fb3c869112
+
+/home/runner/work/Opencode/Opencode/.git/objects/4c:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1655 Oct 24 08:36 2e31c3b17049be3b31ed6694121a4cb73dfe19
+-r--r--r--   1 runner runner  202 Oct 24 08:46 b048f6570c4abd60da861742df1a3fb66b197a
+-r--r--r--   1 runner runner  740 Oct 24 08:46 e688d32b7532862767345f2b991ae856f7d4a8
+
+/home/runner/work/Opencode/Opencode/.git/objects/4d:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  242 Oct 24 08:46 fb6c9acb9a720bb0361cd65574340be40c14ff
+
+/home/runner/work/Opencode/Opencode/.git/objects/4e:
+total 76
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   199 Oct 24 08:15 2ec212295c5132918de148cb147786a255f479
+-r--r--r--   1 runner runner   582 Oct 24 08:46 7e58a121005a8ff82c725add386eb8ecc88fc2
+-r--r--r--   1 runner runner 52424 Oct 24 08:46 e7284337c61dd7d445e0f159b521685fd9ebb3
+-r--r--r--   1 runner runner   210 Oct 24 08:15 f519b2fa611786a2f3741bea8273780360e232
+-r--r--r--   1 runner runner   210 Oct 24 08:26 fcc87d07560c4651a4e09b8cbf7ce977ae64e0
+
+/home/runner/work/Opencode/Opencode/.git/objects/4f:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  343 Oct 24 08:46 0cb90b9110b81bf98315c8f7a7e905d707e527
+
+/home/runner/work/Opencode/Opencode/.git/objects/50:
+total 36
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   251 Oct 24 08:46 572daa3e16c468aa3be8b65b31c865ee9a4efd
+-r--r--r--   1 runner runner 23120 Oct 24 08:46 e0c0f93e4d538832654fc1dd4746939a1ae67a
+
+/home/runner/work/Opencode/Opencode/.git/objects/51:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  135 Oct 24 08:46 53cb133bcb1c016defd92661d77d29812b7c79
+
+/home/runner/work/Opencode/Opencode/.git/objects/52:
+total 3128
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner     158 Oct 24 08:46 60a1a58ced38f024ae9382a851aade3ab941c5
+-r--r--r--   1 runner runner 3159076 Oct 24 08:26 80684a93f043553c701e1dda104c56ada414c1
+-r--r--r--   1 runner runner   23711 Oct 24 08:46 c85f1477c535017cc7d974d62a5b483514ed14
+-r--r--r--   1 runner runner    2129 Oct 24 08:46 d82fcde93896df2f9b08bd5268b5c238930cdf
+
+/home/runner/work/Opencode/Opencode/.git/objects/55:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6349 Oct 24 08:46 3603a5e0fc2eea0b672e975f1267ca1de840ca
+-r--r--r--   1 runner runner  486 Oct 24 08:46 535946803727d660e76cd8e41b86541d4bf5ae
+-r--r--r--   1 runner runner 1681 Oct 24 08:26 7c28d42158c6d42945a016d36011505ddf005b
+
+/home/runner/work/Opencode/Opencode/.git/objects/56:
+total 40
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6350 Oct 24 08:46 1da2717136dba4fe4e80df78e95cbf0cca6006
+-r--r--r--   1 runner runner 7460 Oct 24 08:46 409e0364ae27e949af883ed02e70505d0fca64
+-r--r--r--   1 runner runner 4630 Oct 24 08:46 45dc0db3ae6d97953f9d567adf37ebfd9414a6
+-r--r--r--   1 runner runner 6239 Oct 24 08:46 9ec0665f24ad17436f67beddfb7e8df88419e5
+
+/home/runner/work/Opencode/Opencode/.git/objects/57:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  193 Oct 24 08:26 6e45b6a47ddd49e5bfa56e8c15da396eebac5f
+
+/home/runner/work/Opencode/Opencode/.git/objects/58:
+total 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  287 Oct 24 08:46 0bb7cc6c02df56e3c6d486db1ab57a715c905b
+-r--r--r--   1 runner runner  136 Oct 24 08:26 1b04285d6252161f022a970ea8fd31776947c3
+-r--r--r--   1 runner runner  303 Oct 24 08:26 56ea1b99a32359ba66a47ba762e7070a124490
+-r--r--r--   1 runner runner   86 Oct 24 08:46 72a96091c1930df958f3bb5bd57dff623a14e7
+-r--r--r--   1 runner runner  358 Oct 24 08:36 944bb52d071ade8272c9ab079ed6461e7bbc0c
+
+/home/runner/work/Opencode/Opencode/.git/objects/59:
+total 488
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 491139 Oct 24 08:46 c90a23b3bf902a6fa6105f19ef722a97744988
+
+/home/runner/work/Opencode/Opencode/.git/objects/5a:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2809 Oct 24 08:26 0929f2d2b11f4e38daa9c724185a52c836b67e
+-r--r--r--   1 runner runner  619 Oct 24 08:15 45379243359ec74491151357c15de22292a75c
+
+/home/runner/work/Opencode/Opencode/.git/objects/5c:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  145 Oct 24 08:15 20ffdc1c4b1066fc1de7e67e59de20eeffab0a
+-r--r--r--   1 runner runner  622 Oct 24 08:26 2515ab00d8131581cafb5b8ff145d6c223bb75
+-r--r--r--   1 runner runner  260 Oct 24 08:26 8a176dd81a1d57616d1c0786f000965807ace6
+
+/home/runner/work/Opencode/Opencode/.git/objects/5d:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  124 Oct 24 08:26 811f83a4b85f7bd78f72846d4738905f6b3bc6
+-r--r--r--   1 runner runner 6238 Oct 24 08:46 829f1fe4054688150f91817abadb8da8dae603
+
+/home/runner/work/Opencode/Opencode/.git/objects/5f:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  156 Oct 24 08:46 2cf686c7a45860f31451752af871913be641a1
+-r--r--r--   1 runner runner 3300 Oct 24 08:46 b915987476fd3eb519931e2b16d953f3c07e71
+
+/home/runner/work/Opencode/Opencode/.git/objects/60:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   51 Oct 24 08:46 8479b829d2a40c2fa71c1d393f09be1408e6f5
+-r--r--r--   1 runner runner  173 Oct 24 08:46 faf7d37bbb3c69c1b443421a7d6949e7a371e6
+
+/home/runner/work/Opencode/Opencode/.git/objects/61:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3504 Oct 24 08:46 7530fd97751a133f16779ae6815681373f028c
+-r--r--r--   1 runner runner 1065 Oct 24 08:46 a1c595cd13ce2d85a9193e2ce9d5b4510d98ca
+-r--r--r--   1 runner runner 1560 Oct 24 08:46 a28581e6c18b68ff3fdb81ff089226fd6f606b
+
+/home/runner/work/Opencode/Opencode/.git/objects/63:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  915 Oct 24 08:46 9db0af3812abc35b12174c24217510c472dc14
+-r--r--r--   1 runner runner  179 Oct 24 08:46 efcd7931a4829fcb1a0328eed1437b4f7217aa
+
+/home/runner/work/Opencode/Opencode/.git/objects/64:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1030 Oct 24 08:46 0bcf874dc0bef6d128d09ed4881f0616395ed8
+-r--r--r--   1 runner runner   56 Oct 24 08:46 14f33d6ee78ba462264b4149ca7130e4cfbcf2
+-r--r--r--   1 runner runner  144 Oct 24 07:05 978537a86a438c532cc085dbe76d1d98a01d44
+-r--r--r--   1 runner runner   18 Oct 24 08:46 bb6b746dceaf12b0ba8c08f310b0426babde44
+
+/home/runner/work/Opencode/Opencode/.git/objects/65:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   92 Oct 24 08:15 627992ed952997f4f6dcd30229e70c5393417e
+-r--r--r--   1 runner runner 2608 Oct 24 08:46 f69294c7937728351bfc9c5cc1ba2cf3e331ea
+
+/home/runner/work/Opencode/Opencode/.git/objects/67:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1063 Oct 24 08:26 5c19143df4dcfb305c8ca365da8ed281b9378d
+-r--r--r--   1 runner runner  524 Oct 24 08:46 990ed7aea9b59d1b58bb96bf47add272654e9c
+-r--r--r--   1 runner runner  369 Oct 24 08:36 eaa3953ff9fdc22ca36884eb55f972961ccc7d
+-r--r--r--   1 runner runner  547 Oct 24 08:26 f8ecb213fdc3759307d016bd764b2244a3b983
+
+/home/runner/work/Opencode/Opencode/.git/objects/68:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  163 Oct 24 08:46 6279346536a92a68d7506ac355c515ad256919
+
+/home/runner/work/Opencode/Opencode/.git/objects/69:
+total 3124
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner      52 Oct 24 08:46 0ec74664562f65a3e1e9ec75fb32d35c38d131
+-r--r--r--   1 runner runner 3185456 Oct 24 08:36 72baea37cabf4fa43e370cd1d9d66478774b9f
+
+/home/runner/work/Opencode/Opencode/.git/objects/6a:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  954 Oct 24 08:46 bc0a351bf95ec7892253f5d46aa1c7b1465d56
+-r--r--r--   1 runner runner  393 Oct 24 08:46 ea5b02e40bec205b0e805d053b900ea4d85cd1
+
+/home/runner/work/Opencode/Opencode/.git/objects/6b:
+total 76
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  3318 Oct 24 08:46 0328ae7459d164eb825114be3308a466946aa8
+-r--r--r--   1 runner runner 54349 Oct 24 08:46 7cc5ab2b24df0ab6e3fb5675176454c40d0564
+-r--r--r--   1 runner runner   473 Oct 24 08:46 b215faa9a1b7b6a6b5a719b3b0d0b53a27bf50
+-r--r--r--   1 runner runner   770 Oct 24 08:46 ed1206b0d635bb00cf7d085c72d12bbf1c034b
+
+/home/runner/work/Opencode/Opencode/.git/objects/6c:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 4146 Oct 24 08:26 42e2714f85e206af3800af21003044d522b0c9
+-r--r--r--   1 runner runner 2176 Oct 24 08:46 bef5c370d8c3486ca85423dd70440c5e0a2aa2
+
+/home/runner/work/Opencode/Opencode/.git/objects/6d:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  543 Oct 24 08:46 f25d17feb859e7a6dab1431ae4d5133b569cf9
+
+/home/runner/work/Opencode/Opencode/.git/objects/6f:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1062 Oct 24 08:26 b8495e77e7ee3c6d9e136b0197b2cfef9e9b59
+-r--r--r--   1 runner runner 4133 Oct 24 08:36 bca165033db4a018c4cfa0384b5eeb3403548e
+
+/home/runner/work/Opencode/Opencode/.git/objects/70:
+total 288
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner    250 Oct 24 08:46 0c668ef2e7a88f6b4c96ecb3bf090e18e2a1e3
+-r--r--r--   1 runner runner 272753 Oct 24 08:46 0ff36abc2992af411139e4b2db25013804e1aa
+-r--r--r--   1 runner runner   6201 Oct 24 08:46 65cb8e68bbe31350b66d1c8e125f7d4f101130
+
+/home/runner/work/Opencode/Opencode/.git/objects/71:
+total 72
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   275 Oct 24 08:46 22eef1201921e0192cb8e701c15c3a5200239d
+-r--r--r--   1 runner runner 54274 Oct 24 08:46 397f3873f18feee07b3bbe66f595a6122fbd2a
+-r--r--r--   1 runner runner   268 Oct 24 08:46 64472aff0755402caf7c780184d6a707946a95
+
+/home/runner/work/Opencode/Opencode/.git/objects/72:
+total 432
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   5282 Oct 24 08:46 e2ef863e0f659968069d6bf6d1c4a189c34fd3
+-r--r--r--   1 runner runner 425071 Oct 24 08:46 f31992ae6912b5b90542faff3eda00a0f78124
+
+/home/runner/work/Opencode/Opencode/.git/objects/73:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  198 Oct 24 08:46 df44058e3bc9942fb3ad8cd75147b158862f02
+
+/home/runner/work/Opencode/Opencode/.git/objects/74:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  408 Oct 24 08:46 427430af0487c23b9ffffbec6441c25b78f2b3
+-r--r--r--   1 runner runner  135 Oct 24 08:05 89b5005eeb04a0aab19a6fb9e6bd30f62e8fc2
+
+/home/runner/work/Opencode/Opencode/.git/objects/75:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   56 Oct 24 08:46 a45b005f71aa5a9714e14a6eaaef9f1cb9b490
+
+/home/runner/work/Opencode/Opencode/.git/objects/77:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2505 Oct 24 08:15 f590b7b7c04fe96e214fed57b5f5edaec9afd7
+
+/home/runner/work/Opencode/Opencode/.git/objects/78:
+total 36
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   926 Oct 24 08:46 b7b2b5e59b4b5c859cbc8508f2d870a34597c3
+-r--r--r--   1 runner runner   183 Oct 24 08:36 d2defa6655ecc044f2fe2f2a4a8c209e4f91d6
+-r--r--r--   1 runner runner 20078 Oct 24 08:46 dda48af5254e69583aaa452f3a817813221a64
+
+/home/runner/work/Opencode/Opencode/.git/objects/79:
+total 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  208 Oct 24 08:46 4e7c0d92fe536877b8bd2330838d24f8b7cd0a
+-r--r--r--   1 runner runner 4338 Oct 24 08:46 8fef2f7238011cf70ee3b63219a00f5554337e
+-r--r--r--   1 runner runner  478 Oct 24 08:46 b351e61f0814a5ef38d6d03f337815409e8714
+-r--r--r--   1 runner runner  212 Oct 24 08:15 c8e7f134e0e76a83e617ebd8c50aa51dc2cf50
+
+/home/runner/work/Opencode/Opencode/.git/objects/7a:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   69 Oct 24 08:46 2a2319e9abe56626f670cbc5c9864115ab63cd
+-r--r--r--   1 runner runner   89 Oct 24 08:46 6e28c1257a3b04db6d323754c8848802ccc522
+-r--r--r--   1 runner runner   30 Oct 24 08:46 ca60fba2ba20898f69df8bc4501e03b843e9e1
+
+/home/runner/work/Opencode/Opencode/.git/objects/7b:
+total 52
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 35002 Oct 24 08:46 89d90ce6f57fe426d626998666a6479e3f12cd
+-r--r--r--   1 runner runner   117 Oct 24 08:15 ad7e2871a1fa7be903317cfebf5c1afc5f8227
+-r--r--r--   1 runner runner   547 Oct 24 08:46 e8bc61bd1dcef6716d473acbd7f0cc2ca0be41
+
+/home/runner/work/Opencode/Opencode/.git/objects/7c:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1912 Oct 24 08:46 5e13ed1a57314fc05169c57a2fcacf85cc8ef6
+-r--r--r--   1 runner runner 1940 Oct 24 08:46 9dbeb3bc24da73be3449e529e24ca30ad4411d
+-r--r--r--   1 runner runner 4510 Oct 24 08:46 dc98ebad29dd676107cd8f8663be11c4988369
+
+/home/runner/work/Opencode/Opencode/.git/objects/7d:
+total 2628
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner      50 Oct 24 08:26 0bbcf6c6c4eebef8eb58b5ea41c9b12fa99046
+-r--r--r--   1 runner runner 2667938 Oct 24 08:26 218cc682d531991408b9f276b402bf4c4cbfab
+-r--r--r--   1 runner runner     884 Oct 24 08:46 4fe8f9ce59f5b59068312c81aaa9b02a3f5c21
+-r--r--r--   1 runner runner     183 Oct 24 08:46 ee908e23f67b385971ba5ff19b37f73a893c8c
+
+/home/runner/work/Opencode/Opencode/.git/objects/7e:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  198 Oct 24 08:46 abcaaf8385261c4ced4ca84a904b925460a1e6
+-r--r--r--   1 runner runner  452 Oct 24 08:15 ac60821d7cc9d41fe0e1ba390355d0bfa2e0d6
+-r--r--r--   1 runner runner   98 Oct 24 08:36 de3ec9271f39b98590404697268b5d20cefd60
+
+/home/runner/work/Opencode/Opencode/.git/objects/7f:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6157 Oct 24 08:46 d4910cbe1df770c6f161b3a0cdadbdbc86fae3
+
+/home/runner/work/Opencode/Opencode/.git/objects/80:
+total 40
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 24772 Oct 24 08:46 4138ad25a22d87baa217e908dc12eee30d138d
+-r--r--r--   1 runner runner    47 Oct 24 08:36 d748de2e81d94defdba0c610b2ec5a770735a8
+
+/home/runner/work/Opencode/Opencode/.git/objects/81:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3527 Oct 24 08:46 1817d672d0e20f4be0cb468b4e88624adc2e50
+
+/home/runner/work/Opencode/Opencode/.git/objects/83:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  689 Oct 24 08:46 6c749cfbc20f4e5076d4943e7509e6c8fee50e
+-r--r--r--   1 runner runner 3423 Oct 24 08:46 e3d613bb77d76241f0c0709a7d25c8f4e5e6b4
+
+/home/runner/work/Opencode/Opencode/.git/objects/85:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  750 Oct 24 08:15 780a05cedf5e7e0652f3e5fcf1a5cf31b504b9
+
+/home/runner/work/Opencode/Opencode/.git/objects/86:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  184 Oct 24 08:46 c239c80f938b4fec35eb80f02ec7d79199735c
+
+/home/runner/work/Opencode/Opencode/.git/objects/87:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 8096 Oct 24 08:46 0dceb35b81033668cfe410b84847a8cf339303
+
+/home/runner/work/Opencode/Opencode/.git/objects/88:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3956 Oct 24 08:46 42a73a1fc951f5e73299dbe8ddde4268abeacd
+-r--r--r--   1 runner runner 7638 Oct 24 08:46 d7e82b7049e2d92770d199948fcc3486544fb4
+
+/home/runner/work/Opencode/Opencode/.git/objects/89:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   60 Oct 24 08:46 ba191ebc2f31bb90535642989f7e2e94cbff9d
+-r--r--r--   1 runner runner 4191 Oct 24 08:15 d5c96651179a90491c19f0ae7c41f854fa392d
+
+/home/runner/work/Opencode/Opencode/.git/objects/8b:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  199 Oct 24 08:46 8b492707b7a94b93829ced9c1e8693debf4ce3
+-r--r--r--   1 runner runner 3439 Oct 24 08:46 a7c08c56198222a026b8460dcd2a2490f4bf6e
+
+/home/runner/work/Opencode/Opencode/.git/objects/8d:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  658 Oct 24 08:46 8f425d53eb195eda13d747a459c5b174123f39
+
+/home/runner/work/Opencode/Opencode/.git/objects/8e:
+total 5040
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 5151642 Oct 24 08:46 7109e1725da2332b66b48981cc87f5fabc2dfa
+
+/home/runner/work/Opencode/Opencode/.git/objects/8f:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   94 Oct 24 08:46 ac10b46f6ae95bb4d8ee0c2f9703ce07cd12ba
+
+/home/runner/work/Opencode/Opencode/.git/objects/90:
+total 272
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner    194 Oct 24 08:36 00bc3389fb98795d1b7d900190d5f43d14968a
+-r--r--r--   1 runner runner 257019 Oct 24 08:46 35123997563ae4ce956e073bc5401b5fe0ec9d
+-r--r--r--   1 runner runner    163 Oct 24 08:15 63144f6be46337c2abb7b2afc135a5cacd3f1d
+-r--r--r--   1 runner runner    137 Oct 24 08:15 81f067a38880b84ddbe6d0e3731deed90d3fdb
+
+/home/runner/work/Opencode/Opencode/.git/objects/91:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1514 Oct 24 08:46 559b9f2b91119b041ecaad88c56ccd25594d27
+-r--r--r--   1 runner runner 2195 Oct 24 08:46 57d156427dddb559ffaf0045b250a12a6a6a3e
+-r--r--r--   1 runner runner 5073 Oct 24 08:46 df475af866df1a6f9995224da8891f3b29e9fd
+
+/home/runner/work/Opencode/Opencode/.git/objects/92:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1986 Oct 24 08:46 4025a0296ced6b60382e677b486105ca0e416b
+-r--r--r--   1 runner runner 3134 Oct 24 08:46 97d8bdd2bb564c55b1325520214b5158dda16b
+
+/home/runner/work/Opencode/Opencode/.git/objects/93:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  184 Oct 24 08:26 d7945cc6725983319f934834e189a74930214b
+
+/home/runner/work/Opencode/Opencode/.git/objects/94:
+total 32
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 13553 Oct 24 08:46 4385ccdd9a44930ab26c03557eaad52d8e9cff
+-r--r--r--   1 runner runner   903 Oct 24 08:15 6622c40c26be9e7428066fcc7fc675362d7eb7
+-r--r--r--   1 runner runner   211 Oct 24 08:46 93cd5693ea71fd492c000ab34adbb9c884a97c
+
+/home/runner/work/Opencode/Opencode/.git/objects/97:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   62 Oct 24 08:15 bf1fa61387f891f180c333157c70b98b1e3e3f
+
+/home/runner/work/Opencode/Opencode/.git/objects/98:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  277 Oct 24 08:36 5800d07d5f6c27691dfc96b8544582e3b5afaf
+-r--r--r--   1 runner runner  284 Oct 24 08:46 cf0616a161ef812295b4e6e7787e920124001c
+-r--r--r--   1 runner runner   47 Oct 24 08:46 e010749eb1b44ac9b41e21adeac806ce14454d
+
+/home/runner/work/Opencode/Opencode/.git/objects/99:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  253 Oct 24 08:46 9c6180c6e754a9bf2d2053f3d68da152b5f05d
+-r--r--r--   1 runner runner 4354 Oct 24 08:46 b56534e3174c409fdf9f56c9242eb650e2c263
+
+/home/runner/work/Opencode/Opencode/.git/objects/9a:
+total 272
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 262809 Oct 24 08:46 1ab5d5fc1af1903f780f148c999882d0dcab53
+-r--r--r--   1 runner runner    130 Oct 24 08:26 9b73d3d645fd202f35c9d2c942275ea6d40381
+
+/home/runner/work/Opencode/Opencode/.git/objects/9b:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3187 Oct 24 08:46 85a653aa749b61eaaecbebd00e4a6fa5c951ac
+-r--r--r--   1 runner runner 3266 Oct 24 08:46 ef677df541984289827c4964bead306789a2a0
+-r--r--r--   1 runner runner  380 Oct 24 08:46 f701c8365e311e0c01868ce5cdc6f45ceb818d
+
+/home/runner/work/Opencode/Opencode/.git/objects/9c:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  758 Oct 24 08:46 409ab57bf39d61087a688f22fe8946175a996d
+-r--r--r--   1 runner runner  210 Oct 24 08:36 b642d18b8fbe84a745196d41cf4895f4ef679e
+
+/home/runner/work/Opencode/Opencode/.git/objects/9d:
+total 2676
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2724417 Oct 24 08:36 a4db3e1a36bfbe8a2b55b34620cadc1c1be933
+-r--r--r--   1 runner runner      84 Oct 24 08:46 d38df84d020a7b67132d553eb8bf2d469217b4
+
+/home/runner/work/Opencode/Opencode/.git/objects/9e:
+total 48
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner    48 Oct 24 08:15 48938a1802b25a3ee46d2708b08ab7d64460ed
+-r--r--r--   1 runner runner 24597 Oct 24 08:46 5b4507ca6b32b1c1d30b256eaa2dd977e3f782
+-r--r--r--   1 runner runner   164 Oct 24 08:26 65cc91a302864ff7b5338ae802c126ba473d59
+-r--r--r--   1 runner runner   128 Oct 24 08:46 e10267212c6772f8e4783ca6627ce0e4cee21e
+
+/home/runner/work/Opencode/Opencode/.git/objects/9f:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  134 Oct 24 08:46 53a782986d4bc8a22878f956554b76ad18f6c8
+
+/home/runner/work/Opencode/Opencode/.git/objects/a0:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6262 Oct 24 08:46 cb27c616a979d935ad765321f279a491292305
+
+/home/runner/work/Opencode/Opencode/.git/objects/a1:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  346 Oct 24 08:46 fd29ec14823d8bc4a8d1a2cfe35451580f5118
+
+/home/runner/work/Opencode/Opencode/.git/objects/a2:
+total 40
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   147 Oct 24 08:46 4253fb7b11c1f36b8af06402b9cc401ebe16da
+-r--r--r--   1 runner runner   136 Oct 24 08:36 cb74703b30fe4ae31594f2062a908ab61395a2
+-r--r--r--   1 runner runner 21028 Oct 24 08:46 d585e588baf369a0179ecb776daf9d62b9f679
+
+/home/runner/work/Opencode/Opencode/.git/objects/a3:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 4680 Oct 24 08:46 adeffb2bd3781a100ed5c89f48dc1a6d8cc280
+
+/home/runner/work/Opencode/Opencode/.git/objects/a4:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1530 Oct 24 08:46 d0323f648327b036af73e2c06c17e142be2f08
+
+/home/runner/work/Opencode/Opencode/.git/objects/a5:
+total 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  906 Oct 24 08:26 10cd4a53f0dd75524876325001106a518cb142
+-r--r--r--   1 runner runner  191 Oct 24 08:46 196d1be8fb59edf8062bef36d3a602e0812139
+-r--r--r--   1 runner runner 1906 Oct 24 08:46 5330af87ee755795ac21a2358deb9c08ded5f7
+-r--r--r--   1 runner runner 3368 Oct 24 08:46 92d6b308a4c4292c36de17c5b16257900f6fac
+-r--r--r--   1 runner runner  299 Oct 24 08:46 d7b84a673458d14d9aab082183a1968c2c7492
+
+/home/runner/work/Opencode/Opencode/.git/objects/a6:
+total 92
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 85511 Oct 24 08:46 873874c52c32cd0a585158aaafb8017f266401
+
+/home/runner/work/Opencode/Opencode/.git/objects/a7:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   80 Oct 24 08:46 5c00dce3c968855a428e9f4efee3d43bab236a
+-r--r--r--   1 runner runner  301 Oct 24 08:46 f70c9d82cc8d2f3f9096fafd472f7ff040a381
+
+/home/runner/work/Opencode/Opencode/.git/objects/a8:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   51 Oct 24 08:46 9cfa5bb51d23619571c6bf974752118963ea8e
+
+/home/runner/work/Opencode/Opencode/.git/objects/a9:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   47 Oct 24 08:46 fda05e16d88a0034d0fb43e5eb80505fc27b4a
+
+/home/runner/work/Opencode/Opencode/.git/objects/aa:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   79 Oct 24 08:26 68f0a4d6f4d3eae034b94c4ed373df041c6eb6
+-r--r--r--   1 runner runner 5969 Oct 24 08:46 9a643f70d3550c835a4bbead917390e63dc6d9
+-r--r--r--   1 runner runner  376 Oct 24 08:46 ef72981d5a9e62bf77794476ff6e57dca0c4c6
+
+/home/runner/work/Opencode/Opencode/.git/objects/ab:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1083 Oct 24 08:46 5bfc757f09eec2386e94ffac0940abb372e27e
+-r--r--r--   1 runner runner  145 Oct 24 08:46 aedb64080c4252f9017acfb7db68a83d8e9672
+-r--r--r--   1 runner runner   57 Oct 24 08:46 d6a5df3a4441e8cfc4ddfd69a0e058a17dd739
+
+/home/runner/work/Opencode/Opencode/.git/objects/ac:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   35 Oct 24 08:46 024135d87f8f8d11acbb4962d483e9723bcd0a
+-r--r--r--   1 runner runner  307 Oct 24 08:46 3ed9df295874ea72805da6beafeed37fbfa6a7
+-r--r--r--   1 runner runner 1691 Oct 24 08:46 40b91273af7a6b225bf06d0c3726804ffde853
+
+/home/runner/work/Opencode/Opencode/.git/objects/ad:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 8852 Oct 24 08:46 5b8ec1c2037258d5488568921362030ab2b698
+
+/home/runner/work/Opencode/Opencode/.git/objects/ae:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 4561 Oct 24 08:46 133a3304a7e22d0c11e03118e230afa6706792
+-r--r--r--   1 runner runner  198 Oct 24 07:05 e74905db005dd01413e34afa9c43af1d62f8eb
+
+/home/runner/work/Opencode/Opencode/.git/objects/af:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1338 Oct 24 08:46 5a0c0018b5e9c04b56ac52f21b4d28f48d99ea
+-r--r--r--   1 runner runner 5631 Oct 24 08:46 adbc6685c713fc84700fbf051bcab588b63e2f
+
+/home/runner/work/Opencode/Opencode/.git/objects/b0:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  448 Oct 24 08:46 7a50a71d22b431c4ea54f0149f95030215e989
+
+/home/runner/work/Opencode/Opencode/.git/objects/b1:
+total 24
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 13209 Oct 24 08:26 77e2301b5fb57c68105f9448ba478a11ecba9c
+
+/home/runner/work/Opencode/Opencode/.git/objects/b2:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  534 Oct 24 08:46 772e2b4a8c60657d30951492b1944748efb9e6
+-r--r--r--   1 runner runner  130 Oct 24 08:46 ab9ed87b59819dec876f16b1dcc3711810660f
+
+/home/runner/work/Opencode/Opencode/.git/objects/b3:
+total 44
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 32884 Oct 24 08:46 df562e08eefb45c2d45178704a49363e1e06b9
+
+/home/runner/work/Opencode/Opencode/.git/objects/b4:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   86 Oct 24 08:46 17254cff1fdf27f585b6a8ff1a1cad106df52f
+-r--r--r--   1 runner runner  317 Oct 24 08:46 e7bd12112b9730b367e35a57d91e21e94449a1
+
+/home/runner/work/Opencode/Opencode/.git/objects/b5:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  708 Oct 24 08:46 125dfd8d794d0225e19a1e1c443eabae7f90d7
+-r--r--r--   1 runner runner  735 Oct 24 08:15 21c9767fa117f271b1c388f2690fd5d4544693
+-r--r--r--   1 runner runner  156 Oct 24 08:46 96e32be46218f2c030d5e2e1e66a02eeaf86c2
+
+/home/runner/work/Opencode/Opencode/.git/objects/b7:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  174 Oct 24 08:46 67a90c996e3114ef5b000a745ac46c0be145a1
+-r--r--r--   1 runner runner  214 Oct 24 08:46 e874bfd78a984d0ed0bec04fddb881d6902766
+
+/home/runner/work/Opencode/Opencode/.git/objects/b8:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  518 Oct 24 08:15 468eb9444a1db9bef45a9112736eca5a9267ec
+-r--r--r--   1 runner runner  598 Oct 24 08:46 ce6c908f08b7e45d92e2df46be35425aa9c77b
+-r--r--r--   1 runner runner 3329 Oct 24 08:46 fdb1f705a808cc560ff41400af012fa2c7b323
+
+/home/runner/work/Opencode/Opencode/.git/objects/b9:
+total 88
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 51088 Oct 24 08:46 027d231fe08d96d00db9c708802b3f5c222b46
+-r--r--r--   1 runner runner   625 Oct 24 08:46 2a317e9d2b1ffd5cb0bd13137570d80be4243c
+-r--r--r--   1 runner runner   198 Oct 24 08:26 8b185799a581a4ca625546e5371338ef97d229
+-r--r--r--   1 runner runner 17716 Oct 24 08:46 ca549ef6bb0b1ddda3692b552fe7631b7ab96b
+
+/home/runner/work/Opencode/Opencode/.git/objects/bb:
+total 364
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 310334 Oct 24 08:46 3cec6edffd2335f410be4579ec98763d102fb9
+-r--r--r--   1 runner runner  40209 Oct 24 08:46 7f1ae8ca99b03e532effb5ac4e187a4eeff533
+-r--r--r--   1 runner runner   4151 Oct 24 08:46 9a137806dee4fcbb3291bd3df0dc2d1e8bd3c7
+-r--r--r--   1 runner runner    355 Oct 24 08:46 e3d64eaf95faa556eb945b9a50d492980a743d
+
+/home/runner/work/Opencode/Opencode/.git/objects/bc:
+total 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  102 Oct 24 08:46 17fa9947f20cfb4f0869d7d5a9a83d0dbba587
+-r--r--r--   1 runner runner  377 Oct 24 08:15 70ee47d8abeffd572c344a6965bb84d8ec4a22
+-r--r--r--   1 runner runner   50 Oct 24 08:15 a822df54b2378062b6afec1d20b9fd78ad951a
+-r--r--r--   1 runner runner  276 Oct 24 08:46 c5e9a77204e27de0aa11b6e74873454b960537
+-r--r--r--   1 runner runner 4009 Oct 24 08:46 f076b7d60f243e9cf8c3df187b57fe28d8936a
+
+/home/runner/work/Opencode/Opencode/.git/objects/bd:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 5913 Oct 24 08:46 072d493ce155be925afe00f03caebca343acd6
+
+/home/runner/work/Opencode/Opencode/.git/objects/bf:
+total 80
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 54193 Oct 24 08:46 5b409f920c78a81ff8210a22507071ef102ecb
+-r--r--r--   1 runner runner 13281 Oct 24 08:26 a418f050297828eb38ea1ea11b633adc3687e2
+
+/home/runner/work/Opencode/Opencode/.git/objects/c0:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2277 Oct 24 08:46 457336ffe643b6d417d5b02489af7e8af45a38
+-r--r--r--   1 runner runner  231 Oct 24 08:46 da9673b3a2d6bca5c3c3c051ec8945b8f20fd8
+
+/home/runner/work/Opencode/Opencode/.git/objects/c1:
+total 64
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 54181 Oct 24 08:46 d9a4966978d11111d9768496b5b72e7c8fcea6
+
+/home/runner/work/Opencode/Opencode/.git/objects/c2:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3502 Oct 24 08:46 7d7616191887de41d9e8dc59e1ab0088e95414
+
+/home/runner/work/Opencode/Opencode/.git/objects/c3:
+total 48
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 23248 Oct 24 08:46 160846db9446b949c26b98e2a7e45f839908b0
+-r--r--r--   1 runner runner   128 Oct 24 08:46 1d9899c334e2e4b045f70176ca33d697d59ac9
+-r--r--r--   1 runner runner  1952 Oct 24 08:46 5183ed119b75c14de9580ced26e659c69cba2a
+-r--r--r--   1 runner runner   479 Oct 24 08:46 5f2edfb202fe428f2441a3660a5fa6d7967a7c
+-r--r--r--   1 runner runner    58 Oct 24 08:46 cb41f3cc25b7c59483eba82737edac23c07f8b
+
+/home/runner/work/Opencode/Opencode/.git/objects/c4:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1185 Oct 24 08:46 69000b8f8a6b42486470f2e7f32b31c6d7a5b5
+-r--r--r--   1 runner runner   82 Oct 24 08:46 a0d072fe5517b7361def73aefdf793c409a8f6
+-r--r--r--   1 runner runner 1278 Oct 24 08:46 d426bc6ee9430ee7813263ce6d5da7ec78c3c6
+
+/home/runner/work/Opencode/Opencode/.git/objects/c5:
+total 3672
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner      46 Oct 24 08:46 8091bd7da6e9c7702cb829cdd7dc2386ba0773
+-r--r--r--   1 runner runner    3482 Oct 24 08:46 aaf176b8f4d820276b8d639d6bb4a4f7a66972
+-r--r--r--   1 runner runner 3741509 Oct 24 08:46 bfbae1f5f22a8163f4461851f8e3cb8ad1fc72
+
+/home/runner/work/Opencode/Opencode/.git/objects/c6:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  657 Oct 24 08:46 624529ad4b05c85876f2a32878e214d98a0485
+-r--r--r--   1 runner runner  344 Oct 24 08:46 952aaf027ead2805a3e2bbba15c2229111a220
+-r--r--r--   1 runner runner   88 Oct 24 08:46 d58eca673898f3663d4a52a54c79f8d18eded0
+
+/home/runner/work/Opencode/Opencode/.git/objects/c7:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1262 Oct 24 08:15 8ad20184c90564c48490108e91acdd0112318c
+
+/home/runner/work/Opencode/Opencode/.git/objects/c8:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3366 Oct 24 08:46 dafbbe91d5d4fcd9c26313c5bd8b493a60452e
+
+/home/runner/work/Opencode/Opencode/.git/objects/c9:
+total 3068
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner     734 Oct 24 08:46 098710a5ce5b0260a0810dd6263ba8e2d89b15
+-r--r--r--   1 runner runner    1857 Oct 24 08:46 1e2a0c0664b0ec10982ab4a68adfa6091dc4b2
+-r--r--r--   1 runner runner 3124943 Oct 24 08:15 64190fc819071644c444c9ce29763e0ff81757
+
+/home/runner/work/Opencode/Opencode/.git/objects/cb:
+total 2940
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner      37 Oct 24 08:46 089cd89a7d7686d284d8761201649346b5aa1c
+-r--r--r--   1 runner runner 2958247 Oct 24 08:46 251e14b935b8dbff2a1885f73f5cc53f093391
+-r--r--r--   1 runner runner   35700 Oct 24 08:46 a4db930e868f7d6a94edd9dfbfc09086fcf553
+
+/home/runner/work/Opencode/Opencode/.git/objects/cc:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2228 Oct 24 08:46 3817fd957b904fc2b6495971c27a647b2c1edc
+-r--r--r--   1 runner runner  440 Oct 24 08:46 c0d98fe312d6e6667694e5300990778396a59f
+-r--r--r--   1 runner runner  225 Oct 24 08:46 fab93558e682aab6f4a2fb4f68c60c610088e4
+
+/home/runner/work/Opencode/Opencode/.git/objects/cd:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1002 Oct 24 07:05 6590c03b5f7718c99b680f15a0bca7b3e7b74d
+-r--r--r--   1 runner runner  147 Oct 24 08:15 800b3bebdc5af1ad7913b56ecabef8ecc89a1e
+
+/home/runner/work/Opencode/Opencode/.git/objects/ce:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  206 Oct 24 08:15 52fb35e2a97a4457fcde08d17de076318fb950
+
+/home/runner/work/Opencode/Opencode/.git/objects/cf:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  106 Oct 24 08:46 1254fd8889ff14898426b1f40c5a4f3cda426a
+
+/home/runner/work/Opencode/Opencode/.git/objects/d0:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   17 Oct 24 08:46 0491fd7e5bb6fa28c517a0bb32b8b506539d4d
+-r--r--r--   1 runner runner  989 Oct 24 08:46 2f2fd2c4ba8e020d13dba3111f42480b2d8793
+-r--r--r--   1 runner runner  297 Oct 24 08:46 434568026eeb150cf6333dab4c00860984e45c
+-r--r--r--   1 runner runner  623 Oct 24 08:46 f29d68a38ac262a224738b54e08851877ea212
+
+/home/runner/work/Opencode/Opencode/.git/objects/d1:
+total 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 4559 Oct 24 08:46 0e5f45677ff9d9621c2356b2ebd017d00ccf97
+-r--r--r--   1 runner runner  168 Oct 24 08:15 297affcd7fe4296c13ef201274b3e97dc32b41
+-r--r--r--   1 runner runner 7722 Oct 24 08:46 59169d1050894d3ea3b98e1c965c4058208fe1
+
+/home/runner/work/Opencode/Opencode/.git/objects/d2:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6681 Oct 24 08:46 7adc40509d506b5140a252f1e872960608fac9
+-r--r--r--   1 runner runner   54 Oct 24 08:46 8dc82955efdbcb6f2038fc6a71f8fd133c94d3
+
+/home/runner/work/Opencode/Opencode/.git/objects/d3:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   69 Oct 24 08:15 10213749a5ab44ab512e63412ee653e18701c3
+-r--r--r--   1 runner runner 3417 Oct 24 08:46 9251565130ace5d5b5871bef4a342c3cb24c10
+-r--r--r--   1 runner runner  183 Oct 24 08:15 d6d0523f282d099d18670bb5a7a466b0be7c92
+
+/home/runner/work/Opencode/Opencode/.git/objects/d4:
+total 36
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  147 Oct 24 07:05 2fb7ee14fe0917d7bc881b5536eb95beeb844c
+-r--r--r--   1 runner runner  562 Oct 24 08:46 313c54701c6b667fcdede6be22035f7a617be1
+-r--r--r--   1 runner runner   71 Oct 24 08:46 7cf1e1783292b51423514b32b16ba87aa8d508
+-r--r--r--   1 runner runner 2109 Oct 24 08:46 9035c896d6c22a5f8a22d966c151dc07cb2316
+-r--r--r--   1 runner runner 4629 Oct 24 08:46 b0445dfad467f97b10817d5e14f375ec0d4484
+-r--r--r--   1 runner runner   23 Oct 24 08:46 e08d1c0716668964228d95506f0f0a6d460b7a
+
+/home/runner/work/Opencode/Opencode/.git/objects/d5:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  157 Oct 24 08:46 5c8134cd5616b6ff8fb6d7d5eb3b609ed6021e
+-r--r--r--   1 runner runner  826 Oct 24 08:36 644409f29d212fdeaae9c90f4f443e13064558
+-r--r--r--   1 runner runner  344 Oct 24 08:15 b10f6d691de572023abf829a08dc9d66cdb6e7
+-r--r--r--   1 runner runner   60 Oct 24 08:46 c34124bf896d66ea900fd188aecb870895a87e
+
+/home/runner/work/Opencode/Opencode/.git/objects/d6:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 5967 Oct 24 08:46 28d1f7ecfe66e4fc239f1e27310ecb270b452e
+-r--r--r--   1 runner runner  127 Oct 24 08:46 4d1d1b5f8051c9c56b58c7a1c1cacfec36b6e6
+
+/home/runner/work/Opencode/Opencode/.git/objects/d8:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  988 Oct 24 08:26 2180ff6bccfa9ceb2e65345e0773390673f0ad
+-r--r--r--   1 runner runner 6243 Oct 24 08:46 3eff6a5de74e62187e6b7e8da803ae889c3e3b
+
+/home/runner/work/Opencode/Opencode/.git/objects/d9:
+total 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  184 Oct 24 08:46 06fa5f98036998a6c050b75e4a434185f44d73
+-r--r--r--   1 runner runner 5006 Oct 24 08:46 101ec6b5e86fedb66de932ca2ffdee4ab6ab01
+-r--r--r--   1 runner runner   46 Oct 24 08:15 aca575c3c6ad8daca3df178529a057695b53c1
+-r--r--r--   1 runner runner  243 Oct 24 08:26 b950bfc587b8f7cfb71ade96c28e9c70cf3749
+
+/home/runner/work/Opencode/Opencode/.git/objects/da:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3325 Oct 24 08:46 4b0bd77061eacdbdfb8473e4173fdb0bde2e26
+
+/home/runner/work/Opencode/Opencode/.git/objects/db:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   63 Oct 24 08:26 770a1e026163e3912fc01cade9700e93e96158
+-r--r--r--   1 runner runner   48 Oct 24 08:26 a83616fba969b36b8344fbde649ddc20b43df3
+
+/home/runner/work/Opencode/Opencode/.git/objects/dd:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 4632 Oct 24 08:46 9a0f04759bcb1a358424d75481052b810fe6a8
+
+/home/runner/work/Opencode/Opencode/.git/objects/de:
+total 28
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 10914 Oct 24 08:46 46be9d680dcde90dda752bec01c62549dc3226
+-r--r--r--   1 runner runner  4629 Oct 24 08:46 9b86e2bb40dbc0b7e02a40a7e7fb3e4deb07d9
+
+/home/runner/work/Opencode/Opencode/.git/objects/df:
+total 36
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  3408 Oct 24 08:46 25ee6853138040e62661aaeb07a75463c7bb04
+-r--r--r--   1 runner runner   215 Oct 24 08:46 65d53d537b139c26b2d7dea95f6e48781b44d7
+-r--r--r--   1 runner runner 17364 Oct 24 08:46 df50c0d70c4d3ad782b88ec9ec6499f3211e1e
+
+/home/runner/work/Opencode/Opencode/.git/objects/e0:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6349 Oct 24 08:46 b503186d2de17cbe062e878ebec8788fbb552f
+
+/home/runner/work/Opencode/Opencode/.git/objects/e1:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  264 Oct 24 08:26 281ec8bbc6e9c1c755d202724e93ec42336dd4
+-r--r--r--   1 runner runner 5833 Oct 24 08:46 ecf7a74eaef33a83c3ee5c480e38ee6fc99a1d
+
+/home/runner/work/Opencode/Opencode/.git/objects/e4:
+total 32
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 17365 Oct 24 08:46 36f18b95b3c258203a75292a00298825b222e0
+-r--r--r--   1 runner runner   198 Oct 24 08:36 ed3e85429c593e2996070387fb47180f76278e
+
+/home/runner/work/Opencode/Opencode/.git/objects/e5:
+total 36
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 6625 Oct 24 08:46 204df458fe5cb756cc21d12d32375d4421eb24
+-r--r--r--   1 runner runner 2753 Oct 24 08:46 75d9fb30cada7a61b978931514854780d2bc1e
+-r--r--r--   1 runner runner   79 Oct 24 08:36 97d1315382f30788aff7f16959b97d36a487a7
+-r--r--r--   1 runner runner  302 Oct 24 08:46 981e39de5064890c082b2c925a4edcc8ce9c68
+-r--r--r--   1 runner runner 1129 Oct 24 08:46 d414c5608b677703074a65d1d98f3ee7da6eb8
+-r--r--r--   1 runner runner 2462 Oct 24 08:46 fe0672cc311379fa2699f5d342211f2336126d
+
+/home/runner/work/Opencode/Opencode/.git/objects/e7:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   50 Oct 24 08:36 633102770b4c0f084d984c9e918766dc39fbc8
+
+/home/runner/work/Opencode/Opencode/.git/objects/e8:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  415 Oct 24 08:46 7c26b47f041929d319e868db21723189bfd4ed
+
+/home/runner/work/Opencode/Opencode/.git/objects/e9:
+total 44
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  6391 Oct 24 08:46 259c7e75d4eb9840aa19cde5562abfbaf8a579
+-r--r--r--   1 runner runner   505 Oct 24 08:46 334a08554c40ef807d788fdbf541409fdbaad9
+-r--r--r--   1 runner runner 18606 Oct 24 08:46 cee4d92e60097f301d0b0d0153e5633463ab87
+-r--r--r--   1 runner runner    55 Oct 24 08:46 e2ccc7b374dada74e19a1df1e0be3c373245e0
+
+/home/runner/work/Opencode/Opencode/.git/objects/ea:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1144 Oct 24 08:46 c7ecb7c3d6c725c413aa91a74e3d0cf3d58e6f
+
+/home/runner/work/Opencode/Opencode/.git/objects/eb:
+total 2568
+drwxr-xr-x   2 runner runner    4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner    4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner    1275 Oct 24 08:46 279e9425d50cf5c76d9cd39de039ff42bc6ed5
+-r--r--r--   1 runner runner 2603118 Oct 24 08:15 52b17435c18a61821d0e057f77ab0aa9d1e9aa
+-r--r--r--   1 runner runner     203 Oct 24 08:15 6ac882208830b4dc1e3d3220bc6bfa882a3c8c
+-r--r--r--   1 runner runner     171 Oct 24 08:46 a33e55ecf497c38f4e50489e13eac95c1b1e18
+-r--r--r--   1 runner runner      93 Oct 24 08:36 e17e691d191fc264f0f7819f069c20b02198f4
+
+/home/runner/work/Opencode/Opencode/.git/objects/ec:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  154 Oct 24 08:46 17ec1939b7c3e86b7cb6c0c4de6b0818a7e75e
+
+/home/runner/work/Opencode/Opencode/.git/objects/ee:
+total 228
+drwxr-xr-x   2 runner runner   4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner   4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 215558 Oct 24 08:46 86362d1bdaa78c20727d98de9cb3a236a5aadb
+-r--r--r--   1 runner runner    460 Oct 24 08:15 8abb9021f11f44f1afadb1438f722017f32af2
+-r--r--r--   1 runner runner    207 Oct 24 08:26 930800814876850072643b4abb5e6a3efb8d8b
+
+/home/runner/work/Opencode/Opencode/.git/objects/ef:
+total 16
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  386 Oct 24 08:46 3be2c9d261a5621c09e0dfba5726e7bfe6025f
+-r--r--r--   1 runner runner   79 Oct 24 08:46 69e34c1e442a660d920ec14f60256005200e14
+
+/home/runner/work/Opencode/Opencode/.git/objects/f0:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  153 Oct 24 08:46 ddc0d06a4f533bdf5c17c1afb81060a9073413
+
+/home/runner/work/Opencode/Opencode/.git/objects/f1:
+total 24
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3470 Oct 24 08:46 24da114046340a349d601ed580cd1f0d3ce7c9
+-r--r--r--   1 runner runner 1313 Oct 24 08:46 404e2e9289d4751086a128dfcb2720b9ebc0fc
+-r--r--r--   1 runner runner  109 Oct 24 08:46 9995924d5c59b28b25dbe3a32b1daa5ea68aa8
+-r--r--r--   1 runner runner  365 Oct 24 08:15 eee33cb040d86080c5ca06d0929061f52e2aa5
+
+/home/runner/work/Opencode/Opencode/.git/objects/f2:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  134 Oct 24 08:15 fe6e9912235830ba1404a12cea765381e28011
+
+/home/runner/work/Opencode/Opencode/.git/objects/f5:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:26 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 2297 Oct 24 08:46 ba99876839892b30dbb3d0f3ade4601bc9a74a
+-r--r--r--   1 runner runner  146 Oct 24 08:26 d666f287f1fc05f1ce544418e577aec6653674
+-r--r--r--   1 runner runner 2325 Oct 24 08:46 d8debe5c63e930604275216bb369a59fe1b7ad
+
+/home/runner/work/Opencode/Opencode/.git/objects/f6:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 3446 Oct 24 08:46 c0aa24aebb155e7a87366b635afecb2f05670d
+
+/home/runner/work/Opencode/Opencode/.git/objects/f7:
+total 12
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1051 Oct 24 08:46 458efe62f2c7f945cbf982e596ab0bccdad641
+
+/home/runner/work/Opencode/Opencode/.git/objects/f9:
+total 28
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner 1540 Oct 24 08:46 5ca99532fd69f68c306cce318701f797a48783
+-r--r--r--   1 runner runner  760 Oct 24 08:15 73d53ef7f4b328602e7bf945ddf73169403f4c
+-r--r--r--   1 runner runner 6221 Oct 24 08:46 b7f028e5cc770c6ac9deee23249353e2990f57
+-r--r--r--   1 runner runner 3298 Oct 24 08:46 dbea3c3cd1d17e37c3cc133b2cda8c4a823f5d
+
+/home/runner/work/Opencode/Opencode/.git/objects/fb:
+total 20
+drwxr-xr-x   2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   95 Oct 24 08:46 2e681e6b82d187a5c3d0fb59bf8d4d0145c0db
+-r--r--r--   1 runner runner  256 Oct 24 08:46 3d1c666d0d0100f9243699f4ae064fb1e8a60f
+-r--r--r--   1 runner runner  183 Oct 24 07:05 64a8b485e647ad51cd01124bcc86631d91fdf9
+
+/home/runner/work/Opencode/Opencode/.git/objects/fe:
+total 68
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner  5762 Oct 24 08:46 158bff90c1d665a9327a17a4667bbdfd809fbc
+-r--r--r--   1 runner runner 30547 Oct 24 08:46 342e2788b1f0665855d072034b186a8406c1e6
+-r--r--r--   1 runner runner    63 Oct 24 07:05 4f965a7a088fdc51af5fe2948e8a57d03f27b2
+-r--r--r--   1 runner runner   218 Oct 24 08:46 9ac2845eca6fe6da8a63cd096d9cf9e24ece10
+-r--r--r--   1 runner runner 11722 Oct 24 08:46 c0130e4cf36a1550c4b24fab8f9a78369f3744
+
+/home/runner/work/Opencode/Opencode/.git/objects/ff:
+total 36
+drwxr-xr-x   2 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 219 runner runner  4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner   145 Oct 24 08:36 1001dbfa4d5e48466781f2772687994288ee68
+-r--r--r--   1 runner runner   115 Oct 24 08:46 61a0516d909e9a4833831171fcab14d011ab66
+-r--r--r--   1 runner runner   857 Oct 24 08:46 76f1a4746c89e7d57e535180c57a0ac6669a5e
+-r--r--r--   1 runner runner  1126 Oct 24 08:46 984b705eb2ed4b628ba6b28e2d3e3cfa04ba8c
+-r--r--r--   1 runner runner 12009 Oct 24 08:46 f81bae9fc8a341084e577e51fc1fe77590666e
+
+/home/runner/work/Opencode/Opencode/.git/objects/info:
+total 8
+drwxr-xr-x   2 runner runner 4096 Oct 24 06:54 .
+drwxr-xr-x 219 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/.git/objects/pack:
+total 326972
+drwxr-xr-x   2 runner runner      4096 Oct 24 06:55 .
+drwxr-xr-x 219 runner runner      4096 Oct 24 08:46 ..
+-r--r--r--   1 runner runner     12244 Oct 24 06:55 pack-9528df71e68ef8c3a117ed8fbb1582995190e7f3.idx
+-r--r--r--   1 runner runner 334789112 Oct 24 08:46 pack-9528df71e68ef8c3a117ed8fbb1582995190e7f3.pack
+-r--r--r--   1 runner runner      1648 Oct 24 06:55 pack-9528df71e68ef8c3a117ed8fbb1582995190e7f3.rev
+
+/home/runner/work/Opencode/Opencode/.git/refs:
+total 20
+drwxr-xr-x 5 runner runner 4096 Oct 24 06:55 .
+drwxr-xr-x 7 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 heads
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 remotes
+drwxr-xr-x 2 runner runner 4096 Oct 24 06:54 tags
+
+/home/runner/work/Opencode/Opencode/.git/refs/heads:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 5 runner runner 4096 Oct 24 06:55 ..
+-rw-r--r-- 1 runner runner   41 Oct 24 08:46 main
+
+/home/runner/work/Opencode/Opencode/.git/refs/remotes:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 .
+drwxr-xr-x 5 runner runner 4096 Oct 24 06:55 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 origin
+
+/home/runner/work/Opencode/Opencode/.git/refs/remotes/origin:
+total 24
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 ..
+-rw-r--r-- 1 runner runner   30 Oct 24 07:05 HEAD
+-rw-r--r-- 1 runner runner   41 Oct 24 07:05 gh-pages
+-rw-r--r-- 1 runner runner   41 Oct 24 08:46 main
+-rw-r--r-- 1 runner runner   41 Oct 24 08:46 oc-backup
+
+/home/runner/work/Opencode/Opencode/.git/refs/tags:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 06:54 .
+drwxr-xr-x 5 runner runner 4096 Oct 24 06:55 ..
+
+/home/runner/work/Opencode/Opencode/.github:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 .
+drwxr-xr-x 5 runner runner 4096 Oct 24 07:05 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 06:55 workflows
+
+/home/runner/work/Opencode/Opencode/.github/workflows:
+total 116
+drwxr-xr-x 2 runner runner   4096 Oct 24 06:55 .
+drwxr-xr-x 3 runner runner   4096 Oct 24 06:55 ..
+-rw-r--r-- 1 runner runner 109428 Oct 24 08:46 opencode-web.yml
+
+/home/runner/work/Opencode/Opencode/_external_projects:
+total 20
+drwxr-xr-x  4 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x  5 runner runner 4096 Oct 24 07:05 ..
+drwxr-xr-x  3 runner runner 4096 Oct 24 07:05 .opencode-093890
+-rw-r--r--  1 runner runner  266 Oct 24 08:46 manifest.json
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 tmp-8c3933
+
+/home/runner/work/Opencode/Opencode/_external_projects/.opencode-093890:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 07:05 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 07:05 bin
+
+/home/runner/work/Opencode/Opencode/_external_projects/.opencode-093890/bin:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 07:05 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 07:05 ..
+-rwxr-xr-x 1 runner runner   47 Oct 24 06:55 opencode2
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933:
+total 28764
+drwxr-xr-x 17 runner runner     4096 Oct 24 08:46 .
+drwxr-xr-x  4 runner runner     4096 Oct 24 08:15 ..
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:15 .ICE-unix
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:15 .X11-unix
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:15 .XIM-unix
+-rw-------  1 runner runner   514960 Oct 24 06:55 .bun-1001-71b650bef1b3e52c.node
+-rw-------  1 runner runner 12846400 Oct 24 06:55 .bun-1001-89812e6e6a68aaeb.so
+-rw-------  1 runner runner  5255600 Oct 24 06:55 .bun-1001-ebbfe5f112d1e949.so
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:15 .font-unix
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:15 CC-attack
+-rw-r--r--  1 runner runner    11844 Sep 16  2023 CHANGELOG.md
+-rw-r--r--  1 runner runner     1071 Dec  7  2022 LICENSE
+drwxr-xr-x  5 runner runner     4096 Oct 24 08:15 MHDDoS
+-rw-r--r--  1 runner runner    16232 Sep 16  2023 README.md
+-rw-r--r--  1 runner runner    95787 Oct 24 07:10 app.js
+-rw-r--r--  1 runner runner    95787 Oct 24 07:27 app_full.js
+-rw-r--r--  1 runner runner       41 Oct 24 08:29 arachu_mp4.txt
+-rw-r--r--  1 runner runner     1555 Oct 24 08:38 arachu_mp4_links.txt
+-rw-r--r--  1 runner runner    58933 Oct 24 06:55 auth-proxy.mjs
+-rw-r--r--  1 runner runner     6384 Oct 24 06:55 cf.log
+-rw-r--r--  1 runner runner    13091 Oct 24 07:39 challenge_final_resp.html
+-rw-r--r--  1 runner runner    13091 Oct 24 07:36 challenge_resp_full.html
+-rw-r--r--  1 runner runner    13091 Oct 24 07:38 challenge_resp_v2.html
+-rw-r--r--  1 runner runner    11786 Oct 24 07:34 challenge_verify_resp.html
+-rw-r--r--  1 runner runner      721 Oct 24 07:20 cookie_str.txt
+-rw-r--r--  1 runner runner      131 Oct 24 08:17 cookies.txt
+-rw-r--r--  1 runner runner      131 Oct 24 07:16 cookies2.txt
+-rw-r--r--  1 runner runner      797 Oct 24 07:14 cookies_curl.txt
+-rw-r--r--  1 runner runner      723 Oct 24 07:21 cookies_curl_ready.txt
+-rw-r--r--  1 runner runner      131 Oct 24 07:23 cookies_deface.txt
+-rw-r--r--  1 runner runner      721 Oct 24 07:24 cookies_deface_curl.txt
+-rw-r--r--  1 runner runner      131 Oct 24 07:20 cookies_final.txt
+-rw-r--r--  1 runner runner      131 Oct 24 07:21 cookies_final2.txt
+-rw-r--r--  1 runner runner        0 Oct 24 07:22 cookies_python.txt
+-rw-r--r--  1 runner runner      131 Oct 24 07:21 cookies_verbose.txt
+-rw-r--r--  1 runner runner       98 Oct 24 08:23 credentials.txt
+-rw-r--r--  1 runner runner     7897 Oct 24 07:37 csrf_419_error.html
+-rw-r--r--  1 runner runner     6886 Oct 24 07:28 curl_deface.html
+-rw-r--r--  1 runner runner     5873 Oct 24 07:23 curl_deface.txt
+-rw-r--r--  1 runner runner     7163 Oct 24 07:29 curl_deface2.html
+-rw-r--r--  1 runner runner     5680 Oct 24 07:21 curl_headers1.txt
+-rw-r--r--  1 runner runner     5352 Oct 24 07:21 curl_headers2.txt
+-rw-r--r--  1 runner runner     5798 Oct 24 07:16 curl_login.html
+-rw-r--r--  1 runner runner     5819 Oct 24 07:16 curl_login_cookies.html
+-rw-r--r--  1 runner runner       56 Oct 24 06:55 current_url.txt
+-rw-r--r--  1 runner runner    17728 Oct 24 07:14 dash_full.html
+-rw-r--r--  1 runner runner    17728 Oct 24 07:11 dashboard.html
+-rw-r--r--  1 runner runner     5703 Oct 24 07:21 dashboard_cooked.html
+-rw-r--r--  1 runner runner     5597 Oct 24 07:13 dashboard_cookies.html
+-rw-r--r--  1 runner runner     5575 Oct 24 07:22 dashboard_curl.html
+-rw-r--r--  1 runner runner     5597 Oct 24 07:20 dashboard_final.html
+-rw-r--r--  1 runner runner    17728 Oct 24 07:12 dashboard_logged.html
+-rw-r--r--  1 runner runner     5597 Oct 24 07:21 dashboard_resp3.html
+-rw-r--r--  1 runner runner     1998 Oct 24 07:47 ddos_10gbps.sh
+-rw-r--r--  1 runner runner     1504 Oct 24 07:49 ddos_v2.sh
+-rw-r--r--  1 runner runner     1850 Oct 24 07:17 deface.html
+-rw-r--r--  1 runner runner     4161 Oct 24 08:05 deface_final.html
+-rw-r--r--  1 runner runner     2205 Oct 24 07:52 deface_matrix.html
+-rw-r--r--  1 runner runner      769 Oct 24 07:52 deface_simple.html
+-rw-r--r--  1 runner runner    13786 Oct 24 07:52 deface_tool.py
+-rw-r--r--  1 runner runner    19181 Oct 24 07:28 defaced_final.html
+-rw-r--r--  1 runner runner    18440 Oct 24 07:52 defaced_login.html
+-rw-r--r--  1 runner runner    17533 Oct 24 07:28 defaced_login_page.html
+-rw-r--r--  1 runner runner    19181 Oct 24 07:29 defaced_page_final.html
+-rw-r--r--  1 runner runner    19181 Oct 24 07:28 defaced_response.html
+-rw-r--r--  1 runner runner    17386 Oct 24 07:28 defaced_simple.html
+-rw-r--r--  1 runner runner     5747 Oct 24 08:37 dood_download.html
+-rw-r--r--  1 runner runner     5399 Oct 24 08:37 dood_embed.html
+-rw-r--r--  1 runner runner     5760 Oct 24 08:33 doodstream_embed.html
+-rw-r--r--  1 runner runner     6108 Oct 24 08:33 doodstream_page.html
+-rw-r--r--  1 runner runner   415394 Oct 24 08:35 failed_page.html
+-rwxr-xr-x  1 runner runner  8151040 Sep 16  2023 ffuf
+-rw-r--r--  1 runner runner    13091 Oct 24 07:36 full_challenge_page.html
+-rw-r--r--  1 runner runner     2201 Oct 24 07:13 headers.txt
+-rw-r--r--  1 runner runner    12722 Oct 24 07:32 homepage_full.html
+-rw-r--r--  1 runner runner     5926 Oct 24 07:23 login_deface.html
+-rw-r--r--  1 runner runner     5713 Oct 24 07:20 login_final.html
+-rw-r--r--  1 runner runner     5521 Oct 24 08:17 login_page.html
+-rw-r--r--  1 runner runner     5777 Oct 24 07:20 login_page2.html
+-rw-r--r--  1 runner runner     5755 Oct 24 07:21 login_page3.html
+-rw-r--r--  1 runner runner     5777 Oct 24 07:21 login_page4.html
+-rw-r--r--  1 runner runner     5819 Oct 24 07:20 login_page_final.html
+-rw-r--r--  1 runner runner    18280 Oct 24 07:14 login_resp.html
+-rw-r--r--  1 runner runner     5713 Oct 24 07:21 login_resp3.html
+-rw-r--r--  1 runner runner     5713 Oct 24 07:21 login_resp4.html
+-rw-r--r--  1 runner runner     5734 Oct 24 07:20 login_resp_test.html
+-rw-r--r--  1 runner runner        0 Oct 24 08:46 oc-save.lock
+-rw-r--r--  1 runner runner       23 Oct 24 06:55 oc.log
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:15 opencode
+-rw-r--r--  1 runner runner       40 Oct 24 06:55 pages_url.txt
+-rw-r--r--  1 runner runner        2 Oct 24 06:55 password_verified
+-rw-r--r--  1 runner runner     5764 Oct 24 08:36 playmogo_dl.html
+-rw-r--r--  1 runner runner     5760 Oct 24 08:37 playmogo_e.html
+-rw-r--r--  1 runner runner     3836 Oct 24 08:36 playmogo_embed.html
+-rw-r--r--  1 runner runner   109428 Oct 24 06:55 protected-workflow.yml
+-rw-r--r--  1 runner runner        0 Oct 24 06:55 proxy.log
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:15 proxy_lists
+-rw-r--r--  1 runner runner    18350 Oct 24 08:15 sqli_attempt_0.html
+-rw-r--r--  1 runner runner    18352 Oct 24 08:15 sqli_attempt_1.html
+-rw-r--r--  1 runner runner    18323 Oct 24 08:15 sqli_attempt_2.html
+-rw-r--r--  1 runner runner    18330 Oct 24 08:15 sqli_attempt_3.html
+-rw-r--r--  1 runner runner    18383 Oct 24 08:15 sqli_attempt_4.html
+-rw-r--r--  1 runner runner    18374 Oct 24 08:11 sqli_tables.html
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:25 sqlmap1w3u5rlo75444
+-rw-r--r--  1 runner runner      721 Oct 24 08:24 sqlmap_cookies.txt
+-rw-r--r--  1 runner runner       84 Oct 24 08:18 sqlmap_data.txt
+-rw-r--r--  1 runner runner     3659 Oct 24 08:17 sqlmap_output.log
+-rw-r--r--  1 runner runner     6560 Oct 24 08:17 sqlmap_output2.log
+-rw-r--r--  1 runner runner      237 Oct 24 08:18 sqlmap_output3.log
+-rw-r--r--  1 runner runner   160142 Oct 24 08:23 sqlmap_output4.log
+-rw-r--r--  1 runner runner   798111 Oct 24 08:30 sqlmap_proxy_output.log
+-rw-r--r--  1 runner runner      403 Oct 24 08:24 sqlmap_req.txt
+-rw-r--r--  1 runner runner     1240 Oct 24 08:17 sqlmap_request.txt
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:25 sqlmapc8lf8jc874861
+drwxr-xr-x  2 runner runner     4096 Oct 24 08:25 sqlmapz5az8gqn75588
+-rw-r--r--  1 runner runner       14 Oct 24 06:55 start_ms.txt
+drwxr-xr-x  3 runner runner     4096 Oct 24 08:15 tmp.33o6BOc1lh
+drwxr-xr-x  3 runner runner     4096 Oct 24 08:46 tmp.Os0YXu1AVG
+drwxr-xr-x  3 runner runner     4096 Oct 24 08:36 tmp.Qk0YzBzv5p
+drwxr-xr-x  3 runner runner     4096 Oct 24 08:25 tmp.Udkd34D95m
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/.ICE-unix:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/.X11-unix:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/.XIM-unix:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/.font-unix:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/CC-attack:
+total 64
+drwxr-xr-x  2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner  4096 Oct 24 08:46 ..
+-rw-r--r--  1 runner runner 18092 Oct 24 08:12 LICENSE
+-rw-r--r--  1 runner runner  2854 Oct 24 08:12 README.md
+-rw-r--r--  1 runner runner 26962 Oct 24 08:12 cc.py
+-rw-r--r--  1 runner runner   428 Oct 24 08:12 multiproc.sh
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS:
+total 144
+drwxr-xr-x  5 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner  4096 Oct 24 08:46 ..
+drwxr-xr-x  4 runner runner  4096 Oct 24 08:15 .github
+-rw-r--r--  1 runner runner   852 Oct 24 08:12 .gitignore
+-rw-r--r--  1 runner runner   472 Oct 24 08:12 Dockerfile
+-rw-r--r--  1 runner runner  1065 Oct 24 08:12 LICENSE
+-rw-r--r--  1 runner runner 13261 Oct 24 08:12 README.md
+-rw-r--r--  1 runner runner   449 Oct 24 08:12 config.json
+-rw-r--r--  1 runner runner   243 Oct 24 08:12 docker-compose.yml
+drwxr-xr-x  3 runner runner  4096 Oct 24 08:15 files
+-rw-r--r--  1 runner runner    47 Oct 24 08:12 install.bat
+-rw-r--r--  1 runner runner   220 Oct 24 08:12 requirements.txt
+-rw-r--r--  1 runner runner    45 Oct 24 08:12 run.bat
+-rw-r--r--  1 runner runner 77139 Oct 24 08:12 start.py
+drwxr-xr-x  6 runner runner  4096 Oct 24 08:15 web
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/.github:
+total 20
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 5 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 ISSUE_TEMPLATE
+-rw-r--r-- 1 runner runner  311 Oct 24 08:12 dependabot.yml
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 workflows
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/.github/ISSUE_TEMPLATE:
+total 20
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 2678 Oct 24 08:12 bug_report.yml
+-rw-r--r-- 1 runner runner  172 Oct 24 08:12 config.yml
+-rw-r--r-- 1 runner runner 1643 Oct 24 08:12 feature_request.yml
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/.github/workflows:
+total 16
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 2333 Oct 24 08:12 codeql-analysis.yml
+-rw-r--r-- 1 runner runner  769 Oct 24 08:12 docker-image.yml
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/files:
+total 140
+drwxr-xr-x 3 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 5 runner runner  4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 proxies
+-rw-r--r-- 1 runner runner 42017 Oct 24 08:12 referers.txt
+-rw-r--r-- 1 runner runner 82670 Oct 24 08:12 useragent.txt
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/files/proxies:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner    1 Oct 24 08:12 http.txt
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web:
+total 160
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 5 runner runner  4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner   365 Oct 24 08:12 .env.example
+-rw-r--r-- 1 runner runner 20930 Oct 24 08:12 app.py
+-rw-r--r-- 1 runner runner 83948 Oct 24 08:12 package-lock.json
+-rw-r--r-- 1 runner runner   711 Oct 24 08:12 package.json
+drwxr-xr-x 3 runner runner  4096 Oct 24 08:15 public
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 src
+drwxr-xr-x 4 runner runner  4096 Oct 24 08:15 static
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 templates
+-rw-r--r-- 1 runner runner   445 Oct 24 08:12 tsconfig.json
+-rw-r--r-- 1 runner runner   824 Oct 24 08:12 web-install.bat
+-rw-r--r-- 1 runner runner   793 Oct 24 08:12 web-install.sh
+-rw-r--r-- 1 runner runner   257 Oct 24 08:12 web-start.bat
+-rw-r--r-- 1 runner runner   256 Oct 24 08:12 web-start.sh
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web/public:
+total 964
+drwxr-xr-x 3 runner runner   4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 908468 Oct 24 08:12 MHDDoS.png
+-rw-r--r-- 1 runner runner  21704 Oct 24 08:12 app.js
+-rw-r--r-- 1 runner runner   2593 Oct 24 08:12 i18n.js
+-rw-r--r-- 1 runner runner  14125 Oct 24 08:12 index.html
+drwxr-xr-x 2 runner runner   4096 Oct 24 08:15 locales
+-rw-r--r-- 1 runner runner  19508 Oct 24 08:12 style.css
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web/public/locales:
+total 36
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 4287 Oct 24 08:12 en.xml
+-rw-r--r-- 1 runner runner 4538 Oct 24 08:12 es.xml
+-rw-r--r-- 1 runner runner  272 Oct 24 08:12 manifest.json
+-rw-r--r-- 1 runner runner 4458 Oct 24 08:12 pt.xml
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web/src:
+total 28
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 16751 Oct 24 08:12 server.ts
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web/static:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 css
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 js
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web/static/css:
+total 24
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner  4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 12712 Oct 24 08:12 style.css
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web/static/js:
+total 24
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner  4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 14339 Oct 24 08:12 app.js
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/MHDDoS/web/templates:
+total 24
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 15737 Oct 24 08:12 index.html
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/opencode:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/proxy_lists:
+total 13068
+drwxr-xr-x  2 runner runner    4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner    4096 Oct 24 08:46 ..
+-rw-r--r--  1 runner runner  157736 Oct 24 08:03 all_http_merged.txt
+-rw-r--r--  1 runner runner   93228 Oct 24 08:03 all_https_merged.txt
+-rw-r--r--  1 runner runner  228892 Oct 24 08:02 all_kangproxy.txt
+-rw-r--r--  1 runner runner 1568446 Oct 24 08:03 all_merged.txt
+-rw-r--r--  1 runner runner 2252979 Oct 24 08:02 all_proxifly.txt
+-rw-r--r--  1 runner runner   61651 Oct 24 08:03 all_socks4_merged.txt
+-rw-r--r--  1 runner runner 1396304 Oct 24 08:03 all_socks5_merged.txt
+-rw-r--r--  1 runner runner  265735 Oct 24 08:04 final_http.txt
+-rw-r--r--  1 runner runner   93228 Oct 24 08:04 final_https.txt
+-rw-r--r--  1 runner runner   63001 Oct 24 08:04 final_socks4.txt
+-rw-r--r--  1 runner runner 1418035 Oct 24 08:04 final_socks5.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 http_charles.txt
+-rw-r--r--  1 runner runner       0 Oct 24 08:03 http_charles2.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 http_clearproxy.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:03 http_clearproxy2.txt
+-rw-r--r--  1 runner runner  131946 Oct 24 08:03 http_databay.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 http_dpangestu.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:03 http_dpangestu2.txt
+-rw-r--r--  1 runner runner   17353 Oct 24 08:03 http_gfpcom.txt
+-rw-r--r--  1 runner runner   14752 Oct 24 08:02 http_kangproxy.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 http_komutan.txt
+-rw-r--r--  1 runner runner   74610 Oct 24 08:03 http_komutan2.txt
+-rw-r--r--  1 runner runner    3921 Oct 24 08:03 http_maximilianfeix.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 http_monosans.txt
+-rw-r--r--  1 runner runner    8472 Oct 24 08:03 http_monosans2.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:03 http_openproxy.txt
+-rw-r--r--  1 runner runner  152832 Oct 24 08:02 http_proxifly.txt
+-rw-r--r--  1 runner runner   25710 Oct 24 08:03 http_proxyfree.txt
+-rw-r--r--  1 runner runner   14314 Oct 24 08:02 http_proxylistto.txt
+-rw-r--r--  1 runner runner   14314 Oct 24 08:03 http_proxylistto2.txt
+-rw-r--r--  1 runner runner    1113 Oct 24 08:02 http_prxchk.txt
+-rw-r--r--  1 runner runner    1113 Oct 24 08:03 http_prxchk2.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 http_r00tee.txt
+-rw-r--r--  1 runner runner   55363 Oct 24 08:02 http_speedx.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 http_stormsia.txt
+-rw-r--r--  1 runner runner    4425 Oct 24 08:03 http_stormsia2.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:03 http_vakhov.txt
+-rw-r--r--  1 runner runner   10698 Oct 24 08:03 https_gfpcom.txt
+-rw-r--r--  1 runner runner  174803 Oct 24 08:02 https_kangproxy.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 https_monosans.txt
+-rw-r--r--  1 runner runner    1903 Oct 24 08:03 https_openproxy.txt
+-rw-r--r--  1 runner runner    6768 Oct 24 08:03 https_openproxy_full.txt
+-rw-r--r--  1 runner runner   25925 Oct 24 08:02 https_proxifly.txt
+-rw-r--r--  1 runner runner    6026 Oct 24 08:12 live_socks5.txt
+-rw-r--r--  1 runner runner 2139097 Oct 24 08:10 mubeng_socks5.txt
+-rw-r--r--  1 runner runner   24938 Oct 24 08:03 proxies_charles.json
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks4_charles.txt
+-rw-r--r--  1 runner runner       0 Oct 24 08:03 socks4_charles2.txt
+-rw-r--r--  1 runner runner    9555 Oct 24 08:03 socks4_gfpcom.txt
+-rw-r--r--  1 runner runner   18174 Oct 24 08:02 socks4_kangproxy.txt
+-rw-r--r--  1 runner runner    2573 Oct 24 08:03 socks4_maximilianfeix.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks4_monosans.txt
+-rw-r--r--  1 runner runner    2808 Oct 24 08:03 socks4_monosans2.txt
+-rw-r--r--  1 runner runner    2914 Oct 24 08:03 socks4_openproxy.txt
+-rw-r--r--  1 runner runner   10189 Oct 24 08:03 socks4_openproxy_full.txt
+-rw-r--r--  1 runner runner   15795 Oct 24 08:02 socks4_proxifly.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks4_r00tee.txt
+-rw-r--r--  1 runner runner   46672 Oct 24 08:02 socks4_speedx.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks5
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks5_charles.txt
+-rw-r--r--  1 runner runner       0 Oct 24 08:03 socks5_charles2.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks5_clearproxy.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:03 socks5_clearproxy2.txt
+-rw-r--r--  1 runner runner   13913 Oct 24 08:03 socks5_databay.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks5_dpangestu.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:03 socks5_dpangestu2.txt
+-rw-r--r--  1 runner runner    9861 Oct 24 08:03 socks5_gfpcom.txt
+-rw-r--r--  1 runner runner   21163 Oct 24 08:02 socks5_kangproxy.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks5_komutan.txt
+-rw-r--r--  1 runner runner   93195 Oct 24 08:03 socks5_komutan2.txt
+-rw-r--r--  1 runner runner   43694 Oct 24 08:03 socks5_maximilianfeix.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks5_monosans.txt
+-rw-r--r--  1 runner runner   22375 Oct 24 08:03 socks5_monosans2.txt
+-rw-r--r--  1 runner runner     117 Oct 24 08:03 socks5_openproxy.txt
+-rw-r--r--  1 runner runner     688 Oct 24 08:03 socks5_openproxy_full.txt
+-rw-r--r--  1 runner runner 2058424 Oct 24 08:02 socks5_proxifly.txt
+-rw-r--r--  1 runner runner   37667 Oct 24 08:03 socks5_proxyfree.txt
+-rw-r--r--  1 runner runner    3957 Oct 24 08:02 socks5_proxylistto.txt
+-rw-r--r--  1 runner runner    3957 Oct 24 08:03 socks5_proxylistto2.txt
+-rw-r--r--  1 runner runner     190 Oct 24 08:02 socks5_prxchk.txt
+-rw-r--r--  1 runner runner     190 Oct 24 08:03 socks5_prxchk2.txt
+-rw-r--r--  1 runner runner   40679 Oct 24 08:02 socks5_r00tee.txt
+-rw-r--r--  1 runner runner    2214 Oct 24 08:03 socks5_relayglass.txt
+-rw-r--r--  1 runner runner   91556 Oct 24 08:02 socks5_speedx.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:02 socks5_stormsia.txt
+-rw-r--r--  1 runner runner    1460 Oct 24 08:03 socks5_stormsia2.txt
+-rw-r--r--  1 runner runner      14 Oct 24 08:03 socks5_vakhov.txt
+-rw-r--r--  1 runner runner   31133 Oct 24 08:02 tested_kangproxy.txt
+-rw-r--r--  1 runner runner   41673 Oct 24 08:03 v2ray_openproxy.txt
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/sqlmap1w3u5rlo75444:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/sqlmapc8lf8jc874861:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/sqlmapz5az8gqn75588:
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh:
+total 12
+drwxr-xr-x  3 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x  4 runner runner 4096 Oct 24 08:15 home
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 .config
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 .local
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.config:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.config/opencode:
+total 16
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner  354 Oct 24 07:07 opencode.json
+-rw------- 1 runner runner   64 Oct 23 12:40 service.json
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 share
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 state
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode:
+total 16512
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 16850944 Oct 24 08:15 opencode.db
+-rw-r--r-- 1 runner runner    32768 Oct 24 08:15 opencode.db-shm
+-rw-r--r-- 1 runner runner        0 Oct 24 08:15 opencode.db-wal
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:15 repos
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:15 shell
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:15 snapshot
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:15 tool-output
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/repos:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/shell:
+total 32
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 470c8549ef01a2a9d3c85b22965766cefc874134
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 7b8aac583cc766fe9102b42174b410c0bf5bfdac
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:15 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+drwxr-xr-x 2 runner runner 12288 Oct 24 08:15 e6c7f69750a97bbd4a59ad21432d3cafecde1f16
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/shell/470c8549ef01a2a9d3c85b22965766cefc874134:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/shell/7b8aac583cc766fe9102b42174b410c0bf5bfdac:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/shell/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 44
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 4000 Oct 23 13:13 sh_168e4e8d7001rBQACNYzu5Hb6N.out
+-rw-r--r-- 1 runner runner    0 Oct 23 13:13 sh_168e4e8d7002ozE2OFpBneWlVG.out
+-rw-r--r-- 1 runner runner 4659 Oct 23 13:13 sh_168e4f614001ca505yDlcYKZc4.out
+-rw-r--r-- 1 runner runner  456 Oct 23 13:13 sh_168e509c8001F4rQdFqJDy6TU2.out
+-rw-r--r-- 1 runner runner 3045 Oct 23 13:13 sh_168e51cde001QWeFxDbBYPQQW4.out
+-rw-r--r-- 1 runner runner   24 Oct 23 13:13 sh_168e51cde002505Z8rsOMenGXv.out
+-rw-r--r-- 1 runner runner  609 Oct 23 13:13 sh_168e539f90014BMEHp5UpxFaKi.out
+-rw-r--r-- 1 runner runner  652 Oct 23 13:13 sh_168e54b18001elNfuXprer0EER.out
+-rw-r--r-- 1 runner runner  379 Oct 23 13:13 sh_168e55a91001aMU16gjvBSP1lB.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/shell/e6c7f69750a97bbd4a59ad21432d3cafecde1f16:
+total 560
+drwxr-xr-x 2 runner runner  12288 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner    162 Oct 23 16:46 sh_169a837f2001fo7114aisfWKbp.out
+-rw-r--r-- 1 runner runner    259 Oct 23 16:46 sh_169a83dc6001DF2d5RkF3YxEcn.out
+-rw-r--r-- 1 runner runner    566 Oct 23 16:46 sh_169a84345001aFqeZXNjZkjwOl.out
+-rw-r--r-- 1 runner runner    624 Oct 23 16:46 sh_169a85217001VHVKYSASM1SRjq.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:46 sh_169a856be001Hl1B9O2ssy114d.out
+-rw-r--r-- 1 runner runner   5354 Oct 23 16:48 sh_169aa3448001TxrH58qLkwpdMl.out
+-rw-r--r-- 1 runner runner    182 Oct 23 16:48 sh_169aa42cc001Cser2gfv4qXIOg.out
+-rw-r--r-- 1 runner runner   3182 Oct 23 16:48 sh_169aa4d54001VC46qcZgJr70U6.out
+-rw-r--r-- 1 runner runner     71 Oct 23 16:48 sh_169aa507a001TZCoCBglU1MAVT.out
+-rw-r--r-- 1 runner runner   4396 Oct 23 16:48 sh_169aa5445001PlNc0aBAmtvgYY.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:48 sh_169aa5b6e001qaCGm6IY9ED6Rp.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:50 sh_169ac331200171HMBmkQD40955.out
+-rw-r--r-- 1 runner runner      4 Oct 23 16:52 sh_169ae0c830013ZnM6EYZwv4kyB.out
+-rw-r--r-- 1 runner runner   4212 Oct 23 16:52 sh_169ae125d001cgwY6qSz4iYBaI.out
+-rw-r--r-- 1 runner runner    628 Oct 23 16:53 sh_169ae1d13001LGMqwZcK5ZXdE6.out
+-rw-r--r-- 1 runner runner    157 Oct 23 16:53 sh_169ae2058001mQutvMpRV4JJJZ.out
+-rw-r--r-- 1 runner runner   1831 Oct 23 16:53 sh_169ae22f7001jYRHg8RXfv92tz.out
+-rw-r--r-- 1 runner runner    267 Oct 23 16:53 sh_169ae273f001DwB9OsEsWb6MUH.out
+-rw-r--r-- 1 runner runner    846 Oct 23 16:53 sh_169ae2a80001sLkGtrw5GWKPx0.out
+-rw-r--r-- 1 runner runner 126024 Oct 23 16:53 sh_169ae2dc80014Xifk67rKszWWu.out
+-rw-r--r-- 1 runner runner      3 Oct 23 16:53 sh_169ae328f001GhUJKBOa2xJADK.out
+-rw-r--r-- 1 runner runner    415 Oct 23 16:53 sh_169ae358e0010544lKFz4NRtIB.out
+-rw-r--r-- 1 runner runner    490 Oct 23 16:53 sh_169ae3b6f001klGF5uoCtexnV2.out
+-rw-r--r-- 1 runner runner    186 Oct 23 16:53 sh_169ae40330010AOPfm4qV2fnO1.out
+-rw-r--r-- 1 runner runner  31500 Oct 23 16:53 sh_169ae4849001Fs7HJDvhHCYn0m.out
+-rw-r--r-- 1 runner runner    608 Oct 23 19:46 sh_16a4cc8c4001IrKOs6RYN5fiX7.out
+-rw-r--r-- 1 runner runner     78 Oct 23 19:46 sh_16a4cdfb6001tMeTFfW5vvtNhj.out
+-rw-r--r-- 1 runner runner   4201 Oct 23 19:47 sh_16a4e4369001rawxlx0gKpLwSu.out
+-rw-r--r-- 1 runner runner    991 Oct 23 19:47 sh_16a4e4ce5001fwKvgZKP7WcZKx.out
+-rw-r--r-- 1 runner runner    175 Oct 23 19:48 sh_16a4eb862001QrsCWLWMO4ZpYf.out
+-rw-r--r-- 1 runner runner      4 Oct 23 19:48 sh_16a4ec5ee001Mv4Iw49Ineom40.out
+-rw-r--r-- 1 runner runner    206 Oct 23 19:50 sh_16a4ecf5f001zifMGfkTkBNUKb.out
+-rw-r--r-- 1 runner runner      0 Oct 23 19:50 sh_16a502cae001nKlHDTSdMcBKuy.out
+-rw-r--r-- 1 runner runner     16 Oct 23 19:50 sh_16a503c9b001SHugjSTNDh3auH.out
+-rw-r--r-- 1 runner runner     48 Oct 23 19:50 sh_16a504ab70013qv6T6dAv4vWbM.out
+-rw-r--r-- 1 runner runner    119 Oct 24 02:34 sh_16bc26836001AbB47ueZ63Sqr2.out
+-rw-r--r-- 1 runner runner    433 Oct 24 02:34 sh_16bc26de5001sKWjcKCXk115dR.out
+-rw-r--r-- 1 runner runner   1192 Oct 24 02:36 sh_16bc41879001voag2LkmDOVJjn.out
+-rw-r--r-- 1 runner runner    176 Oct 24 02:36 sh_16bc427e0001939yVFowZdocHn.out
+-rw-r--r-- 1 runner runner    193 Oct 24 02:36 sh_16bc42bc00016JKQnvQiD2EUNZ.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:36 sh_16bc43438001ICaipjjWUh65Qk.out
+-rw-r--r-- 1 runner runner    137 Oct 24 02:37 sh_16bc56e810011Gxt1IO9yXCP6R.out
+-rw-r--r-- 1 runner runner     62 Oct 24 02:37 sh_16bc57e04001t7bVUITP6M37tt.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:37 sh_16bc58768001s7fMYiphFwkwVt.out
+-rw-r--r-- 1 runner runner     37 Oct 24 02:38 sh_16bc5a290001voRHQAfeCUtGGn.out
+-rw-r--r-- 1 runner runner      8 Oct 24 02:38 sh_16bc5c098001cCUXnMcf0TI6YT.out
+-rw-r--r-- 1 runner runner    245 Oct 24 02:38 sh_16bc60c71001SeoIdaUdwIt7Wq.out
+-rw-r--r-- 1 runner runner     77 Oct 24 02:38 sh_16bc61355001htq4OqZGih185v.out
+-rw-r--r-- 1 runner runner   1554 Oct 24 02:38 sh_16bc626200015qMkBNE5Eil9Ix.out
+-rw-r--r-- 1 runner runner     82 Oct 24 02:38 sh_16bc63dfc001XM5t5Lnj5STaSo.out
+-rw-r--r-- 1 runner runner    902 Oct 24 05:30 sh_16c63efcb001qE8UeTr6qNsUvO.out
+-rw-r--r-- 1 runner runner   1602 Oct 24 05:30 sh_16c640cae001dJd486kcUg0LQO.out
+-rw-r--r-- 1 runner runner   2314 Oct 24 05:31 sh_16c6411b5001KzKjg0vvb0w3Y1.out
+-rw-r--r-- 1 runner runner    216 Oct 24 05:31 sh_16c641a2f001AJZiFDir90IcyL.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:31 sh_16c64330d001sNuwbXt0r5ExQv.out
+-rw-r--r-- 1 runner runner    337 Oct 24 05:31 sh_16c6439fe001Mo4FTQ570hSi2o.out
+-rw-r--r-- 1 runner runner    190 Oct 24 05:31 sh_16c645315001q1HQ00bRzb6WGB.out
+-rw-r--r-- 1 runner runner    963 Oct 24 05:31 sh_16c645e61001pqFdGxf0fulJTq.out
+-rw-r--r-- 1 runner runner    182 Oct 24 05:31 sh_16c649534001VFvztBAHeF67Vx.out
+-rw-r--r-- 1 runner runner    172 Oct 24 05:31 sh_16c64d7dc001gC2KYXaYf2AZJi.out
+-rw-r--r-- 1 runner runner   1099 Oct 24 05:31 sh_16c64ddf3001xbgu07c1F4jITz.out
+-rw-r--r-- 1 runner runner    174 Oct 24 05:31 sh_16c64e4b9001ZF27wTFbtvWAPt.out
+-rw-r--r-- 1 runner runner    820 Oct 24 05:31 sh_16c64ea93001loK8pez0cBUr2U.out
+-rw-r--r-- 1 runner runner    144 Oct 24 05:32 sh_16c64fe0a001ROjFK96gnUc7lX.out
+-rw-r--r-- 1 runner runner     19 Oct 24 05:32 sh_16c650d20001qscquYRlJGPA49.out
+-rw-r--r-- 1 runner runner   1385 Oct 24 05:32 sh_16c651082001uK8RRA1jHzcpsw.out
+-rw-r--r-- 1 runner runner    105 Oct 24 05:32 sh_16c655b0b001GT572UyJUwBXm5.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:32 sh_16c655ffe001m5jDCfQYKxRCQ6.out
+-rw-r--r-- 1 runner runner    237 Oct 24 05:34 sh_16c66e0e8001S1l6F66nT3mKl8.out
+-rw-r--r-- 1 runner runner      9 Oct 24 05:34 sh_16c66f483001Ng0ii57JHwW8lQ.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:34 sh_16c66f834001KbL4Bojo3TT8N0.out
+-rw-r--r-- 1 runner runner    106 Oct 24 05:34 sh_16c66ff12001eSb4BQCxrnBQFu.out
+-rw-r--r-- 1 runner runner    111 Oct 24 05:34 sh_16c6708bc001d03WU8eUQkVdwf.out
+-rw-r--r-- 1 runner runner    163 Oct 24 05:34 sh_16c670f8c0019qUf3nuyTcKheU.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:34 sh_16c672216001vFqnuAh19z6n5K.out
+-rw-r--r-- 1 runner runner    277 Oct 24 08:07 sh_16cf39b34001ZJe2LzAlNck4xT.out
+-rw-r--r-- 1 runner runner    509 Oct 24 08:08 sh_16cf3df95001q7P3HJ3ICRPKZS.out
+-rw-r--r-- 1 runner runner    195 Oct 24 08:08 sh_16cf43d74001VWIQWsATIfcOeS.out
+-rw-r--r-- 1 runner runner    337 Oct 24 08:08 sh_16cf4893a0013ozRVr7Q6JRLrB.out
+-rw-r--r-- 1 runner runner   4078 Oct 24 08:08 sh_16cf49eaf001RxZevPTIG3NBci.out
+-rw-r--r-- 1 runner runner    647 Oct 24 08:09 sh_16cf4ec4d001emN32wAGIBN7Qw.out
+-rw-r--r-- 1 runner runner    119 Oct 24 08:09 sh_16cf52acb0015kq358PoDyDAu6.out
+-rw-r--r-- 1 runner runner     68 Oct 24 08:09 sh_16cf542f30016gwj8lYrjZEOIB.out
+-rw-r--r-- 1 runner runner    636 Oct 24 08:10 sh_16cf5f620001jjxqRf93HkB3fJ.out
+-rw-r--r-- 1 runner runner    282 Oct 24 08:10 sh_16cf607b9001PagFchYVvTnXSP.out
+-rw-r--r-- 1 runner runner    193 Oct 24 08:10 sh_16cf613c9001YyJWLESCDMJi30.out
+-rw-r--r-- 1 runner runner    440 Oct 24 08:10 sh_16cf65f5b001LJfjEYItC7gRKr.out
+-rw-r--r-- 1 runner runner    249 Oct 24 08:11 sh_16cf6f77900176P6dmwlH6ZPlK.out
+-rw-r--r-- 1 runner runner   1300 Oct 24 08:11 sh_16cf729ad001KnrNzh8M8btIw9.out
+-rw-r--r-- 1 runner runner   1142 Oct 24 08:12 sh_16cf77d16001cIdmTI2KQOOC0G.out
+-rw-r--r-- 1 runner runner    209 Oct 24 08:12 sh_16cf84015001CAgpkEw6FfISiq.out
+-rw-r--r-- 1 runner runner   1255 Oct 24 08:13 sh_16cf84a4c001JMcegF5SX3Bg34.out
+-rw-r--r-- 1 runner runner   1856 Oct 24 08:14 sh_16cf890d8001ZSu1CZMpFrBvBb.out
+-rw-r--r-- 1 runner runner   1222 Oct 24 08:13 sh_16cf89a8b001o73BWpTY5z6LZR.out
+-rw-r--r-- 1 runner runner     86 Oct 24 08:13 sh_16cf8a0ac001DiDzjuJsv9lkid.out
+-rw-r--r-- 1 runner runner    907 Oct 24 08:13 sh_16cf8a5d9001pHxDJWEbSF4wPt.out
+-rw-r--r-- 1 runner runner   1532 Oct 24 08:13 sh_16cf8abb3001adHpqNyCV7zyMj.out
+-rw-r--r-- 1 runner runner   2180 Oct 24 08:13 sh_16cf8bc96001gxL77JXY9E9qiL.out
+-rw-r--r-- 1 runner runner   1512 Oct 24 08:14 sh_16cf95a7e0013IOxOrRmHrWiOv.out
+-rw-r--r-- 1 runner runner   1228 Oct 24 08:15 sh_16cfa3d56001ARhw4B64tfXht9.out
+-rw-r--r-- 1 runner runner    666 Oct 24 08:15 sh_16cfa4f24001JEe5IDsr79hny6.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 a8e127369044034c85a467eb702c71ede3ce3809
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809:
+total 44
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner   23 Oct 23 13:07 HEAD
+-rw-r--r-- 1 runner runner  178 Oct 23 13:07 config
+-rwxr-xr-x 1 runner runner   73 Oct 23 13:07 description
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 hooks
+-rw-r--r-- 1 runner runner  555 Oct 23 13:07 index
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 info
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 objects
+-rw-r--r-- 1 runner runner  270 Oct 23 13:07 opencode.gitconfig
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 refs
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/hooks:
+total 72
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+-rwxr-xr-x 1 runner runner  478 Oct 23 13:07 applypatch-msg.sample
+-rwxr-xr-x 1 runner runner 1972 Oct 23 13:07 commit-msg.sample
+-rwxr-xr-x 1 runner runner 4611 Oct 23 13:07 fsmonitor-watchman.sample
+-rwxr-xr-x 1 runner runner  189 Oct 23 13:07 post-update.sample
+-rwxr-xr-x 1 runner runner  424 Oct 23 13:07 pre-applypatch.sample
+-rwxr-xr-x 1 runner runner 1649 Oct 23 13:07 pre-commit.sample
+-rwxr-xr-x 1 runner runner  416 Oct 23 13:07 pre-merge-commit.sample
+-rwxr-xr-x 1 runner runner 1374 Oct 23 13:07 pre-push.sample
+-rwxr-xr-x 1 runner runner 4898 Oct 23 13:07 pre-rebase.sample
+-rwxr-xr-x 1 runner runner  544 Oct 23 13:07 pre-receive.sample
+-rwxr-xr-x 1 runner runner 1492 Oct 23 13:07 prepare-commit-msg.sample
+-rwxr-xr-x 1 runner runner 2783 Oct 23 13:07 push-to-checkout.sample
+-rwxr-xr-x 1 runner runner 2308 Oct 23 13:07 sendemail-validate.sample
+-rwxr-xr-x 1 runner runner 3650 Oct 23 13:07 update.sample
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+-rwxr-xr-x 1 runner runner  240 Oct 23 13:07 exclude
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 info
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 pack
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner   49 Oct 23 13:07 alternates
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/pack:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 heads
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 tags
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/heads:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/tags:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/share/opencode/tool-output:
+total 544
+drwxr-xr-x 2 runner runner   4096 Oct 24 08:15 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:15 ..
+-rw-r--r-- 1 runner runner 204526 Oct 23 15:41 tool_1696cf80a001dK5LRq5U6K0syU
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:09 tool_16cbea8120016SzWB4MmY549n6
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:10 tool_16cbec2db001FDRDoFSPgshUBV
+-rw-r--r-- 1 runner runner 144575 Oct 24 08:02 tool_16cef21f1001qrGiMKXINIEuTj
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/state:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.33o6BOc1lh/home/.local/state/opencode:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:15 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:15 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG:
+total 12
+drwxr-xr-x  3 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x  4 runner runner 4096 Oct 24 08:46 home
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 .config
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 .local
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.config:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.config/opencode:
+total 16
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner  354 Oct 24 07:07 opencode.json
+-rw------- 1 runner runner   64 Oct 23 12:40 service.json
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 share
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 state
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode:
+total 18548
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:46 .
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner 18935808 Oct 24 08:46 opencode.db
+-rw-r--r-- 1 runner runner    32768 Oct 24 08:46 opencode.db-shm
+-rw-r--r-- 1 runner runner        0 Oct 24 08:46 opencode.db-wal
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:46 repos
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:46 shell
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:46 snapshot
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:46 tool-output
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/repos:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/shell:
+total 32
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:46 ..
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:46 470c8549ef01a2a9d3c85b22965766cefc874134
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:46 7b8aac583cc766fe9102b42174b410c0bf5bfdac
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:46 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+drwxr-xr-x 2 runner runner 12288 Oct 24 08:46 e6c7f69750a97bbd4a59ad21432d3cafecde1f16
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/shell/470c8549ef01a2a9d3c85b22965766cefc874134:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/shell/7b8aac583cc766fe9102b42174b410c0bf5bfdac:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/shell/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 44
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner 4000 Oct 23 13:13 sh_168e4e8d7001rBQACNYzu5Hb6N.out
+-rw-r--r-- 1 runner runner    0 Oct 23 13:13 sh_168e4e8d7002ozE2OFpBneWlVG.out
+-rw-r--r-- 1 runner runner 4659 Oct 23 13:13 sh_168e4f614001ca505yDlcYKZc4.out
+-rw-r--r-- 1 runner runner  456 Oct 23 13:13 sh_168e509c8001F4rQdFqJDy6TU2.out
+-rw-r--r-- 1 runner runner 3045 Oct 23 13:13 sh_168e51cde001QWeFxDbBYPQQW4.out
+-rw-r--r-- 1 runner runner   24 Oct 23 13:13 sh_168e51cde002505Z8rsOMenGXv.out
+-rw-r--r-- 1 runner runner  609 Oct 23 13:13 sh_168e539f90014BMEHp5UpxFaKi.out
+-rw-r--r-- 1 runner runner  652 Oct 23 13:13 sh_168e54b18001elNfuXprer0EER.out
+-rw-r--r-- 1 runner runner  379 Oct 23 13:13 sh_168e55a91001aMU16gjvBSP1lB.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/shell/e6c7f69750a97bbd4a59ad21432d3cafecde1f16:
+total 1372
+drwxr-xr-x 2 runner runner  12288 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner    162 Oct 23 16:46 sh_169a837f2001fo7114aisfWKbp.out
+-rw-r--r-- 1 runner runner    259 Oct 23 16:46 sh_169a83dc6001DF2d5RkF3YxEcn.out
+-rw-r--r-- 1 runner runner    566 Oct 23 16:46 sh_169a84345001aFqeZXNjZkjwOl.out
+-rw-r--r-- 1 runner runner    624 Oct 23 16:46 sh_169a85217001VHVKYSASM1SRjq.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:46 sh_169a856be001Hl1B9O2ssy114d.out
+-rw-r--r-- 1 runner runner   5354 Oct 23 16:48 sh_169aa3448001TxrH58qLkwpdMl.out
+-rw-r--r-- 1 runner runner    182 Oct 23 16:48 sh_169aa42cc001Cser2gfv4qXIOg.out
+-rw-r--r-- 1 runner runner   3182 Oct 23 16:48 sh_169aa4d54001VC46qcZgJr70U6.out
+-rw-r--r-- 1 runner runner     71 Oct 23 16:48 sh_169aa507a001TZCoCBglU1MAVT.out
+-rw-r--r-- 1 runner runner   4396 Oct 23 16:48 sh_169aa5445001PlNc0aBAmtvgYY.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:48 sh_169aa5b6e001qaCGm6IY9ED6Rp.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:50 sh_169ac331200171HMBmkQD40955.out
+-rw-r--r-- 1 runner runner      4 Oct 23 16:52 sh_169ae0c830013ZnM6EYZwv4kyB.out
+-rw-r--r-- 1 runner runner   4212 Oct 23 16:52 sh_169ae125d001cgwY6qSz4iYBaI.out
+-rw-r--r-- 1 runner runner    628 Oct 23 16:53 sh_169ae1d13001LGMqwZcK5ZXdE6.out
+-rw-r--r-- 1 runner runner    157 Oct 23 16:53 sh_169ae2058001mQutvMpRV4JJJZ.out
+-rw-r--r-- 1 runner runner   1831 Oct 23 16:53 sh_169ae22f7001jYRHg8RXfv92tz.out
+-rw-r--r-- 1 runner runner    267 Oct 23 16:53 sh_169ae273f001DwB9OsEsWb6MUH.out
+-rw-r--r-- 1 runner runner    846 Oct 23 16:53 sh_169ae2a80001sLkGtrw5GWKPx0.out
+-rw-r--r-- 1 runner runner 126024 Oct 23 16:53 sh_169ae2dc80014Xifk67rKszWWu.out
+-rw-r--r-- 1 runner runner      3 Oct 23 16:53 sh_169ae328f001GhUJKBOa2xJADK.out
+-rw-r--r-- 1 runner runner    415 Oct 23 16:53 sh_169ae358e0010544lKFz4NRtIB.out
+-rw-r--r-- 1 runner runner    490 Oct 23 16:53 sh_169ae3b6f001klGF5uoCtexnV2.out
+-rw-r--r-- 1 runner runner    186 Oct 23 16:53 sh_169ae40330010AOPfm4qV2fnO1.out
+-rw-r--r-- 1 runner runner  31500 Oct 23 16:53 sh_169ae4849001Fs7HJDvhHCYn0m.out
+-rw-r--r-- 1 runner runner    608 Oct 23 19:46 sh_16a4cc8c4001IrKOs6RYN5fiX7.out
+-rw-r--r-- 1 runner runner     78 Oct 23 19:46 sh_16a4cdfb6001tMeTFfW5vvtNhj.out
+-rw-r--r-- 1 runner runner   4201 Oct 23 19:47 sh_16a4e4369001rawxlx0gKpLwSu.out
+-rw-r--r-- 1 runner runner    991 Oct 23 19:47 sh_16a4e4ce5001fwKvgZKP7WcZKx.out
+-rw-r--r-- 1 runner runner    175 Oct 23 19:48 sh_16a4eb862001QrsCWLWMO4ZpYf.out
+-rw-r--r-- 1 runner runner      4 Oct 23 19:48 sh_16a4ec5ee001Mv4Iw49Ineom40.out
+-rw-r--r-- 1 runner runner    206 Oct 23 19:50 sh_16a4ecf5f001zifMGfkTkBNUKb.out
+-rw-r--r-- 1 runner runner      0 Oct 23 19:50 sh_16a502cae001nKlHDTSdMcBKuy.out
+-rw-r--r-- 1 runner runner     16 Oct 23 19:50 sh_16a503c9b001SHugjSTNDh3auH.out
+-rw-r--r-- 1 runner runner     48 Oct 23 19:50 sh_16a504ab70013qv6T6dAv4vWbM.out
+-rw-r--r-- 1 runner runner    119 Oct 24 02:34 sh_16bc26836001AbB47ueZ63Sqr2.out
+-rw-r--r-- 1 runner runner    433 Oct 24 02:34 sh_16bc26de5001sKWjcKCXk115dR.out
+-rw-r--r-- 1 runner runner   1192 Oct 24 02:36 sh_16bc41879001voag2LkmDOVJjn.out
+-rw-r--r-- 1 runner runner    176 Oct 24 02:36 sh_16bc427e0001939yVFowZdocHn.out
+-rw-r--r-- 1 runner runner    193 Oct 24 02:36 sh_16bc42bc00016JKQnvQiD2EUNZ.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:36 sh_16bc43438001ICaipjjWUh65Qk.out
+-rw-r--r-- 1 runner runner    137 Oct 24 02:37 sh_16bc56e810011Gxt1IO9yXCP6R.out
+-rw-r--r-- 1 runner runner     62 Oct 24 02:37 sh_16bc57e04001t7bVUITP6M37tt.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:37 sh_16bc58768001s7fMYiphFwkwVt.out
+-rw-r--r-- 1 runner runner     37 Oct 24 02:38 sh_16bc5a290001voRHQAfeCUtGGn.out
+-rw-r--r-- 1 runner runner      8 Oct 24 02:38 sh_16bc5c098001cCUXnMcf0TI6YT.out
+-rw-r--r-- 1 runner runner    245 Oct 24 02:38 sh_16bc60c71001SeoIdaUdwIt7Wq.out
+-rw-r--r-- 1 runner runner     77 Oct 24 02:38 sh_16bc61355001htq4OqZGih185v.out
+-rw-r--r-- 1 runner runner   1554 Oct 24 02:38 sh_16bc626200015qMkBNE5Eil9Ix.out
+-rw-r--r-- 1 runner runner     82 Oct 24 02:38 sh_16bc63dfc001XM5t5Lnj5STaSo.out
+-rw-r--r-- 1 runner runner    902 Oct 24 05:30 sh_16c63efcb001qE8UeTr6qNsUvO.out
+-rw-r--r-- 1 runner runner   1602 Oct 24 05:30 sh_16c640cae001dJd486kcUg0LQO.out
+-rw-r--r-- 1 runner runner   2314 Oct 24 05:31 sh_16c6411b5001KzKjg0vvb0w3Y1.out
+-rw-r--r-- 1 runner runner    216 Oct 24 05:31 sh_16c641a2f001AJZiFDir90IcyL.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:31 sh_16c64330d001sNuwbXt0r5ExQv.out
+-rw-r--r-- 1 runner runner    337 Oct 24 05:31 sh_16c6439fe001Mo4FTQ570hSi2o.out
+-rw-r--r-- 1 runner runner    190 Oct 24 05:31 sh_16c645315001q1HQ00bRzb6WGB.out
+-rw-r--r-- 1 runner runner    963 Oct 24 05:31 sh_16c645e61001pqFdGxf0fulJTq.out
+-rw-r--r-- 1 runner runner    182 Oct 24 05:31 sh_16c649534001VFvztBAHeF67Vx.out
+-rw-r--r-- 1 runner runner    172 Oct 24 05:31 sh_16c64d7dc001gC2KYXaYf2AZJi.out
+-rw-r--r-- 1 runner runner   1099 Oct 24 05:31 sh_16c64ddf3001xbgu07c1F4jITz.out
+-rw-r--r-- 1 runner runner    174 Oct 24 05:31 sh_16c64e4b9001ZF27wTFbtvWAPt.out
+-rw-r--r-- 1 runner runner    820 Oct 24 05:31 sh_16c64ea93001loK8pez0cBUr2U.out
+-rw-r--r-- 1 runner runner    144 Oct 24 05:32 sh_16c64fe0a001ROjFK96gnUc7lX.out
+-rw-r--r-- 1 runner runner     19 Oct 24 05:32 sh_16c650d20001qscquYRlJGPA49.out
+-rw-r--r-- 1 runner runner   1385 Oct 24 05:32 sh_16c651082001uK8RRA1jHzcpsw.out
+-rw-r--r-- 1 runner runner    105 Oct 24 05:32 sh_16c655b0b001GT572UyJUwBXm5.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:32 sh_16c655ffe001m5jDCfQYKxRCQ6.out
+-rw-r--r-- 1 runner runner    237 Oct 24 05:34 sh_16c66e0e8001S1l6F66nT3mKl8.out
+-rw-r--r-- 1 runner runner      9 Oct 24 05:34 sh_16c66f483001Ng0ii57JHwW8lQ.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:34 sh_16c66f834001KbL4Bojo3TT8N0.out
+-rw-r--r-- 1 runner runner    106 Oct 24 05:34 sh_16c66ff12001eSb4BQCxrnBQFu.out
+-rw-r--r-- 1 runner runner    111 Oct 24 05:34 sh_16c6708bc001d03WU8eUQkVdwf.out
+-rw-r--r-- 1 runner runner    163 Oct 24 05:34 sh_16c670f8c0019qUf3nuyTcKheU.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:34 sh_16c672216001vFqnuAh19z6n5K.out
+-rw-r--r-- 1 runner runner 798267 Oct 24 08:30 sh_16d02e877001pmhoY48w0wN9uL.out
+-rw-r--r-- 1 runner runner    283 Oct 24 08:30 sh_16d086a53001YPU20xCCi61hlj.out
+-rw-r--r-- 1 runner runner   4709 Oct 24 08:30 sh_16d088c11001kHogwzuDG0OJ1V.out
+-rw-r--r-- 1 runner runner    625 Oct 24 08:31 sh_16d08fed8001ZMgEkjAe1gxn9z.out
+-rw-r--r-- 1 runner runner    382 Oct 24 08:31 sh_16d0968bf001BudzSANddxINVx.out
+-rw-r--r-- 1 runner runner   2054 Oct 24 08:31 sh_16d09b85e001X5WK2PBdB19x4K.out
+-rw-r--r-- 1 runner runner   1766 Oct 24 08:32 sh_16d0a261e001P6bvjsKaKKCX0n.out
+-rw-r--r-- 1 runner runner    378 Oct 24 08:32 sh_16d0a833300143wbdCVTiUe9MD.out
+-rw-r--r-- 1 runner runner    397 Oct 24 08:33 sh_16d0acf64001GXi39OI1Yd9Pdy.out
+-rw-r--r-- 1 runner runner   6052 Oct 24 08:33 sh_16d0b07c4001eUaNQ5Qhj5vD63.out
+-rw-r--r-- 1 runner runner   1232 Oct 24 08:34 sh_16d0b87d50015eHAeftdBDup2X.out
+-rw-r--r-- 1 runner runner   1881 Oct 24 08:35 sh_16d0cb740001GQTTrAF8yaNCJ4.out
+-rw-r--r-- 1 runner runner   1400 Oct 24 08:35 sh_16d0cee7f001Zv0gc0SQH8kUhQ.out
+-rw-r--r-- 1 runner runner   1416 Oct 24 08:35 sh_16d0d283a0019TptpzEqfz3Bp1.out
+-rw-r--r-- 1 runner runner   1287 Oct 24 08:35 sh_16d0d4cd0001G6IESmTJpzstja.out
+-rw-r--r-- 1 runner runner    276 Oct 24 08:36 sh_16d0d6e48001wet4MN2YY1bo22.out
+-rw-r--r-- 1 runner runner  12843 Oct 24 08:36 sh_16d0db7c2001ec00C9AmxGeKIY.out
+-rw-r--r-- 1 runner runner   2292 Oct 24 08:36 sh_16d0df1290013Z4wvtO9jaggmJ.out
+-rw-r--r-- 1 runner runner   1250 Oct 24 08:36 sh_16d0e4825001Xy1s8NyBMnE1Yv.out
+-rw-r--r-- 1 runner runner   2555 Oct 24 08:37 sh_16d0e849b001NZRv27KNNJl2Ay.out
+-rw-r--r-- 1 runner runner    581 Oct 24 08:37 sh_16d0f0257001jImtFLXDQD0ykB.out
+-rw-r--r-- 1 runner runner   1399 Oct 24 08:38 sh_16d0f41b700144q832qhwQSi1I.out
+-rw-r--r-- 1 runner runner  21016 Oct 24 08:38 sh_16d0fa9a9001dX8GKKiFiTrEVc.out
+-rw-r--r-- 1 runner runner   3355 Oct 24 08:38 sh_16d0fef51001tPIq2LYUf119wC.out
+-rw-r--r-- 1 runner runner   1555 Oct 24 08:38 sh_16d102169001iFijeIncnKA7Lc.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 a8e127369044034c85a467eb702c71ede3ce3809
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809:
+total 44
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner   23 Oct 23 13:07 HEAD
+-rw-r--r-- 1 runner runner  178 Oct 23 13:07 config
+-rwxr-xr-x 1 runner runner   73 Oct 23 13:07 description
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 hooks
+-rw-r--r-- 1 runner runner  555 Oct 23 13:07 index
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 info
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 objects
+-rw-r--r-- 1 runner runner  270 Oct 23 13:07 opencode.gitconfig
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 refs
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/hooks:
+total 72
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+-rwxr-xr-x 1 runner runner  478 Oct 23 13:07 applypatch-msg.sample
+-rwxr-xr-x 1 runner runner 1972 Oct 23 13:07 commit-msg.sample
+-rwxr-xr-x 1 runner runner 4611 Oct 23 13:07 fsmonitor-watchman.sample
+-rwxr-xr-x 1 runner runner  189 Oct 23 13:07 post-update.sample
+-rwxr-xr-x 1 runner runner  424 Oct 23 13:07 pre-applypatch.sample
+-rwxr-xr-x 1 runner runner 1649 Oct 23 13:07 pre-commit.sample
+-rwxr-xr-x 1 runner runner  416 Oct 23 13:07 pre-merge-commit.sample
+-rwxr-xr-x 1 runner runner 1374 Oct 23 13:07 pre-push.sample
+-rwxr-xr-x 1 runner runner 4898 Oct 23 13:07 pre-rebase.sample
+-rwxr-xr-x 1 runner runner  544 Oct 23 13:07 pre-receive.sample
+-rwxr-xr-x 1 runner runner 1492 Oct 23 13:07 prepare-commit-msg.sample
+-rwxr-xr-x 1 runner runner 2783 Oct 23 13:07 push-to-checkout.sample
+-rwxr-xr-x 1 runner runner 2308 Oct 23 13:07 sendemail-validate.sample
+-rwxr-xr-x 1 runner runner 3650 Oct 23 13:07 update.sample
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+-rwxr-xr-x 1 runner runner  240 Oct 23 13:07 exclude
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 info
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 pack
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner   49 Oct 23 13:07 alternates
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/pack:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 heads
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 tags
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/heads:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/tags:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/share/opencode/tool-output:
+total 608
+drwxr-xr-x 2 runner runner   4096 Oct 24 08:46 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:46 ..
+-rw-r--r-- 1 runner runner 204526 Oct 23 15:41 tool_1696cf80a001dK5LRq5U6K0syU
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:09 tool_16cbea8120016SzWB4MmY549n6
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:10 tool_16cbec2db001FDRDoFSPgshUBV
+-rw-r--r-- 1 runner runner 144575 Oct 24 08:02 tool_16cef21f1001qrGiMKXINIEuTj
+-rw-r--r-- 1 runner runner  26407 Oct 24 08:26 tool_16d047956001kFkXXH2Ah5o6SM
+-rw-r--r-- 1 runner runner  34816 Oct 24 08:26 tool_16d048583001Hlb5Ncf5F361Gl
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/state:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Os0YXu1AVG/home/.local/state/opencode:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:46 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:46 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p:
+total 12
+drwxr-xr-x  3 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x  4 runner runner 4096 Oct 24 08:36 home
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 .config
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 .local
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.config:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.config/opencode:
+total 16
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 ..
+-rw-r--r-- 1 runner runner  354 Oct 24 07:07 opencode.json
+-rw------- 1 runner runner   64 Oct 23 12:40 service.json
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 share
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 state
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode:
+total 16512
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:36 .
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:36 ..
+-rw-r--r-- 1 runner runner 16850944 Oct 24 08:36 opencode.db
+-rw-r--r-- 1 runner runner    32768 Oct 24 08:36 opencode.db-shm
+-rw-r--r-- 1 runner runner        0 Oct 24 08:36 opencode.db-wal
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:36 repos
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:36 shell
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:36 snapshot
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:36 tool-output
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/repos:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/shell:
+total 32
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:36 ..
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:36 470c8549ef01a2a9d3c85b22965766cefc874134
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:36 7b8aac583cc766fe9102b42174b410c0bf5bfdac
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:36 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+drwxr-xr-x 2 runner runner 12288 Oct 24 08:36 e6c7f69750a97bbd4a59ad21432d3cafecde1f16
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/shell/470c8549ef01a2a9d3c85b22965766cefc874134:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/shell/7b8aac583cc766fe9102b42174b410c0bf5bfdac:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/shell/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 44
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+-rw-r--r-- 1 runner runner 4000 Oct 23 13:13 sh_168e4e8d7001rBQACNYzu5Hb6N.out
+-rw-r--r-- 1 runner runner    0 Oct 23 13:13 sh_168e4e8d7002ozE2OFpBneWlVG.out
+-rw-r--r-- 1 runner runner 4659 Oct 23 13:13 sh_168e4f614001ca505yDlcYKZc4.out
+-rw-r--r-- 1 runner runner  456 Oct 23 13:13 sh_168e509c8001F4rQdFqJDy6TU2.out
+-rw-r--r-- 1 runner runner 3045 Oct 23 13:13 sh_168e51cde001QWeFxDbBYPQQW4.out
+-rw-r--r-- 1 runner runner   24 Oct 23 13:13 sh_168e51cde002505Z8rsOMenGXv.out
+-rw-r--r-- 1 runner runner  609 Oct 23 13:13 sh_168e539f90014BMEHp5UpxFaKi.out
+-rw-r--r-- 1 runner runner  652 Oct 23 13:13 sh_168e54b18001elNfuXprer0EER.out
+-rw-r--r-- 1 runner runner  379 Oct 23 13:13 sh_168e55a91001aMU16gjvBSP1lB.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/shell/e6c7f69750a97bbd4a59ad21432d3cafecde1f16:
+total 1340
+drwxr-xr-x 2 runner runner  12288 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:36 ..
+-rw-r--r-- 1 runner runner    162 Oct 23 16:46 sh_169a837f2001fo7114aisfWKbp.out
+-rw-r--r-- 1 runner runner    259 Oct 23 16:46 sh_169a83dc6001DF2d5RkF3YxEcn.out
+-rw-r--r-- 1 runner runner    566 Oct 23 16:46 sh_169a84345001aFqeZXNjZkjwOl.out
+-rw-r--r-- 1 runner runner    624 Oct 23 16:46 sh_169a85217001VHVKYSASM1SRjq.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:46 sh_169a856be001Hl1B9O2ssy114d.out
+-rw-r--r-- 1 runner runner   5354 Oct 23 16:48 sh_169aa3448001TxrH58qLkwpdMl.out
+-rw-r--r-- 1 runner runner    182 Oct 23 16:48 sh_169aa42cc001Cser2gfv4qXIOg.out
+-rw-r--r-- 1 runner runner   3182 Oct 23 16:48 sh_169aa4d54001VC46qcZgJr70U6.out
+-rw-r--r-- 1 runner runner     71 Oct 23 16:48 sh_169aa507a001TZCoCBglU1MAVT.out
+-rw-r--r-- 1 runner runner   4396 Oct 23 16:48 sh_169aa5445001PlNc0aBAmtvgYY.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:48 sh_169aa5b6e001qaCGm6IY9ED6Rp.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:50 sh_169ac331200171HMBmkQD40955.out
+-rw-r--r-- 1 runner runner      4 Oct 23 16:52 sh_169ae0c830013ZnM6EYZwv4kyB.out
+-rw-r--r-- 1 runner runner   4212 Oct 23 16:52 sh_169ae125d001cgwY6qSz4iYBaI.out
+-rw-r--r-- 1 runner runner    628 Oct 23 16:53 sh_169ae1d13001LGMqwZcK5ZXdE6.out
+-rw-r--r-- 1 runner runner    157 Oct 23 16:53 sh_169ae2058001mQutvMpRV4JJJZ.out
+-rw-r--r-- 1 runner runner   1831 Oct 23 16:53 sh_169ae22f7001jYRHg8RXfv92tz.out
+-rw-r--r-- 1 runner runner    267 Oct 23 16:53 sh_169ae273f001DwB9OsEsWb6MUH.out
+-rw-r--r-- 1 runner runner    846 Oct 23 16:53 sh_169ae2a80001sLkGtrw5GWKPx0.out
+-rw-r--r-- 1 runner runner 126024 Oct 23 16:53 sh_169ae2dc80014Xifk67rKszWWu.out
+-rw-r--r-- 1 runner runner      3 Oct 23 16:53 sh_169ae328f001GhUJKBOa2xJADK.out
+-rw-r--r-- 1 runner runner    415 Oct 23 16:53 sh_169ae358e0010544lKFz4NRtIB.out
+-rw-r--r-- 1 runner runner    490 Oct 23 16:53 sh_169ae3b6f001klGF5uoCtexnV2.out
+-rw-r--r-- 1 runner runner    186 Oct 23 16:53 sh_169ae40330010AOPfm4qV2fnO1.out
+-rw-r--r-- 1 runner runner  31500 Oct 23 16:53 sh_169ae4849001Fs7HJDvhHCYn0m.out
+-rw-r--r-- 1 runner runner    608 Oct 23 19:46 sh_16a4cc8c4001IrKOs6RYN5fiX7.out
+-rw-r--r-- 1 runner runner     78 Oct 23 19:46 sh_16a4cdfb6001tMeTFfW5vvtNhj.out
+-rw-r--r-- 1 runner runner   4201 Oct 23 19:47 sh_16a4e4369001rawxlx0gKpLwSu.out
+-rw-r--r-- 1 runner runner    991 Oct 23 19:47 sh_16a4e4ce5001fwKvgZKP7WcZKx.out
+-rw-r--r-- 1 runner runner    175 Oct 23 19:48 sh_16a4eb862001QrsCWLWMO4ZpYf.out
+-rw-r--r-- 1 runner runner      4 Oct 23 19:48 sh_16a4ec5ee001Mv4Iw49Ineom40.out
+-rw-r--r-- 1 runner runner    206 Oct 23 19:50 sh_16a4ecf5f001zifMGfkTkBNUKb.out
+-rw-r--r-- 1 runner runner      0 Oct 23 19:50 sh_16a502cae001nKlHDTSdMcBKuy.out
+-rw-r--r-- 1 runner runner     16 Oct 23 19:50 sh_16a503c9b001SHugjSTNDh3auH.out
+-rw-r--r-- 1 runner runner     48 Oct 23 19:50 sh_16a504ab70013qv6T6dAv4vWbM.out
+-rw-r--r-- 1 runner runner    119 Oct 24 02:34 sh_16bc26836001AbB47ueZ63Sqr2.out
+-rw-r--r-- 1 runner runner    433 Oct 24 02:34 sh_16bc26de5001sKWjcKCXk115dR.out
+-rw-r--r-- 1 runner runner   1192 Oct 24 02:36 sh_16bc41879001voag2LkmDOVJjn.out
+-rw-r--r-- 1 runner runner    176 Oct 24 02:36 sh_16bc427e0001939yVFowZdocHn.out
+-rw-r--r-- 1 runner runner    193 Oct 24 02:36 sh_16bc42bc00016JKQnvQiD2EUNZ.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:36 sh_16bc43438001ICaipjjWUh65Qk.out
+-rw-r--r-- 1 runner runner    137 Oct 24 02:37 sh_16bc56e810011Gxt1IO9yXCP6R.out
+-rw-r--r-- 1 runner runner     62 Oct 24 02:37 sh_16bc57e04001t7bVUITP6M37tt.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:37 sh_16bc58768001s7fMYiphFwkwVt.out
+-rw-r--r-- 1 runner runner     37 Oct 24 02:38 sh_16bc5a290001voRHQAfeCUtGGn.out
+-rw-r--r-- 1 runner runner      8 Oct 24 02:38 sh_16bc5c098001cCUXnMcf0TI6YT.out
+-rw-r--r-- 1 runner runner    245 Oct 24 02:38 sh_16bc60c71001SeoIdaUdwIt7Wq.out
+-rw-r--r-- 1 runner runner     77 Oct 24 02:38 sh_16bc61355001htq4OqZGih185v.out
+-rw-r--r-- 1 runner runner   1554 Oct 24 02:38 sh_16bc626200015qMkBNE5Eil9Ix.out
+-rw-r--r-- 1 runner runner     82 Oct 24 02:38 sh_16bc63dfc001XM5t5Lnj5STaSo.out
+-rw-r--r-- 1 runner runner    902 Oct 24 05:30 sh_16c63efcb001qE8UeTr6qNsUvO.out
+-rw-r--r-- 1 runner runner   1602 Oct 24 05:30 sh_16c640cae001dJd486kcUg0LQO.out
+-rw-r--r-- 1 runner runner   2314 Oct 24 05:31 sh_16c6411b5001KzKjg0vvb0w3Y1.out
+-rw-r--r-- 1 runner runner    216 Oct 24 05:31 sh_16c641a2f001AJZiFDir90IcyL.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:31 sh_16c64330d001sNuwbXt0r5ExQv.out
+-rw-r--r-- 1 runner runner    337 Oct 24 05:31 sh_16c6439fe001Mo4FTQ570hSi2o.out
+-rw-r--r-- 1 runner runner    190 Oct 24 05:31 sh_16c645315001q1HQ00bRzb6WGB.out
+-rw-r--r-- 1 runner runner    963 Oct 24 05:31 sh_16c645e61001pqFdGxf0fulJTq.out
+-rw-r--r-- 1 runner runner    182 Oct 24 05:31 sh_16c649534001VFvztBAHeF67Vx.out
+-rw-r--r-- 1 runner runner    172 Oct 24 05:31 sh_16c64d7dc001gC2KYXaYf2AZJi.out
+-rw-r--r-- 1 runner runner   1099 Oct 24 05:31 sh_16c64ddf3001xbgu07c1F4jITz.out
+-rw-r--r-- 1 runner runner    174 Oct 24 05:31 sh_16c64e4b9001ZF27wTFbtvWAPt.out
+-rw-r--r-- 1 runner runner    820 Oct 24 05:31 sh_16c64ea93001loK8pez0cBUr2U.out
+-rw-r--r-- 1 runner runner    144 Oct 24 05:32 sh_16c64fe0a001ROjFK96gnUc7lX.out
+-rw-r--r-- 1 runner runner     19 Oct 24 05:32 sh_16c650d20001qscquYRlJGPA49.out
+-rw-r--r-- 1 runner runner   1385 Oct 24 05:32 sh_16c651082001uK8RRA1jHzcpsw.out
+-rw-r--r-- 1 runner runner    105 Oct 24 05:32 sh_16c655b0b001GT572UyJUwBXm5.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:32 sh_16c655ffe001m5jDCfQYKxRCQ6.out
+-rw-r--r-- 1 runner runner    237 Oct 24 05:34 sh_16c66e0e8001S1l6F66nT3mKl8.out
+-rw-r--r-- 1 runner runner      9 Oct 24 05:34 sh_16c66f483001Ng0ii57JHwW8lQ.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:34 sh_16c66f834001KbL4Bojo3TT8N0.out
+-rw-r--r-- 1 runner runner    106 Oct 24 05:34 sh_16c66ff12001eSb4BQCxrnBQFu.out
+-rw-r--r-- 1 runner runner    111 Oct 24 05:34 sh_16c6708bc001d03WU8eUQkVdwf.out
+-rw-r--r-- 1 runner runner    163 Oct 24 05:34 sh_16c670f8c0019qUf3nuyTcKheU.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:34 sh_16c672216001vFqnuAh19z6n5K.out
+-rw-r--r-- 1 runner runner 798267 Oct 24 08:30 sh_16d02e877001pmhoY48w0wN9uL.out
+-rw-r--r-- 1 runner runner    207 Oct 24 08:28 sh_16d06cd87001EJuJL2tpH5cEHa.out
+-rw-r--r-- 1 runner runner      0 Oct 24 08:28 sh_16d06d8b10011RanijzqStzyA9.out
+-rw-r--r-- 1 runner runner   1284 Oct 24 08:28 sh_16d06e2f6001LoJGnccqMXuTAW.out
+-rw-r--r-- 1 runner runner   1427 Oct 24 08:28 sh_16d06ee070015nffHpNBRPRpaV.out
+-rw-r--r-- 1 runner runner    158 Oct 24 08:29 sh_16d075416001HjO0f1F8csofwM.out
+-rw-r--r-- 1 runner runner   5826 Oct 24 08:29 sh_16d077244001BiwS2Jwji0UA6O.out
+-rw-r--r-- 1 runner runner   1118 Oct 24 08:29 sh_16d0791da001z2M5BwJeg5DEOj.out
+-rw-r--r-- 1 runner runner    208 Oct 24 08:30 sh_16d081c99001J5B2pt25hLMSOj.out
+-rw-r--r-- 1 runner runner   1407 Oct 24 08:30 sh_16d083eb5001h8bSOya5Z0oPiC.out
+-rw-r--r-- 1 runner runner    283 Oct 24 08:30 sh_16d086a53001YPU20xCCi61hlj.out
+-rw-r--r-- 1 runner runner   4709 Oct 24 08:30 sh_16d088c11001kHogwzuDG0OJ1V.out
+-rw-r--r-- 1 runner runner    625 Oct 24 08:31 sh_16d08fed8001ZMgEkjAe1gxn9z.out
+-rw-r--r-- 1 runner runner    382 Oct 24 08:31 sh_16d0968bf001BudzSANddxINVx.out
+-rw-r--r-- 1 runner runner   2054 Oct 24 08:31 sh_16d09b85e001X5WK2PBdB19x4K.out
+-rw-r--r-- 1 runner runner   1766 Oct 24 08:32 sh_16d0a261e001P6bvjsKaKKCX0n.out
+-rw-r--r-- 1 runner runner    378 Oct 24 08:32 sh_16d0a833300143wbdCVTiUe9MD.out
+-rw-r--r-- 1 runner runner    397 Oct 24 08:33 sh_16d0acf64001GXi39OI1Yd9Pdy.out
+-rw-r--r-- 1 runner runner   6052 Oct 24 08:33 sh_16d0b07c4001eUaNQ5Qhj5vD63.out
+-rw-r--r-- 1 runner runner   1232 Oct 24 08:34 sh_16d0b87d50015eHAeftdBDup2X.out
+-rw-r--r-- 1 runner runner   1881 Oct 24 08:35 sh_16d0cb740001GQTTrAF8yaNCJ4.out
+-rw-r--r-- 1 runner runner   1400 Oct 24 08:35 sh_16d0cee7f001Zv0gc0SQH8kUhQ.out
+-rw-r--r-- 1 runner runner   1416 Oct 24 08:35 sh_16d0d283a0019TptpzEqfz3Bp1.out
+-rw-r--r-- 1 runner runner   1287 Oct 24 08:35 sh_16d0d4cd0001G6IESmTJpzstja.out
+-rw-r--r-- 1 runner runner    276 Oct 24 08:36 sh_16d0d6e48001wet4MN2YY1bo22.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 a8e127369044034c85a467eb702c71ede3ce3809
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809:
+total 44
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 ..
+-rw-r--r-- 1 runner runner   23 Oct 23 13:07 HEAD
+-rw-r--r-- 1 runner runner  178 Oct 23 13:07 config
+-rwxr-xr-x 1 runner runner   73 Oct 23 13:07 description
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 hooks
+-rw-r--r-- 1 runner runner  555 Oct 23 13:07 index
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 info
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 objects
+-rw-r--r-- 1 runner runner  270 Oct 23 13:07 opencode.gitconfig
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 refs
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/hooks:
+total 72
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+-rwxr-xr-x 1 runner runner  478 Oct 23 13:07 applypatch-msg.sample
+-rwxr-xr-x 1 runner runner 1972 Oct 23 13:07 commit-msg.sample
+-rwxr-xr-x 1 runner runner 4611 Oct 23 13:07 fsmonitor-watchman.sample
+-rwxr-xr-x 1 runner runner  189 Oct 23 13:07 post-update.sample
+-rwxr-xr-x 1 runner runner  424 Oct 23 13:07 pre-applypatch.sample
+-rwxr-xr-x 1 runner runner 1649 Oct 23 13:07 pre-commit.sample
+-rwxr-xr-x 1 runner runner  416 Oct 23 13:07 pre-merge-commit.sample
+-rwxr-xr-x 1 runner runner 1374 Oct 23 13:07 pre-push.sample
+-rwxr-xr-x 1 runner runner 4898 Oct 23 13:07 pre-rebase.sample
+-rwxr-xr-x 1 runner runner  544 Oct 23 13:07 pre-receive.sample
+-rwxr-xr-x 1 runner runner 1492 Oct 23 13:07 prepare-commit-msg.sample
+-rwxr-xr-x 1 runner runner 2783 Oct 23 13:07 push-to-checkout.sample
+-rwxr-xr-x 1 runner runner 2308 Oct 23 13:07 sendemail-validate.sample
+-rwxr-xr-x 1 runner runner 3650 Oct 23 13:07 update.sample
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+-rwxr-xr-x 1 runner runner  240 Oct 23 13:07 exclude
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 info
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 pack
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+-rw-r--r-- 1 runner runner   49 Oct 23 13:07 alternates
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/pack:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 heads
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 tags
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/heads:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/tags:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/share/opencode/tool-output:
+total 608
+drwxr-xr-x 2 runner runner   4096 Oct 24 08:36 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:36 ..
+-rw-r--r-- 1 runner runner 204526 Oct 23 15:41 tool_1696cf80a001dK5LRq5U6K0syU
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:09 tool_16cbea8120016SzWB4MmY549n6
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:10 tool_16cbec2db001FDRDoFSPgshUBV
+-rw-r--r-- 1 runner runner 144575 Oct 24 08:02 tool_16cef21f1001qrGiMKXINIEuTj
+-rw-r--r-- 1 runner runner  26407 Oct 24 08:26 tool_16d047956001kFkXXH2Ah5o6SM
+-rw-r--r-- 1 runner runner  34816 Oct 24 08:26 tool_16d048583001Hlb5Ncf5F361Gl
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/state:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:36 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Qk0YzBzv5p/home/.local/state/opencode:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:36 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:36 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m:
+total 12
+drwxr-xr-x  3 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 17 runner runner 4096 Oct 24 08:46 ..
+drwxr-xr-x  4 runner runner 4096 Oct 24 08:25 home
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 .config
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 .local
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.config:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.config/opencode:
+total 16
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 ..
+-rw-r--r-- 1 runner runner  354 Oct 24 07:07 opencode.json
+-rw------- 1 runner runner   64 Oct 23 12:40 service.json
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 share
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 state
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode:
+total 16512
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:25 .
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:25 ..
+-rw-r--r-- 1 runner runner 16850944 Oct 24 08:25 opencode.db
+-rw-r--r-- 1 runner runner    32768 Oct 24 08:25 opencode.db-shm
+-rw-r--r-- 1 runner runner        0 Oct 24 08:25 opencode.db-wal
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:25 repos
+drwxr-xr-x 6 runner runner     4096 Oct 24 08:25 shell
+drwxr-xr-x 3 runner runner     4096 Oct 24 08:25 snapshot
+drwxr-xr-x 2 runner runner     4096 Oct 24 08:25 tool-output
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/repos:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/shell:
+total 32
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner  4096 Oct 24 08:25 ..
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:25 470c8549ef01a2a9d3c85b22965766cefc874134
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:25 7b8aac583cc766fe9102b42174b410c0bf5bfdac
+drwxr-xr-x 2 runner runner  4096 Oct 24 08:25 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+drwxr-xr-x 2 runner runner 12288 Oct 24 08:25 e6c7f69750a97bbd4a59ad21432d3cafecde1f16
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/shell/470c8549ef01a2a9d3c85b22965766cefc874134:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/shell/7b8aac583cc766fe9102b42174b410c0bf5bfdac:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/shell/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 44
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+-rw-r--r-- 1 runner runner 4000 Oct 23 13:13 sh_168e4e8d7001rBQACNYzu5Hb6N.out
+-rw-r--r-- 1 runner runner    0 Oct 23 13:13 sh_168e4e8d7002ozE2OFpBneWlVG.out
+-rw-r--r-- 1 runner runner 4659 Oct 23 13:13 sh_168e4f614001ca505yDlcYKZc4.out
+-rw-r--r-- 1 runner runner  456 Oct 23 13:13 sh_168e509c8001F4rQdFqJDy6TU2.out
+-rw-r--r-- 1 runner runner 3045 Oct 23 13:13 sh_168e51cde001QWeFxDbBYPQQW4.out
+-rw-r--r-- 1 runner runner   24 Oct 23 13:13 sh_168e51cde002505Z8rsOMenGXv.out
+-rw-r--r-- 1 runner runner  609 Oct 23 13:13 sh_168e539f90014BMEHp5UpxFaKi.out
+-rw-r--r-- 1 runner runner  652 Oct 23 13:13 sh_168e54b18001elNfuXprer0EER.out
+-rw-r--r-- 1 runner runner  379 Oct 23 13:13 sh_168e55a91001aMU16gjvBSP1lB.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/shell/e6c7f69750a97bbd4a59ad21432d3cafecde1f16:
+total 884
+drwxr-xr-x 2 runner runner  12288 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:25 ..
+-rw-r--r-- 1 runner runner    162 Oct 23 16:46 sh_169a837f2001fo7114aisfWKbp.out
+-rw-r--r-- 1 runner runner    259 Oct 23 16:46 sh_169a83dc6001DF2d5RkF3YxEcn.out
+-rw-r--r-- 1 runner runner    566 Oct 23 16:46 sh_169a84345001aFqeZXNjZkjwOl.out
+-rw-r--r-- 1 runner runner    624 Oct 23 16:46 sh_169a85217001VHVKYSASM1SRjq.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:46 sh_169a856be001Hl1B9O2ssy114d.out
+-rw-r--r-- 1 runner runner   5354 Oct 23 16:48 sh_169aa3448001TxrH58qLkwpdMl.out
+-rw-r--r-- 1 runner runner    182 Oct 23 16:48 sh_169aa42cc001Cser2gfv4qXIOg.out
+-rw-r--r-- 1 runner runner   3182 Oct 23 16:48 sh_169aa4d54001VC46qcZgJr70U6.out
+-rw-r--r-- 1 runner runner     71 Oct 23 16:48 sh_169aa507a001TZCoCBglU1MAVT.out
+-rw-r--r-- 1 runner runner   4396 Oct 23 16:48 sh_169aa5445001PlNc0aBAmtvgYY.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:48 sh_169aa5b6e001qaCGm6IY9ED6Rp.out
+-rw-r--r-- 1 runner runner      0 Oct 23 16:50 sh_169ac331200171HMBmkQD40955.out
+-rw-r--r-- 1 runner runner      4 Oct 23 16:52 sh_169ae0c830013ZnM6EYZwv4kyB.out
+-rw-r--r-- 1 runner runner   4212 Oct 23 16:52 sh_169ae125d001cgwY6qSz4iYBaI.out
+-rw-r--r-- 1 runner runner    628 Oct 23 16:53 sh_169ae1d13001LGMqwZcK5ZXdE6.out
+-rw-r--r-- 1 runner runner    157 Oct 23 16:53 sh_169ae2058001mQutvMpRV4JJJZ.out
+-rw-r--r-- 1 runner runner   1831 Oct 23 16:53 sh_169ae22f7001jYRHg8RXfv92tz.out
+-rw-r--r-- 1 runner runner    267 Oct 23 16:53 sh_169ae273f001DwB9OsEsWb6MUH.out
+-rw-r--r-- 1 runner runner    846 Oct 23 16:53 sh_169ae2a80001sLkGtrw5GWKPx0.out
+-rw-r--r-- 1 runner runner 126024 Oct 23 16:53 sh_169ae2dc80014Xifk67rKszWWu.out
+-rw-r--r-- 1 runner runner      3 Oct 23 16:53 sh_169ae328f001GhUJKBOa2xJADK.out
+-rw-r--r-- 1 runner runner    415 Oct 23 16:53 sh_169ae358e0010544lKFz4NRtIB.out
+-rw-r--r-- 1 runner runner    490 Oct 23 16:53 sh_169ae3b6f001klGF5uoCtexnV2.out
+-rw-r--r-- 1 runner runner    186 Oct 23 16:53 sh_169ae40330010AOPfm4qV2fnO1.out
+-rw-r--r-- 1 runner runner  31500 Oct 23 16:53 sh_169ae4849001Fs7HJDvhHCYn0m.out
+-rw-r--r-- 1 runner runner    608 Oct 23 19:46 sh_16a4cc8c4001IrKOs6RYN5fiX7.out
+-rw-r--r-- 1 runner runner     78 Oct 23 19:46 sh_16a4cdfb6001tMeTFfW5vvtNhj.out
+-rw-r--r-- 1 runner runner   4201 Oct 23 19:47 sh_16a4e4369001rawxlx0gKpLwSu.out
+-rw-r--r-- 1 runner runner    991 Oct 23 19:47 sh_16a4e4ce5001fwKvgZKP7WcZKx.out
+-rw-r--r-- 1 runner runner    175 Oct 23 19:48 sh_16a4eb862001QrsCWLWMO4ZpYf.out
+-rw-r--r-- 1 runner runner      4 Oct 23 19:48 sh_16a4ec5ee001Mv4Iw49Ineom40.out
+-rw-r--r-- 1 runner runner    206 Oct 23 19:50 sh_16a4ecf5f001zifMGfkTkBNUKb.out
+-rw-r--r-- 1 runner runner      0 Oct 23 19:50 sh_16a502cae001nKlHDTSdMcBKuy.out
+-rw-r--r-- 1 runner runner     16 Oct 23 19:50 sh_16a503c9b001SHugjSTNDh3auH.out
+-rw-r--r-- 1 runner runner     48 Oct 23 19:50 sh_16a504ab70013qv6T6dAv4vWbM.out
+-rw-r--r-- 1 runner runner    119 Oct 24 02:34 sh_16bc26836001AbB47ueZ63Sqr2.out
+-rw-r--r-- 1 runner runner    433 Oct 24 02:34 sh_16bc26de5001sKWjcKCXk115dR.out
+-rw-r--r-- 1 runner runner   1192 Oct 24 02:36 sh_16bc41879001voag2LkmDOVJjn.out
+-rw-r--r-- 1 runner runner    176 Oct 24 02:36 sh_16bc427e0001939yVFowZdocHn.out
+-rw-r--r-- 1 runner runner    193 Oct 24 02:36 sh_16bc42bc00016JKQnvQiD2EUNZ.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:36 sh_16bc43438001ICaipjjWUh65Qk.out
+-rw-r--r-- 1 runner runner    137 Oct 24 02:37 sh_16bc56e810011Gxt1IO9yXCP6R.out
+-rw-r--r-- 1 runner runner     62 Oct 24 02:37 sh_16bc57e04001t7bVUITP6M37tt.out
+-rw-r--r-- 1 runner runner      0 Oct 24 02:37 sh_16bc58768001s7fMYiphFwkwVt.out
+-rw-r--r-- 1 runner runner     37 Oct 24 02:38 sh_16bc5a290001voRHQAfeCUtGGn.out
+-rw-r--r-- 1 runner runner      8 Oct 24 02:38 sh_16bc5c098001cCUXnMcf0TI6YT.out
+-rw-r--r-- 1 runner runner    245 Oct 24 02:38 sh_16bc60c71001SeoIdaUdwIt7Wq.out
+-rw-r--r-- 1 runner runner     77 Oct 24 02:38 sh_16bc61355001htq4OqZGih185v.out
+-rw-r--r-- 1 runner runner   1554 Oct 24 02:38 sh_16bc626200015qMkBNE5Eil9Ix.out
+-rw-r--r-- 1 runner runner     82 Oct 24 02:38 sh_16bc63dfc001XM5t5Lnj5STaSo.out
+-rw-r--r-- 1 runner runner    902 Oct 24 05:30 sh_16c63efcb001qE8UeTr6qNsUvO.out
+-rw-r--r-- 1 runner runner   1602 Oct 24 05:30 sh_16c640cae001dJd486kcUg0LQO.out
+-rw-r--r-- 1 runner runner   2314 Oct 24 05:31 sh_16c6411b5001KzKjg0vvb0w3Y1.out
+-rw-r--r-- 1 runner runner    216 Oct 24 05:31 sh_16c641a2f001AJZiFDir90IcyL.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:31 sh_16c64330d001sNuwbXt0r5ExQv.out
+-rw-r--r-- 1 runner runner    337 Oct 24 05:31 sh_16c6439fe001Mo4FTQ570hSi2o.out
+-rw-r--r-- 1 runner runner    190 Oct 24 05:31 sh_16c645315001q1HQ00bRzb6WGB.out
+-rw-r--r-- 1 runner runner    963 Oct 24 05:31 sh_16c645e61001pqFdGxf0fulJTq.out
+-rw-r--r-- 1 runner runner    182 Oct 24 05:31 sh_16c649534001VFvztBAHeF67Vx.out
+-rw-r--r-- 1 runner runner    172 Oct 24 05:31 sh_16c64d7dc001gC2KYXaYf2AZJi.out
+-rw-r--r-- 1 runner runner   1099 Oct 24 05:31 sh_16c64ddf3001xbgu07c1F4jITz.out
+-rw-r--r-- 1 runner runner    174 Oct 24 05:31 sh_16c64e4b9001ZF27wTFbtvWAPt.out
+-rw-r--r-- 1 runner runner    820 Oct 24 05:31 sh_16c64ea93001loK8pez0cBUr2U.out
+-rw-r--r-- 1 runner runner    144 Oct 24 05:32 sh_16c64fe0a001ROjFK96gnUc7lX.out
+-rw-r--r-- 1 runner runner     19 Oct 24 05:32 sh_16c650d20001qscquYRlJGPA49.out
+-rw-r--r-- 1 runner runner   1385 Oct 24 05:32 sh_16c651082001uK8RRA1jHzcpsw.out
+-rw-r--r-- 1 runner runner    105 Oct 24 05:32 sh_16c655b0b001GT572UyJUwBXm5.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:32 sh_16c655ffe001m5jDCfQYKxRCQ6.out
+-rw-r--r-- 1 runner runner    237 Oct 24 05:34 sh_16c66e0e8001S1l6F66nT3mKl8.out
+-rw-r--r-- 1 runner runner      9 Oct 24 05:34 sh_16c66f483001Ng0ii57JHwW8lQ.out
+-rw-r--r-- 1 runner runner    114 Oct 24 05:34 sh_16c66f834001KbL4Bojo3TT8N0.out
+-rw-r--r-- 1 runner runner    106 Oct 24 05:34 sh_16c66ff12001eSb4BQCxrnBQFu.out
+-rw-r--r-- 1 runner runner    111 Oct 24 05:34 sh_16c6708bc001d03WU8eUQkVdwf.out
+-rw-r--r-- 1 runner runner    163 Oct 24 05:34 sh_16c670f8c0019qUf3nuyTcKheU.out
+-rw-r--r-- 1 runner runner    101 Oct 24 05:34 sh_16c672216001vFqnuAh19z6n5K.out
+-rw-r--r-- 1 runner runner   1117 Oct 24 08:16 sh_16cfa4f24001JEe5IDsr79hny6.out
+-rw-r--r-- 1 runner runner    489 Oct 24 08:23 sh_16cfb0b1b001qAr8w0TQMgUnfJ.out
+-rw-r--r-- 1 runner runner    129 Oct 24 08:16 sh_16cfb44d3001go812laZesG1fv.out
+-rw-r--r-- 1 runner runner      0 Oct 24 08:16 sh_16cfb4a83001tdA0tOphzmPIzI.out
+-rw-r--r-- 1 runner runner    907 Oct 24 08:16 sh_16cfb5e9e001VlCGUWz74vWZ6M.out
+-rw-r--r-- 1 runner runner      0 Oct 24 08:16 sh_16cfb73d2001AUiJS4hMG7LPrc.out
+-rw-r--r-- 1 runner runner   1797 Oct 24 08:16 sh_16cfb8699001HQzN38eHDzZIYt.out
+-rw-r--r-- 1 runner runner    300 Oct 24 08:17 sh_16cfbf8c3001fRAqHoD6sNa61a.out
+-rw-r--r-- 1 runner runner    249 Oct 24 08:17 sh_16cfc0a37001HIgl2QjzwaOxdK.out
+-rw-r--r-- 1 runner runner   1360 Oct 24 08:17 sh_16cfc1bb6001HQQ7RKK8UiBs8i.out
+-rw-r--r-- 1 runner runner   2231 Oct 24 08:17 sh_16cfc34030018GUj7tY0QSL4IG.out
+-rw-r--r-- 1 runner runner   1497 Oct 24 08:17 sh_16cfc53d0001W79EGqM5t36iG9.out
+-rw-r--r-- 1 runner runner   3659 Oct 24 08:17 sh_16cfc7010001qxNeF4M0szBqI0.out
+-rw-r--r-- 1 runner runner   6560 Oct 24 08:17 sh_16cfc824f0014X3pz8j6WIad9K.out
+-rw-r--r-- 1 runner runner    507 Oct 24 08:17 sh_16cfca996001mPQbqimYqDCUhR.out
+-rw-r--r-- 1 runner runner   2674 Oct 24 08:17 sh_16cfcc1f9001ZboqmDCymBV7XT.out
+-rw-r--r-- 1 runner runner   1390 Oct 24 08:18 sh_16cfcd32e0010IEDi40Lkxi7gv.out
+-rw-r--r-- 1 runner runner    216 Oct 24 08:18 sh_16cfd09ef001uvsJiNot57Hjai.out
+-rw-r--r-- 1 runner runner    363 Oct 24 08:18 sh_16cfd5654001LBLZkKZlmrnqWa.out
+-rw-r--r-- 1 runner runner   1467 Oct 24 08:19 sh_16cfd6801001LYA3lRl0TaCwYu.out
+-rw-r--r-- 1 runner runner    158 Oct 24 08:18 sh_16cfd93c2001rcpCcrVeQnq5kS.out
+-rw-r--r-- 1 runner runner    289 Oct 24 08:18 sh_16cfda4880018hzPcJvlVFksLE.out
+-rw-r--r-- 1 runner runner 160142 Oct 24 08:23 sh_16cfdaf800011kYgXOK5ryumbK.out
+-rw-r--r-- 1 runner runner   2419 Oct 24 08:21 sh_16cfe6aa6001kK93aZPeIlC0bc.out
+-rw-r--r-- 1 runner runner 175646 Oct 24 08:25 sh_16d02e877001pmhoY48w0wN9uL.out
+-rw-r--r-- 1 runner runner   5143 Oct 24 08:24 sh_16d0325ce0017ji5Lq0k2gCTwY.out
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 98169689c7a7e6c21f3bf31ad4dc768970a7f356
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 a8e127369044034c85a467eb702c71ede3ce3809
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809:
+total 44
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 ..
+-rw-r--r-- 1 runner runner   23 Oct 23 13:07 HEAD
+-rw-r--r-- 1 runner runner  178 Oct 23 13:07 config
+-rwxr-xr-x 1 runner runner   73 Oct 23 13:07 description
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 hooks
+-rw-r--r-- 1 runner runner  555 Oct 23 13:07 index
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 info
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 objects
+-rw-r--r-- 1 runner runner  270 Oct 23 13:07 opencode.gitconfig
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 refs
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/hooks:
+total 72
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+-rwxr-xr-x 1 runner runner  478 Oct 23 13:07 applypatch-msg.sample
+-rwxr-xr-x 1 runner runner 1972 Oct 23 13:07 commit-msg.sample
+-rwxr-xr-x 1 runner runner 4611 Oct 23 13:07 fsmonitor-watchman.sample
+-rwxr-xr-x 1 runner runner  189 Oct 23 13:07 post-update.sample
+-rwxr-xr-x 1 runner runner  424 Oct 23 13:07 pre-applypatch.sample
+-rwxr-xr-x 1 runner runner 1649 Oct 23 13:07 pre-commit.sample
+-rwxr-xr-x 1 runner runner  416 Oct 23 13:07 pre-merge-commit.sample
+-rwxr-xr-x 1 runner runner 1374 Oct 23 13:07 pre-push.sample
+-rwxr-xr-x 1 runner runner 4898 Oct 23 13:07 pre-rebase.sample
+-rwxr-xr-x 1 runner runner  544 Oct 23 13:07 pre-receive.sample
+-rwxr-xr-x 1 runner runner 1492 Oct 23 13:07 prepare-commit-msg.sample
+-rwxr-xr-x 1 runner runner 2783 Oct 23 13:07 push-to-checkout.sample
+-rwxr-xr-x 1 runner runner 2308 Oct 23 13:07 sendemail-validate.sample
+-rwxr-xr-x 1 runner runner 3650 Oct 23 13:07 update.sample
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+-rwxr-xr-x 1 runner runner  240 Oct 23 13:07 exclude
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 info
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 pack
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/info:
+total 12
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+-rw-r--r-- 1 runner runner   49 Oct 23 13:07 alternates
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/objects/pack:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs:
+total 16
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 heads
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 tags
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/heads:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/snapshot/98169689c7a7e6c21f3bf31ad4dc768970a7f356/a8e127369044034c85a467eb702c71ede3ce3809/refs/tags:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/share/opencode/tool-output:
+total 544
+drwxr-xr-x 2 runner runner   4096 Oct 24 08:25 .
+drwxr-xr-x 6 runner runner   4096 Oct 24 08:25 ..
+-rw-r--r-- 1 runner runner 204526 Oct 23 15:41 tool_1696cf80a001dK5LRq5U6K0syU
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:09 tool_16cbea8120016SzWB4MmY549n6
+-rw-r--r-- 1 runner runner  95787 Oct 24 07:10 tool_16cbec2db001FDRDoFSPgshUBV
+-rw-r--r-- 1 runner runner 144575 Oct 24 08:02 tool_16cef21f1001qrGiMKXINIEuTj
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/state:
+total 12
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:25 ..
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 opencode
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/tmp.Udkd34D95m/home/.local/state/opencode:
+total 8
+drwxr-xr-x 2 runner runner 4096 Oct 24 08:25 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 08:25 ..
