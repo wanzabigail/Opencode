@@ -1,0 +1,16 @@
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/opencode/marimo-pair/skills/marimo-pair/reference:
+total 44
+drwxr-xr-x 2 runner runner 4096 Oct 24 18:43 .
+drwxr-xr-x 4 runner runner 4096 Oct 24 18:43 ..
+-rw-r--r-- 1 runner runner 2894 Oct 24 18:50 execution-context.md
+-rw-r--r-- 1 runner runner 4370 Oct 24 18:50 finding-marimo.md
+-rw-r--r-- 1 runner runner 2959 Oct 24 18:50 gotchas.md
+-rw-r--r-- 1 runner runner 4499 Oct 24 18:50 notebook-improvements.md
+-rw-r--r-- 1 runner runner 9826 Oct 24 18:50 rich-representations.md
+
+/home/runner/work/Opencode/Opencode/_external_projects/tmp-8c3933/opencode/marimo-pair/skills/marimo-pair/scripts:
+total 28
+drwxr-xr-x 2 runner runner  4096 Oct 24 18:43 .
+drwxr-xr-x 4 runner runner  4096 Oct 24 18:43 ..
+-rwxr-xr-x 1 runner runner 10451 Oct 24 18:50 discover-servers.sh
+-rwxr-xr-x 1 runner runner  7747 Oct 24 18:50 execute-code.sh
