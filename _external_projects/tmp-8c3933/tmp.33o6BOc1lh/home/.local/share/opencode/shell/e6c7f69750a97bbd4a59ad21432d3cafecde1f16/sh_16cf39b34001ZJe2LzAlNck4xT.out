@@ -1,0 +1,11 @@
+[*] Trying various SQLi payloads...
+  403: ' OR 1=1--
+  403: ' OR '1'='1'--
+  403: admin'--
+  403: ' UNION SELECT 1,2,3--
+  403: 1' ORDER BY 10--
+
+[*] Checking error messages for SQL injection results...
+Error: HTTP Error 403: Forbidden
+
+[*] Trying common admin credentials...

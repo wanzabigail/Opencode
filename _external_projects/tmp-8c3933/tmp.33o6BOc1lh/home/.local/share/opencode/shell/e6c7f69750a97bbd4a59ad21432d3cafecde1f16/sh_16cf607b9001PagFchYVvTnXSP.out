@@ -1,0 +1,10 @@
+=== Checking SOCKS5 proxies LIVE ===
+[36m
+           _   
+ _____ _ _| |_ ___ ___ ___
+|     | | | . | -_|   | . |
+|_|_|_|___|___|___|_|_|_  |
+                      |___|
+  by @dwisiswant0[0m
+
+[[1;31mFTL[0m] Error! open /tmp/proxy_lists/final_socks5.txt: has no valid proxy URLs.

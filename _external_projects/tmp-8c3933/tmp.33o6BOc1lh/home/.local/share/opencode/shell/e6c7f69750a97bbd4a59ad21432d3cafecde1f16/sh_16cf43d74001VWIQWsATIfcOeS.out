@@ -1,0 +1,6 @@
+=== Mengecek proxy live dengan mubeng ===
+Checking 5000 SOCKS5 proxies...
+/bin/bash: line 1: mubeng: command not found
+
+Checking 1000 HTTP proxies...
+/bin/bash: line 1: mubeng: command not found

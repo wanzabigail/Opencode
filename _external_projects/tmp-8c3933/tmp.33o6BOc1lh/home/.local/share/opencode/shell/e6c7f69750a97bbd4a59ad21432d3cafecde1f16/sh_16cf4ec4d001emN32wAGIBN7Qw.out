@@ -1,0 +1,15 @@
+[*] Step 1: Getting homepage...
+Traceback (most recent call last):
+  File "<stdin>", line 33, in <module>
+  File "/usr/lib/python3.12/gzip.py", line 627, in decompress
+    if _read_gzip_header(fp) is None:
+       ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/gzip.py", line 456, in _read_gzip_header
+    raise BadGzipFile('Not a gzipped file (%r)' % magic)
+gzip.BadGzipFile: Not a gzipped file (b'\x1b\xb1')
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<stdin>", line 35, in <module>
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0xb1 in position 1: invalid start byte

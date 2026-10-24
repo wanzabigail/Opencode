@@ -1,0 +1,8 @@
+=== Setup DDoS Attack ===
+Target: https://www.nadiavpn.web.id/
+SOCKS5 proxies ready: 80118
+HTTP proxies ready: 13962
+
+=== Download DDoS tools ===
+Cloning into '/tmp/CC-attack'...
+Cloning into '/tmp/MHDDoS'...

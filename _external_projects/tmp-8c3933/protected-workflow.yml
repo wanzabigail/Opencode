@@ -1,0 +1,2162 @@
+name: OpenCode Cloud Pro v2 (Terbaru + Custom Provider + Anti-Block UI + 24/7)
+
+on:
+  workflow_dispatch:
+    inputs:
+      versi_opencode:
+        description: "Pilih versi OpenCode (v2 = Terbaru v2.1+ Full Fix, v1 = Klasik v1.19+)"
+        type: choice
+        options:
+          - v2
+          - v1
+        required: true
+        default: "v2"
+      password_login:
+        description: "Password login (kosongkan jika sudah pakai Secret OPENCODE_PASSWORD)"
+        required: false
+        default: ""
+      durasi_menit:
+        description: "Durasi per sesi dalam menit (maks 350 = hampir 6 jam)"
+        required: true
+        default: "350"
+      lanjut_otomatis:
+        description: "Lanjut otomatis 24 jam nonstop? (Centang agar nyambung terus tiap 6 jam)"
+        type: boolean
+        required: true
+        default: true
+
+jobs:
+  opencode-web:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    permissions:
+      contents: write
+      actions: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: 1. Ambil Kode & Backup Sebelumnya (Full Git History agar Project ID Permanen)
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: 2. Install OpenCode (${{ inputs.versi_opencode }}), Custom Provider Patch, Panel & Helper
+        env:
+          OC_VER: ${{ inputs.versi_opencode }}
+        run: |
+          # Simpan salinan workflow agar tidak pernah terhapus tak sengaja oleh agen AI
+          cp .github/workflows/opencode-web.yml /tmp/protected-workflow.yml 2>/dev/null || true
+
+          sudo apt-get update -qq && sudo apt-get install -y -qq zip >/dev/null 2>&1 || true
+
+          mkdir -p "$HOME/.local/bin"
+          if [ "$OC_VER" = "v1" ]; then
+            curl -fsSL https://opencode.ai/install | bash
+          else
+            # Default: Install OpenCode Generasi Terbaru v2 (v2.1.x+)
+            curl -fsSL https://opencode.ai/v2/install | bash
+          fi
+          cp "$HOME/.opencode/bin/opencode" "$HOME/.local/bin/opencode"
+          echo "Versi OpenCode terinstal: $($HOME/.local/bin/opencode --version)"
+
+          # Install Bun (super cepat untuk JS/TS build modern)
+          curl -fsSL https://bun.sh/install | bash >/dev/null 2>&1 || true
+          [ -d "$HOME/.bun/bin" ] && echo "$HOME/.bun/bin" >> "$GITHUB_PATH"
+
+          # Install Cloudflare Tunnel
+          curl -fsSL https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64 -o "$HOME/.local/bin/cloudflared"
+          chmod +x "$HOME/.local/bin/opencode" "$HOME/.local/bin/cloudflared"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+          # Konfigurasi default model gratis OpenCode (kompatibel penuh di v2 maupun v1)
+          if [ ! -f opencode.json ]; then
+            printf '{\n  "$schema": "https://opencode.ai/config.json",\n  "model": "opencode/deepseek-v4.1-flash-free"\n}\n' > opencode.json
+          fi
+
+          # Pastikan .gitignore aman agar node_modules / build raksasa & file rahasia .env tidak bocor ke publik
+          if [ ! -f .gitignore ]; then
+            cat << 'GITEOF' > .gitignore
+          node_modules/
+          .next/
+          .nuxt/
+          .svelte-kit/
+          .gradle/
+          **/build/intermediates/
+          **/build/tmp/
+          __pycache__/
+          .venv/
+          venv/
+          target/debug/
+          .opencode-backup.enc
+          .opencode-backup.enc.tmp
+          .env
+          .env.*
+          !.env.example
+          !.env.sample
+          !.env.template
+          GITEOF
+          else
+            for rule in ".opencode-backup.enc" ".env" ".env.*" "!.env.example" "!.env.sample"; do
+              grep -qxF "$rule" .gitignore 2>/dev/null || echo "$rule" >> .gitignore
+            done
+          fi
+
+          # Panduan pintar otomatis untuk Agen AI OpenCode (AGENTS.md)
+          if [ ! -f AGENTS.md ]; then
+            cat << 'AGENTEOF' > AGENTS.md
+          # OpenCode Cloud Pro Environment Guide
+
+          Kamu berjalan di mesin Linux Cloud berkapasitas besar (16 GB RAM, 4 vCPU, Ubuntu 24.04) dengan akses internet penuh:
+          - **Web & Fullstack:** Node.js, npm, pnpm, yarn, Bun, Python 3, PHP, Go, Rust, Docker & Docker Compose tersedia.
+          - **Live Preview Web:** Saat menjalankan dev server (Next.js, Vite, Flask, PHP, dll.), SELALU bind ke `0.0.0.0` (contoh: `npm run dev -- --host 0.0.0.0 --port 3000`). User dapat langsung membukanya lewat tombol **⚡ Panel** di bagian atas tengah layar!
+          - **Build Aplikasi Android (.apk):** Java JDK 17/21, Gradle, dan Android SDK lengkap SUDAH TERINSTAL di `$ANDROID_HOME` (`/usr/local/lib/android/sdk`). Jika diminta membuat aplikasi Android, buat project Gradle lengkap dan jalankan `./gradlew assembleDebug` — file `.apk` otomatis muncul sebagai tombol Download 1-Klik di **⚡ Panel** user!
+          - **Penyimpanan Permanen:** Selalu simpan seluruh project di dalam folder repository saat ini (`$PWD`) agar otomatis ter-backup ke GitHub setiap 10 menit.
+          AGENTEOF
+          fi
+
+          # ------------------------------------------------------------------
+          # Helper 1A: Simpan Atomic SQLite WAL + Subproject + External Project + AES-256
+          # ------------------------------------------------------------------
+          cat << 'SAVEEOF' > "$HOME/.local/bin/oc-save"
+          #!/usr/bin/env bash
+          exec 9>/tmp/oc-save.lock
+          flock -w 90 9 || exit 0
+
+          cd "$WORKSPACE_DIR" || exit 1
+          git config user.name "OpenCode Cloud" 2>/dev/null || true
+          git config user.email "bot@opencode.local" 2>/dev/null || true
+
+          if [ -f /tmp/protected-workflow.yml ]; then
+            mkdir -p .github/workflows
+            cp /tmp/protected-workflow.yml .github/workflows/opencode-web.yml
+          fi
+
+          STAGE_DIR=$(mktemp -d)
+          trap 'rm -rf "$STAGE_DIR"' EXIT
+
+          python3 - "$HOME" "$WORKSPACE_DIR" "$STAGE_DIR" << 'PYEOF'
+          import os, sys, json, shutil, sqlite3, subprocess, hashlib
+
+          home_dir, ws_dir, stage_dir = [os.path.realpath(x) for x in sys.argv[1:4]]
+          skip_heavy = {
+              ".git", "node_modules", ".next", ".nuxt", ".svelte-kit",
+              ".gradle", "target", ".venv", "venv", "__pycache__", ".cache"
+          }
+
+          # 1. Stage OpenCode dirs menggunakan SQLite C Online Backup API (.backup()) agar 100% aman dari korupsi WAL saat live chat!
+          home_out = os.path.join(stage_dir, "home")
+          os.makedirs(home_out, exist_ok=True)
+          for rel_dir, skip_sub in [
+              (".local/share/opencode", {"log"}),
+              (".config/opencode", set()),
+              (".local/state/opencode", {"locks", "service.json"}),
+          ]:
+              src_root = os.path.join(home_dir, rel_dir)
+              if not os.path.isdir(src_root):
+                  continue
+              for cur, dirs, files in os.walk(src_root):
+                  dirs[:] = [d for d in dirs if d not in skip_sub]
+                  rel_cur = os.path.relpath(cur, home_dir)
+                  dst_cur = os.path.join(home_out, rel_cur)
+                  os.makedirs(dst_cur, exist_ok=True)
+                  for f in files:
+                      if rel_cur == ".local/state/opencode" and f == "service.json":
+                          continue
+                      if f.endswith("-wal") or f.endswith("-shm"):
+                          continue
+                      s_file = os.path.join(cur, f)
+                      d_file = os.path.join(dst_cur, f)
+                      try:
+                          if f.endswith(".db"):
+                              s_conn = sqlite3.connect(s_file, timeout=15)
+                              d_conn = sqlite3.connect(d_file)
+                              with d_conn:
+                                  s_conn.backup(d_conn)
+                              d_conn.close()
+                              s_conn.close()
+                          elif os.path.isfile(s_file):
+                              shutil.copy2(s_file, d_file)
+                      except Exception:
+                          if os.path.isfile(s_file):
+                              try:
+                                  shutil.copy2(s_file, d_file)
+                              except Exception:
+                                  pass
+
+          # 2. Simpan pin .git/opencode & sinkronkan project eksternal di luar $WORKSPACE_DIR (misal dibuat dari tombol "+ Open project")!
+          db_copy = os.path.join(home_out, ".local/share/opencode/opencode.db")
+          ext_root = os.path.join(ws_dir, "_external_projects")
+          ext_manifest = []
+          pins = {}
+          git_oc_path = os.path.join(ws_dir, ".git", "opencode")
+          if os.path.isfile(git_oc_path):
+              try:
+                  pins["__workspace__"] = open(git_oc_path, "r", encoding="utf-8").read().strip()
+              except Exception:
+                  pass
+
+          if os.path.isfile(db_copy):
+              try:
+                  conn = sqlite3.connect(db_copy)
+                  for pid, wt in conn.execute("SELECT id, worktree FROM project").fetchall():
+                      if not wt:
+                          continue
+                      wt_real = os.path.realpath(wt)
+                      pins[wt] = pid
+                      if wt_real == home_dir or wt_real == ws_dir or wt_real.startswith(ws_dir + os.sep):
+                          continue
+                      if wt_real in ("/", "/usr", "/etc", "/bin", "/lib", "/proc", "/sys", "/dev") or any(
+                          wt_real.startswith(p) for p in ("/usr/", "/etc/", "/proc/", "/sys/", "/dev/")
+                      ):
+                          continue
+                      if os.path.isdir(wt) and not os.path.islink(wt):
+                          slug = os.path.basename(wt.rstrip("/")) + "-" + hashlib.sha1(wt.encode()).hexdigest()[:6]
+                          dst_ext = os.path.join(ext_root, slug)
+                          os.makedirs(dst_ext, exist_ok=True)
+                          for cur, dirs, files in os.walk(wt):
+                              dirs[:] = [d for d in dirs if d not in skip_heavy]
+                              rel_p = os.path.relpath(cur, wt)
+                              d_dir = os.path.join(dst_ext, rel_p)
+                              os.makedirs(d_dir, exist_ok=True)
+                              for fn in files:
+                                  sf = os.path.join(cur, fn)
+                                  df = os.path.join(d_dir, fn)
+                                  try:
+                                      if os.path.isfile(sf) and os.path.getsize(sf) < 95_000_000:
+                                          shutil.copy2(sf, df)
+                                  except Exception:
+                                      pass
+                          ext_manifest.append({"slug": slug, "worktree": wt, "project_id": pid})
+                      elif os.path.islink(wt):
+                          target_rel = os.path.relpath(os.path.realpath(wt), ext_root)
+                          if not target_rel.startswith(".."):
+                              ext_manifest.append({"slug": target_rel.split(os.sep)[0], "worktree": wt, "project_id": pid})
+                  conn.close()
+              except Exception:
+                  pass
+
+          if ext_manifest:
+              os.makedirs(ext_root, exist_ok=True)
+              with open(os.path.join(ext_root, "manifest.json"), "w", encoding="utf-8") as mf:
+                  json.dump(ext_manifest, mf, indent=2)
+
+          with open(os.path.join(stage_dir, "pins.json"), "w", encoding="utf-8") as pf:
+              json.dump(pins, pf, indent=2)
+
+          # 3. Aman dari error fatal Git akibat nested `.git` di subfolder (cth: `create-next-app`, `cargo new`, `flutter create`, `git init`)!
+          for cur, dirs, files in os.walk(ws_dir):
+              rel_cur = os.path.relpath(cur, ws_dir)
+              if rel_cur == ".":
+                  dirs[:] = [d for d in dirs if d not in {".git", "node_modules", ".gradle", ".venv", "venv"}]
+                  continue
+              if ".git" in dirs:
+                  nested_git = os.path.join(cur, ".git")
+                  backup_git = os.path.join(cur, ".git_subrepo_saved")
+                  try:
+                      if os.path.exists(backup_git):
+                          shutil.rmtree(backup_git) if os.path.isdir(backup_git) else os.remove(backup_git)
+                      shutil.move(nested_git, backup_git)
+                      subprocess.run(["git", "-C", ws_dir, "rm", "--cached", "-rf", "--ignore-unmatch", rel_cur],
+                                     stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                  except Exception:
+                      pass
+                  dirs.remove(".git")
+              dirs[:] = [d for d in dirs if d not in {".git_subrepo_saved", "node_modules", ".gradle", ".venv", "venv"}]
+
+          # 4. Amankan semua file rahasia `.env` / `.env.*` ke dalam arsip terenkripsi AES-256 (aman walau repo Public)!
+          env_dir = os.path.join(stage_dir, "envs")
+          os.makedirs(env_dir, exist_ok=True)
+          env_manifest = []
+          safe_env_examples = {".env.example", ".env.sample", ".env.template"}
+          for cur, dirs, files in os.walk(ws_dir):
+              dirs[:] = [d for d in dirs if d not in skip_heavy and d != ".git_subrepo_saved"]
+              for fn in files:
+                  if (fn == ".env" or fn.startswith(".env.")) and fn not in safe_env_examples:
+                      full_env = os.path.join(cur, fn)
+                      rel_env = os.path.relpath(full_env, ws_dir)
+                      key_name = hashlib.sha1(rel_env.encode()).hexdigest()
+                      try:
+                          shutil.copy2(full_env, os.path.join(env_dir, key_name))
+                          env_manifest.append({"rel": rel_env, "key": key_name})
+                      except Exception:
+                          pass
+          with open(os.path.join(stage_dir, "envs.json"), "w", encoding="utf-8") as ef:
+              json.dump(env_manifest, ef, indent=2)
+          PYEOF
+
+          # 5. Enkripsi AES-256-CBC PBKDF2 & simpan ke orphan branch `oc-backup` (0% pembengkakan ukuran Git walau jalan bertahun-tahun!)
+          PUSH_REMOTE=""
+          if [ -n "$GITHUB_REPOSITORY" ] && [ -n "$GH_TOKEN" ]; then
+            PUSH_REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          else
+            PUSH_REMOTE=$(git remote get-url origin 2>/dev/null || echo "")
+          fi
+
+          if [ -n "$FINAL_PW" ]; then
+            TMP_BKP=$(mktemp -d)
+            if tar -czf - -C "$STAGE_DIR" . 2>/dev/null \
+              | openssl enc -aes-256-cbc -salt -pbkdf2 -pass env:FINAL_PW -out "$TMP_BKP/opencode-backup.enc"; then
+              if [ -n "$PUSH_REMOTE" ]; then
+                (
+                  cd "$TMP_BKP"
+                  git init -q -b oc-backup
+                  git config user.name "OpenCode Cloud"
+                  git config user.email "bot@opencode.local"
+                  git add opencode-backup.enc
+                  git commit -q -m "chore: encrypted OpenCode state snapshot"
+                  if git push -f -q "$PUSH_REMOTE" oc-backup >/dev/null 2>&1; then
+                    rm -f "$WORKSPACE_DIR/.opencode-backup.enc"
+                  else
+                    cp "$TMP_BKP/opencode-backup.enc" "$WORKSPACE_DIR/.opencode-backup.enc"
+                  fi
+                )
+              else
+                cp "$TMP_BKP/opencode-backup.enc" "$WORKSPACE_DIR/.opencode-backup.enc"
+              fi
+            fi
+            rm -rf "$TMP_BKP"
+          fi
+
+          # 6. Simpan seluruh kode project ke branch utama (tanpa file rahasia .env & tanpa file >95MB)
+          git add -A 2>/dev/null || true
+          git diff --cached --name-only | while IFS= read -r file; do
+            base=$(basename "$file")
+            if [ "$base" = ".env" ] || { [[ "$base" == .env.* ]] && [ "$base" != ".env.example" ] && [ "$base" != ".env.sample" ] && [ "$base" != ".env.template" ]; }; then
+              git rm --cached -f --ignore-unmatch "$file" >/dev/null 2>&1 || true
+              continue
+            fi
+            if [ -f "$file" ]; then
+              size=$(wc -c < "$file" 2>/dev/null || echo 0)
+              if [ "$size" -gt 99000000 ]; then
+                echo "Melewati file >95MB dari git push (tetap bisa diunduh lewat Cloud Panel): $file"
+                git reset HEAD "$file" >/dev/null 2>&1 || true
+              fi
+            fi
+          done
+
+          if ! git diff --cached --quiet; then
+            git commit -m "${1:-chore: auto-save kode project OpenCode}" || true
+            git pull --rebase --autostash >/dev/null 2>&1 || true
+            if [ -n "$PUSH_REMOTE" ]; then
+              CUR_BRANCH=$(git rev-parse --abbrev-ref HEAD 2>/dev/null || echo "HEAD")
+              git push "$PUSH_REMOTE" "HEAD:${CUR_BRANCH}" >/dev/null 2>&1 || git push >/dev/null 2>&1 || true
+            else
+              git push >/dev/null 2>&1 || true
+            fi
+          fi
+          SAVEEOF
+          chmod +x "$HOME/.local/bin/oc-save"
+
+          # ------------------------------------------------------------------
+          # Helper 1B: Pulihkan Session, Chat, Project Eksternal, .env & Pin Project ID
+          # ------------------------------------------------------------------
+          cat << 'RESTOREEOF' > "$HOME/.local/bin/oc-restore"
+          #!/usr/bin/env bash
+          cd "$WORKSPACE_DIR" || exit 1
+          ENC_FILE=""
+          TMP_RES=$(mktemp -d)
+          trap 'rm -rf "$TMP_RES"' EXIT
+
+          FETCH_REMOTE=""
+          if [ -n "$GITHUB_REPOSITORY" ] && [ -n "$GH_TOKEN" ]; then
+            FETCH_REMOTE="https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          else
+            FETCH_REMOTE=$(git remote get-url origin 2>/dev/null || echo "")
+          fi
+
+          if [ -n "$FETCH_REMOTE" ] && git fetch -q "$FETCH_REMOTE" oc-backup 2>/dev/null; then
+            if git show FETCH_HEAD:opencode-backup.enc > "$TMP_RES/backup.enc" 2>/dev/null && [ -s "$TMP_RES/backup.enc" ]; then
+              ENC_FILE="$TMP_RES/backup.enc"
+            fi
+          fi
+          if [ -z "$ENC_FILE" ] && [ -f "$WORKSPACE_DIR/.opencode-backup.enc" ]; then
+            ENC_FILE="$WORKSPACE_DIR/.opencode-backup.enc"
+          fi
+
+          if [ -n "$ENC_FILE" ] && [ -n "$FINAL_PW" ]; then
+            echo "Memulihkan riwayat chat, session, custom provider & .env dari enkripsi AES-256 ..."
+            mkdir -p "$TMP_RES/unpack"
+            if openssl enc -d -aes-256-cbc -pbkdf2 -pass env:FINAL_PW -in "$ENC_FILE" 2>/dev/null | tar -xzf - -C "$TMP_RES/unpack" 2>/dev/null; then
+              if [ -d "$TMP_RES/unpack/home" ]; then
+                cp -a "$TMP_RES/unpack/home/." "$HOME/"
+              else
+                # Kompatibilitas mundur penuh untuk format arsip lama (.local / .config langsung di root tar)
+                cp -a "$TMP_RES/unpack/." "$HOME/"
+              fi
+              echo "✅ Database riwayat chat, session & custom provider berhasil dipulihkan!"
+            else
+              echo "⚠️ Backup lama memakai password berbeda — memulai database session baru."
+            fi
+          fi
+
+          # Pulihkan .env, symlink project eksternal, dan kunci Project ID permanen agar 0% chat yatim/hilang!
+          python3 - "$HOME" "$WORKSPACE_DIR" "$TMP_RES/unpack" << 'PYRESEOF'
+          import os, sys, json, shutil, sqlite3, subprocess
+
+          home_dir = os.path.realpath(sys.argv[1])
+          ws_dir = os.path.realpath(sys.argv[2])
+          unpack_dir = sys.argv[3]
+
+          # 1. Pulihkan semua file rahasia `.env` ke lokasi aslinya masing-masing
+          envs_json = os.path.join(unpack_dir, "envs.json")
+          if os.path.isfile(envs_json):
+              try:
+                  for item in json.load(open(envs_json, "r", encoding="utf-8")):
+                      src = os.path.join(unpack_dir, "envs", item["key"])
+                      dst = os.path.realpath(os.path.join(ws_dir, item["rel"]))
+                      if dst.startswith(ws_dir + os.sep) and os.path.isfile(src):
+                          os.makedirs(os.path.dirname(dst), exist_ok=True)
+                          shutil.copy2(src, dst)
+              except Exception:
+                  pass
+
+          # 2. Pulihkan symlink semua project eksternal di luar $WORKSPACE_DIR (cth: /home/runner/proyek-ku)
+          ext_manifest_file = os.path.join(ws_dir, "_external_projects", "manifest.json")
+          if os.path.isfile(ext_manifest_file):
+              try:
+                  for item in json.load(open(ext_manifest_file, "r", encoding="utf-8")):
+                      src_proj = os.path.join(ws_dir, "_external_projects", item["slug"])
+                      wt_path = item["worktree"]
+                      if os.path.isdir(src_proj) and not os.path.exists(wt_path):
+                          os.makedirs(os.path.dirname(wt_path), exist_ok=True)
+                          os.symlink(src_proj, wt_path)
+              except Exception:
+                  pass
+
+          # 3. Kunci Project ID permanen (.git/opencode) + satukan semua sesi lama di SQLite agar tidak pernah terpisah!
+          pins = {}
+          pins_file = os.path.join(unpack_dir, "pins.json")
+          if os.path.isfile(pins_file):
+              try:
+                  pins = json.load(open(pins_file, "r", encoding="utf-8"))
+              except Exception:
+                  pass
+
+          root_sha = ""
+          try:
+              out = subprocess.check_output(["git", "-C", ws_dir, "rev-list", "--max-parents=0", "HEAD"], text=True).strip().splitlines()
+              if out:
+                  root_sha = out[-1].strip()
+          except Exception:
+              pass
+
+          canonical_id = pins.get("__workspace__") or pins.get(ws_dir) or root_sha
+          db_file = os.path.join(home_dir, ".local/share/opencode/opencode.db")
+          if os.path.isfile(db_file):
+              try:
+                  conn = sqlite3.connect(db_file)
+                  rows = conn.execute("SELECT id, worktree FROM project").fetchall()
+                  ws_ids = [pid for pid, wt in rows if wt and os.path.realpath(wt) == ws_dir]
+                  if not canonical_id and ws_ids:
+                      canonical_id = ws_ids[0]
+                  if canonical_id and ws_ids:
+                      other_ids = [pid for pid in ws_ids if pid != canonical_id]
+                      for old_id in other_ids:
+                          conn.execute("UPDATE session_v2 SET project_id = ? WHERE project_id = ?", (canonical_id, old_id))
+                          conn.execute("DELETE FROM worktree WHERE project_id = ?", (old_id,))
+                          conn.execute("DELETE FROM project WHERE id = ?", (old_id,))
+                      conn.commit()
+                  conn.close()
+              except Exception:
+                  pass
+
+          if canonical_id and os.path.isdir(os.path.join(ws_dir, ".git")):
+              try:
+                  with open(os.path.join(ws_dir, ".git", "opencode"), "w", encoding="utf-8") as gf:
+                      gf.write(canonical_id)
+              except Exception:
+                  pass
+          PYRESEOF
+          RESTOREEOF
+          chmod +x "$HOME/.local/bin/oc-restore"
+
+          # ------------------------------------------------------------------
+          # Helper 2: Update Link Permanen GitHub Pages + Kirim Notif Telegram/Discord
+          # ------------------------------------------------------------------
+          cat << 'PUBEOF' > "$HOME/.local/bin/oc-publish-url"
+          #!/usr/bin/env bash
+          NEW_URL="$1"
+          [ -z "$NEW_URL" ] && exit 0
+          echo "$NEW_URL" > /tmp/current_url.txt
+
+          OWNER="${GITHUB_REPOSITORY%/*}"
+          REPO="${GITHUB_REPOSITORY#*/}"
+          OWNER_LOWER=$(echo "$OWNER" | tr '[:upper:]' '[:lower:]')
+          PAGES_URL="https://${OWNER_LOWER}.github.io/${REPO}/"
+          echo "$PAGES_URL" > /tmp/pages_url.txt
+
+          if [ -n "$GITHUB_REPOSITORY" ] && [ -n "$GH_TOKEN" ]; then
+            TMP_PAGES=$(mktemp -d)
+            (
+              cd "$TMP_PAGES"
+              git init -q -b gh-pages
+              git config user.name "OpenCode Cloud"
+              git config user.email "bot@opencode.local"
+              NOW_WIB=$(TZ=Asia/Jakarta date '+%d %b %Y %H:%M WIB')
+              cat << HTMLEOF > index.html
+          <!doctype html>
+          <html lang="id">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>OpenCode Cloud Redirect</title>
+            <meta http-equiv="refresh" content="2;url=${NEW_URL}" />
+            <style>
+              * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+              body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b0d12; color: #f3f4f6; padding: 18px; text-align: center; }
+              .box { width: 100%; max-width: 430px; background: #161922; border: 1px solid #2a2f3d; border-radius: 18px; padding: 28px 24px; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+              .badge { display: inline-block; background: #064e3b; color: #6ee7b7; font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; margin-bottom: 14px; }
+              h1 { margin: 0 0 8px; font-size: 21px; }
+              p { margin: 0 0 20px; font-size: 14px; color: #9ca3af; line-height: 1.5; }
+              a.btn { display: block; width: 100%; padding: 13px; border-radius: 11px; background: #3b82f6; color: #fff; text-decoration: none; font-weight: 600; font-size: 15px; margin-bottom: 10px; }
+              a.sub { display: block; width: 100%; padding: 11px; border-radius: 11px; background: #1f2433; border: 1px solid #32394e; color: #d1d5db; text-decoration: none; font-size: 13px; }
+              .meta { margin-top: 16px; font-size: 12px; color: #6b7280; }
+            </style>
+          </head>
+          <body>
+            <div class="box">
+              <div class="badge">● SERVER CLOUD AKTIF</div>
+              <h1>🚀 Mengarahkan ke OpenCode Web...</h1>
+              <p>Otomatis berpindah dalam 2 detik. Jika belum berpindah, klik tombol di bawah:</p>
+              <a class="btn" href="${NEW_URL}">Buka OpenCode Web Sekarang →</a>
+              <a class="sub" href="${NEW_URL}/__panel">⚙️ Buka Cloud Control Panel</a>
+              <div class="meta">Diperbarui otomatis: ${NOW_WIB}</div>
+            </div>
+          </body>
+          </html>
+          HTMLEOF
+              touch .nojekyll
+              git add -A
+              git commit -q -m "chore: update active OpenCode URL"
+              git push -f -q "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" gh-pages >/dev/null 2>&1 || true
+            )
+            rm -rf "$TMP_PAGES"
+
+            gh api -X POST "repos/${GITHUB_REPOSITORY}/pages" \
+              -f "source[branch]=gh-pages" -f "source[path]=/" >/dev/null 2>&1 || true
+          fi
+
+          if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
+            MSG="🚀 *OpenCode Cloud Pro Aktif!*%0A%0A🌐 *Link Sesi Ini:*%0A${NEW_URL}%0A%0A🔗 *Link Permanen:*%0A${PAGES_URL}%0A%0A⚙️ *Control Panel:*%0A${NEW_URL}/__panel"
+            curl -4 -fsS -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+              -d "chat_id=${TELEGRAM_CHAT_ID}" \
+              -d "parse_mode=Markdown" \
+              -d "text=${MSG}" >/dev/null 2>&1 || true
+          fi
+
+          if [ -n "$DISCORD_WEBHOOK_URL" ]; then
+            PAYLOAD=$(printf '{"content":"🚀 **OpenCode Cloud Pro Aktif!**\\n🌐 **Link Sesi Ini:** %s\\n🔗 **Link Permanen:** %s\\n⚙️ **Control Panel:** %s/__panel"}' "$NEW_URL" "$PAGES_URL" "$NEW_URL")
+            curl -4 -fsS -X POST "$DISCORD_WEBHOOK_URL" \
+              -H "Content-Type: application/json" \
+              -d "$PAYLOAD" >/dev/null 2>&1 || true
+          fi
+          PUBEOF
+          chmod +x "$HOME/.local/bin/oc-publish-url"
+
+          # ------------------------------------------------------------------
+          # Helper 3: Full Gateway + Real-Time WebSocket SSE Bridge + Native
+          # Custom Provider Enabler (v2 & Panel) + Draggable Top Panel Button
+          # ------------------------------------------------------------------
+          cat << 'PROXYEOF' > /tmp/auth-proxy.mjs
+          import http from "node:http";
+          import net from "node:net";
+          import crypto from "node:crypto";
+          import fs from "node:fs";
+          import path from "node:path";
+          import os from "node:os";
+          import { spawn, execFileSync, execSync } from "node:child_process";
+
+          const PASSWORD = (process.env.OPENCODE_PASSWORD || "").trim();
+          const OC_VER = (process.env.OC_VER || "v2").trim();
+          const WORKSPACE = process.env.WORKSPACE_DIR || process.cwd();
+          const HOME_DIR = process.env.HOME || "/root";
+          const START_TIME = Number(process.env.START_TIME_MS || Date.now());
+          const DURATION_MIN = Number(process.env.DURASI_MENIT || 350);
+          const LISTEN_PORT = Number(process.env.LISTEN_PORT || 4096);
+          const TOKEN = crypto.createHmac("sha256", PASSWORD || "default").update("opencode-cookie-v3").digest("hex");
+          const GLOBAL_CFG_FILE = path.join(HOME_DIR, ".config/opencode/opencode.json");
+          const OC_DB_FILE = path.join(HOME_DIR, ".local/share/opencode/opencode.db");
+
+          const previewTunnels = new Map();
+
+          function getPersistenceMeta() {
+            const out = { worktrees: WORKSPACE ? [WORKSPACE] : [], sessionCount: 0 };
+            if (!fs.existsSync(OC_DB_FILE)) return out;
+            try {
+              const py = [
+                "import sys, os, json, sqlite3",
+                "db, hd = sys.argv[1], os.path.realpath(sys.argv[2])",
+                "conn = sqlite3.connect(db, timeout=5)",
+                "wts = [r[0] for r in conn.execute('SELECT worktree FROM project ORDER BY time_updated DESC').fetchall() if r[0] and os.path.exists(r[0]) and os.path.realpath(r[0]) != hd]",
+                "try:",
+                "  cnt = conn.execute('SELECT COUNT(*) FROM session_v2 WHERE time_archived IS NULL').fetchone()[0]",
+                "except Exception:",
+                "  cnt = 0",
+                "print(json.dumps({'worktrees': wts, 'sessionCount': cnt}))",
+              ].join("\n");
+              const raw = execFileSync("python3", ["-c", py, OC_DB_FILE, HOME_DIR], { encoding: "utf8", timeout: 4000 }).trim();
+              const parsed = JSON.parse(raw);
+              for (const wt of parsed.worktrees || []) {
+                if (wt && !out.worktrees.includes(wt)) out.worktrees.push(wt);
+              }
+              out.sessionCount = Number(parsed.sessionCount || 0);
+            } catch {}
+            return out;
+          }
+
+          function readGlobalConfig() {
+            try {
+              if (fs.existsSync(GLOBAL_CFG_FILE)) {
+                return JSON.parse(fs.readFileSync(GLOBAL_CFG_FILE, "utf8"));
+              }
+            } catch {}
+            return { $schema: "https://opencode.ai/config.json", provider: {} };
+          }
+
+          function getCustomModelEntries() {
+            const cfg = readGlobalConfig();
+            const entries = [];
+            for (const [providerID, p] of Object.entries(cfg.provider || {})) {
+              for (const modelID of Object.keys((p && p.models) || {})) {
+                entries.push({ providerID, modelID });
+              }
+            }
+            return entries;
+          }
+
+          function reloadOpenCodeEngine() {
+            try {
+              if (OC_VER === "v1") {
+                execSync('pkill -TERM -f "opencode web" || true');
+              } else {
+                const ocBin = path.join(HOME_DIR, ".local/bin/opencode");
+                try {
+                  execFileSync(ocBin, ["service", "stop"], { env: { ...process.env, HOME: HOME_DIR }, timeout: 10000 });
+                } catch {}
+                execSync("sleep 1");
+                execFileSync(ocBin, ["service", "start"], { cwd: WORKSPACE, env: { ...process.env, HOME: HOME_DIR }, timeout: 15000 });
+              }
+            } catch {}
+          }
+
+          function writeGlobalConfig(cfg) {
+            fs.mkdirSync(path.dirname(GLOBAL_CFG_FILE), { recursive: true });
+            const tmp = `${GLOBAL_CFG_FILE}.tmp.${process.pid}`;
+            fs.writeFileSync(tmp, JSON.stringify(cfg, null, 2));
+            fs.renameSync(tmp, GLOBAL_CFG_FILE);
+            // Simpan terenkripsi AES-256 ke GitHub secara non-blocking di latar belakang
+            try {
+              const saveBin = path.join(HOME_DIR, ".local/bin/oc-save");
+              if (fs.existsSync(saveBin)) {
+                const bg = spawn(saveBin, ["chore: auto-save custom provider terenkripsi"], {
+                  env: { ...process.env, FINAL_PW: PASSWORD, WORKSPACE_DIR: WORKSPACE },
+                  stdio: "ignore",
+                  detached: true,
+                });
+                bg.unref();
+              }
+            } catch {}
+          }
+
+          // Baca port & UUID service dinamis untuk OpenCode v2 (maupun fallback 4097 untuk v1)
+          function getUpstreamService() {
+            if (OC_VER !== "v1") {
+              try {
+                const svcFile = path.join(HOME_DIR, ".local/state/opencode/service.json");
+                const svc = JSON.parse(fs.readFileSync(svcFile, "utf8"));
+                if (svc && svc.url) {
+                  const u = new URL(svc.url);
+                  if (u.port) return { port: Number(u.port), id: String(svc.id || "") };
+                }
+              } catch {}
+            }
+            return { port: 4097, id: "v1" };
+          }
+
+          function getUpstreamPort() {
+            return getUpstreamService().port;
+          }
+
+          // Buat link pairing sekali pakai resmi untuk OpenCode v2 agar otomatis login tanpa ketik terminal
+          function getV2PairPath() {
+            if (OC_VER === "v1") return "/";
+            try {
+              const ocBin = path.join(HOME_DIR, ".local/bin/opencode");
+              const out = execFileSync(ocBin, ["pair", "--url", `http://127.0.0.1:${LISTEN_PORT}`], {
+                env: { ...process.env, HOME: HOME_DIR },
+                encoding: "utf8",
+                timeout: 8000,
+              });
+              const m = out.match(/\/auth\/connect\/[-A-Za-z0-9_]+/);
+              if (m) return m[0];
+            } catch {}
+            return "/";
+          }
+
+          function parseCookies(header = "") {
+            const out = {};
+            for (const part of header.split(";")) {
+              const idx = part.indexOf("=");
+              if (idx > -1) out[part.slice(0, idx).trim()] = part.slice(idx + 1).trim();
+            }
+            return out;
+          }
+
+          function isAuthed(req) {
+            if (!PASSWORD) return true;
+            return parseCookies(req.headers.cookie || "").oc_auth === TOKEN;
+          }
+
+          function sendJson(res, code, data) {
+            res.writeHead(code, { "content-type": "application/json; charset=utf-8", "cache-control": "no-store" });
+            res.end(JSON.stringify(data));
+          }
+
+          function readBody(req) {
+            return new Promise((resolve) => {
+              let body = "";
+              req.on("data", (c) => { body += c; if (body.length > 131072) req.destroy(); });
+              req.on("end", () => resolve(body));
+            });
+          }
+
+          function scanArtifacts(dir, depth = 0, out = []) {
+            if (depth > 6) return out;
+            let entries = [];
+            try { entries = fs.readdirSync(dir, { withFileTypes: true }); } catch { return out; }
+            for (const e of entries) {
+              if ([".git", "node_modules", ".gradle", ".cache"].includes(e.name)) continue;
+              const full = path.join(dir, e.name);
+              if (e.isDirectory()) {
+                scanArtifacts(full, depth + 1, out);
+              } else if (/\.(apk|aab|ipa|exe|AppImage)$/i.test(e.name)) {
+                try {
+                  const st = fs.statSync(full);
+                  out.push({
+                    name: e.name,
+                    relPath: path.relative(WORKSPACE, full),
+                    sizeMB: (st.size / (1024 * 1024)).toFixed(2),
+                    mtime: st.mtimeMs,
+                  });
+                } catch {}
+              }
+            }
+            return out.sort((a, b) => b.mtime - a.mtime);
+          }
+
+          function detectActivePorts() {
+            try {
+              const raw = execSync("ss -tlnH 2>/dev/null || true", { encoding: "utf8" });
+              const ignored = new Set([22, 4096, 4097, 20241, getUpstreamPort()]);
+              const found = new Set();
+              for (const line of raw.split("\n")) {
+                const m = line.match(/:(\d+)\s+/);
+                if (m) {
+                  const p = Number(m[1]);
+                  if (p >= 1024 && p <= 65535 && !ignored.has(p) && p < 32768) found.add(p);
+                }
+              }
+              return Array.from(found).sort((a, b) => a - b);
+            } catch {
+              return [];
+            }
+          }
+
+          async function startPortPreviewTunnel(port) {
+            const p = Number(port);
+            if (!p || p < 1 || p > 65535) throw new Error("Port tidak valid");
+            const existing = previewTunnels.get(p);
+            if (existing && existing.url && existing.proc && existing.proc.exitCode === null) {
+              return existing.url;
+            }
+            const cfBin = path.join(HOME_DIR, ".local/bin/cloudflared");
+            const proc = spawn(cfBin, ["tunnel", "--no-autoupdate", "--protocol", "http2", "--url", `http://127.0.0.1:${p}`], {
+              stdio: ["ignore", "pipe", "pipe"],
+            });
+            let logs = "";
+            const urlPromise = new Promise((resolve, reject) => {
+              const timer = setTimeout(() => reject(new Error("Timeout membuat tunnel preview")), 20000);
+              const onChunk = (buf) => {
+                logs += buf.toString();
+                const m = logs.match(/https:\/\/[-a-z0-9]+\.trycloudflare\.com/);
+                if (m) {
+                  clearTimeout(timer);
+                  resolve(m[0]);
+                }
+              };
+              proc.stdout.on("data", onChunk);
+              proc.stderr.on("data", onChunk);
+              proc.on("exit", () => {
+                previewTunnels.delete(p);
+                clearTimeout(timer);
+                reject(new Error("Cloudflared berhenti"));
+              });
+            });
+            const url = await urlPromise;
+            previewTunnels.set(p, { url, proc });
+            return url;
+          }
+
+          const LOGIN_HTML = (err = false) => `<!doctype html>
+          <html lang="id">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>Login — OpenCode Cloud Pro</title>
+            <style>
+              * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+              body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #0b0d12; color: #f3f4f6; padding: 16px; }
+              .card { width: 100%; max-width: 390px; background: #161922; border: 1px solid #2a2f3d; border-radius: 18px; padding: 28px 24px; box-shadow: 0 20px 50px rgba(0,0,0,.5); }
+              h1 { margin: 0 0 8px; font-size: 21px; }
+              p { margin: 0 0 18px; font-size: 14px; color: #9ca3af; line-height: 1.5; }
+              .err { background: #3b181e; border: 1px solid #ef4444; color: #fca5a5; padding: 10px 12px; border-radius: 10px; font-size: 13px; margin-bottom: 16px; }
+              label { display: block; font-size: 13px; color: #d1d5db; margin-bottom: 6px; }
+              input { width: 100%; padding: 12px 14px; border-radius: 10px; border: 1px solid #374151; background: #0b0d12; color: #fff; font-size: 15px; margin-bottom: 16px; }
+              button { width: 100%; padding: 12px; border: 0; border-radius: 10px; background: #3b82f6; color: #fff; font-weight: 600; font-size: 15px; cursor: pointer; }
+            </style>
+          </head>
+          <body>
+            <form class="card" method="POST" action="/__oc_login">
+              <h1>🚀 OpenCode Cloud Pro (${OC_VER.toUpperCase()})</h1>
+              <p>Masukkan password kamu untuk membuka ruang kerja AI & Cloud Panel.</p>
+              ${err ? '<div class="err">Password belum cocok. Cek kembali password kamu.</div>' : ''}
+              <label>Password</label>
+              <input type="password" name="password" placeholder="Ketik password..." autofocus required />
+              <button type="submit">Masuk Sekarang →</button>
+            </form>
+          </body>
+          </html>`;
+
+          const PANEL_HTML = `<!doctype html>
+          <html lang="id">
+          <head>
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <title>⚡ Cloud Control Panel — OpenCode Pro</title>
+            <style>
+              * { box-sizing: border-box; font-family: system-ui, -apple-system, sans-serif; }
+              body { margin: 0; background: #0b0d12; color: #f3f4f6; padding: 18px; }
+              .wrap { max-width: 760px; margin: 0 auto; }
+              .top { display: flex; flex-wrap: wrap; gap: 10px; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+              h1 { margin: 0; font-size: 20px; }
+              .back { padding: 9px 14px; border-radius: 10px; background: #2563eb; color: #fff; text-decoration: none; font-weight: 600; font-size: 13px; }
+              .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; margin-bottom: 16px; }
+              .stat { background: #161922; border: 1px solid #262c3d; border-radius: 14px; padding: 14px; }
+              .stat .k { font-size: 12px; color: #9ca3af; margin-bottom: 4px; }
+              .stat .v { font-size: 18px; font-weight: 700; color: #60a5fa; }
+              .card { background: #161922; border: 1px solid #262c3d; border-radius: 14px; padding: 18px; margin-bottom: 14px; }
+              .card h2 { margin: 0 0 8px; font-size: 16px; }
+              .card p { margin: 0 0 12px; font-size: 13px; color: #9ca3af; line-height: 1.5; }
+              .row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+              .form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 8px; margin-bottom: 10px; }
+              input { padding: 10px 12px; border-radius: 9px; border: 1px solid #374151; background: #0b0d12; color: #fff; font-size: 13px; width: 100%; }
+              input.short { width: 130px; }
+              button, a.btn { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; border: 0; border-radius: 9px; background: #3b82f6; color: #fff; font-weight: 600; font-size: 13px; cursor: pointer; text-decoration: none; }
+              button.green, a.btn.green { background: #059669; }
+              button.amber { background: #d97706; }
+              button.red { background: #dc2626; padding: 7px 11px; font-size: 12px; }
+              .pill { display: inline-block; padding: 6px 10px; border-radius: 8px; background: #1f2937; font-size: 12px; margin: 4px 4px 0 0; cursor: pointer; border: 1px solid #374151; color: #e5e7eb; }
+              .msg { margin-top: 10px; font-size: 13px; color: #6ee7b7; word-break: break-all; }
+              .list-item { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 10px 12px; background: #0f1219; border: 1px solid #23293a; border-radius: 10px; margin-top: 8px; font-size: 13px; }
+            </style>
+          </head>
+          <body>
+            <div class="wrap">
+              <div class="top">
+                <h1>⚡ OpenCode Cloud Control Panel</h1>
+                <a class="back" href="/__oc_pair">← Kembali ke OpenCode Web</a>
+              </div>
+
+              <div class="grid">
+                <div class="stat"><div class="k">Versi Engine</div><div class="v" id="st-ver">Memuat...</div></div>
+                <div class="stat"><div class="k">Sisa Waktu Sesi</div><div class="v" id="st-time">Memuat...</div></div>
+                <div class="stat"><div class="k">Project & Chat Aman</div><div class="v" id="st-sess">Memuat...</div></div>
+                <div class="stat"><div class="k">RAM / Disk Bebas</div><div class="v" id="st-ram">Memuat...</div></div>
+              </div>
+
+              <div class="card">
+                <h2>🔌 Penyedia Kustom (OpenAI-Compatible Provider)</h2>
+                <p>Bisa ditambah langsung dari menu <b>Settings → Providers → Custom Provider</b> di dalam OpenCode Web <i>maupun</i> lewat form cepat di bawah ini (API key otomatis dienkripsi AES-256). Pakai <b>🔍 Ambil Daftar Model</b> & <b>⚡ Tes Koneksi 3-Tahap</b> dulu — tes ini mensimulasikan request asli OpenCode (tools + reasoning) dan otomatis mendeteksi penyebab error 400 "Invalid inference request"!</p>
+                <div class="form-grid">
+                  <input id="cp-id" placeholder="Provider ID (cth: myprovider)" />
+                  <input id="cp-name" placeholder="Nama Tampilan (cth: My AI)" />
+                  <input id="cp-url" placeholder="Base URL (https://.../v1)" />
+                  <input id="cp-key" type="password" placeholder="API Key (sk-...)" />
+                  <input id="cp-mid" placeholder="Model ID (cth: gpt-4.1)" />
+                  <input id="cp-mname" placeholder="Nama Model (cth: GPT 4.1)" />
+                  <select id="cp-reason">
+                    <option value="">🧠 Reasoning: Default — tanpa parameter (paling kompatibel)</option>
+                    <option value="none">🧠 Reasoning: none (matikan thinking)</option>
+                    <option value="high">🧠 Reasoning: high</option>
+                    <option value="max">🧠 Reasoning: max</option>
+                  </select>
+                </div>
+                <select id="cp-model-sel" style="display:none" onchange="document.getElementById('cp-mid').value=this.value"></select>
+                <div class="row">
+                  <button onclick="fetchCpModels()">🔍 Ambil Daftar Model</button>
+                  <button class="amber" onclick="testCpConn()">⚡ Tes Koneksi (3-Tahap)</button>
+                </div>
+                <button class="green" onclick="addCustomProvider()">➕ Simpan Penyedia Kustom</button>
+                <button class="amber" id="cp-fix-btn" style="display:none" onclick="applyCpFix()">🛡️ Terapkan Perbaikan Otomatis</button>
+                <div class="msg" id="cp-msg"></div>
+                <div id="cp-list" style="margin-top:10px;"></div>
+              </div>
+
+              <div class="card">
+                <h2>🌐 Live Preview Website / App Buatan OpenCode</h2>
+                <p>Masukkan port web yang dijalankan OpenCode (misal <code>3000</code>, <code>5173</code>, <code>8000</code>) untuk membuat Link HTTPS Publik instan:</p>
+                <div class="row">
+                  <input class="short" id="port-in" type="number" value="3000" placeholder="Port (cth: 3000)" />
+                  <button onclick="openPreview()">🚀 Buat & Buka Link Live Preview</button>
+                  <button class="green" onclick="openSubpath()">⚡ Preview Cepat (/preview/port)</button>
+                </div>
+                <div id="ports-detected" style="margin-top:10px;font-size:12px;color:#9ca3af;"></div>
+                <div id="preview-list"></div>
+              </div>
+
+              <div class="card">
+                <h2>📦 Download Project (.zip) & File Aplikasi (.apk)</h2>
+                <p>Unduh seluruh folder project sebagai <code>.zip</code> atau unduh langsung file <code>.apk</code> hasil build Android:</p>
+                <div class="row">
+                  <a class="btn green" href="/__api/zip">📥 Download Seluruh Project (.zip)</a>
+                </div>
+                <div id="apk-list" style="margin-top:10px;"></div>
+              </div>
+
+              <div class="card">
+                <h2>🛠️ Kontrol Server & Link Permanen</h2>
+                <p id="pages-info">Memuat link permanen GitHub Pages...</p>
+                <div class="row">
+                  <button class="green" onclick="doAction('/__api/save', 'Menyimpan kode & chat ke GitHub...')">💾 Save & Backup Sekarang</button>
+                  <button class="amber" onclick="doAction('/__api/restart', 'Me-restart mesin OpenCode...')">🔄 Restart OpenCode</button>
+                  <a class="btn" href="/__oc_pair">🔗 Hubungkan Ulang Sesi Web</a>
+                </div>
+                <div class="msg" id="act-msg"></div>
+              </div>
+            </div>
+
+            <script>
+              async function loadStatus() {
+                const r = await fetch('/__api/status');
+                const d = await r.json();
+                document.getElementById('st-ver').textContent = d.ocVersion || '-';
+                document.getElementById('st-time').textContent = d.remainingMin + ' menit';
+                document.getElementById('st-sess').textContent = (d.projectCount || 1) + ' proj · ' + (d.sessionCount || 0) + ' sesi';
+                document.getElementById('st-ram').textContent = d.usedMemGB + '/' + d.totalMemGB + 'G · ' + d.freeDisk;
+                document.getElementById('pages-info').innerHTML = '🔗 <b>Link Permanen GitHub Pages:</b> <a style="color:#60a5fa" target="_blank" href="' + d.pagesUrl + '">' + d.pagesUrl + '</a>';
+
+                const cpl = document.getElementById('cp-list');
+                if (d.customProviders && d.customProviders.length) {
+                  cpl.innerHTML = d.customProviders.map(p => '<div class="list-item"><span>🔌 <b>' + p.name + '</b> (<code>' + p.id + '</code> — ' + p.models.map(m => m.id + (m.effort ? ' <b style="color:#fbbf24">🧠' + m.effort + '</b>' : '')).join(', ') + ')</span><button class="red" onclick="delCustomProvider(\\'' + p.id + '\\')">Hapus</button></div>').join('');
+                } else {
+                  cpl.innerHTML = '<div style="font-size:12px;color:#6b7280;margin-top:6px;">Belum ada penyedia kustom tersimpan.</div>';
+                }
+
+                const pd = document.getElementById('ports-detected');
+                if (d.activePorts.length) {
+                  pd.innerHTML = 'Port aktif terdeteksi (klik untuk pilih): ' + d.activePorts.map(p => '<span class="pill" onclick="document.getElementById(\\'port-in\\').value=' + p + '">Port ' + p + '</span>').join('');
+                } else {
+                  pd.textContent = 'Belum ada port web tambahan yang menyala.';
+                }
+
+                const pl = document.getElementById('preview-list');
+                pl.innerHTML = d.tunnels.map(t => '<div class="list-item"><span>🌐 Port <b>' + t.port + '</b></span><a class="btn" target="_blank" href="' + t.url + '">Buka Website ↗</a></div>').join('');
+
+                const al = document.getElementById('apk-list');
+                if (d.artifacts.length) {
+                  al.innerHTML = d.artifacts.map(a => '<div class="list-item"><span>📱 <b>' + a.name + '</b> (' + a.sizeMB + ' MB)</span><a class="btn green" href="/__api/download?path=' + encodeURIComponent(a.relPath) + '">Download ⬇</a></div>').join('');
+                } else {
+                  al.innerHTML = '<div style="font-size:12px;color:#6b7280;margin-top:6px;">Belum ada file .apk — suruh OpenCode membuat aplikasi Android untuk melihat tombol unduh otomatis di sini!</div>';
+                }
+              }
+
+              async function addCustomProvider() {
+                const providerID = document.getElementById('cp-id').value.trim().toLowerCase();
+                const name = document.getElementById('cp-name').value.trim();
+                const baseURL = document.getElementById('cp-url').value.trim();
+                const key = document.getElementById('cp-key').value.trim();
+                const mid = document.getElementById('cp-mid').value.trim();
+                const mname = document.getElementById('cp-mname').value.trim() || mid;
+                const msg = document.getElementById('cp-msg');
+                if (!providerID || !name || !baseURL || !mid) {
+                  msg.textContent = '❌ Isi minimal Provider ID, Nama, Base URL, dan Model ID!';
+                  return;
+                }
+                const reason = document.getElementById('cp-reason') ? document.getElementById('cp-reason').value : '';
+                const modelEntry = { name: mname };
+                if (reason) modelEntry.options = { reasoningEffort: reason };
+                const payload = {
+                  providerID,
+                  name,
+                  key: key || undefined,
+                  config: {
+                    npm: '@ai-sdk/openai-compatible',
+                    name,
+                    options: { baseURL },
+                    models: { [mid]: modelEntry }
+                  }
+                };
+                const r = await fetch('/__api/custom-provider', {
+                  method: 'POST',
+                  headers: { 'content-type': 'application/json' },
+                  body: JSON.stringify(payload)
+                });
+                const d = await r.json();
+                if (r.ok) {
+                  msg.textContent = '✅ Penyedia kustom "' + name + '" tersimpan & langsung aktif di OpenCode Web!';
+                  loadStatus();
+                } else {
+                  msg.textContent = '❌ Gagal: ' + (d.error || 'Unknown error');
+                }
+              }
+
+              async function delCustomProvider(id) {
+                await fetch('/__api/custom-provider?id=' + encodeURIComponent(id), { method: 'DELETE' });
+                loadStatus();
+              }
+
+              async function fetchCpModels() {
+                const msg = document.getElementById('cp-msg');
+                const baseURL = document.getElementById('cp-url').value.trim();
+                const key = document.getElementById('cp-key').value.trim();
+                if (!baseURL) { msg.textContent = '❌ Isi Base URL dulu!'; return; }
+                msg.textContent = '⏳ Mengambil daftar model dari provider...';
+                const r = await fetch('/__api/cp-models', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ baseURL, key }) });
+                const d = await r.json();
+                if (d.models && d.models.length) {
+                  const sel = document.getElementById('cp-model-sel');
+                  sel.style.display = 'block';
+                  sel.innerHTML = d.models.map(m => '<option value="' + m.replace(/"/g, '&quot;') + '">' + m + '</option>').join('');
+                  if (!document.getElementById('cp-mid').value) document.getElementById('cp-mid').value = d.models[0];
+                  msg.textContent = '✅ Ditemukan ' + d.models.length + ' model! Pilih dari dropdown di atas.';
+                } else {
+                  msg.textContent = '❌ ' + (d.error || 'Tidak ada model yang dikembalikan.');
+                }
+              }
+
+              let __cpFixHigh = false;
+              async function testCpConn() {
+                const msg = document.getElementById('cp-msg');
+                const baseURL = document.getElementById('cp-url').value.trim();
+                const key = document.getElementById('cp-key').value.trim();
+                const mid = document.getElementById('cp-mid').value.trim();
+                if (!baseURL || !mid) { msg.textContent = '❌ Isi Base URL dan Model ID dulu!'; return; }
+                msg.textContent = '⏳ Tes 3-tahap: dasar → +reasoning medium +tools → +tools saja...';
+                try {
+                  const r = await fetch('/__api/cp-test', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ baseURL, key, mid }) });
+                  const d = await r.json();
+                  msg.textContent = d.message || d.error;
+                  __cpFixHigh = Boolean(d.reasoningHighWorks);
+                  const fb = document.getElementById('cp-fix-btn');
+                  if (fb) fb.style.display = d.fixReasoning ? 'block' : 'none';
+                } catch (e) {
+                  msg.textContent = '❌ Tes gagal: ' + e.message;
+                }
+              }
+
+              async function applyCpFix() {
+                document.getElementById('cp-reason').value = __cpFixHigh ? 'high' : '';
+                document.getElementById('cp-fix-btn').style.display = 'none';
+                await addCustomProvider();
+              }
+
+              async function openPreview() {
+                const port = document.getElementById('port-in').value;
+                const msg = document.getElementById('act-msg');
+                msg.textContent = '⏳ Membuat link HTTPS publik untuk port ' + port + ' (~5 detik)...';
+                const r = await fetch('/__api/preview', { method: 'POST', headers: {'content-type':'application/json'}, body: JSON.stringify({ port }) });
+                const d = await r.json();
+                if (d.url) {
+                  msg.innerHTML = '✅ Live Preview aktif: <a style="color:#6ee7b7" target="_blank" href="' + d.url + '">' + d.url + '</a>';
+                  loadStatus();
+                  window.open(d.url, '_blank');
+                } else {
+                  msg.textContent = '❌ Gagal: ' + (d.error || 'Unknown error');
+                }
+              }
+
+              function openSubpath() {
+                const port = document.getElementById('port-in').value;
+                window.open('/preview/' + port + '/', '_blank');
+              }
+
+              async function doAction(url, waitText) {
+                const msg = document.getElementById('act-msg');
+                msg.textContent = '⏳ ' + waitText;
+                const r = await fetch(url, { method: 'POST' });
+                const d = await r.json();
+                msg.textContent = d.message || '✅ Selesai!';
+                loadStatus();
+              }
+
+              loadStatus();
+              setInterval(loadStatus, 10000);
+            </script>
+          </body>
+          </html>`;
+
+          const buildWidgetJs = () => {
+            const pMeta = getPersistenceMeta();
+            return `(() => {
+            const OC_WORKSPACE = ${JSON.stringify(WORKSPACE)};
+            const OC_WORKTREES = ${JSON.stringify(pMeta.worktrees)};
+            const OC_HAS_SESSIONS = ${JSON.stringify(pMeta.sessionCount > 0)};
+            const OC_MODE = ${JSON.stringify(OC_VER)};
+            const OC_CUSTOM_MODELS = ${JSON.stringify(getCustomModelEntries())};
+
+            // 1. Daftarkan otomatis SEMUA project user & tampilkan semua model kustom walau domain *.trycloudflare.com berganti tiap 6 jam!
+            if (OC_MODE !== 'v1') {
+              try {
+                if (OC_WORKTREES.length > 0) {
+                  const key = 'opencode.global.dat:server';
+                  const parsed = JSON.parse(localStorage.getItem(key) || 'null') || {
+                    list: [],
+                    hidden: {},
+                    projects: { local: [] },
+                    lastProject: {},
+                    recentlyClosed: {}
+                  };
+                  parsed.projects = parsed.projects || {};
+                  parsed.projects.local = Array.isArray(parsed.projects.local) ? parsed.projects.local : [];
+                  for (const wt of OC_WORKTREES) {
+                    if (wt && !parsed.projects.local.some((p) => p && p.worktree === wt)) {
+                      parsed.projects.local.push({ worktree: wt, expanded: true });
+                    }
+                  }
+                  parsed.lastProject = parsed.lastProject || {};
+                  if (!parsed.lastProject.local && OC_WORKSPACE) {
+                    parsed.lastProject.local = OC_WORKSPACE;
+                  }
+                  localStorage.setItem(key, JSON.stringify(parsed));
+                }
+                if (OC_CUSTOM_MODELS.length > 0) {
+                  const mKey = 'opencode.global.dat:model';
+                  const mData = JSON.parse(localStorage.getItem(mKey) || 'null') || { user: [], recent: [], variant: {} };
+                  mData.user = Array.isArray(mData.user) ? mData.user : [];
+                  for (const item of OC_CUSTOM_MODELS) {
+                    const existing = mData.user.find((x) => x && x.providerID === item.providerID && x.modelID === item.modelID);
+                    if (!existing) {
+                      mData.user.push({ providerID: item.providerID, modelID: item.modelID, visibility: 'show' });
+                    }
+                  }
+                  localStorage.setItem(mKey, JSON.stringify(mData));
+                }
+              } catch {}
+            }
+
+            // 2. Real-Time SSE-over-WebSocket Tunnel (mengatasi buffering HTTP chunked di *.trycloudflare.com!)
+            if (!window.__ocSsePatched) {
+              window.__ocSsePatched = true;
+              const origFetch = window.fetch.bind(window);
+              const isSseReq = (input, init) => {
+                try {
+                  const rawUrl = typeof input === 'string'
+                    ? input
+                    : input instanceof URL
+                    ? input.href
+                    : (input && input.url) || String(input || '');
+                  const u = new URL(rawUrl, location.origin);
+                  if (u.origin !== location.origin) return null;
+                  let accept = '';
+                  if (init && init.headers) {
+                    if (init.headers instanceof Headers) accept = init.headers.get('accept') || '';
+                    else if (Array.isArray(init.headers)) {
+                      const found = init.headers.find(([k]) => String(k).toLowerCase() === 'accept');
+                      accept = found ? found[1] : '';
+                    } else {
+                      for (const k of Object.keys(init.headers)) {
+                        if (k.toLowerCase() === 'accept') accept = init.headers[k];
+                      }
+                    }
+                  } else if (input instanceof Request) {
+                    accept = input.headers.get('accept') || '';
+                  }
+                  if (accept.includes('text/event-stream') || u.pathname === '/event' || u.pathname.endsWith('/event')) {
+                    return u.pathname + u.search;
+                  }
+                } catch {}
+                return null;
+              };
+
+              const openWsStream = (targetPath, signal) => new Promise((resolve, reject) => {
+                const proto = location.protocol === 'https:' ? 'wss:' : 'ws:';
+                const ws = new WebSocket(proto + '//' + location.host + '/__oc_sse_ws?path=' + encodeURIComponent(targetPath));
+                ws.binaryType = 'arraybuffer';
+                let settled = false;
+                let controllerRef = null;
+                const stream = new ReadableStream({
+                  start(controller) { controllerRef = controller; },
+                  cancel() { try { ws.close(); } catch {} }
+                });
+                if (signal) {
+                  if (signal.aborted) { try { ws.close(); } catch {} return reject(new DOMException('Aborted', 'AbortError')); }
+                  signal.addEventListener('abort', () => {
+                    try { ws.close(); } catch {}
+                    try { controllerRef && controllerRef.close(); } catch {}
+                  }, { once: true });
+                }
+                ws.onmessage = (ev) => {
+                  if (!settled) {
+                    settled = true;
+                    resolve(new Response(stream, {
+                      status: 200,
+                      headers: { 'content-type': 'text/event-stream', 'cache-control': 'no-cache' }
+                    }));
+                  }
+                  try {
+                    const bytes = typeof ev.data === 'string' ? new TextEncoder().encode(ev.data) : new Uint8Array(ev.data);
+                    controllerRef.enqueue(bytes);
+                  } catch {}
+                };
+                ws.onerror = () => {
+                  if (!settled) { settled = true; reject(new TypeError('SSE WebSocket failed')); }
+                  else { try { controllerRef && controllerRef.close(); } catch {} }
+                };
+                ws.onclose = () => {
+                  if (!settled) {
+                    settled = true;
+                    resolve(new Response(stream, { status: 200, headers: { 'content-type': 'text/event-stream' } }));
+                  }
+                  try { controllerRef && controllerRef.close(); } catch {}
+                };
+              });
+
+              window.fetch = function(input, init) {
+                const method = (init && init.method) || (input instanceof Request ? input.method : 'GET');
+                const ssePath = isSseReq(input, init);
+                if (ssePath && String(method).toUpperCase() === 'GET') {
+                  return openWsStream(ssePath, (init && init.signal) || (input instanceof Request ? input.signal : undefined));
+                }
+                return origFetch(input, init);
+              };
+            }
+
+            // 3. Jika di v2 belum ada chat tersimpan sama sekali di halaman awal, buka otomatis kolom chat baru!
+            if (OC_MODE !== 'v1' && !OC_HAS_SESSIONS) {
+              let tries = 0;
+              let autoClicked = false;
+              const autoTimer = setInterval(() => {
+                tries++;
+                if (autoClicked || tries > 25 || location.pathname !== '/') {
+                  clearInterval(autoTimer);
+                  return;
+                }
+                const newBtn = document.querySelector('[data-action="home-new-session"]');
+                if (newBtn && document.body && document.body.innerText.includes('Nothing here yet')) {
+                  autoClicked = true;
+                  clearInterval(autoTimer);
+                  newBtn.click();
+                }
+              }, 300);
+            }
+
+            // 4. Tombol ⚡ Panel Mini di Atas Tengah + Bisa Digeser Bebas (Drag) & Diperkecil (Minimize)
+            //    100% TIDAK PERNAH menghalangi tombol kirim chat, pilih model, atau menu OpenCode!
+            const mountFab = () => {
+              if (document.getElementById('__oc_cloud_fab') || !document.body) return;
+              const wrap = document.createElement('div');
+              wrap.id = '__oc_cloud_fab';
+              let savedPos = null;
+              try { savedPos = JSON.parse(localStorage.getItem('__oc_fab_pos') || 'null'); } catch {}
+              let minimized = localStorage.getItem('__oc_fab_min') === '1';
+
+              Object.assign(wrap.style, {
+                position: 'fixed',
+                top: savedPos && typeof savedPos.top === 'number' ? savedPos.top + 'px' : '88px',
+                left: savedPos && typeof savedPos.left === 'number' ? savedPos.left + 'px' : 'auto',
+                right: savedPos && typeof savedPos.left === 'number' ? 'auto' : '8px',
+                transform: 'none',
+                zIndex: '2147483647',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '4px',
+                borderRadius: '999px',
+                background: 'rgba(22, 25, 34, 0.88)',
+                color: '#60a5fa',
+                border: '1px solid rgba(71, 85, 105, 0.85)',
+                fontSize: '11px',
+                fontWeight: '600',
+                fontFamily: 'system-ui, -apple-system, sans-serif',
+                boxShadow: '0 3px 12px rgba(0,0,0,0.28)',
+                backdropFilter: 'blur(8px)',
+                userSelect: 'none',
+                touchAction: 'none',
+              });
+
+              const link = document.createElement('a');
+              link.href = '/__panel';
+              link.target = '_blank';
+              link.title = 'Buka Cloud Control Panel (geser untuk pindah posisi)';
+              Object.assign(link.style, {
+                color: '#60a5fa',
+                textDecoration: 'none',
+                padding: '3px 8px 3px 9px',
+                lineHeight: '1.2',
+                whiteSpace: 'nowrap',
+              });
+
+              const toggleBtn = document.createElement('button');
+              toggleBtn.type = 'button';
+              toggleBtn.title = 'Kecilkan / Perbesar tombol panel';
+              Object.assign(toggleBtn.style, {
+                border: '0',
+                background: 'transparent',
+                color: '#94a3b8',
+                fontSize: '11px',
+                lineHeight: '1',
+                padding: '3px 7px 3px 2px',
+                cursor: 'pointer',
+              });
+
+              const renderState = () => {
+                if (minimized) {
+                  link.textContent = '⚡';
+                  link.style.padding = '3px 7px';
+                  toggleBtn.style.display = 'none';
+                  wrap.style.opacity = '0.55';
+                } else {
+                  link.textContent = '⚡ Panel';
+                  link.style.padding = '3px 4px 3px 9px';
+                  toggleBtn.textContent = '–';
+                  toggleBtn.style.display = 'inline-block';
+                  wrap.style.opacity = '0.92';
+                }
+              };
+              renderState();
+
+              let dragging = false;
+              let moved = false;
+              let startX = 0, startY = 0, origLeft = 0, origTop = 0;
+
+              wrap.addEventListener('pointerdown', (e) => {
+                dragging = true;
+                moved = false;
+                const rect = wrap.getBoundingClientRect();
+                startX = e.clientX;
+                startY = e.clientY;
+                origLeft = rect.left;
+                origTop = rect.top;
+                wrap.setPointerCapture(e.pointerId);
+              });
+
+              wrap.addEventListener('pointermove', (e) => {
+                if (!dragging) return;
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                if (Math.abs(dx) > 5 || Math.abs(dy) > 5) moved = true;
+                if (!moved) return;
+                const nextLeft = Math.max(4, Math.min(window.innerWidth - wrap.offsetWidth - 4, origLeft + dx));
+                const nextTop = Math.max(4, Math.min(window.innerHeight - wrap.offsetHeight - 4, origTop + dy));
+                wrap.style.transform = 'none';
+                wrap.style.left = nextLeft + 'px';
+                wrap.style.top = nextTop + 'px';
+              });
+
+              const finishDrag = (e) => {
+                if (!dragging) return;
+                dragging = false;
+                try { wrap.releasePointerCapture(e.pointerId); } catch {}
+                if (moved) {
+                  const rect = wrap.getBoundingClientRect();
+                  try {
+                    localStorage.setItem('__oc_fab_pos', JSON.stringify({ left: Math.round(rect.left), top: Math.round(rect.top) }));
+                  } catch {}
+                }
+              };
+              wrap.addEventListener('pointerup', finishDrag);
+              wrap.addEventListener('pointercancel', finishDrag);
+
+              link.addEventListener('click', (e) => {
+                if (moved) {
+                  e.preventDefault();
+                  moved = false;
+                  return;
+                }
+                if (minimized) {
+                  e.preventDefault();
+                  minimized = false;
+                  localStorage.setItem('__oc_fab_min', '0');
+                  renderState();
+                }
+              });
+
+              toggleBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                if (moved) { moved = false; return; }
+                minimized = true;
+                localStorage.setItem('__oc_fab_min', '1');
+                renderState();
+              });
+
+              wrap.appendChild(link);
+              wrap.appendChild(toggleBtn);
+              document.body.appendChild(wrap);
+            };
+            document.addEventListener('DOMContentLoaded', mountFab);
+            mountFab();
+          })();`;
+          };
+
+          let cachedOcVersion = "";
+          try {
+            cachedOcVersion = execFileSync(path.join(HOME_DIR, ".local/bin/opencode"), ["--version"], { encoding: "utf8" }).trim();
+          } catch {}
+
+          function sendWsBinary(socket, buf) {
+            if (socket.destroyed) return;
+            const len = buf.length;
+            let header;
+            if (len < 126) {
+              header = Buffer.from([0x82, len]);
+            } else if (len < 65536) {
+              header = Buffer.alloc(4);
+              header[0] = 0x82;
+              header[1] = 126;
+              header.writeUInt16BE(len, 2);
+            } else {
+              header = Buffer.alloc(10);
+              header[0] = 0x82;
+              header[1] = 127;
+              header.writeBigUInt64BE(BigInt(len), 2);
+            }
+            socket.write(Buffer.concat([header, buf]));
+          }
+
+          const server = http.createServer(async (req, res) => {
+            const url = new URL(req.url || "/", `http://${req.headers.host || "localhost"}`);
+            const targetPort = getUpstreamPort();
+
+            if (url.pathname === "/__oc_health") {
+              return sendJson(res, 200, { ok: true, version: cachedOcVersion });
+            }
+
+            if (url.pathname === "/__oc_login" && req.method === "POST") {
+              const body = await readBody(req);
+              const pw = (new URLSearchParams(body).get("password") || "").trim();
+              if (pw === PASSWORD) {
+                const isHttps = req.headers["x-forwarded-proto"] === "https";
+                const svc = getUpstreamService();
+                res.writeHead(302, {
+                  "Set-Cookie": [
+                    `oc_auth=${TOKEN}; Path=/; HttpOnly; Max-Age=2592000; SameSite=Lax${isHttps ? "; Secure" : ""}`,
+                    `oc_svc_id=${svc.id}; Path=/; HttpOnly; Max-Age=2592000; SameSite=Lax`,
+                  ],
+                  "Location": getV2PairPath(),
+                });
+                return res.end();
+              }
+              res.writeHead(401, { "content-type": "text/html; charset=utf-8" });
+              return res.end(LOGIN_HTML(true));
+            }
+
+            if (!isAuthed(req)) {
+              res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
+              return res.end(LOGIN_HTML(false));
+            }
+
+            if (url.pathname === "/__oc_pair") {
+              const svc = getUpstreamService();
+              res.writeHead(302, {
+                "Set-Cookie": `oc_svc_id=${svc.id}; Path=/; HttpOnly; Max-Age=2592000; SameSite=Lax`,
+                "Location": getV2PairPath(),
+                "cache-control": "no-store",
+              });
+              return res.end();
+            }
+
+            if (url.pathname === "/__oc_widget.js") {
+              res.writeHead(200, { "content-type": "application/javascript; charset=utf-8", "cache-control": "no-store" });
+              return res.end(buildWidgetJs());
+            }
+
+            if (url.pathname === "/__panel") {
+              res.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" });
+              return res.end(PANEL_HTML);
+            }
+
+            // Endpoint penyimpanan & penghapusan Custom OpenAI-Compatible Provider (aktif langsung & auto-reload!)
+            if (url.pathname === "/__api/cp-models" && req.method === "POST") {
+              try {
+                const d = JSON.parse((await readBody(req)) || "{}");
+                const base = String(d.baseURL || "").trim().replace(/\/+$/, "");
+                const key = String(d.key || "").trim();
+                if (!base) return sendJson(res, 400, { error: "Isi Base URL dulu." });
+                const hdrs = { accept: "application/json" };
+                if (key) hdrs.authorization = "Bearer " + key;
+                const r = await fetch(base + "/models", { headers: hdrs, signal: AbortSignal.timeout(15000) });
+                const txt = await r.text();
+                if (!r.ok) return sendJson(res, 200, { error: "HTTP " + r.status + ": " + txt.slice(0, 160) });
+                const j = JSON.parse(txt || "{}");
+                const list = Array.isArray(j.data) ? j.data.map((m) => m && (m.id || m.name)).filter(Boolean) : [];
+                return sendJson(res, 200, { models: [...new Set(list)].sort() });
+              } catch (e) {
+                return sendJson(res, 500, { error: "Gagal: " + e.message });
+              }
+            }
+
+            if (url.pathname === "/__api/cp-test" && req.method === "POST") {
+              try {
+                const d = JSON.parse((await readBody(req)) || "{}");
+                const base = String(d.baseURL || "").trim().replace(/\/+$/, "");
+                const key = String(d.key || "").trim();
+                const mid = String(d.mid || "").trim();
+                if (!base || !mid) return sendJson(res, 400, { error: "Isi Base URL dan Model ID dulu." });
+                const hdrs = { "content-type": "application/json" };
+                if (key) hdrs.authorization = "Bearer " + key;
+                const simTools = [{ type: "function", function: { name: "check_status", description: "Cek status sistem", parameters: { type: "object", properties: {}, additionalProperties: false } } }];
+                const call = async (extra) => {
+                  const r = await fetch(base + "/chat/completions", {
+                    method: "POST",
+                    headers: hdrs,
+                    body: JSON.stringify({ model: mid, messages: [{ role: "user", content: "Jawab singkat: OK" }], max_tokens: 16, ...extra }),
+                    signal: AbortSignal.timeout(25000),
+                  });
+                  return { status: r.status, text: await r.text() };
+                };
+                const t0 = Date.now();
+                const rA = await call({});
+                if (rA.status >= 300) {
+                  return sendJson(res, 200, { error: "❌ Tes Dasar GAGAL (HTTP " + rA.status + ", " + (Date.now() - t0) + " ms): " + rA.text.slice(0, 160) });
+                }
+                const ms = Date.now() - t0;
+                const rB = await call({ reasoning_effort: "medium", tools: simTools });
+                if (rB.status < 300) {
+                  return sendJson(res, 200, { message: "⚡ Koneksi SEMPURNA (" + ms + " ms)! Key, model, tools & reasoning 'medium' semuanya diterima — siap dipakai OpenCode tanpa error." });
+                }
+                const rC = await call({ tools: simTools });
+                if (rC.status < 300) {
+                  const rB2 = await call({ reasoning_effort: "high", tools: simTools });
+                  const highOk = rB2.status < 300;
+                  return sendJson(res, 200, {
+                    message: "⚠️ Masalah ketemu! Key & model valid (" + ms + " ms), TAPI provider menolak reasoning 'medium' (HTTP " + rB.status + ") — penyebab error 400 'Invalid inference request'. " + (highOk ? "Provider MENERIMA 'high' → klik 🛡️ Terapkan Perbaikan Otomatis di bawah." : "Provider juga menolak 'high' → pastikan Reasoning: Default (tanpa parameter) lalu klik Simpan ulang."),
+                    fixReasoning: true,
+                    reasoningHighWorks: highOk,
+                  });
+                }
+                return sendJson(res, 200, { error: "❌ Model ini tampaknya TIDAK mendukung tools/function-calling (HTTP " + rC.status + "): " + rC.text.slice(0, 140) + " — OpenCode butuh model yang support tools. Pilih model lain lewat 🔍 Ambil Daftar Model." });
+              } catch (e) {
+                return sendJson(res, 500, { error: "❌ Gagal konek: " + e.message });
+              }
+            }
+
+            if (url.pathname === "/__api/custom-provider") {
+              if (req.method === "POST") {
+                try {
+                  const data = JSON.parse((await readBody(req)) || "{}");
+                  const providerID = String(data.providerID || "").trim();
+                  if (!providerID || !data.config) {
+                    return sendJson(res, 400, { error: "Data penyedia kustom tidak lengkap." });
+                  }
+                  const cfg = readGlobalConfig();
+                  cfg.provider = cfg.provider || {};
+                  const options = { ...(data.config.options || {}) };
+                  if (data.key) options.apiKey = String(data.key).trim();
+                  cfg.provider[providerID] = {
+                    ...data.config,
+                    options,
+                  };
+                  writeGlobalConfig(cfg);
+                  reloadOpenCodeEngine();
+                  return sendJson(res, 200, { ok: true, providerID, name: data.name || providerID });
+                } catch (e) {
+                  return sendJson(res, 500, { error: e.message });
+                }
+              }
+              if (req.method === "DELETE") {
+                try {
+                  const id = String(url.searchParams.get("id") || "").trim();
+                  const cfg = readGlobalConfig();
+                  if (cfg.provider && cfg.provider[id]) {
+                    delete cfg.provider[id];
+                    writeGlobalConfig(cfg);
+                    reloadOpenCodeEngine();
+                  }
+                  return sendJson(res, 200, { ok: true });
+                } catch (e) {
+                  return sendJson(res, 500, { error: e.message });
+                }
+              }
+            }
+
+            if (url.pathname === "/__api/status") {
+              const elapsedMin = Math.floor((Date.now() - START_TIME) / 60000);
+              const remainingMin = Math.max(0, DURATION_MIN - elapsedMin);
+              const totalMemGB = (os.totalmem() / 1073741824).toFixed(1);
+              const usedMemGB = ((os.totalmem() - os.freemem()) / 1073741824).toFixed(1);
+              let freeDisk = "-";
+              try {
+                freeDisk = execSync("df -h / | awk 'NR==2{print $4}'", { encoding: "utf8" }).trim();
+              } catch {}
+              let pagesUrl = "";
+              try { pagesUrl = fs.readFileSync("/tmp/pages_url.txt", "utf8").trim(); } catch {}
+              const tunnels = [];
+              for (const [port, info] of previewTunnels.entries()) {
+                if (info.url && info.proc && info.proc.exitCode === null) tunnels.push({ port, url: info.url });
+              }
+              const cfg = readGlobalConfig();
+              const customProviders = Object.entries(cfg.provider || {}).map(([id, val]) => ({
+                id,
+                name: (val && val.name) || id,
+                models: Object.entries((val && val.models) || {}).map(([mid, mm]) => ({
+                  id: mid,
+                  effort: (mm && mm.options && mm.options.reasoningEffort) || "",
+                })),
+              }));
+              const pMeta = getPersistenceMeta();
+              return sendJson(res, 200, {
+                ocVersion: cachedOcVersion,
+                remainingMin,
+                totalMemGB,
+                usedMemGB,
+                freeDisk,
+                pagesUrl,
+                projectCount: pMeta.worktrees.length || 1,
+                sessionCount: pMeta.sessionCount || 0,
+                customProviders,
+                activePorts: detectActivePorts(),
+                tunnels,
+                artifacts: scanArtifacts(WORKSPACE),
+              });
+            }
+
+            if (url.pathname === "/__api/preview" && req.method === "POST") {
+              try {
+                const body = JSON.parse((await readBody(req)) || "{}");
+                const pUrl = await startPortPreviewTunnel(body.port);
+                return sendJson(res, 200, { url: pUrl });
+              } catch (e) {
+                return sendJson(res, 500, { error: e.message });
+              }
+            }
+
+            if (url.pathname === "/__api/save" && req.method === "POST") {
+              try {
+                execFileSync(path.join(HOME_DIR, ".local/bin/oc-save"), ["chore: manual save dari Cloud Panel"], {
+                  env: { ...process.env, FINAL_PW: PASSWORD, WORKSPACE_DIR: WORKSPACE },
+                  timeout: 45000,
+                });
+                return sendJson(res, 200, { message: "✅ Berhasil! Semua kode & riwayat chat sudah tersimpan ke GitHub." });
+              } catch (e) {
+                return sendJson(res, 500, { message: "❌ Gagal save: " + e.message });
+              }
+            }
+
+            if (url.pathname === "/__api/restart" && req.method === "POST") {
+              try {
+                if (OC_VER === "v1") {
+                  execSync('pkill -TERM -f "opencode web" || true');
+                } else {
+                  const ocBin = path.join(HOME_DIR, ".local/bin/opencode");
+                  execFileSync(ocBin, ["service", "stop"], { env: { ...process.env, HOME: HOME_DIR }, timeout: 10000 });
+                  execFileSync(ocBin, ["service", "start"], { cwd: WORKSPACE, env: { ...process.env, HOME: HOME_DIR }, timeout: 10000 });
+                }
+                return sendJson(res, 200, { message: "✅ Mesin OpenCode di-restart! Klik tombol 'Hubungkan Ulang Sesi Web' di sebelah kanan untuk masuk kembali." });
+              } catch (e) {
+                return sendJson(res, 500, { message: "❌ Gagal restart: " + e.message });
+              }
+            }
+
+            if (url.pathname === "/__api/zip") {
+              const zipFile = `/tmp/project-${Date.now()}.zip`;
+              try {
+                execFileSync("zip", ["-rq", zipFile, ".", "-x", ".git/*", "node_modules/*", ".gradle/*", ".opencode-backup.enc"], {
+                  cwd: WORKSPACE,
+                  timeout: 60000,
+                });
+                const st = fs.statSync(zipFile);
+                res.writeHead(200, {
+                  "content-type": "application/zip",
+                  "content-length": st.size,
+                  "content-disposition": 'attachment; filename="opencode-project.zip"',
+                });
+                const stream = fs.createReadStream(zipFile);
+                stream.pipe(res);
+                stream.on("close", () => fs.unlink(zipFile, () => {}));
+                return;
+              } catch (e) {
+                return sendJson(res, 500, { error: "Gagal membuat ZIP: " + e.message });
+              }
+            }
+
+            if (url.pathname === "/__api/download") {
+              const rel = url.searchParams.get("path") || "";
+              const target = path.resolve(WORKSPACE, rel);
+              if (!target.startsWith(path.resolve(WORKSPACE) + path.sep) || !fs.existsSync(target)) {
+                return sendJson(res, 404, { error: "File tidak ditemukan" });
+              }
+              const st = fs.statSync(target);
+              res.writeHead(200, {
+                "content-type": "application/octet-stream",
+                "content-length": st.size,
+                "content-disposition": `attachment; filename="${path.basename(target)}"`,
+              });
+              return fs.createReadStream(target).pipe(res);
+            }
+
+            const prevMatch = url.pathname.match(/^\/preview\/(\d+)(\/.*)?$/);
+            if (prevMatch) {
+              const appPort = Number(prevMatch[1]);
+              const subPath = (prevMatch[2] || "/") + url.search;
+              const pReq = http.request(
+                {
+                  hostname: "127.0.0.1",
+                  port: appPort,
+                  path: subPath,
+                  method: req.method,
+                  headers: { ...req.headers, host: `127.0.0.1:${appPort}` },
+                },
+                (pRes) => {
+                  res.writeHead(pRes.statusCode || 200, pRes.headers);
+                  pRes.pipe(res);
+                }
+              );
+              pReq.on("error", () => {
+                res.writeHead(502, { "content-type": "text/plain; charset=utf-8" });
+                res.end(`Belum ada web server aktif di port ${appPort}. Suruh OpenCode menyalakan server di port ${appPort} terlebih dahulu.`);
+              });
+              return req.pipe(pReq);
+            }
+
+            // Patch otomatis bundle JS OpenCode v2 agar fitur Custom OpenAI-Compatible Provider & Disconnect berfungsi penuh!
+            if (
+              OC_VER !== "v1" &&
+              req.method === "GET" &&
+              (url.pathname.startsWith("/_assets/") || url.pathname.startsWith("/assets/")) &&
+              url.pathname.endsWith(".js")
+            ) {
+              const jsHeaders = {
+                ...req.headers,
+                host: `127.0.0.1:${targetPort}`,
+                origin: `http://127.0.0.1:${targetPort}`,
+              };
+              delete jsHeaders["accept-encoding"];
+              delete jsHeaders["if-none-match"];
+              const jsReq = http.request(
+                { hostname: "127.0.0.1", port: targetPort, path: req.url, method: "GET", headers: jsHeaders },
+                (jsRes) => {
+                  const chunks = [];
+                  jsRes.on("data", (c) => chunks.push(c));
+                  jsRes.on("end", () => {
+                    let code = Buffer.concat(chunks).toString("utf8");
+                    let patched = false;
+                    if (code.includes("provider.custom.unavailable")) {
+                      const next = code.replace(
+                        /throw\s+(?:new\s+)?Error\(([A-Za-z0-9_$]+)\.t\([`"']provider\.custom\.unavailable[`"']\)\)/g,
+                        'return await fetch("/__api/custom-provider",{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(e)}).then(async _r=>{const _d=await _r.json();if(!_r.ok)throw Error(_d.error||"Gagal menyimpan penyedia kustom");setTimeout(()=>location.reload(),500);return e})'
+                      );
+                      if (next !== code) {
+                        code = next;
+                        patched = true;
+                      }
+                    }
+                    if (code.includes("provider.disconnect.toast.noCredentials.description")) {
+                      const next = code.replace(
+                        /if\(([A-Za-z0-9_$]+)\.length===0\)\{([A-Za-z0-9_$]+)\(\{title:([A-Za-z0-9_$]+)\.t\([`"']common\.requestFailed[`"']\),description:\3\.t\([`"']provider\.disconnect\.toast\.noCredentials\.description[`"'],\{provider:([A-Za-z0-9_$]+)\}\)\}\);return\}/g,
+                        'if($1.length===0){await fetch("/__api/custom-provider?id="+encodeURIComponent(o[0]),{method:"DELETE"});$2({variant:"success",icon:"circle-check",title:$3.t("provider.disconnect.toast.disconnected.title",{provider:$4}),description:$3.t("provider.disconnect.toast.disconnected.description",{provider:$4})});setTimeout(()=>location.reload(),500);return}'
+                      );
+                      if (next !== code) {
+                        code = next;
+                        patched = true;
+                      }
+                    }
+                    const outHeaders = { ...jsRes.headers };
+                    delete outHeaders["access-control-allow-origin"];
+                    if (patched) {
+                      delete outHeaders["content-length"];
+                      delete outHeaders["etag"];
+                      outHeaders["cache-control"] = "no-store";
+                    }
+                    res.writeHead(jsRes.statusCode || 200, outHeaders);
+                    res.end(code);
+                  });
+                }
+              );
+              jsReq.on("error", () => {
+                if (!res.headersSent) res.writeHead(502);
+                res.end();
+              });
+              return jsReq.end();
+            }
+
+            // Semua navigasi halaman HTML (/, /new-session, /session/..., F5 reload) -> auto-pair + injeksi <head> widget & SSE WS bridge!
+            const acceptHdr = String(req.headers.accept || "");
+            const isHtmlNav =
+              req.method === "GET" &&
+              acceptHdr.includes("text/html") &&
+              !url.pathname.startsWith("/auth/") &&
+              !url.pathname.startsWith("/api/") &&
+              !url.pathname.startsWith("/_assets/") &&
+              !url.pathname.startsWith("/assets/");
+
+            if (isHtmlNav) {
+              const cookies = parseCookies(req.headers.cookie || "");
+              const svc = getUpstreamService();
+              if (OC_VER !== "v1" && (!cookies[`opencode_session_${targetPort}`] || cookies.oc_svc_id !== svc.id)) {
+                const pairPath = getV2PairPath();
+                if (pairPath !== "/") {
+                  res.writeHead(302, {
+                    "Set-Cookie": `oc_svc_id=${svc.id}; Path=/; HttpOnly; Max-Age=2592000; SameSite=Lax`,
+                    "Location": pairPath,
+                    "cache-control": "no-store",
+                  });
+                  return res.end();
+                }
+              }
+
+              // Jika tab HP/browser di-reload saat masih di draft kosong (?draftId=...), arahkan balik ke / agar draft segar dibuat otomatis
+              if (url.pathname === "/new-session" && url.searchParams.has("draftId")) {
+                res.writeHead(302, { "Location": "/", "cache-control": "no-store" });
+                return res.end();
+              }
+
+              const cleanHeaders = {
+                ...req.headers,
+                host: `127.0.0.1:${targetPort}`,
+                origin: `http://127.0.0.1:${targetPort}`,
+              };
+              delete cleanHeaders["accept-encoding"];
+              const proxyReq = http.request(
+                { hostname: "127.0.0.1", port: targetPort, path: req.url, method: "GET", headers: cleanHeaders },
+                (proxyRes) => {
+                  const ct = String(proxyRes.headers["content-type"] || "");
+                  const outHeaders = { ...proxyRes.headers };
+                  delete outHeaders["access-control-allow-origin"];
+                  if (!ct.includes("text/html")) {
+                    res.writeHead(proxyRes.statusCode || 200, outHeaders);
+                    return proxyRes.pipe(res);
+                  }
+                  const chunks = [];
+                  proxyRes.on("data", (c) => chunks.push(c));
+                  proxyRes.on("end", () => {
+                    let html = Buffer.concat(chunks).toString("utf8");
+                    if (html.includes("<head>")) {
+                      html = html.replace("<head>", '<head><script src="/__oc_widget.js"></script>');
+                    } else if (html.includes("</body>")) {
+                      html = html.replace("</body>", '<script src="/__oc_widget.js"></script></body>');
+                    }
+                    delete outHeaders["content-length"];
+                    res.writeHead(proxyRes.statusCode || 200, outHeaders);
+                    res.end(html);
+                  });
+                }
+              );
+              proxyReq.on("error", (err) => {
+                res.writeHead(502, { "content-type": "text/plain" });
+                res.end("OpenCode sedang menyala: " + err.message);
+              });
+              return proxyReq.end();
+            }
+
+            const upHeaders = {
+              ...req.headers,
+              host: `127.0.0.1:${targetPort}`,
+              origin: `http://127.0.0.1:${targetPort}`,
+            };
+            const proxyReq = http.request(
+              {
+                hostname: "127.0.0.1",
+                port: targetPort,
+                path: req.url,
+                method: req.method,
+                headers: upHeaders,
+              },
+              (proxyRes) => {
+                const outHeaders = { ...proxyRes.headers };
+                delete outHeaders["access-control-allow-origin"];
+                res.writeHead(proxyRes.statusCode || 200, outHeaders);
+                proxyRes.pipe(res);
+              }
+            );
+            proxyReq.on("error", (err) => {
+              if (!res.headersSent) res.writeHead(502, { "content-type": "text/plain" });
+              res.end("OpenCode sedang menyala: " + err.message);
+            });
+            req.pipe(proxyReq);
+          });
+
+          server.on("upgrade", (req, socket, head) => {
+            if (!isAuthed(req)) {
+              socket.write("HTTP/1.1 401 Unauthorized\r\n\r\n");
+              socket.destroy();
+              return;
+            }
+            const targetPort = getUpstreamPort();
+            const upUrl = new URL(req.url || "/", "http://localhost");
+
+            // Endpoint WebSocket khusus untuk streaming SSE real-time tanpa buffering Cloudflare Quick Tunnel!
+            if (upUrl.pathname === "/__oc_sse_ws") {
+              const wsKey = req.headers["sec-websocket-key"];
+              const ssePath = upUrl.searchParams.get("path") || "/api/event";
+              if (!wsKey || !ssePath.startsWith("/")) {
+                socket.destroy();
+                return;
+              }
+              const acceptKey = crypto
+                .createHash("sha1")
+                .update(wsKey + "258EAFA5-E914-47DA-95CA-C5AB0DC85B11")
+                .digest("base64");
+              socket.write(
+                "HTTP/1.1 101 Switching Protocols\r\n" +
+                "Upgrade: websocket\r\n" +
+                "Connection: Upgrade\r\n" +
+                `Sec-WebSocket-Accept: ${acceptKey}\r\n\r\n`
+              );
+              const sseHeaders = {
+                cookie: req.headers.cookie || "",
+                accept: "text/event-stream",
+                host: `127.0.0.1:${targetPort}`,
+                origin: `http://127.0.0.1:${targetPort}`,
+              };
+              const upstreamReq = http.request(
+                { hostname: "127.0.0.1", port: targetPort, path: ssePath, method: "GET", headers: sseHeaders },
+                (upstreamRes) => {
+                  sendWsBinary(socket, Buffer.from(": connected\n\n", "utf8"));
+                  upstreamRes.on("data", (chunk) => sendWsBinary(socket, Buffer.from(chunk)));
+                  upstreamRes.on("end", () => { try { socket.end(); } catch {} });
+                  upstreamRes.on("error", () => { try { socket.destroy(); } catch {} });
+                }
+              );
+              upstreamReq.on("error", () => { try { socket.destroy(); } catch {} });
+              upstreamReq.end();
+              socket.on("data", (frame) => {
+                if (frame.length >= 1) {
+                  const op = frame[0] & 0x0f;
+                  if (op === 0x08) {
+                    upstreamReq.destroy();
+                    try { socket.end(); } catch {}
+                  } else if (op === 0x09 && !socket.destroyed) {
+                    socket.write(Buffer.from([0x8a, 0x00]));
+                  }
+                }
+              });
+              socket.on("close", () => upstreamReq.destroy());
+              socket.on("error", () => upstreamReq.destroy());
+              return;
+            }
+
+            const upstream = net.connect(targetPort, "127.0.0.1", () => {
+              let raw = `${req.method} ${req.url} HTTP/${req.httpVersion}\r\n`;
+              for (let i = 0; i < req.rawHeaders.length; i += 2) {
+                const k = req.rawHeaders[i];
+                const kl = k.toLowerCase();
+                const v =
+                  kl === "host"
+                    ? `127.0.0.1:${targetPort}`
+                    : kl === "origin"
+                    ? `http://127.0.0.1:${targetPort}`
+                    : req.rawHeaders[i + 1];
+                raw += `${k}: ${v}\r\n`;
+              }
+              raw += "\r\n";
+              upstream.write(raw);
+              if (head && head.length) upstream.write(head);
+              socket.pipe(upstream).pipe(socket);
+            });
+            upstream.on("error", () => socket.destroy());
+            socket.on("error", () => upstream.destroy());
+          });
+
+          server.listen(LISTEN_PORT, "127.0.0.1");
+          PROXYEOF
+
+      - name: 3. Restore Session, Nyalakan Server, Publish GitHub Pages & Notif
+        env:
+          OC_VER: ${{ inputs.versi_opencode }}
+          SECRET_PW: ${{ secrets.OPENCODE_PASSWORD }}
+          INPUT_PW: ${{ inputs.password_login }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DURASI: ${{ inputs.durasi_menit }}
+        run: |
+          export FINAL_PW="$(printf '%s' "${INPUT_PW:-$SECRET_PW}" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+          export WORKSPACE_DIR="$PWD"
+          if [ -z "$FINAL_PW" ]; then
+            echo "::error::Password belum diisi! Isi kolom 'password_login' saat klik Run workflow ATAU buat Secret OPENCODE_PASSWORD."
+            exit 1
+          fi
+          echo "1" > /tmp/password_verified
+
+          "$HOME/.local/bin/oc-restore"
+
+          START_MS=$(date +%s%3N)
+          echo "$START_MS" > /tmp/start_ms.txt
+
+          if [ "$OC_VER" = "v1" ]; then
+            env -u RUNNER_TRACKING_ID \
+              nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4097 </dev/null >/tmp/oc.log 2>&1 &
+          else
+            env -u RUNNER_TRACKING_ID \
+              "$HOME/.local/bin/opencode" service start >/tmp/oc.log 2>&1
+          fi
+          sleep 2
+
+          env -u RUNNER_TRACKING_ID \
+            OC_VER="$OC_VER" \
+            OPENCODE_PASSWORD="$FINAL_PW" \
+            WORKSPACE_DIR="$WORKSPACE_DIR" \
+            START_TIME_MS="$START_MS" \
+            DURASI_MENIT="$DURASI" \
+            nohup node /tmp/auth-proxy.mjs </dev/null >/tmp/proxy.log 2>&1 &
+          sleep 1
+
+          env -u RUNNER_TRACKING_ID \
+            nohup "$HOME/.local/bin/cloudflared" tunnel --no-autoupdate --protocol http2 --url http://127.0.0.1:4096 </dev/null >/tmp/cf.log 2>&1 &
+
+          URL=""
+          for i in $(seq 1 25); do
+            URL=$(grep -o 'https://[-a-z0-9]*\.trycloudflare\.com' /tmp/cf.log | head -n 1 || true)
+            [ -n "$URL" ] && break
+            sleep 1
+          done
+
+          if [ -z "$URL" ]; then
+            echo "::error::Gagal mendapatkan URL Cloudflare Tunnel."
+            cat /tmp/cf.log
+            exit 1
+          fi
+
+          for i in $(seq 1 20); do
+            if curl -4 -fsS "$URL/__oc_health" >/dev/null 2>&1; then
+              break
+            fi
+            sleep 1
+          done
+
+          "$HOME/.local/bin/oc-publish-url" "$URL"
+          PAGES_URL=$(cat /tmp/pages_url.txt 2>/dev/null || echo "")
+          OC_FULL_VER=$("$HOME/.local/bin/opencode" --version 2>/dev/null || echo "$OC_VER")
+
+          echo "::notice title=OPENCODE CLOUD PRO ($OC_FULL_VER)::$URL  |  Link Permanen: $PAGES_URL"
+
+          {
+            echo "## 🚀 OpenCode Cloud Pro Aktif! (\`$OC_FULL_VER\`)"
+            echo ""
+            echo "| Fitur | Link / Info |"
+            echo "| :--- | :--- |"
+            echo "| **🧬 Versi Engine** | **\`$OC_FULL_VER\`** |"
+            echo "| **🌐 Link Langsung Sesi Ini** | [**$URL**]($URL) |"
+            echo "| **🔗 Link Permanen Seumur Hidup (GitHub Pages)** | [**$PAGES_URL**]($PAGES_URL) |"
+            echo "| **⚡ Cloud Control Panel (Preview, Custom Provider & ZIP/APK)** | [**$URL/__panel**]($URL/__panel) *(atau klik tombol \`⚡ Panel\` di bagian atas tengah layar)* |"
+            echo "| **💾 Auto-Backup Kode, Chat & Custom Provider** | Aktif tiap **10 menit** (AES-256 Encrypted) |"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: 4. Jaga Server Aktif 24/7 + Watchdog + Auto-Save Tiap 10 Menit
+        env:
+          OC_VER: ${{ inputs.versi_opencode }}
+          SECRET_PW: ${{ secrets.OPENCODE_PASSWORD }}
+          INPUT_PW: ${{ inputs.password_login }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          DURASI: ${{ inputs.durasi_menit }}
+        run: |
+          export FINAL_PW="$(printf '%s' "${INPUT_PW:-$SECRET_PW}" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+          export WORKSPACE_DIR="$PWD"
+          START_MS=$(cat /tmp/start_ms.txt 2>/dev/null || date +%s%3N)
+
+          git config user.name "OpenCode Cloud"
+          git config user.email "bot@opencode.local"
+
+          AKTIF_URL=$(cat /tmp/current_url.txt 2>/dev/null || echo "")
+          PAGES_URL=$(cat /tmp/pages_url.txt 2>/dev/null || echo "")
+          echo "========================================================"
+          echo "✅ OPENCODE CLOUD PRO AKTIF (BUKAN STUCK!)"
+          echo "🌐 LINK SESI INI     : $AKTIF_URL"
+          echo "🔗 LINK PERMANEN     : $PAGES_URL"
+          echo "⚡ CONTROL PANEL     : $AKTIF_URL/__panel"
+          echo "========================================================"
+
+          TOTAL_DETIK=$(( DURASI * 60 ))
+          BERJALAN=0
+
+          while [ "$BERJALAN" -lt "$TOTAL_DETIK" ]; do
+            if [ "$OC_VER" = "v1" ]; then
+              if ! pgrep -f "opencode web" >/dev/null 2>&1; then
+                env -u RUNNER_TRACKING_ID \
+                  nohup "$HOME/.local/bin/opencode" web --hostname 127.0.0.1 --port 4097 </dev/null >>/tmp/oc.log 2>&1 &
+              fi
+            else
+              if ! pgrep -x "opencode" >/dev/null 2>&1; then
+                env -u RUNNER_TRACKING_ID "$HOME/.local/bin/opencode" service start >>/tmp/oc.log 2>&1 || true
+              fi
+            fi
+
+            if ! pgrep -f "[a]uth-proxy.mjs" >/dev/null 2>&1; then
+              env -u RUNNER_TRACKING_ID \
+                OC_VER="$OC_VER" \
+                OPENCODE_PASSWORD="$FINAL_PW" \
+                WORKSPACE_DIR="$WORKSPACE_DIR" \
+                START_TIME_MS="$START_MS" \
+                DURASI_MENIT="$DURASI" \
+                nohup node /tmp/auth-proxy.mjs </dev/null >>/tmp/proxy.log 2>&1 &
+            fi
+
+            if ! pgrep -f "[c]loudflared.*4096" >/dev/null 2>&1; then
+              rm -f /tmp/cf.log
+              env -u RUNNER_TRACKING_ID \
+                nohup "$HOME/.local/bin/cloudflared" tunnel --no-autoupdate --protocol http2 --url http://127.0.0.1:4096 </dev/null >/tmp/cf.log 2>&1 &
+              for i in $(seq 1 20); do
+                AKTIF_URL=$(grep -o 'https://[-a-z0-9]*\.trycloudflare\.com' /tmp/cf.log | head -n 1 || true)
+                [ -n "$AKTIF_URL" ] && break
+                sleep 1
+              done
+              "$HOME/.local/bin/oc-publish-url" "$AKTIF_URL"
+              echo "🔗 LINK BARU DIPUBLIKASIKAN: $AKTIF_URL"
+            fi
+
+            sleep 60
+            BERJALAN=$(( BERJALAN + 60 ))
+            MENIT=$(( BERJALAN / 60 ))
+            echo "[Menit ke-$MENIT/$DURASI] Aktif | Sesi: $AKTIF_URL | Permanen: $PAGES_URL"
+
+            if [ $(( BERJALAN % 600 )) -eq 0 ]; then
+              "$HOME/.local/bin/oc-save" "chore: auto-save kode & session (${MENIT}m)"
+            fi
+          done
+
+      - name: 5. Simpan Permanen Semua Kode & Session Sebelum Ganti Sesi / Berhenti
+        if: always()
+        env:
+          OC_VER: ${{ inputs.versi_opencode }}
+          SECRET_PW: ${{ secrets.OPENCODE_PASSWORD }}
+          INPUT_PW: ${{ inputs.password_login }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          export FINAL_PW="$(printf '%s' "${INPUT_PW:-$SECRET_PW}" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')"
+          export WORKSPACE_DIR="$PWD"
+          git config user.name "OpenCode Cloud"
+          git config user.email "bot@opencode.local"
+
+          if [ "$OC_VER" = "v1" ]; then
+            pkill -TERM -f "opencode web" || true
+          else
+            "$HOME/.local/bin/opencode" service stop >/dev/null 2>&1 || true
+          fi
+          sleep 2
+
+          "$HOME/.local/bin/oc-save" "chore: final auto-save kode & session OpenCode"
+
+      - name: 6. Lanjut Otomatis Sesi 6 Jam Berikutnya (Self-Healing 24/7 Nonstop)
+        if: always() && !cancelled() && inputs.lanjut_otomatis == true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ ! -f /tmp/password_verified ]; then
+            echo "Melewati auto-restart karena password belum diisi."
+            exit 0
+          fi
+          for attempt in 1 2 3; do
+            if gh workflow run opencode-web.yml \
+              -f versi_opencode="${{ inputs.versi_opencode }}" \
+              -f password_login="${{ inputs.password_login }}" \
+              -f durasi_menit="${{ inputs.durasi_menit }}" \
+              -f lanjut_otomatis=true; then
+              echo "✅ Sesi 6 jam berikutnya berhasil dijadwalkan otomatis!"
+              break
+            fi
+            sleep 5
+          done

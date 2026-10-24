@@ -1,0 +1,17 @@
+total 156
+drwxr-xr-x  6 runner runner  4096 Oct 24 08:12 .
+drwxrwxrwt 17 root   root   12288 Oct 24 08:13 ..
+drwxr-xr-x  7 runner runner  4096 Oct 24 08:12 .git
+drwxr-xr-x  4 runner runner  4096 Oct 24 08:12 .github
+-rw-r--r--  1 runner runner   852 Oct 24 08:12 .gitignore
+-rw-r--r--  1 runner runner   472 Oct 24 08:12 Dockerfile
+-rw-r--r--  1 runner runner  1065 Oct 24 08:12 LICENSE
+-rw-r--r--  1 runner runner 13261 Oct 24 08:12 README.md
+-rw-r--r--  1 runner runner   449 Oct 24 08:12 config.json
+-rw-r--r--  1 runner runner   243 Oct 24 08:12 docker-compose.yml
+drwxr-xr-x  3 runner runner  4096 Oct 24 08:12 files
+-rw-r--r--  1 runner runner    47 Oct 24 08:12 install.bat
+-rw-r--r--  1 runner runner   220 Oct 24 08:12 requirements.txt
+-rw-r--r--  1 runner runner    45 Oct 24 08:12 run.bat
+-rw-r--r--  1 runner runner 77139 Oct 24 08:12 start.py
+drwxr-xr-x  6 runner runner  4096 Oct 24 08:12 web

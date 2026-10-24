@@ -1,0 +1,9 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	worktree = /home/runner/work/Opencode/Opencode
+
+[include]
+	path = opencode.gitconfig

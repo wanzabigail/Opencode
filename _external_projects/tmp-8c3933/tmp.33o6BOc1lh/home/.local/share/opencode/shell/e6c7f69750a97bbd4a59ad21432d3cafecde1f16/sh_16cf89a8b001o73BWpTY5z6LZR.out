@@ -1,0 +1,38 @@
+total 76
+drwxr-xr-x  3 runner runner  4096 Oct 24 08:12 .
+drwxrwxrwt 17 root   root   12288 Oct 24 08:13 ..
+drwxr-xr-x  7 runner runner  4096 Oct 24 08:12 .git
+-rw-r--r--  1 runner runner 18092 Oct 24 08:12 LICENSE
+-rw-r--r--  1 runner runner  2854 Oct 24 08:12 README.md
+-rw-r--r--  1 runner runner 26962 Oct 24 08:12 cc.py
+-rw-r--r--  1 runner runner   428 Oct 24 08:12 multiproc.sh
+#!/usr/bin/python3
+#Coded by L330n123
+#########################################
+#         Just a little change          #
+#                           -- L330n123 #
+#########################################
+import requests
+import socket
+import socks
+import time
+import random
+import threading
+import sys
+import ssl
+import datetime
+import os
+
+
+
+print ('''
+	   /////    /////    /////////////
+	  CCCCC/   CCCCC/   | CC-attack |/
+	 CC/      CC/       |-----------|/ 
+	 CC/      CC/       |  Layer 7  |/ 
+	 CC/////  CC/////   | ddos tool |/ 
+	  CCCCC/   CCCCC/   |___________|/
+>--------------------------------------------->
+Version 3.7.1 (2022/3/24)
+                              C0d3d by L330n123
+┌─────────────────────────────────────────────┐

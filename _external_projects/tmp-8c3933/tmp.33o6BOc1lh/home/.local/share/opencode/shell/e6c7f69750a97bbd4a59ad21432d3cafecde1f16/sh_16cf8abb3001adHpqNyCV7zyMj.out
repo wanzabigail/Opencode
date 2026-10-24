@@ -1,0 +1,31 @@
+/tmp/MHDDoS/start.py:53: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1
+/tmp/MHDDoS/start.py:55: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1_1
+* MHDDoS - DDoS Attack Script With 57 Methods
+Note: If the Proxy list is empty, The attack will run without proxies
+      If the Proxy file doesn't exist, the script will download proxies and check them.
+      Proxy Type 0 = All in config.json
+      SocksTypes:
+         - 6 = RANDOM
+         - 5 = SOCKS5
+         - 4 = SOCKS4
+         - 1 = HTTP
+         - 0 = ALL
+ > Methods:
+ - Layer4
+ | FIVEM, SYN, CLDAP, FIVEM-TOKEN, TS3, CPS, MINECRAFT, OVH-UDP, DNS, VSE, RDP, MCPE, NTP, ARD, UDP, MCBOT, MEM, CONNECTION, TCP, ICMP, CHAR | 21 Methods
+ - Layer7
+ | GSB, SLOW, CFBUAM, DYN, BOMB, STOMP, EVEN, COOKIE, APACHE, BOT, KILLER, HEAD, TOR, RHEX, STRESS, GET, XMLRPC, DGB, BYPASS, CFB, AVB, NULL, PPS, DOWNLOADER, POST, OVH | 26 Methods
+ - Tools
+ | DSTAT, CFIP, INFO, DNS, CHECK, TSSRV, PING | 7 Methods
+ - Others
+ | TOOLS, HELP, STOP | 3 Methods
+ - All 57 Methods
+
+Example:
+   L7: python3 start.py <method> <url> <socks_type> <threads> <proxylist> <rpc> <duration> <debug=optional>
+   L4: python3 start.py <method> <ip:port> <threads> <duration>
+   L4 Proxied: python3 start.py <method> <ip:port> <threads> <duration> <socks_type> <proxylist>
+   L4 Amplification: python3 start.py <method> <ip:port> <threads> <duration> <reflector file (only use with Amplification)>
+

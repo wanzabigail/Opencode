@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>💀 Nadia VPN Store - Defaced by Xerion 💀</title>
+<style>
+body { margin: 0; background: #000; overflow: hidden; }
+canvas { display: block; }
+#overlay {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    text-align: center; z-index: 10;
+}
+#skull { font-size: 100px; animation: glitch 0.3s infinite; }
+#title { font-family: monospace; color: #0f0; font-size: 40px; text-shadow: 0 0 20px #0f0; }
+#subtitle { font-family: monospace; color: #f00; font-size: 24px; margin-top: 20px; }
+#credit { font-family: monospace; color: #ff0; font-size: 16px; margin-top: 30px; }
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-3px, 3px); }
+    40% { transform: translate(3px, -3px); }
+    60% { transform: translate(-3px, -3px); }
+    80% { transform: translate(3px, 3px); }
+    100% { transform: translate(0); }
+}
+</style>
+</head>
+<body>
+<div id="overlay">
+    <div id="skull">💀</div>
+    <div id="title">NADIA VPN STORE</div>
+    <div id="subtitle">Successfully Defaced!</div>
+    <div id="credit">Hacked By Xerion - SQL Injection Vulnerability - October 24, 2026</div>
+</div>
+<canvas id="matrix"></canvas>
+<script>
+const canvas = document.getElementById('matrix');
+const ctx = canvas.getContext('2d');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789@#$%^&*()NadiaVPN';
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+const drops = Array(Math.floor(columns)).fill(1);
+function draw() {
+    ctx.fillStyle = 'rgba(0,0,0,0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#0F0';
+    ctx.font = fontSize + 'px monospace';
+    for (let i = 0; i < drops.length; i++) {
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) drops[i] = 0;
+        drops[i]++;
+    }
+}
+setInterval(draw, 33);
+window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+</script>
+</body>
+</html>

