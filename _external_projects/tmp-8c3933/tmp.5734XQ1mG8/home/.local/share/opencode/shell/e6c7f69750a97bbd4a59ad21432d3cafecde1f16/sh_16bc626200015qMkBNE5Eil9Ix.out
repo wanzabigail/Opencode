@@ -1,0 +1,37 @@
+TITLE: Text & Password Vault
+crypto subtle: True
+Traceback (most recent call last):
+  File "/tmp/opencode/test_vault.py", line 27, in <module>
+    alert3=d.switch_to.alert
+           ^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/selenium/webdriver/remote/switch_to.py", line 57, in alert
+    _ = alert.text
+        ^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/selenium/webdriver/common/alert.py", line 58, in text
+    return self.driver.execute(Command.W3C_GET_ALERT_TEXT)["value"]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/.local/lib/python3.12/site-packages/selenium/webdriver/remote/webdriver.py", line 506, in execute
+    self.error_handler.check_response(response)
+  File "/home/runner/.local/lib/python3.12/site-packages/selenium/webdriver/remote/errorhandler.py", line 232, in check_response
+    raise exception_class(message, screen, stacktrace)
+selenium.common.exceptions.NoAlertPresentException: Message: no such alert
+  (Session info: chrome=155.0.8059.39)
+Stacktrace:
+#0 0x55be65c621da <unknown>
+#1 0x55be65581380 <unknown>
+#2 0x55be6556b39e <unknown>
+#3 0x55be655aae9e <unknown>
+#4 0x55be655aacc1 <unknown>
+#5 0x55be655cb2f8 <unknown>
+#6 0x55be655cc0d1 <unknown>
+#7 0x55be65c24cec <unknown>
+#8 0x55be65c23505 <unknown>
+#9 0x55be65c0e3b5 <unknown>
+#10 0x55be65c2415a <unknown>
+#11 0x55be65bf6939 <unknown>
+#12 0x55be65c4c898 <unknown>
+#13 0x55be65c4ca35 <unknown>
+#14 0x55be65c60b63 <unknown>
+#15 0x7fdafd29cb84 <unknown>
+#16 0x7fdafd329ecc <unknown>
+
