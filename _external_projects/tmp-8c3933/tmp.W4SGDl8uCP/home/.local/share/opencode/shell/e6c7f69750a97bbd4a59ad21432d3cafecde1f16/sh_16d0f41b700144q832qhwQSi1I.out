@@ -1,0 +1,24 @@
+=== Looking for Clean Tube Player shortcode ===
+
+=== Looking for video ID in page ===
+
+=== Article video shortcode ===
+  Article iframe: https://playmogo.com/e/wyr99ofrib7b
+  Video element: iframe
+
+=== Trying playmogo with different headers ===
+Playmogo page size: 5760
+
+=== Playmogo video source ===
+Script:  $(document).ready(function() { $(".captcha_l").click(function(){ $(this).css('display', 'block'); $(this).html('<span aria-hidden="true" class="vjs-loading-spinner"></span>'); $('#video_player').addClass('vjs-waiting'); var captchaContainer = null; var loadCaptcha = function() { const widgetId = turnstile.render("#turnstile-container", { sitekey: "0x4AAAAAACFq32tMjwLTJaKk", size: 'flexible', callback : function(response) { $.get("/dood?op=validate&gc_response="+response, function(data){ setTime
+  URL: https://imgds.net/splash/8rrwpuv9srfef6aa.jpg
+  URL: https://imgds.net/splash/8rrwpuv9srfef6aa.jpg
+  URL: https://imgds.net/splash/8rrwpuv9srfef6aa.jpg
+  URL: https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092
+
+=== DoodStream API call ===
+API: {"status":400,"msg":"No API key passed","server_time":"2026-10-24 08:38:00"}
+
+=== DoodStream embed API ===
+https://doodapi.com/api/hoster: HTTP Error 404: Not Found
+https://doodapi.com/api/file_info/wyr99ofrib7b: {"server_time":"2026-10-24 08:38:01","status":400,"msg":"No API key passed"}
