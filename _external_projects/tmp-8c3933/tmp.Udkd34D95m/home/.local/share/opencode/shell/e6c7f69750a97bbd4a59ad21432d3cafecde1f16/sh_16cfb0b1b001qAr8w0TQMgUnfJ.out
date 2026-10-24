@@ -1,0 +1,21 @@
+[*] Waiting for rate limit reset...
+[*] Getting fresh session...
+CSRF obtained
+
+[*] Extracting password from users table...
+
+[*] Extracting email from users table...
+
+[*] Trying 'admin' and 'admins' table...
+
+==================================================
+=== CREDENTIALS ===
+==================================================
+Email (users): unknown
+Password (users): unknown
+
+Tables found: user, users, admin, admins
+
+Contact page email: nama@email.com
+
+Saved to /tmp/credentials.txt

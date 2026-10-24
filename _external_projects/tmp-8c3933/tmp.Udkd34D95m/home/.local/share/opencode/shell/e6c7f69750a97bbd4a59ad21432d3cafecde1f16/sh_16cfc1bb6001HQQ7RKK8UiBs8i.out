@@ -1,0 +1,15 @@
+=== VERIFIKASI 60d ===
+HTTP/2 403 
+date: Sat, 24 Oct 2026 08:17:33 GMT
+content-type: text/html; charset=UTF-8
+content-length: 5249
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cf-mitigated: challenge
+content-security-policy: default-src 'none'; script-src 'nonce-hi681HgIX5KYWZ6qc2162o' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+server: cloudflare
+critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cross-origin-embedder-policy: require-corp
+
+=== CPU/Memory Usage ===
+PID 72605: CPU 14.5% MEM 2.6%
+PID 74282: CPU 10.0% MEM 1.0%

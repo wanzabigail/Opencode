@@ -1,0 +1,8 @@
+[*] Getting fresh session...
+
+[*] Extracting password hex via binary search on hex chars...
+  (Only 16 possible chars: 0-9, a-f)
+  ✗ Password not found
+Traceback (most recent call last):
+  File "<stdin>", line 90, in <module>
+NameError: name 'hex_length' is not defined. Did you mean: 'pw_length'?

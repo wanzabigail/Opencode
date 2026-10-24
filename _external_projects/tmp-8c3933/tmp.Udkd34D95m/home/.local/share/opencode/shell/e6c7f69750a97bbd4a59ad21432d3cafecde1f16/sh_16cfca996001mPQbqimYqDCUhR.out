@@ -1,0 +1,13 @@
+=== Menambahkan ATTACK 6: TOR method ===
+DYN PID: 74891
+
+=== Total attacks running ===
+TOR PID: 74888
+BYPASS PID: 74890
+3
+/tmp/MHDDoS/start.py:53: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1
+/tmp/MHDDoS/start.py:55: DeprecationWarning: ssl.OP_NO_SSL*/ssl.OP_NO_TLS* options are deprecated
+  ctx.options |= ssl.OP_NO_TLSv1_1
+[08:17:40 - WARNING] RPC (Request Pre Connection) is higher than 100
+[08:17:41 - INFO] [93mProxy Count: [94m80,117[0m
