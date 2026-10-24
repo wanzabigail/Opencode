@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+started
+[32/464] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/amx/mmq.cpp.o
+[33/464] Building CXX object ggml/src/CMakeFiles/ggml-cpu.dir/ggml-cpu/ops.cpp.o
+ninja: build stopped: subcommand failed.
+
+

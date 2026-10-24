@@ -1,0 +1,16 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+total 0
+lrwxrwxrwx 1 root root 24 Oct 24 20:10 cub -> /marimo/llm/cccl/cub/cub
+lrwxrwxrwx 1 root root 40 Oct 24 20:10 cuda -> /marimo/llm/cccl/libcudacxx/include/cuda
+lrwxrwxrwx 1 root root 30 Oct 24 20:10 thrust -> /marimo/llm/cccl/thrust/thrust
+CMake Warning at vendor/cpp-httplib/CMakeLists.txt:152 (message):
+  OpenSSL not found, HTTPS support disabled
+
+
+-- Generating embedded license file for target: llama-app
+-- Configuring done (4.1s)
+-- Generating done (0.2s)
+-- Build files have been written to: /marimo/llm/llama.cpp-src/build
+
+ERR: 
+

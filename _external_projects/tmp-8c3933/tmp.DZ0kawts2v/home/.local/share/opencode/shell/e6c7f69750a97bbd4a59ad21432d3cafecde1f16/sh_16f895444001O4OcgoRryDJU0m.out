@@ -1,0 +1,16 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+Openacc
+Openmp
+builtin_types.h
+channel_descriptor.h
+common_functions.h
+cooperative_groups
+cooperative_groups.h
+crt
+cuComplex.h
+cublas.h
+---
+---
+['nvidia-cublas', 'nvidia-cuda-crt', 'nvidia-cuda-cupti', 'nvidia-cuda-nvcc', 'nvidia-cuda-nvrtc', 'nvidia-cuda-runtime', 'nvidia-cudnn-cu13', 'nvidia-cufft', 'nvidia-cufile', 'nvidia-curand', 'nvidia-cusolver', 'nvidia-cusparse', 'nvidia-cusparselt-cu13', 'nvidia-cutlass-dsl', 'nvidia-cutlass-dsl-libs-base', 'nvidia-cutlass-dsl-libs-cu13', 'nvidia-nccl-cu12', 'nvidia-nccl-cu13', 'nvidia-nvjitlink', 'nvidia-nvshmem-cu13', 'nvidia-nvtx', 'nvidia-nvvm']
+
+

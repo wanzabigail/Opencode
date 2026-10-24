@@ -1,0 +1,10 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+cu13
+cudnn
+cusparselt
+nccl
+nvshmem
+/usr/local/lib/python3.13/site-packages/nvidia/cu13/bin/nvcc
+CUDA_HOME= /usr/local/lib/python3.13/site-packages/nvidia/cu13
+
+

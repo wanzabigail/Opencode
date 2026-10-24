@@ -1,0 +1,9 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+-- Configuring done (0.8s)
+-- Generating done (0.2s)
+-- Build files have been written to: /marimo/llm/llama.cpp-src/build
+[39/438] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/quantize.cu.o
+[40/438] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/scale.cu.o
+0
+
+

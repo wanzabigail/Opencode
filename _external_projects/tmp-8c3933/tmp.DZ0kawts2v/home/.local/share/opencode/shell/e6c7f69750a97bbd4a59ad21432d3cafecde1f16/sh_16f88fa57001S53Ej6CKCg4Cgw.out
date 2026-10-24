@@ -1,0 +1,12 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+lrwxrwxrwx 1 root root 15 Oct 24 20:10 libcublas.so -> libcublas.so.13
+lrwxrwxrwx 1 root root 17 Oct 24 20:10 libcublasLt.so -> libcublasLt.so.13
+lrwxrwxrwx 1 root root 15 Oct 24 20:10 libcudart.so -> libcudart.so.13
+Installed 2 packages in 71ms
+ + cmake==4.4.4
+ + ninja==1.13.2
+/usr/local/bin/cmake
+/usr/local/bin/ninja
+
+ERR: 
+

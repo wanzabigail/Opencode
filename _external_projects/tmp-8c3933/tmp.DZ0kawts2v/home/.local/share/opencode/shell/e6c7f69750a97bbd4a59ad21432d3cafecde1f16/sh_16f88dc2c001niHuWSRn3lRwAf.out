@@ -1,0 +1,38 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+total 1823055
+drwxr-xr-x 1 root root      4096 Oct 21 20:23 .
+drwxr-xr-x 1 root root        75 Oct 21 20:23 ..
+-rw-r--r-- 1 root root   1382856 Oct 21 20:22 libcheckpoint.so
+-rw-r--r-- 1 root root  54177976 Oct 21 20:23 libcublas.so.13
+-rw-r--r-- 1 root root 541595600 Oct 21 20:23 libcublasLt.so.13
+-rw-r--r-- 1 root root   1024340 Oct 21 20:22 libcudadevrt.a
+-rw-r--r-- 1 root root    704288 Oct 21 20:22 libcudart.so.13
+-rw-r--r-- 1 root root   1361104 Oct 21 20:22 libcudart_static.a
+-rw-r--r-- 1 root root 286542352 Oct 21 20:23 libcufft.so.12
+-rw-r--r-- 1 root root    991704 Oct 21 20:23 libcufftw.so.12
+-rw-r--r-- 1 root root   3170800 Oct 21 20:22 libcufile.so.0
+-rw-r--r-- 1 root root     43320 Oct 21 20:22 libcufile_rdma.so.1
+-rw-r--r-- 1 root root   4152208 Oct 21 20:22 libcupti.so.13
+-rw-r--r-- 1 root root 132698328 Oct 21 20:23 libcurand.so.10
+-rw-r--r-- 1 root root 141152872 Oct 21 20:23 libcusolver.so.12
+-rw-r--r-- 1 root root 103956840 Oct 21 20:23 libcusolverMg.so.12
+-rw-r--r-- 1 root root 162565256 Oct 21 20:23 libcusparse.so.12
+-rw-r--r-- 1 root root  98806736 Oct 21 20:23 libnvJitLink.so.13
+-rw-r--r-- 1 root root    737504 Oct 21 20:23 libnvblas.so.13
+-rw-r--r-- 1 root root  32405040 Oct 21 20:22 libnvperf_host.so
+-rw-r--r-- 1 root root   5304944 Oct 21 20:22 libnvperf_target.so
+-rw-r--r-- 1 root root   4372424 Oct 21 20:22 libnvrtc-builtins.alt.so.13.0
+-rw-r--r-- 1 root root   4380616 Oct 21 20:22 libnvrtc-builtins.so.13.0
+-rw-r--r-- 1 root root 109821488 Oct 21 20:23 libnvrtc.alt.so.13
+---
+__nvcc_device_query
+bin2c
+crt
+cudafe++
+fatbinary
+nvcc
+nvcc.profile
+nvlink
+ptxas
+
+

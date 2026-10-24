@@ -1,0 +1,5 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+-rw-r--r-- 1 root root 2.4K Oct 24 20:09 HauhauCS-FastMTP-llama.cpp.patch
+-rw-r--r-- 1 root root 862M Oct 24 20:09 models/Qwen3.8-27B-FastMTP-32K.gguf
+
+

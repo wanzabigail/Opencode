@@ -1,0 +1,21 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+root       895  0.0  0.0      0     0 ?        Z    19:49   0:00 [ssh] <defunct>
+root       906  0.0  0.0  22612 15740 ?        Ss   19:49   0:00 ssh -p 443 -o S
+---
+https://zrsma-166-19-116-222.run.pinggy-free.link
+
+RB: 0, SB: 0, TC: 0, AC: 0               
+RB: 387, SB: 0, TC: 1, AC: 1               
+RB: 387, SB: 0, TC: 1, AC: 1               
+RB: 387, SB: 0, TC: 1, AC: 1               
+RB: 387, SB: 836, TC: 2, AC: 2               
+RB: 387, SB: 836, TC: 2, AC: 2               
+RB: 789, SB: 1672, TC: 2, AC: 2               
+RB: 789, SB: 1672, TC: 2, AC: 1               
+RB: 789, SB: 1672, TC: 2, AC: 0               
+RB: 789, SB: 1672, TC: 2, AC: 0               
+RB: 1504, SB: 1672, TC: 3, AC: 1               
+RB: 1504, SB: 1672, TC: 3, AC: 1               
+RB: 1504, SB: 5116, TC: 3, AC: 1               
+RB: 1504, SB: 5116, TC: 3, AC: 0               
+

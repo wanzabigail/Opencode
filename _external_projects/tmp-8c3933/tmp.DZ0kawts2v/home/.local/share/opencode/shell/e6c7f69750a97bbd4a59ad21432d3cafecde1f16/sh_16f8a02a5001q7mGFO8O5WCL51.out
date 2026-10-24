@@ -1,0 +1,29 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+17-/usr/local/lib/python3.13/site-packages/nvidia/cu13/bin/nvcc -forward-unknown-to-host-compiler -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 -DGGML_CUDA_USE_GRAPHS -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cuda_EXPORTS -I/marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/.. -I/marimo/llm/llama.cpp-src/ggml/src/../include -isystem /usr/local/lib/python3.13/site-packages/nvidia/cu13/include -isystem /usr/local/lib/python3.13/site-packages/nvidia/cu13/include/cccl -O3 -DNDEBUG -std=c++17 "--generate-code=arch=compute_120a,code=[compute_120a,sm_120a]" -Xcompiler=-fPIC -use_fast_math -extended-lambda -compress-mode=size -Xcompiler "-Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -Wno-pedantic" -MD -MT ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o -MF ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o.d -x cu -c /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/acc.cu -o ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/acc.cu.o
+18-In file included from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/../ggml-common.h:39,
+19-                 from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/common.cuh:23,
+20-                 from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/acc.cuh:1,
+21-                 from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/acc.cu:1:
+22:/usr/local/lib/python3.13/site-packages/nvidia/cu13/include/cuda_fp16.h:4492:10: fatal error: nv/target: No such file or directory
+23- 4492 | #include <nv/target>
+24-      |          ^~~~~~~~~~~
+25-compilation terminated.
+26-[15/464] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/add-id.cu.o
+27-FAILED: [code=1] ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/add-id.cu.o 
+28-/usr/local/lib/python3.13/site-packages/nvidia/cu13/bin/nvcc -forward-unknown-to-host-compiler -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 -DGGML_CUDA_USE_GRAPHS -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cuda_EXPORTS -I/marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/.. -I/marimo/llm/llama.cpp-src/ggml/src/../include -isystem /usr/local/lib/python3.13/site-packages/nvidia/cu13/include -isystem /usr/local/lib/python3.13/site-packages/nvidia/cu13/include/cccl -O3 -DNDEBUG -std=c++17 "--generate-code=arch=compute_120a,code=[compute_120a,sm_120a]" -Xcompiler=-fPIC -use_fast_math -extended-lambda -compress-mode=size -Xcompiler "-Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -Wno-pedantic" -MD -MT ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/add-id.cu.o -MF ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/add-id.cu.o.d -x cu -c /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/add-id.cu -o ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/add-id.cu.o
+29-In file included from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/../ggml-common.h:39,
+30-                 from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/common.cuh:23,
+31-                 from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/add-id.cuh:1,
+32-                 from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/add-id.cu:1:
+33-/usr/local/lib/python3.13/site-packages/nvidia/cu13/include/cuda_fp16.h:4492:10: fatal error: nv/target: No such file or directory
+34- 4492 | #include <nv/target>
+35-      |          ^~~~~~~~~~~
+36-compilation terminated.
+37-[16/464] Building C object ggml/src/CMakeFiles/ggml-base.dir/ggml.c.o
+38-[17/464] Building CUDA object ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/allreduce.cu.o
+39-FAILED: [code=1] ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/allreduce.cu.o 
+40-/usr/local/lib/python3.13/site-packages/nvidia/cu13/bin/nvcc -forward-unknown-to-host-compiler -DGGML_BACKEND_BUILD -DGGML_BACKEND_SHARED -DGGML_CUDA_PEER_MAX_BATCH_SIZE=128 -DGGML_CUDA_USE_GRAPHS -DGGML_SCHED_MAX_COPIES=4 -DGGML_SHARED -D_GNU_SOURCE -D_XOPEN_SOURCE=600 -Dggml_cuda_EXPORTS -I/marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/.. -I/marimo/llm/llama.cpp-src/ggml/src/../include -isystem /usr/local/lib/python3.13/site-packages/nvidia/cu13/include -isystem /usr/local/lib/python3.13/site-packages/nvidia/cu13/include/cccl -O3 -DNDEBUG -std=c++17 "--generate-code=arch=compute_120a,code=[compute_120a,sm_120a]" -Xcompiler=-fPIC -use_fast_math -extended-lambda -compress-mode=size -Xcompiler "-Wmissing-declarations -Wmissing-noreturn -Wall -Wextra -Wpedantic -Wcast-qual -Wno-unused-function -Wno-array-bounds -Wextra-semi -Wno-pedantic" -MD -MT ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/allreduce.cu.o -MF ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/allreduce.cu.o.d -x cu -c /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/allreduce.cu -o ggml/src/ggml-cuda/CMakeFiles/ggml-cuda.dir/allreduce.cu.o
+41-In file included from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/../ggml-common.h:39,
+42-                 from /marimo/llm/llama.cpp-src/ggml/src/ggml-cuda/common.cuh:23,
+
+
