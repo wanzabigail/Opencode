@@ -1,0 +1,10 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+heartbeat 2026-10-24T18:50:40+0000
+http://127.0.0.1:18080/v1/models 200
+http://127.0.0.1:8501/healthz 200
+anti_mati 555
+start_model.py 
+run_ngrok.py 417
+uvicorn app:app 380
+files ['.config', '.env', '__marimo__', 'anti_mati.log', 'anti_mati.sh', 'antimati_start.out', 'chat_app', 'heartbeat.txt', 'llama.cpp', 'models', 'ngrok.out', 'ngrok_url.txt', 'notebook.py', 'pyproject.toml', 'run_ngrok.py', 'start_chat.sh', 'start_model.out', 'start_model.py', 'uvicorn.out']
+

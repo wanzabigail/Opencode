@@ -1,0 +1,6 @@
+data: {"sandbox_id":"sb-9012fea9c78adfae","state":"sandbox_running","reason":"running","url":"/v1/sandboxes/sb-9012fea9c78adfae/proxy/","timestamp":"2026-10-24T18:50:25Z"}
+
+
+total 8
+drwxr-xr-x  2 runner runner 4096 Oct 24 18:43 .
+drwxrwxrwt 14 root   root   4096 Oct 24 18:47 ..

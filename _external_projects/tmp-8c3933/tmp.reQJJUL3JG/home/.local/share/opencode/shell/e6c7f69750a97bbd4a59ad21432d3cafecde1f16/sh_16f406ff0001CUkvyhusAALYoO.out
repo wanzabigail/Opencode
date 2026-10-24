@@ -1,0 +1,4 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+err HTTP Error 401: Unauthorized b'{"detail":"Authorization header required"}'
+ok 200 b'{"s_ygm9q3":{"session_id":"sess-ps3dsehhtm5jywpa","filename":"/marimo/notebook.py","path":"/marimo/notebook.py"}}'
+

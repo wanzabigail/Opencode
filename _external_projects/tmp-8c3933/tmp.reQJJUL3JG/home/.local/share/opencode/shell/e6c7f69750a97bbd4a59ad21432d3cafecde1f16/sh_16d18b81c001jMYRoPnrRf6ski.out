@@ -1,0 +1,9 @@
+total 32
+drwxr-xr-x 5 runner runner 4096 Oct 24 07:05 .
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:54 ..
+drwxr-xr-x 7 runner runner 4096 Oct 24 08:46 .git
+drwxr-xr-x 3 runner runner 4096 Oct 24 06:55 .github
+-rw-r--r-- 1 runner runner  188 Oct 24 06:55 .gitignore
+-rw-r--r-- 1 runner runner 1034 Oct 24 06:55 AGENTS.md
+drwxr-xr-x 4 runner runner 4096 Oct 24 08:15 _external_projects
+-rw-r--r-- 1 runner runner   99 Oct 24 06:55 opencode.json
