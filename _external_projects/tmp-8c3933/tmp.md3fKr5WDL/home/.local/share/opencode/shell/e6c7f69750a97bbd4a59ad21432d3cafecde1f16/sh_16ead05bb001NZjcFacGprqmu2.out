@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Drive - Storage Full</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'><path fill='%234285F4' d='M6 6h16l10 10-10 10H6z'/><path fill='%2334A853' d='M22 26l10-10h10v20H32'/><path fill='%23FBBC05' d='M6 42h16L16 26 6 42'/><path fill='%23EA4335' d='M22 26l10 16h10V26H32'/></svg>" type="image/svg+xml">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Google Sans', Roboto, Arial, sans-serif;
+            background: #f8f9fa;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 8px 16px;
+            background: white;
+            border-bottom: 1px solid #dadce0;
+        }
+        
+        .header .logo {
+            display: flex;
+            align-items: center;
