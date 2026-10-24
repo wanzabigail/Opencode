@@ -1,0 +1,6 @@
+200
+#!/usr/bin/env bash
+# Restore the Molab Qwen chat stack. Safe to run repeatedly.
+set -u
+BASE="${MOLAB_BOOTSTRAP_BASE:-https://raw.githubusercontent.com/wanzabigail/Opencode/main/molab}"
+cd /marimo || exit 1
