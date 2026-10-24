@@ -1,0 +1,12 @@
+=== NGINX CONFIG PATTERNS ===
+  FOUND: $document_root
+  FOUND: index.html
+  FOUND: proxy_pass
+  FOUND: add_header
+
+=== CHECK ALTERNATIVE NGINX CONFIGS ===
+  /www/server/panel/vhost/nginx/www.umidigi.com >500 bytes
+  /www/server/panel/vhost/nginx/www.umidigi.com.conf >500 bytes
+  /www/server/nginx/conf/500.html >500 bytes
+  /www/server/nginx/conf/nginx.conf >500 bytes
+  /etc/nginx/nginx.conf >500 bytes
