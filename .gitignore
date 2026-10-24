@@ -9,3 +9,8 @@ __pycache__/
 .venv/
 venv/
 target/debug/
+.opencode-backup.enc
+.env
+.env.*
+!.env.example
+!.env.sample
