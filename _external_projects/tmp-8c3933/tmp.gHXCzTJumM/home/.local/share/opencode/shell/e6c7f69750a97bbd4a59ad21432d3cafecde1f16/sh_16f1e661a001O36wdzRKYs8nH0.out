@@ -1,0 +1,22 @@
+=== DATA PATTERNS ===
+  FOUND: |username=admin
+  FOUND: |username=root
+  FOUND: |username=test
+  FOUND: |username=user
+  FOUND: |username=guest
+  FOUND: |username=support
+  FOUND: |username=info
+  FOUND: |username=webmaster
+  FOUND: |username=administrator
+  FOUND: |password=|password=a
+  FOUND: |password=1
+  FOUND: |password=e
+  FOUND: |email=|email=a
+  FOUND: |email=admin
+
+=== CHECKING PASSWORD HASHES ===
+  HASH FOUND: 21232f297a57a5a743894a0e4a801fc3
+  HASH FOUND: e10adc3949ba59abbe56e057f20f883e
+  HASH FOUND: d41d8cd98f00b204e9800998ecf8427e
+  HASH FOUND: 5f4dcc3b5aa765d61d8327deb882cf99
+  HASH FOUND: e99a18c428cb38d5f260853678922e03

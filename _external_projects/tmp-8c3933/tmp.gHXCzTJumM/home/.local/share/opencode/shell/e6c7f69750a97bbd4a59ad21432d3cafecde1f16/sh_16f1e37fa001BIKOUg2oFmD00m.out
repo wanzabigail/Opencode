@@ -1,0 +1,22 @@
+=== MARKERS ===
+===UMS_ADMIN_USER===: 200
+===UMS_USER===: 200
+===ECS_ADMIN_USER===: 200
+===ECS_USER===: 200
+===ADMIN_USER===: 200
+===ADMIN===: 200
+admin_pass=: 200
+user_pass=: 200
+password=: 200
+
+=== CHECKING SPECIFIC ADMIN VALUES ===
+admin: 200
+root: 200
+administrator: 200
+webmaster: 200
+admin1: 200
+test: 200
+user: 200
+guest: 200
+support: 200
+info: 200

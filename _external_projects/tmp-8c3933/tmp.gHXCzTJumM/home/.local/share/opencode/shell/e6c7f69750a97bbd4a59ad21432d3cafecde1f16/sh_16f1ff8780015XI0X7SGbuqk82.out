@@ -1,0 +1,17 @@
+200 offset=0 >100
+200 >500
+200 offset=1 >100
+200 >500
+200 offset=2 >100
+200 >500
+200 offset=3 >100
+200 >500
+200 offset=4 >100
+200 >500
+
+direct0 >10: 
+  admin_direct0 has 'admin|21232f297a57a5a743894a0e4a801fc3': 200
+  admin_direct0 has 'admin||': 200
+  admin_direct0 has 'root|21232f297a57a5a743894a0e4a801fc3': 200
+  admin_direct0 has 'test|d41d8cd98f00b204e9800998ecf8427e': 200
+  admin_direct0 has 'user|5f4dcc3b5aa765d61d8327deb882cf99': 200

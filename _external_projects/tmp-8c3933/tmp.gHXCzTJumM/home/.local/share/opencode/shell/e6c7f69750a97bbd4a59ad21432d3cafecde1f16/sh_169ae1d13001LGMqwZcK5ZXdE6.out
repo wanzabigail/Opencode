@@ -1,0 +1,26 @@
+account            event_sequence     migration          session_message  
+account_state      instruction_blob   permission         session_pending  
+control_account    instruction_entry  project            session_v2       
+credential         instruction_state  project_directory  workspace        
+event              kv                 session_inbox      worktree         
+---
+account_state
+account
+control_account
+credential
+event_sequence
+event
+kv
+permission
+project_directory
+project
+instruction_blob
+instruction_entry
+instruction_state
+session_inbox
+session_message
+session_pending
+session_v2
+workspace
+worktree
+migration

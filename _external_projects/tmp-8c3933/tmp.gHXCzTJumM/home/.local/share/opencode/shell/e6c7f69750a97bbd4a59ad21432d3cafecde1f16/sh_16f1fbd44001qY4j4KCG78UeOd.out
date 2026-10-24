@@ -1,0 +1,36 @@
+=== admin TABLE ROWS ===
+Row 0:
+  MATCH: admin|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: admin|e10adc3949ba59abbe56e057f20f883e|
+  MATCH: admin||
+  MATCH: root|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: test|d41d8cd98f00b204e9800998ecf8427e|
+  MATCH: user|5f4dcc3b5aa765d61d8327deb882cf99|
+Row 1:
+  MATCH: admin|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: admin|e10adc3949ba59abbe56e057f20f883e|
+  MATCH: admin||
+  MATCH: root|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: test|d41d8cd98f00b204e9800998ecf8427e|
+  MATCH: user|5f4dcc3b5aa765d61d8327deb882cf99|
+Row 2:
+  MATCH: admin|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: admin|e10adc3949ba59abbe56e057f20f883e|
+  MATCH: admin||
+  MATCH: root|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: test|d41d8cd98f00b204e9800998ecf8427e|
+  MATCH: user|5f4dcc3b5aa765d61d8327deb882cf99|
+Row 3:
+  MATCH: admin|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: admin|e10adc3949ba59abbe56e057f20f883e|
+  MATCH: admin||
+  MATCH: root|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: test|d41d8cd98f00b204e9800998ecf8427e|
+  MATCH: user|5f4dcc3b5aa765d61d8327deb882cf99|
+Row 4:
+  MATCH: admin|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: admin|e10adc3949ba59abbe56e057f20f883e|
+  MATCH: admin||
+  MATCH: root|21232f297a57a5a743894a0e4a801fc3|
+  MATCH: test|d41d8cd98f00b204e9800998ecf8427e|
+  MATCH: user|5f4dcc3b5aa765d61d8327deb882cf99|

@@ -1,0 +1,18 @@
+=== FIRST 10 BYTES ===
+admin (5 chars): 200
+root (4 chars): 200
+test (4 chars): 200
+user (4 chars): 200
+123 (3 chars): 200
+admin1 (6 chars): 200
+webmaster (9 chars): 200
+administrator (13 chars): 200
+guest (5 chars): 200
+support (7 chars): 200
+info (4 chars): 200
+
+=== FIRST 20 BYTES ===
+admin|admin_pass=|email=: 200
+admin|test123|email=: 200
+root|root|email=: 200
+user|user|email=: 200
