@@ -1,0 +1,15 @@
+/home/runner/go:
+total 16
+drwxr-xr-x  4 runner runner 4096 Oct 24 08:09 .
+drwxr-xr-x 16 runner runner 4096 Oct 24 08:24 ..
+drwxr-xr-x  2 runner runner 4096 Oct 24 08:09 bin
+drwxr-xr-x  4 runner runner 4096 Oct 24 08:08 pkg
+
+/home/runner/work:
+total 24
+drwxr-xr-x  6 runner runner 4096 Oct 24 06:54 .
+drwxr-xr-x 16 runner runner 4096 Oct 24 08:24 ..
+drwxr-xr-x  3 runner runner 4096 Oct 24 06:54 Opencode
+drwxr-xr-x  3 runner runner 4096 Oct 24 06:54 _PipelineMapping
+drwxr-xr-x  3 runner runner 4096 Oct 24 06:54 _actions
+drwxr-xr-x  4 runner runner 4096 Oct 24 06:55 _temp

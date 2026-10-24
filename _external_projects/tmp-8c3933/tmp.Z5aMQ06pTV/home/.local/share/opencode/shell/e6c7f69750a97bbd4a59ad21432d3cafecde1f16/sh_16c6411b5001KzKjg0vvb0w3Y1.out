@@ -1,0 +1,55 @@
+Warning: connecting to non-local server 'sb-238b5efe5619d672.sb.molab.run'. Ensure this is trusted.
+def gen():
+        started = time.time()
+        tokens = 0
+        usage = None
+        finish = None
+        try:
+            stream = client.chat.completions.create(
+                model=MODEL,
+                messages=history,
+                max_tokens=int(body.get("max_tokens") or 4096),
+                temperature=float(body.get("temperature", 0.7)),
+                top_p=float(body.get("top_p", 1.0)),
+                extra_body={"chat_template_kwargs": {"enable_thinking": bool(body.get("thinking", True))}},
+                stream=True,
+                stream_options={"include_usage": True},
+            )
+            for chunk in stream:
+                if getattr(chunk, "usage", None):
+                    usage = chunk.usage
+                if not chunk.choices:
+                    continue
+                if chunk.choices[0].finish_reason:
+                    finish = chunk.choices[0].finish_reason
+                delta = chunk.choices[0].delta
+                reasoning = getattr(delta, "reasoning_content", None) or getattr(delta, "reasoning", None)
+                if reasoning:
+                    yield _sse({"r": reasoning})
+                if delta.content:
+                    tokens += 1
+                    yield _sse({"t": delta.content})
+            elapsed = max(time.time() - started, 1e-6)
+            generated = getattr(usage, "completion_tokens", None) or tokens
+            stats = {"secs": round(elapsed, 2), "tokens": generated, "tps": round(generated / elapsed, 1), "finish": finish}
+            if usage is not None:
+                stats["prompt_tokens"] = getattr(usage, "prompt_tokens", None)
+                stats["total_tokens"] = getattr(usage, "total_tokens", None)
+            yield _sse({"done": True, "stats": stats})
+        except Exception as exc:  # surface problems in the UI, not as a dead stream
+            yield _sse({"e": str(exc)})
+
+    
+TAIL:
+return StreamingResponse(
+        gen(),
+        media_type="text/event-stream",
+        headers={"Cache-Control": "no-store", "X-Accel-Buffering": "no"},
+    )
+
+
+async def proxy(request):
+    """Passthrough to llama-server (OpenAI-compatible + /props + /tokenize)."""
+    if API_KEY:
+        auth = 
+

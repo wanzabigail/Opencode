@@ -1,0 +1,32 @@
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /www ---
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /wwwroot ---
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /var/www/html ---
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /var/www ---
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /home/www ---
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /home ---
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /data/www ---
+<html>
+<head><title>404 Not Found</title></head>
+<body>
+--- /data ---

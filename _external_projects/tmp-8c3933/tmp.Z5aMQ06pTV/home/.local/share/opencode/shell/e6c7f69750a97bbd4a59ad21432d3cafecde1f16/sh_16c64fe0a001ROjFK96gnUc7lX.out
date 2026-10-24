@@ -1,0 +1,2 @@
+/bin/bash: -c: line 24: syntax error near unexpected token `)'
+/bin/bash: -c: line 24: `print("out:", open("/marimo/ngrok.out').read()[-800:])'
