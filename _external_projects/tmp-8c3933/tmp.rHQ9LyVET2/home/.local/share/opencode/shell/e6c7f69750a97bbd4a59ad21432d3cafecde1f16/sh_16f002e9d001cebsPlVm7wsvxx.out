@@ -1,0 +1,9 @@
+nginx.conf: 0
+default.conf: 0
+FOUND: /etc/nginx/fastcgi_params (exists, length>50)
+FOUND: /etc/nginx/mime.types (exists, length>50)
+FOUND: /etc/php/8.1/fpm/pool.d/www.conf (exists, length>50)
+FOUND: /etc/php/8.0/fpm/pool.d/www.conf (exists, length>50)
+FOUND: /etc/php-fpm.d/www.conf (exists, length>50)
+FOUND: /usr/local/php/etc/php-fpm.conf (exists, length>50)
+FOUND: /usr/local/php/etc/php-fpm.d/www.conf (exists, length>50)

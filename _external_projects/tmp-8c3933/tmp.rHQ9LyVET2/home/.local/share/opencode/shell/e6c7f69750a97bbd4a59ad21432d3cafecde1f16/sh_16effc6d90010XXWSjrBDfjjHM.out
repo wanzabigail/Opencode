@@ -1,0 +1,4 @@
+flow.php after write: 200
+cache/test.php: 404
+includes/test.php: 404
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

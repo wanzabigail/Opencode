@@ -1,0 +1,12 @@
+=== admin_ums ===
+admin: admin1: md5: email: webadmin: root: 
+=== admin_umsuser ===
+admin: admin1: md5: email: webadmin: root: 
+=== admin_ecsadmin ===
+admin: admin1: md5: email: webadmin: root: 
+=== admin_ecsuser ===
+admin: admin1: md5: email: webadmin: root: 
+=== admin_adminuser ===
+admin: admin1: md5: email: webadmin: root: 
+=== admin_admin ===
+admin: admin1: md5: email: webadmin: root: 
