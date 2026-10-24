@@ -1,0 +1,95 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.25.2",
+    "script_metadata_hash": null
+  },
+  "cells": [
+    {
+      "id": "Hbol",
+      "code_hash": "e86c7cb9c67029f5f94a863413bd117c",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"qwen36-35b-a3b-uncensored-lokal-di-molab\">\ud83e\udd99 Qwen3.6-35B-A3B Uncensored \u2014 lokal di molab</h1>\n<span class=\"paragraph\"><strong>Q8_K_P \u00b7 MoE (3B aktif/token) \u00b7 vision \u00b7 context 262K native</strong></span>\n<span class=\"paragraph\">Semua berjalan di GPU sandbox ini (RTX PRO 6000 Blackwell, 96 GB VRAM) lewat\n<a href=\"https://github.com/ggml-org/llama.cpp\" rel=\"noopener noreferrer\" target=\"_blank\">llama.cpp</a> build CUDA 12.8. Tanpa API key,\ntanpa data keluar dari sandbox.</span>\n<ul>\n<li><strong>Model:</strong> <code>HauhauCS/Qwen3.6-35B-A3B-Uncensored-HauhauCS-Aggressive</code> (GGUF Q8_K_P + mmproj f16)</li>\n<li><strong>Endpoint:</strong> OpenAI-compatible di <code>http://127.0.0.1:18080/v1</code> (marimo sendiri memakai :8080)</li>\n<li>Sandbox hanya menyimpan <code>notebook.py</code>. Kalau sandbox di-restart, cell\n  <code>server_start</code> akan mengunduh ulang bobot (~41 GB, sekitar 9 menit) lalu\n  menyalakan server sendiri.</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "2b9c90a903d0e820d294e572603faa2f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-ui-element object-id='MJUe-0' random-id='d971b26d-7f83-1d6c-556e-1afee305da9e'><marimo-anywidget data-initial-value='{&quot;model_id&quot;:&quot;baf0ea8d1ddb4eb89112f3a31cffa732&quot;}' data-label='null' data-model-id='&quot;baf0ea8d1ddb4eb89112f3a31cffa732&quot;'></marimo-anywidget></marimo-ui-element></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "vblA",
+      "code_hash": "08a0fc766b1ef6b76f4728000160698d",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "60deb40a42ade0793fb568464e3bf128",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "b652982effd63aa8b9803a5572cc37cd",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "33d1f1799fdf7772f31fe4e3f04c409f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='PKri-0' random-id='ac4c9bf9-8e43-6696-f3f8-d616322b2c3d'><marimo-chatbot data-initial-value='{&quot;messages&quot;:[]}' data-label='null' data-prompts='[&quot;Ceritakan soal dirimu dalam 2 kalimat.&quot;,&quot;Buat puisi pendek tentang GPU yang menyala di malam hari.&quot;,&quot;Tulis fungsi Python untuk chunking teks panjang, lalu jelaskan.&quot;]' data-show-configuration-controls='true' data-config='{&quot;max_tokens&quot;:4096,&quot;temperature&quot;:0.5,&quot;top_p&quot;:1,&quot;top_k&quot;:40,&quot;frequency_penalty&quot;:0,&quot;presence_penalty&quot;:0}' data-allow-attachments='[&quot;image/*&quot;]' data-max-height='640' data-disabled='false'></marimo-chatbot></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "ed613d468bd8abbe8fda47f4782f3865",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+          
+

@@ -1,0 +1,46 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "qwen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Qwen",
+      "options": {
+        "baseURL": "https://animate-cardstock-detector.ngrok-free.dev/v1"
+      },
+      "models": {
+        "qwen3.6-35b-uncensored": {
+          "name": "Qwen"
+        }
+      }
+    },
+    "river": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "River",
+      "options": {
+        "baseURL": "https://api.river.ai/v1",
+        "apiKey": "rv_7hCnd0nYhXH-VmLqKBCxNv7848SZHcnJnjPlTMB-ZMw"
+      },
+      "models": {
+        "deepseek-ai/DeepSeek-V4.1-Flash-1017": {
+          "name": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
+          "options": {
+            "reasoningEffort": "high"
+          }
+        }
+      }
+    },
+    "wen": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Wen",
+      "options": {
+        "baseURL": "https://xmlfd-166-19-116-252.free.pinggy.net/v1",
+        "apiKey": "sk-molab-b1b5c624c794fccfeb46b8647caa8afd"
+      },
+      "models": {
+        "qwen3.8-27b": {
+          "name": "qwen3.8-27b"
+        }
+      }
+    }
+  }
+}
