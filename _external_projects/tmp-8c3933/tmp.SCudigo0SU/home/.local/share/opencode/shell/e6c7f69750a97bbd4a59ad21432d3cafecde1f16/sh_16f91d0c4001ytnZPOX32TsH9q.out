@@ -1,0 +1,12 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+ + gguf==0.19.0
+arch: qwen35
+
+ERR: Traceback (most recent call last):
+  File "<stdin>", line 5, in <module>
+  File "/usr/local/lib/python3.13/site-packages/gguf/gguf_reader.py", line 195, in get_tensor
+    return self.tensors[idx]
+           ~~~~~~~~~~~~^^^^^
+TypeError: list indices must be integers or slices, not str
+
+
