@@ -1,0 +1,19 @@
+== https://molab.marimo.io/api/notebook/status?sandboxId=sb-9012fea9c78adfae
+HTTP/2 200 
+age: 0
+cache-control: no-cache
+content-type: text/event-stream
+date: Sat, 24 Oct 2026 18:38:54 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-accel-buffering: no
+x-clerk-auth-reason: session-token-and-uat-missing
+x-clerk-auth-status: signed-out
+data: {"sandbox_id":"sb-9012fea9c78adfae","state":"sandbox_running","reason":"running","url":"/v1/sandboxes/sb-9012fea9c78adfae/proxy/","timestamp":"2026-10-24T18:38:54Z"}
+
+
+== https://molab.marimo.io/api/notebook/status?sandboxId=9012fea9c78adfae
+curl: (28) Operation timed out after 15000 milliseconds with 0 bytes received
+data: {"sandbox_id":"sb-9012fea9c78adfae","state":"sandbox_running","reason":"running","url":"/v1/sandboxes/sb-9012fea9c78adfae/proxy/","timestamp":"2026-10-24T18:38:54Z"}
+
+

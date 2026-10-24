@@ -1,0 +1,12 @@
+admin: 404
+admin/: 404
+admin/index.php: 404
+admin.php: 404
+admin/login.php: 404
+admin/login: 404
+api/admin: 404
+mobile/admin: 404
+---
+404 admin/test.txt exists
+---
+200 admin/index.php on server exists

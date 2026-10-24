@@ -1,0 +1,15 @@
+flow.php: 200
+index.php: 200
+article.php: 200
+page.php: 200
+api.php: 200
+user.php: 200
+exchange.php: 200
+goods.php: 200
+brand.php: 200
+auction.php: 200
+snatch.php: 200
+group_buy.php: 200
+tag_cloud.php: 200
+sitemap.xml: 200
+robots.txt: 200

@@ -1,0 +1,5 @@
+=== EXACT admin TABLE ROWS ===
+admin:admin admin:123456 admin:12345 admin:password admin:1234 admin:123 admin:guest admin:webmaster admin:root admin:support admin:info admin:administator 
+root:admin root:123456 root:root root:password 
+test:empty test:123456 
+user:password user:admin user:123456 
