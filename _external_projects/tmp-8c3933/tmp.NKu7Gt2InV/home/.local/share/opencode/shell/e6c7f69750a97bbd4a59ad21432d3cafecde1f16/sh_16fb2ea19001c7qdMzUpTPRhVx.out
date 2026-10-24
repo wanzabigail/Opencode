@@ -1,0 +1,14 @@
+Decrypted 3 file(s).
+--- after decrypt ---
+/tmp/opencode/rtest/RESTORE_YOUR_FILES.txt
+/tmp/opencode/rtest/a.txt
+/tmp/opencode/rtest/a.txt.r0x
+/tmp/opencode/rtest/big.bin
+/tmp/opencode/rtest/big.bin.r0x
+/tmp/opencode/rtest/subdir/RESTORE_YOUR_FILES.txt
+/tmp/opencode/rtest/subdir/n.txt
+/tmp/opencode/rtest/subdir/n.txt.r0x
+--- content check ---
+top secret doc
+nested file
+/tmp/opencode/rtest/big.bin: OK
