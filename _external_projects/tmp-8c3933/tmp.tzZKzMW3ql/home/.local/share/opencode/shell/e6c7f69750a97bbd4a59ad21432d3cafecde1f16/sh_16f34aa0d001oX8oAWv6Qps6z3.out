@@ -1,0 +1,17 @@
+HTTP/2 200 
+date: Sat, 24 Oct 2026 18:38:05 GMT
+content-type: text/html; charset=utf-8
+cf-ray: a4fb18b0580d771e-ORD
+cf-cache-status: DYNAMIC
+cache-control: private, no-cache
+nel: {"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}
+server: cloudflare
+set-cookie: session_8080=eyJhY2Nlc3NfdG9rZW4iOiAiZDNkZGMxMDE2ZWE3NDQ2NWQyNjcxNTY0OGY3ZDNhMTE4MGEzYTY5YTJhYWE0NTk3OTBmNGU4MTI1ODZiNzZiYiJ9.atz7DQ.AV0M060JbtHoMmds7ybY3neI3TQ; path=/; Max-Age=1209600; httponly; samesite=lax
+vary: Cookie
+content-security-policy: frame-ancestors 'self' https://*.marimo.io https://sb-9012fea9c78adfae-session.sb.molab.run
+alt-svc: h3=":443"; ma=86400
+referrer-policy: strict-origin-when-cross-origin
+x-content-type-options: nosniff
+x-request-id: 726cd760c51d8b25
+report-to: {"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=CnvHTm3GDQeRw6gK0CzKmxYh08YLh03tqtEFAPoOacMG3Wnb7H8IWEkNUPzUpn3%2FyhRAzJ35908Gznks5Mx5DYsTFNloIofBKueXfdTj%2F%2FyrqAbLhEwiYdsodhXrOXXecTCWRSBGa%2Fn2Bv%2FSjAG%2Bti%2FzyA%3D%3D"}]}
+

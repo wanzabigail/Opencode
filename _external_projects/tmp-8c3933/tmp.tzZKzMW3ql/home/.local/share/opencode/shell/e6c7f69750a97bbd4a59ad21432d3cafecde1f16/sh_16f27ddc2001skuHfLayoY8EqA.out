@@ -1,0 +1,14 @@
+exists=200
+has_server_name=200
+starts_with 'www.umidigi.com': 200
+starts_with 'umidigi.com': 200
+www.umidigi.com found at position 50
+www.umidigi.com found at position 100
+www.umidigi.com found at position 150
+www.umidigi.com found at position 200
+www.umidigi.com found at position 250
+www.umidigi.com found at position 300
+www.umidigi.com found at position 350
+www.umidigi.com found at position 400
+www.umidigi.com found at position 450
+www.umidigi.com found at position 500
