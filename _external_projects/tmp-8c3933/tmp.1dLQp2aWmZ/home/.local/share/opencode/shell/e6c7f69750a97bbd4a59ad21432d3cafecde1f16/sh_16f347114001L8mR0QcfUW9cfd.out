@@ -1,0 +1,13 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+== /marimo/.config
+/marimo/.config/marimo/marimo.toml 2241
+== /marimo/__marimo__
+/marimo/__marimo__/notebook.html 67897
+/marimo/__marimo__/session/notebook.py.json 4081
+== /home/marimo/.config
+/home/marimo/.config/ngrok/ngrok 32809120
+/home/marimo/.config/ngrok/ngrok.yml 85
+== /home/marimo/.marimo
+== /home/marimo/.local/state
+/home/marimo/.local/state/marimo/recent_files.toml 32
+
