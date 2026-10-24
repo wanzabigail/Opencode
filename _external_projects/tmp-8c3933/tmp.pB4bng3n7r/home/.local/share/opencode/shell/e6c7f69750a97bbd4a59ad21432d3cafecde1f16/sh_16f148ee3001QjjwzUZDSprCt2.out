@@ -1,0 +1,35 @@
+=== ums_admin_data.txt patterns ===
+  FOUND: admin
+  FOUND: root
+  FOUND: test
+  FOUND: user
+  FOUND: pass
+  FOUND: 123456
+  FOUND: admin1
+  FOUND: webmaster
+  FOUND: administrator
+  FOUND: admin@
+  FOUND: root@
+  FOUND: test@
+  FOUND: user@
+  FOUND: 1234
+  FOUND: admin,
+  FOUND: admin|
+
+=== ums_test3.txt (GROUP_CONCAT(*)) patterns ===
+  FOUND: admin
+  FOUND: root
+  FOUND: test
+  FOUND: user
+  FOUND: pass
+  FOUND: 123456
+  FOUND: admin1
+  FOUND: webmaster
+  FOUND: administrator
+  FOUND: admin@
+  FOUND: root@
+  FOUND: test@
+  FOUND: user@
+  FOUND: 1234
+  FOUND: admin,
+  FOUND: admin|

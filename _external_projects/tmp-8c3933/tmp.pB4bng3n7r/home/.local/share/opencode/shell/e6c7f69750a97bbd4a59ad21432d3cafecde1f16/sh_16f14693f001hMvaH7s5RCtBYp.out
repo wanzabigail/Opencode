@@ -1,0 +1,18 @@
+=== ROW COUNTS ===
+  umi_article rows>0: 200
+  ums_admin_user rows>0: 200
+  ums_user rows>0: 200
+  ecs_admin_user rows>0: 200
+  ecs_user rows>0: 200
+  admin_user rows>0: 200
+  admin rows>0: 200
+
+=== CHECKING ums_admin_user data ===
+ums_admin data written
+file_size_check: 
+has 7c (pipe): has |admin: has uid: 
+=== TRYING DIFFERENT COLUMN COMBOS ===
+ums_test1.txt: 200 (200=has data)
+ums_test2.txt: 200 (200=has data)
+ums_test3.txt: 200 (200=has data)
+ums_admin_data.txt: 200 (200=has data)
