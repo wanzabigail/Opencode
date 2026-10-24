@@ -1,0 +1,6 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+old has xhigh: False
+[I 261024 19:50:29 pypi_package_manager:529] Updating script metadata for /marimo/notebook.py
+[I 261024 19:50:29 pypi_package_manager:672] Listing packages with 'uv pip list'
+edited code of cell 'UuLv' (chat) and ran
+

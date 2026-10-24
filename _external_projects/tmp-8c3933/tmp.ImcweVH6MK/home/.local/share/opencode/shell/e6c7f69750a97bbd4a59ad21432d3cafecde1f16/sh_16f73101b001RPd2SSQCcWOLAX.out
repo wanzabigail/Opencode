@@ -1,0 +1,8 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+0.05.419.371 W srv          init: chat template supports preserving reasoning, it is enabled by default (may use more tokens, disable via --no-reasoning-preserve)
+0.05.419.527 I srv  llama_server: model loaded
+0.05.419.568 I srv  llama_server: listening on http://127.0.0.1:8080
+
+no-key:401 with-key:200
+
+

@@ -1,0 +1,42 @@
+== {"sandboxId":"sb-9012fea9c78adfae"}
+HTTP/2 401 
+cache-control: public, max-age=0, must-revalidate
+content-type: application/json
+date: Sat, 24 Oct 2026 18:39:14 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-clerk-auth-reason: session-token-and-uat-missing
+x-clerk-auth-status: signed-out
+x-matched-path: /api/notebook/keep-alive
+x-vercel-cache: MISS
+x-vercel-id: cle1::cle1::45dkk-1792867154247-2d33de849161
+
+{"error":"Unauthorized"}
+== {"notebookId":"/marimo/notebook.py","sandboxId":"sb-9012fea9c78adfae"}
+HTTP/2 401 
+cache-control: public, max-age=0, must-revalidate
+content-type: application/json
+date: Sat, 24 Oct 2026 18:39:14 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-clerk-auth-reason: session-token-and-uat-missing
+x-clerk-auth-status: signed-out
+x-matched-path: /api/notebook/keep-alive
+x-vercel-cache: MISS
+x-vercel-id: cle1::cle1::dhj62-1792867154379-ebacbfcf7858
+
+{"error":"Unauthorized"}
+== {"notebookId":"%2Fmarimo%2Fnotebook.py","sandboxId":"sb-9012fea9c78adfae"}
+HTTP/2 401 
+cache-control: public, max-age=0, must-revalidate
+content-type: application/json
+date: Sat, 24 Oct 2026 18:39:14 GMT
+server: Vercel
+strict-transport-security: max-age=63072000
+x-clerk-auth-reason: session-token-and-uat-missing
+x-clerk-auth-status: signed-out
+x-matched-path: /api/notebook/keep-alive
+x-vercel-cache: MISS
+x-vercel-id: cle1::cle1::9pz5b-1792867154528-53812561be1c
+
+{"error":"Unauthorized"}

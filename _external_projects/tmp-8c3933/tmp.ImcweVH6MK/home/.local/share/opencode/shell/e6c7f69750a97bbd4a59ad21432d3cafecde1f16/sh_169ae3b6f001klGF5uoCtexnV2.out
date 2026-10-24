@@ -1,0 +1,8 @@
+TYPE user
+DATA KEYS ['metadata', 'time', 'text', 'files', 'agents']
+metadata : {'displayText': 'Failed to load notebook\nThe sandbox service is temporarily unavailable. Please retry in a moment.', 'comments': [], 'attachments': [], 'agent': 'build', 'model': {'modelID': 'beam', 'providerID': 'ollama-cloud', 'variant': 'max'}}
+time : {'created': 1792773982409}
+text : Failed to load notebook
+The sandbox service is temporarily unavailable. Please retry in a moment.
+files : []
+agents : []
