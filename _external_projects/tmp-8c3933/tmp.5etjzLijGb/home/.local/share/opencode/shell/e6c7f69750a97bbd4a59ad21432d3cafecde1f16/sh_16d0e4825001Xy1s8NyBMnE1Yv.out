@@ -1,0 +1,25 @@
+=== Getting session cookies ===
+Cookies: [('lang', '1'), ('__ddg8_', 'aXfA7Wls70VNEEdp'), ('__ddg10_', '1792831015'), ('__ddg9_', '20.64.17.101'), ('__ddg1_', 'RyRoFHp8POdtPYKZJfYS'), ('lang', '1')]
+
+=== Getting embed page with cookies ===
+Embed page size: 5399
+
+=== Getting download page with cookies ===
+Download page size: 5764
+
+=== Looking for download links ===
+  Link: //i.doodcdn.io
+  Link: //cdnjs.cloudflare.com
+  Link: //i.doodcdn.io/theme_2/css/bootstrap.min.css
+  Link: https://fonts.googleapis.com/css?family=Nunito:200,300,300i,400,600,600i,700,700i,800,900&display=swap
+  Link: //i.doodcdn.io/theme_2/css/style.css?v=0.1
+  Link: #lights
+  Iframe: /e/wyr99ofrib7b
+
+=== DoodStream API with file_id ===
+  https://doodapi.com/api/doodstream/wyr99ofrib7b: {"server_time":"2026-10-24 08:36:56","msg":"No API key passed","status":400}
+  https://doodws.com/api/doodstream/wyr99ofrib7b: <urlopen error [Errno -2] Name or service not known>
+  https://doodapi.com/api/file/8rrwpuv9srfef6aa: {"status":400,"server_time":"2026-10-24 08:36:57","msg":"No API key passed"}
+  https://dood.ws/api/file/8rrwpuv9srfef6aa: {"server_time":"2026-10-24 08:36:58","status":400,"msg":"No API key passed"}
+
+=== Looking for download button in DoodStream page ===
