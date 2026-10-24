@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-238b5efe5619d672.sb.molab.run'. Ensure this is trusted.
+ngrok: None
+cloudflared: None
+curl: /usr/bin/curl
+wget: /usr/bin/wget
+[Errno 2] No such file or directory: 'ngrok'
+
