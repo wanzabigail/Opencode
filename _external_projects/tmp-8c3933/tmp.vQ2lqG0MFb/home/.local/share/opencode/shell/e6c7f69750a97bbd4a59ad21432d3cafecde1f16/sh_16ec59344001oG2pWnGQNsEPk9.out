@@ -1,0 +1,24 @@
+cd /home/runner/phishing && python3 start_cloudflared.py
+runner@runnervm8k3b6:~$ cd /home/runner/phishing && python3 start_cloudflared.py
+🔄 Starting cloudflared tunnel on port 9000...
+   This may take a moment...
+
+✅ Tunnel created!
+🌐 Public URL: 2026-10-24T16:36:35Z INF Requesting new quick Tunnel on trycloudf
+lare.com...
+
+📤 Share this link with victims:
+   2026-10-24T16:36:35Z INF Requesting new quick Tunnel on trycloudflare.com...
+
+⚠️   Keep this running!
+
+
+
+
+
+
+
+
+
+
+
