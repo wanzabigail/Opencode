@@ -1,0 +1,13 @@
+https://kittykawai.com/wp-content/plugins/clean-tube-player/public/player-x.php?q=post_id=311016&type=video: empty response
+https://kittykawai.com/wp-json/ctpl/v1/video/311016: HTTP Error 403: Forbidden
+https://kittykawai.com/wp-json/ultimatube/v1/video/311016: HTTP Error 403: Forbidden
+https://kittykawai.com/wp-json/ultimatube/videos/311016: HTTP Error 403: Forbidden
+
+=== Checking oEmbed API ===
+oEmbed error: HTTP Error 403: Forbidden
+
+=== WordPress REST API ===
+REST API error: HTTP Error 403: Forbidden
+
+=== Getting post content ===
+Content error: HTTP Error 403: Forbidden
