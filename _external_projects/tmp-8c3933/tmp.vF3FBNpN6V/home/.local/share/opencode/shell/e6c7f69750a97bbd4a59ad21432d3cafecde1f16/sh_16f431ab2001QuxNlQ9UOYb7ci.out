@@ -1,0 +1,10 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+http://127.0.0.1:18080/v1/models 200
+http://127.0.0.1:8501/healthz 200
+anti_mati 555
+keepalive.py 11693
+run_ngrok.py 417
+uvicorn app:app 380
+url https://animate-cardstock-detector.ngrok-free.dev
+heartbeat 2026-10-24T18:53:46+0000
+

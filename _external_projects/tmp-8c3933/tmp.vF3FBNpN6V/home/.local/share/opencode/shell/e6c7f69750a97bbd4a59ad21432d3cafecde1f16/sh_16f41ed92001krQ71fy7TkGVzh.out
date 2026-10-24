@@ -1,0 +1,17 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+== /marimo/.env
+OLLAMA_API_KEY="752b1d7d32f3485ca6e15b3eef97c980.qaG2c4YkodPMe6pfj4T-PwTN"
+
+== /marimo/.config/marimo/marimo.toml
+[ai]
+allow_provider_config = false
+enabled = true
+max_tokens = 65536
+mode = 'agent'
+
+[ai.models]
+autocomplete_model = 'ollama/beam:cloud'
+chat_model = 'ollama/beam:cloud'
+custom_models = ['ollama/beam:cloud', 'ollama/beam:cloud', 'openrouter/ppP', 'ollama/minimax-m3.1-flash:cloud', 'ollama/minimax-m3.1-flash:coud']
+displayed_models = ['wandb/openai/gpt-oss-20b', 'wandb/nvidia/NVIDIA-Nemotron-3.5-Super-VL-120B-A12B', 'wandb/deepseek-ai/DeepSeek-V4.1-Flash', 'wandb/zai-org/GLM-5.3-Flash', 'wandb/ibm-granite/granite-4.2-8b', 'wandb/deepseek-ai/DeepSeek-V4-Pro-0813', 'wandb/Qwen/Qwen3.8-27B', 'wandb/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B', 'wandb/deepseek-ai/DeepSeek-V4-Flash-0731', 'wandb/MiniMaxAI/MiniMax-M3', 'wandb/deepseek-ai/DeepSeek-V4-Flash', 'wandb/deepseek-ai/DeepSeek-V4-Pro', 'wandb/zai-org/GLM-5.2', 'wandb/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B', 'wandb/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8', 'wandb/openai/gpt-oss-120b', 'wandb/JetBrains/Mellum2-12B-A2.5B-Instruc
+

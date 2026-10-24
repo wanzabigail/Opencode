@@ -1,0 +1,56 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+  return (qwen_chat,)
+
+
+@app.cell
+def chat_ui(mo, qwen_chat):
+    chat = mo.ui.chat(
+        qwen_chat,
+        prompts=[
+            "Ceritakan soal dirimu dalam 2 kalimat.",
+            "Buat puisi pendek tentang GPU yang menyala di malam hari.",
+            "Tulis fungsi Python untuk chunking teks panjang, lalu jelaskan.",
+        ],
+        allow_attachments=["image/*"],
+        show_configuration_controls=True,
+        max_height=640,
+    )
+    chat
+    return
+
+
+@app.cell
+def chat_url(json, mo, urllib):
+    def _tunnel() -> str | None:
+        """Read the public URL from the ngrok agent's local API."""
+        try:
+            with urllib.request.urlopen("http://127.0.0.1:4040/api/tunnels", timeout=2) as r:
+                tunnels = json.loads(r.read()).get("tunnels", [])
+        except Exception:
+            return None
+        urls = [t["public_url"] for t in tunnels if t.get("public_url", "").startswith("https")]
+        return urls[0] if urls else None
+
+
+    public_chat_url = _tunnel()
+    if public_chat_url:
+        mo.callout(
+            mo.md(
+                f"**🌐 Chat publik (ngrok):** [{public_chat_url}]({public_chat_url})\n\n"
+                "Kalau ngrok menampilkan halaman *Visit Site*, klik sekali saja. "
+                "Halaman ini streaming langsung dari model di sandbox."
+            ),
+            kind="info",
+        )
+    else:
+        mo.callout(
+            mo.md("**Tunnel belum aktif.** Di sandbox: `uvicorn app:app --port 8501` lalu `ngrok http 8501`."),
+            kind="danger",
+        )
+    return
+
+
+if __name__ == "__main__":
+    app.run()
+
+
