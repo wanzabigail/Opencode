@@ -1,0 +1,4 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+A plain gen: PP 129 | TG 58.5 | draft 117/465
+B prefill: prompt_n 2820 | PP 2098 tok/s | TG 54.7
+

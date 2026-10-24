@@ -1,0 +1,28 @@
+  esac
+done < <(curl -sN -X POST "${base}/api/kernel/execute" \
+  -H "Content-Type: application/json" \
+  -H "Marimo-Session-Id: ${session_id}" \
+  ${auth_args[@]+"${auth_args[@]}"} \
+  -d "$(jq -n --arg c "$code" '{code: $c}')" \
+)
+
+if [[ "$done_received" == false ]]; then
+  # No `done` event means the code never ran; without this we would exit 0.
+  echo "Execution did not complete: the server ended the stream without a result." >&2
+  if [[ -n "$unparsed" ]]; then
+    detail=$(jq -r '.detail // empty' <<<"$unparsed" 2>/dev/null) || detail=""
+    if [[ -n "$detail" ]]; then
+      echo "$detail" >&2
+    else
+      printf '%s' "$unparsed" >&2
+    fi
+  fi
+  if [[ -n "$file" ]]; then
+    echo "The session for --file may have changed during execution. Retry the same --file command." >&2
+  elif [[ -n "$session" ]]; then
+    echo "The --session id may be stale: marimo renames a session when the browser reconnects. Retry without --session." >&2
+  fi
+  exit 1
+fi
+
+exit "$exit_code"
