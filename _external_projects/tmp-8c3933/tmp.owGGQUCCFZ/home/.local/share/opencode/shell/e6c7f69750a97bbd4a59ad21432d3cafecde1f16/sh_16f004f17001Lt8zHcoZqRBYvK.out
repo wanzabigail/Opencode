@@ -1,0 +1,3 @@
+config length >500: 0
+/bin/bash: -c: line 18: syntax error near unexpected token `done'
+/bin/bash: -c: line 18: `done'

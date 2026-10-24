@@ -1,0 +1,13 @@
+<b>MySQL server error report:Array
+(
+00000000: 6361 743a 202f 746d 702f 616c 6c5f 7461  cat: /tmp/all_ta
+00000010: 626c 6573 2e74 7874 3a20 4e6f 2073 7563  bles.txt: No suc
+00000020: 6820 6669 6c65 206f 7220 6469 7265 6374  h file or direct
+00000030: 6f72 790a                                ory.
+===
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+00000000: 6361 743a 202f 746d 702f 6164 6d69 6e5f  cat: /tmp/admin_
+00000010: 6475 6d70 2e74 7874 3a20 4e6f 2073 7563  dump.txt: No suc
+00000020: 6820 6669 6c65 206f 7220 6469 7265 6374  h file or direct
+00000030: 6f72 790a                                ory.

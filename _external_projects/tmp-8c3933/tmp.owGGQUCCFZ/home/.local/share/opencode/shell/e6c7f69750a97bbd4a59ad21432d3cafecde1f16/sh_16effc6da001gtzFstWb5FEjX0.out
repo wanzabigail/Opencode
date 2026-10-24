@@ -1,0 +1,17 @@
+HTTP/2 404 
+server: nginx
+date: Sat, 24 Oct 2026 17:40:18 GMT
+content-type: text/html
+content-length: 146
+
+===
+HTTP/2 200 
+server: nginx
+date: Sat, 24 Oct 2026 17:40:19 GMT
+content-type: text/html; charset=utf-8
+vary: Accept-Encoding
+cache-control: private
+strict-transport-security: max-age=31536000
+
+===
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">

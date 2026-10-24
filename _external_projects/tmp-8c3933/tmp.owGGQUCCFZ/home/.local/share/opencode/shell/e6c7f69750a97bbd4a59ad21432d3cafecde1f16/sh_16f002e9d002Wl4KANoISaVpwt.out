@@ -1,0 +1,6 @@
+FOUND: /www/server/nginx/conf/nginx.conf
+FOUND: /www/server/nginx/conf/500.html
+FOUND: /www/server/panel/vhost/nginx/www.umidigi.com.conf
+FOUND: /www/server/panel/vhost/nginx/www.umidigi.com
+proc cwd: 0
+proc 1 environ: 0
