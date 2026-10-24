@@ -1,0 +1,39 @@
+LISTEN 0      5                 0.0.0.0:8000       0.0.0.0:*    users:(("python3",pid=18605,fd=3))    
+runner     18604  0.0  0.0   7892  2160 ?        S    15:57   0:00 /bin/bash -c cd /home/runner && python3 -m http.server 8000 --bind 0.0.0.0 &
+runner     18605  0.7  0.1 112572 20488 ?        S    15:57   0:00 python3 -m http.server 8000 --bind 0.0.0.0
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/usr/lib/python3.12/http/server.py", line 1314, in <module>
+    test(
+  File "/usr/lib/python3.12/http/server.py", line 1261, in test
+    with ServerClass(addr, HandlerClass) as httpd:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/socketserver.py", line 457, in __init__
+    self.server_bind()
+  File "/usr/lib/python3.12/http/server.py", line 1308, in server_bind
+    return super().server_bind()
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/http/server.py", line 136, in server_bind
+    socketserver.TCPServer.server_bind(self)
+  File "/usr/lib/python3.12/socketserver.py", line 473, in server_bind
+    self.socket.bind(self.server_address)
+OSError: [Errno 98] Address already in use
+* Host localhost:8000 was resolved.
+* IPv6: ::1
+* IPv4: 127.0.0.1
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0*   Trying [::1]:8000...
+* connect to ::1 port 8000 from ::1 port 40742 failed: Connection refused
+*   Trying 127.0.0.1:8000...
+* Connected to localhost (127.0.0.1) port 8000
+> GET / HTTP/1.1
+> Host: localhost:8000
+> User-Agent: curl/8.5.0
+> Accept: */*
+> 
+* Empty reply from server
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+* Closing connection
+curl: (52) Empty reply from server

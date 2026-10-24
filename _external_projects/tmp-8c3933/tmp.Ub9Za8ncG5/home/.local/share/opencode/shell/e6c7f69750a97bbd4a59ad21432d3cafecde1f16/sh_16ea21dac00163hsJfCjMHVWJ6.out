@@ -1,0 +1,10 @@
+=== Server Status ===
+127.0.0.1 - - [24/Oct/2026 15:57:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [24/Oct/2026 15:57:58] "GET /SpookApp-debug.apk HTTP/1.1" 200 -
+
+=== Network Info ===
+    inet 10.1.0.185/20 metric 100 brd 10.1.15.255 scope global eth0
+    inet 172.17.0.1/16 brd 172.17.255.255 scope global docker0
+
+=== Download Link ===
+http://127.0.0.1:8080/SpookApp-debug.apk

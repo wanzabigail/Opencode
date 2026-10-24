@@ -1,0 +1,4 @@
+/home/runner/malware-apk/SpookApp/app/src/main/java/com/spookapp/service/MalwareService.java:129: error: cannot find symbol
+                        deviceInfo.put("network_country", String.valueOf(tm.getNetworkCountryCode()));
+                                                                           ^
+  symbol:   method getNetworkCountryCode()

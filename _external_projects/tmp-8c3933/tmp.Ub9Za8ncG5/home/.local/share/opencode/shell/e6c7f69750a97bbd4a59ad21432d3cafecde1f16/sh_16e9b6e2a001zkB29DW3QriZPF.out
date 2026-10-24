@@ -1,0 +1,15 @@
+Note: Recompile with -Xlint:deprecation for details.
+1 error
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Execution failed for task ':app:compileDebugJavaWithJavac'.
+> Compilation failed; see the compiler error output for details.
+
+* Try:
+> Run with --info option to get more log output.
+> Run with --scan to get full insights.
+
+BUILD FAILED in 1s
+14 actionable tasks: 1 executed, 13 up-to-date

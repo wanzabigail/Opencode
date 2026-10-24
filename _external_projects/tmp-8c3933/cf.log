@@ -42,3 +42,21 @@
 2026-10-24T12:49:08Z INF precheck component="TCP Connectivity" details="HTTP/2 connection successful" run_id=ce95e0df-2f8d-4d1b-b2ff-978b97e04b62 status=pass target=region2.v2.argotunnel.com
 2026-10-24T12:49:08Z INF precheck component="Cloudflare API" details="API is reachable" run_id=ce95e0df-2f8d-4d1b-b2ff-978b97e04b62 status=pass target=api.cloudflare.com:443
 2026-10-24T12:49:08Z INF precheck complete hard_fail=false run_id=ce95e0df-2f8d-4d1b-b2ff-978b97e04b62 suggested_protocol=http2
+2026-10-24T15:55:41Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:55:41Z ERR failed to serve incoming request error="Failed to proxy HTTP: Incoming request ended abruptly: context canceled"
+2026-10-24T15:55:41Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:55:41Z ERR failed to serve incoming request error="Failed to proxy HTTP: Incoming request ended abruptly: context canceled"
+2026-10-24T15:55:41Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:55:41Z ERR failed to serve incoming request error="Failed to proxy HTTP: Incoming request ended abruptly: context canceled"
+2026-10-24T15:56:10Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:56:10Z ERR failed to serve incoming request error="Failed to proxy HTTP: Incoming request ended abruptly: context canceled"
+2026-10-24T15:56:14Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:56:14Z ERR failed to serve incoming request error="Failed to proxy HTTP: Incoming request ended abruptly: context canceled"
+2026-10-24T15:56:15Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:56:15Z ERR failed to serve incoming request error="Failed to proxy HTTP: Incoming request ended abruptly: context canceled"
+2026-10-24T15:56:19Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:56:19Z ERR failed to serve incoming request error="Failed to proxy HTTP: Incoming request ended abruptly: context canceled"
+2026-10-24T15:56:25Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: read tcp 127.0.0.1:59720->127.0.0.1:4096: read: connection reset by peer" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:56:25Z ERR failed to serve incoming request error="Failed to proxy HTTP: Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: read tcp 127.0.0.1:59720->127.0.0.1:4096: read: connection reset by peer"
+2026-10-24T15:56:25Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: read tcp 127.0.0.1:59722->127.0.0.1:4096: read: connection reset by peer" connIndex=0 event=1 ingressRule=0 originService=http://127.0.0.1:4096
+2026-10-24T15:56:25Z ERR failed to serve incoming request error="Failed to proxy HTTP: Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: read tcp 127.0.0.1:59722->127.0.0.1:4096: read: connection reset by peer"
