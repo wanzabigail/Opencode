@@ -1,0 +1,7 @@
+Warning: connecting to non-local server 'sb-179ee0d0adbd1795.sb.molab.run'. Ensure this is trusted.
+[428/438] Building CXX object tools/server/CMakeFiles/server-context.dir/server-context.cpp.o
+[429/438] Linking CXX static library tools/server/libserver-context.a
+0
+building
+
+
