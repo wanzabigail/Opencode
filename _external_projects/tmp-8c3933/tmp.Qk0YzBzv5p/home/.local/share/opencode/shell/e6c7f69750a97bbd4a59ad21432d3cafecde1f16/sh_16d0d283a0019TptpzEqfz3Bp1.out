@@ -1,0 +1,22 @@
+=== Looking for video element in page ===
+Iframe: <iframe loading="eager" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" src="https://playmogo.com/e/wyr99ofrib7b" scrolling="no" frameborder="0" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true">
+
+Data post IDs: ['311016', '311016']
+Embed: https://playmogo.com/e/wyr99ofrib7b
+Embed: https://playmogo.com/e/wyr99ofrib7b
+Dood: ('doodstream-y1v2wp/', 'stream')
+Dood: ('doodstream-90h27tq4bnmz-x9sw3qsm4x2tk3m3-320x180.jpg', 'stream')
+Dood: ('doodstream-s70sy0yxiimo-82sixgf924pl4f48-222x180.jpg', 'stream')
+Dood: ('doodstream-e7pvi3tm6cn8-qwu2xxthb39aiumh-320x180.jpg', 'stream')
+Dood: ('doodstream-4dvb0simw9es-7zqzsab8ukem8oj8-320x180.jpg', 'stream')
+Dood: ('doodstream-4hc6rpvmq9rl-hs666tbpw3bq7cre-320x180.jpg', 'stream')
+Dood: ('doodstream-x89mcgs2s3m9-19gdng9m6orwtjo5-320x180.jpg', 'stream')
+Dood: ('doodstream-d66s7qyz3gn6-jkr29gapl6p8wg58-320x180.jpg', 'stream')
+Dood: ('doodstream-250rbpo6i3xn-3mf5rictnarzgv3n-320x180.jpg', 'stream')
+Dood: ('doodstream', 'stream')
+Dood: ('doodstream-ldozxexhiiri-fh3tt0bg3xisvu2m-320x180.jpg', 'stream')
+
+=== Checking page size ===
+Page size: 415342 chars
+Article content length: 11465
+Video-related in article: ['video', 'video', 'iframe', 'iframe', 'iframe', 'video', 'iframe', 'iframe', 'video', 'video', 'video', 'video', 'video']

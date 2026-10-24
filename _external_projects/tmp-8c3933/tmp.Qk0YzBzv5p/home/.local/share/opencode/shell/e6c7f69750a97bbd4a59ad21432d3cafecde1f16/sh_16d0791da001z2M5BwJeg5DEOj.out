@@ -1,0 +1,19 @@
+===
+data-post_id="311016"
+data-post_like="like"
+data-post_id="311016"
+data-post_like="dislike"
+===
+===
+#article
+===
+	.post-thumbnail .wpst-trailer,
+<link rel='stylesheet' id='ctpl-overlay-css' href='https://kittykawai.com/wp-content/plugins/clean-tube-player/public/assets/css/ctpl-overlay.css?ver=2.8.2.1787505510' media='all' />
+<link rel='stylesheet' id='wpst-font-awesome-css' href='https://kittykawai.com/wp-content/themes/ultimatube/assets/stylesheets/font-awesome/css/font-awesome.min.css?ver=4.7.0' media='all' />
+<link rel='stylesheet' id='wpst-style-css' href='https://kittykawai.com/wp-content/themes/ultimatube/style.css?ver=1.2.14.1791210758' media='all' />
+		<div class="modal fade wpst-user-modal" id="wpst-user-modal" tabindex="-1" role="dialog" aria-hidden="true">
+						<div class="wpst-register">	
+						<div class="wpst-login">							 
+									<button class="btn btn-theme btn-lg" data-loading-text="Loading..." type="submit">Login</button> <a class="alignright" href="#wpst-reset-password">Lost Password?</a>
+							<div class="wpst-errors"></div>
+						<div class="wpst-reset-password">							 

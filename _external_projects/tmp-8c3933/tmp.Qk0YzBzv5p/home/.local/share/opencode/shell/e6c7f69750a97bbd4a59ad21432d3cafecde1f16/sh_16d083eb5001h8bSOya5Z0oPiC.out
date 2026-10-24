@@ -1,0 +1,16 @@
+Player URL: https://kittykawai.com/wp-content/plugins/clean-tube-player/public/player-x.php?q=cG9zdF9pZD0zMTEwMTYmdHlwZT12aWRlbw==
+Status: 200
+Headers: {'Date': 'Sat, 24 Oct 2026 08:30:19 GMT', 'Content-Type': 'text/html; charset=UTF-8', 'Transfer-Encoding': 'chunked', 'Connection': 'close', 'Server': 'cloudflare', 'vary': 'Accept-Encoding', 'strict-transport-security': 'max-age=31536000; includeSubDomains', 'x-content-type-options': 'nosniff', 'x-frame-options': 'SAMEORIGIN', 'referrer-policy': 'strict-origin-when-cross-origin', 'Report-To': '{"group":"cf-nel","max_age":604800,"endpoints":[{"url":"https://a.nel.cloudflare.com/report/v4?s=9iPV5TvIP%2FkT7aYArDh057YCtYJO0gSBUZrlzQvobbQH2rgLZ%2FeOs8Oa7eVQrrx4voKd97O64YhB%2FrRp%2BmU5Pge02oFtR0t3SsRBLopP%2BQDKXQjkrJvS%2B8pQ8Mv7z7j5uw%3D%3D"}]}', 'Nel': '{"report_to":"cf-nel","success_fraction":0.0,"max_age":604800}', 'cf-cache-status': 'BYPASS', 'Server-Timing': 'cfCacheStatus;desc="BYPASS"', 'CF-RAY': 'a4f79e6b59761214-DFW', 'alt-svc': 'h3=":443"; ma=86400'}
+Length: 0
+Content: b''
+
+=== Without base64 encoding ===
+Raw URL: https://kittykawai.com/wp-content/plugins/clean-tube-player/public/player-x.php?q=post_id=311016&type=video
+Status: 200
+Length: 0
+Content: 
+
+=== Original iframe pattern ===
+Original URL: https://kittykawai.com/wp-content/plugins/clean-tube-player/public/player-x.php?q=cG9zdF9pZD00MzQ2MSZ0eXBlPXZpZGVv
+Length: 0
+Content: 

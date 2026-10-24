@@ -1,0 +1,44 @@
+=== Trying /d/ with file ID ===
+Status: 301
+Location: https://playmogo.com/d/8rrwpuv9srfef6aa
+Body: <html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
+
+=== Trying /d/ with video ID ===
+Status: 301
+Location: https://playmogo.com/d/wyr99ofrib7b
+
+=== Trying DoodStream CDN ===
+  https://d0000d.com/d/wyr99ofrib7b
+    Status: 301, Content-Type: text/html
+
+=== Direct video URL patterns ===
+  https://dood.ws/d/wyr99ofrib7b/video.mp4
+    Content-Type: text/html; charset=UTF-8, Length: unknown
+  https://dood.ws/d/wyr99ofrib7b/8rrwpuv9srfef6aa.mp4
+    Content-Type: text/html; charset=UTF-8, Length: unknown
+  https://dood.ws/d/wyr99ofrib7b/Bokep_Indo_Arachu.mp4
+    Content-Type: text/html; charset=UTF-8, Length: unknown
+  https://d0000d.com/d/wyr99ofrib7b
+    Content-Type: text/html; charset=UTF-8, Length: unknown
+
+=== DoodStream API ===
+  Error: HTTP Error 404: Not Found
+
+=== Trying POST to /dood ===
+Status: 301
+Location: https://playmogo.com/dood
+Body: <html>
+<head><title>301 Moved Permanently</title></head>
+<body>
+<center><h1>301 Moved Permanently</h1></center>
+<hr><center>nginx</center>
+</body>
+</html>
+
