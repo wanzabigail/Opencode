@@ -1,0 +1,9 @@
+Warning: connecting to non-local server 'sb-9012fea9c78adfae.sb.molab.run'. Ensure this is trusted.
+anti_mati.sh exists: False 0
+start_chat.sh exists: False
+heartbeat: False
+anti_mati 
+start_model.py 293
+run_ngrok.py 417
+uvicorn app:app 380
+

@@ -1,0 +1,21 @@
+total 76
+drwxr-xr-x  15 runner runner 4096 Oct 24 12:48 .
+drwxr-xr-x+  5 root   root   4096 Oct 12 22:09 ..
+-rw-r--r--   1 runner runner  220 Mar 31  2024 .bash_logout
+-rw-r--r--   1 runner runner  143 Oct 24 12:48 .bash_profile
+-rw-r--r--   1 runner runner 3828 Oct 24 12:48 .bashrc
+drwxr-xr-x   3 runner runner 4096 Oct 24 12:48 .bun
+drwxr-xr-x   3 runner runner 4096 Oct 24 12:48 .cache
+drwxr-xr-x   3 runner runner 4096 Oct 12 21:32 .cargo
+drwxr-xr-x   2 runner runner 4096 Oct 12 21:30 .composer
+drwxr-xr-x   4 runner runner 4096 Oct 24 12:48 .config
+drwxr-xr-x   2 runner docker 4096 Oct 12 22:12 .docker
+drwxr-xr-x   3 runner runner 4096 Oct 12 21:18 .dotnet
+lrwxrwxrwx   1 runner runner   17 Oct 12 21:24 .ghcup -> /usr/local/.ghcup
+drwxr-xr-x   5 runner runner 4096 Oct 24 12:48 .local
+drwxr-xr-x   6 runner runner 4096 Oct 12 21:28 .nvm
+drwxr-xr-x   3 runner runner 4096 Oct 24 12:48 .opencode
+-rw-r--r--   1 runner runner  807 Mar 31  2024 .profile
+drwxr-xr-x   6 runner runner 4096 Oct 12 21:32 .rustup
+drwxrwxr-x   3 runner runner 4096 Oct 24 12:47 actions-runner
+drwxr-xr-x   6 runner runner 4096 Oct 24 12:48 work

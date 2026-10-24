@@ -1,0 +1,5 @@
+>>> Enabling and starting ollama service...
+Created symlink /etc/systemd/system/default.target.wants/ollama.service → /etc/systemd/system/ollama.service.
+>>> The Ollama API is now available at 127.0.0.1:11434.
+>>> Install complete. Run "ollama" from the command line.
+[1m[31mWARNING:(B[m No NVIDIA/AMD GPU detected. Ollama will run in CPU-only mode.
