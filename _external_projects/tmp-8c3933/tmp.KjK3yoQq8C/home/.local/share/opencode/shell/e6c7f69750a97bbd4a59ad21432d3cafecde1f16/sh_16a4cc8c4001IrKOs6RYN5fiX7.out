@@ -1,0 +1,27 @@
+/usr/bin/chromium
+/usr/bin/google-chrome
+/usr/bin/firefox
+/usr/local/bin/node
+/usr/local/bin/npm
+/usr/bin/python3
+---
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'playwright'
+---node pkgs---
+---npm global---
+/usr/local/lib
+├── @bazel/bazelisk@v1.28.1
+├── corepack@0.36.0
+├── grunt@1.6.3
+├── gulp@5.0.1
+├── lerna@10.1.0
+├── n@10.2.0
+├── newman@6.2.3
+├── npm@10.9.9
+├── parcel@2.16.4
+├── typescript@7.0.2
+├── webpack-cli@7.2.3
+├── webpack@5.111.1
+└── yarn@1.22.22
+

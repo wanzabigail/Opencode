@@ -1,0 +1,50 @@
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0  22860 14428 ?        Ss   13:05   0:02 /sbin/init
+root           2  0.0  0.0      0     0 ?        S    13:05   0:00 [kthreadd]
+root           3  0.0  0.0      0     0 ?        S    13:05   0:00 [pool_workqueue_release]
+root           4  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/R-rcu_gp]
+root           5  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/R-sync_wq]
+root           6  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/R-kvfree_rcu_reclaim]
+root           7  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/R-slub_flushwq]
+root           8  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/R-netns]
+root          11  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/0:0H-events_highpri]
+root          13  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/R-mm_percpu_wq]
+root          14  0.0  0.0      0     0 ?        S    13:05   0:00 [ksoftirqd/0]
+root          15  0.0  0.0      0     0 ?        I    13:05   0:00 [rcu_sched]
+root          16  0.0  0.0      0     0 ?        S    13:05   0:00 [rcu_exp_par_gp_kthread_worker/0]
+root          17  0.0  0.0      0     0 ?        S    13:05   0:00 [rcu_exp_gp_kthread_worker]
+root          18  0.0  0.0      0     0 ?        S    13:05   0:00 [migration/0]
+root          19  0.0  0.0      0     0 ?        S    13:05   0:00 [idle_inject/0]
+root          20  0.0  0.0      0     0 ?        S    13:05   0:00 [cpuhp/0]
+root          21  0.0  0.0      0     0 ?        S    13:05   0:00 [cpuhp/2]
+root          22  0.0  0.0      0     0 ?        S    13:05   0:00 [idle_inject/2]
+root          23  0.0  0.0      0     0 ?        S    13:05   0:00 [migration/2]
+root          24  0.0  0.0      0     0 ?        S    13:05   0:00 [ksoftirqd/2]
+root          26  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/2:0H-events_highpri]
+root          27  0.0  0.0      0     0 ?        S    13:05   0:00 [cpuhp/1]
+root          28  0.0  0.0      0     0 ?        S    13:05   0:00 [idle_inject/1]
+root          29  0.0  0.0      0     0 ?        S    13:05   0:00 [migration/1]
+root          30  0.0  0.0      0     0 ?        S    13:05   0:00 [ksoftirqd/1]
+root          32  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/1:0H-events_highpri]
+root          33  0.0  0.0      0     0 ?        S    13:05   0:00 [cpuhp/3]
+root          34  0.0  0.0      0     0 ?        S    13:05   0:00 [idle_inject/3]
+root          35  0.0  0.0      0     0 ?        S    13:05   0:00 [migration/3]
+root          36  0.0  0.0      0     0 ?        S    13:05   0:00 [ksoftirqd/3]
+root          38  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/3:0H-kblockd]
+root          39  0.0  0.0      0     0 ?        S    13:05   0:00 [kdevtmpfs]
+root          40  0.0  0.0      0     0 ?        I<   13:05   0:00 [kworker/R-inet_frag_wq]
+root          41  0.0  0.0      0     0 ?        I    13:05   0:00 [rcu_tasks_rude_kthread]
+root          42  0.0  0.0      0     0 ?        I    13:05   0:00 [rcu_tasks_trace_kthread]
+root          43  0.0  0.0      0     0 ?        S    13:05   0:00 [kauditd]
+root          44  0.0  0.0      0     0 ?        S    13:05   0:00 [khungtaskd]
+root          46  0.0  0.0      0     0 ?        S    13:05   0:00 [oom_reaper]
+===
+State  Recv-Q Send-Q Local Address:Port  Peer Address:PortProcess                                
+LISTEN 0      4096         0.0.0.0:22         0.0.0.0:*                                          
+LISTEN 0      4096       127.0.0.1:20241      0.0.0.0:*    users:(("cloudflared",pid=2575,fd=11))
+LISTEN 0      512        127.0.0.1:49374      0.0.0.0:*    users:(("opencode",pid=2542,fd=8))    
+LISTEN 0      4096   127.0.0.53%lo:53         0.0.0.0:*                                          
+LISTEN 0      4096      127.0.0.54:53         0.0.0.0:*                                          
+LISTEN 0      511        127.0.0.1:4096       0.0.0.0:*    users:(("node",pid=2558,fd=21))       
+LISTEN 0      4096            [::]:22            [::]:*                                          
+=== python packages ===
